@@ -1,0 +1,2145 @@
+2026-07-08 21:06:26 === PC 端 RPC 推理（DEBUG 模式） ===
+2026-07-08 21:06:26   model    : /home/atituiset/models/qwen2-0.5b-instruct-q4_0.gguf
+2026-07-08 21:06:26   rpc      : 192.168.1.7:50052
+2026-07-08 21:06:26   ngl      : 4
+2026-07-08 21:06:26   prompt   : 你好
+2026-07-08 21:06:26   n        : 5
+2026-07-08 21:06:26   log file : /tmp/llama_rpc_debug.log
+2026-07-08 21:06:26 
+2026-07-08 21:06:26 0.00.045.143 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:26 0.00.054.527 D [~impl] closing socket 3
+2026-07-08 21:06:26 0.00.055.955 I llama_completion: llama backend init
+2026-07-08 21:06:26 0.00.056.002 I llama_completion: load the model and apply lora adapter, if any
+2026-07-08 21:06:26 0.00.056.018 I cmn  common_init_: fitting params to device memory ...
+2026-07-08 21:06:26 0.00.056.019 I cmn  common_init_: (for bugs during this step try to reproduce them with -fit off, or provide --verbose logs if the bug only occurs with -fit on)
+2026-07-08 21:06:26 0.00.056.034 I common_params_fit_impl: getting device memory data for initial parameters:
+2026-07-08 21:06:27 0.00.095.920 I llama_model_loader: loaded meta data with 21 key-value pairs and 290 tensors from /home/atituiset/models/qwen2-0.5b-instruct-q4_0.gguf (version GGUF V3 (latest))
+2026-07-08 21:06:27 0.00.095.963 I llama_model_loader: Dumping metadata keys/values. Note: KV overrides do not apply in this output.
+2026-07-08 21:06:27 0.00.095.976 I llama_model_loader: - kv   0:                       general.architecture str              = qwen2
+2026-07-08 21:06:27 0.00.095.976 I llama_model_loader: - kv   1:                               general.name str              = Qwen2-0.5B-Instruct
+2026-07-08 21:06:27 0.00.095.981 I llama_model_loader: - kv   2:                          qwen2.block_count u32              = 24
+2026-07-08 21:06:27 0.00.095.981 I llama_model_loader: - kv   3:                       qwen2.context_length u32              = 32768
+2026-07-08 21:06:27 0.00.095.982 I llama_model_loader: - kv   4:                     qwen2.embedding_length u32              = 896
+2026-07-08 21:06:27 0.00.095.982 I llama_model_loader: - kv   5:                  qwen2.feed_forward_length u32              = 4864
+2026-07-08 21:06:27 0.00.095.982 I llama_model_loader: - kv   6:                 qwen2.attention.head_count u32              = 14
+2026-07-08 21:06:27 0.00.095.983 I llama_model_loader: - kv   7:              qwen2.attention.head_count_kv u32              = 2
+2026-07-08 21:06:27 0.00.095.990 I llama_model_loader: - kv   8:                       qwen2.rope.freq_base f32              = 1000000.000000
+2026-07-08 21:06:27 0.00.095.990 I llama_model_loader: - kv   9:     qwen2.attention.layer_norm_rms_epsilon f32              = 0.000001
+2026-07-08 21:06:27 0.00.096.028 I llama_model_loader: - kv  10:                          general.file_type u32              = 2
+2026-07-08 21:06:27 0.00.096.035 I llama_model_loader: - kv  11:                       tokenizer.ggml.model str              = gpt2
+2026-07-08 21:06:27 0.00.096.035 I llama_model_loader: - kv  12:                         tokenizer.ggml.pre str              = qwen2
+2026-07-08 21:06:27 0.00.108.366 I llama_model_loader: - kv  13:                      tokenizer.ggml.tokens arr[str,151936]  = ["!", "\"", "#", "$", "%", "&", "'", ...
+2026-07-08 21:06:27 0.00.111.960 I llama_model_loader: - kv  14:                  tokenizer.ggml.token_type arr[i32,151936]  = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, ...
+2026-07-08 21:06:27 0.00.123.931 I llama_model_loader: - kv  15:                      tokenizer.ggml.merges arr[str,151387]  = ["Ġ Ġ", "ĠĠ ĠĠ", "i n", "Ġ t",...
+2026-07-08 21:06:27 0.00.123.961 I llama_model_loader: - kv  16:                tokenizer.ggml.eos_token_id u32              = 151645
+2026-07-08 21:06:27 0.00.123.962 I llama_model_loader: - kv  17:            tokenizer.ggml.padding_token_id u32              = 151643
+2026-07-08 21:06:27 0.00.123.962 I llama_model_loader: - kv  18:                tokenizer.ggml.bos_token_id u32              = 151643
+2026-07-08 21:06:27 0.00.123.965 I llama_model_loader: - kv  19:                    tokenizer.chat_template str              = {% for message in messages %}{% if lo...
+2026-07-08 21:06:27 0.00.123.965 I llama_model_loader: - kv  20:               general.quantization_version u32              = 2
+2026-07-08 21:06:27 0.00.123.972 I llama_model_loader: - type  f32:  121 tensors
+2026-07-08 21:06:27 0.00.123.973 I llama_model_loader: - type q4_0:  168 tensors
+2026-07-08 21:06:27 0.00.123.973 I llama_model_loader: - type q8_0:    1 tensors
+2026-07-08 21:06:27 0.00.123.977 I print_info: file format = GGUF V3 (latest)
+2026-07-08 21:06:27 0.00.123.980 I print_info: file type   = Q4_0
+2026-07-08 21:06:27 0.00.123.984 I print_info: file size   = 330.17 MiB (5.61 BPW) 
+2026-07-08 21:06:27 0.00.137.045 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:27 0.00.145.767 D [~impl] closing socket 5
+2026-07-08 21:06:27 0.00.145.834 I llama_prepare_model_devices: using device RPC0 (192.168.1.7:50052) (unknown id) - 7488 MiB free
+2026-07-08 21:06:27 0.00.222.984 D init_tokenizer: initializing tokenizer for type 2
+2026-07-08 21:06:27 0.00.271.229 I load: 0 unused tokens
+2026-07-08 21:06:27 0.00.272.169 W load: control-looking token: 128247 '</s>' was not control-type; this is probably a bug in the model. its type will be overridden
+2026-07-08 21:06:27 0.00.292.060 D load: control token: 151644 '<|im_start|>' is not marked as EOG
+2026-07-08 21:06:27 0.00.309.705 I load: printing all EOG tokens:
+2026-07-08 21:06:27 0.00.309.732 I load:   - 128247 ('</s>')
+2026-07-08 21:06:27 0.00.309.734 I load:   - 151643 ('<|endoftext|>')
+2026-07-08 21:06:27 0.00.309.734 I load:   - 151645 ('<|im_end|>')
+2026-07-08 21:06:27 0.00.310.127 I load: special tokens cache size = 294
+2026-07-08 21:06:27 0.00.350.499 I load: token to piece cache size = 0.9338 MB
+2026-07-08 21:06:27 0.00.350.566 I print_info: arch                  = qwen2
+2026-07-08 21:06:27 0.00.350.566 I print_info: vocab_only            = 0
+2026-07-08 21:06:27 0.00.350.567 I print_info: no_alloc              = 1
+2026-07-08 21:06:27 0.00.350.567 I print_info: n_ctx_train           = 32768
+2026-07-08 21:06:27 0.00.350.569 I print_info: n_embd_inp            = 896
+2026-07-08 21:06:27 0.00.350.569 I print_info: n_embd                = 896
+2026-07-08 21:06:27 0.00.350.572 I print_info: n_embd_out            = 896
+2026-07-08 21:06:27 0.00.350.572 I print_info: n_layer               = 24
+2026-07-08 21:06:27 0.00.350.572 I print_info: n_layer_all           = 24
+2026-07-08 21:06:27 0.00.350.621 I print_info: n_head                = 14
+2026-07-08 21:06:27 0.00.350.626 I print_info: n_head_kv             = 2
+2026-07-08 21:06:27 0.00.350.626 I print_info: n_rot                 = 64
+2026-07-08 21:06:27 0.00.350.627 I print_info: n_swa                 = 0
+2026-07-08 21:06:27 0.00.350.629 I print_info: is_swa_any            = 0
+2026-07-08 21:06:27 0.00.350.629 I print_info: n_embd_head_k         = 64
+2026-07-08 21:06:27 0.00.350.629 I print_info: n_embd_head_v         = 64
+2026-07-08 21:06:27 0.00.350.631 I print_info: n_gqa                 = 7
+2026-07-08 21:06:27 0.00.350.637 I print_info: n_embd_k_gqa          = 128
+2026-07-08 21:06:27 0.00.350.642 I print_info: n_embd_v_gqa          = 128
+2026-07-08 21:06:27 0.00.350.643 I print_info: f_norm_eps            = 0.0e+00
+2026-07-08 21:06:27 0.00.350.644 I print_info: f_norm_rms_eps        = 1.0e-06
+2026-07-08 21:06:27 0.00.350.644 I print_info: f_clamp_kqv           = 0.0e+00
+2026-07-08 21:06:27 0.00.350.644 I print_info: f_max_alibi_bias      = 0.0e+00
+2026-07-08 21:06:27 0.00.350.644 I print_info: f_logit_scale         = 0.0e+00
+2026-07-08 21:06:27 0.00.350.645 I print_info: f_attn_scale          = 0.0e+00
+2026-07-08 21:06:27 0.00.350.645 I print_info: f_attn_value_scale    = 0.0000
+2026-07-08 21:06:27 0.00.350.648 I print_info: n_ff                  = 4864
+2026-07-08 21:06:27 0.00.350.648 I print_info: n_expert              = 0
+2026-07-08 21:06:27 0.00.350.648 I print_info: n_expert_used         = 0
+2026-07-08 21:06:27 0.00.350.649 I print_info: n_expert_groups       = 0
+2026-07-08 21:06:27 0.00.350.649 I print_info: n_group_used          = 0
+2026-07-08 21:06:27 0.00.350.649 I print_info: causal attn           = 1
+2026-07-08 21:06:27 0.00.350.649 I print_info: pooling type          = -1
+2026-07-08 21:06:27 0.00.350.650 I print_info: rope type             = 2
+2026-07-08 21:06:27 0.00.350.650 I print_info: rope scaling          = linear
+2026-07-08 21:06:27 0.00.350.651 I print_info: freq_base_train       = 1000000.0
+2026-07-08 21:06:27 0.00.350.652 I print_info: freq_scale_train      = 1
+2026-07-08 21:06:27 0.00.350.652 I print_info: n_ctx_orig_yarn       = 32768
+2026-07-08 21:06:27 0.00.350.653 I print_info: rope_yarn_log_mul     = 0.0000
+2026-07-08 21:06:27 0.00.350.653 I print_info: rope_finetuned        = unknown
+2026-07-08 21:06:27 0.00.350.654 I print_info: model type            = 1B
+2026-07-08 21:06:27 0.00.350.655 I print_info: model params          = 494.03 M
+2026-07-08 21:06:27 0.00.350.655 I print_info: general.name          = Qwen2-0.5B-Instruct
+2026-07-08 21:06:27 0.00.350.662 I print_info: vocab type            = BPE
+2026-07-08 21:06:27 0.00.350.664 I print_info: n_vocab               = 151936
+2026-07-08 21:06:27 0.00.350.665 I print_info: n_merges              = 151387
+2026-07-08 21:06:27 0.00.350.665 I print_info: BOS token             = 151643 '<|endoftext|>'
+2026-07-08 21:06:27 0.00.350.665 I print_info: EOS token             = 151645 '<|im_end|>'
+2026-07-08 21:06:27 0.00.350.665 I print_info: EOT token             = 151645 '<|im_end|>'
+2026-07-08 21:06:27 0.00.350.666 I print_info: PAD token             = 151643 '<|endoftext|>'
+2026-07-08 21:06:27 0.00.350.666 I print_info: LF token              = 198 'Ċ'
+2026-07-08 21:06:27 0.00.350.667 I print_info: EOG token             = 128247 '</s>'
+2026-07-08 21:06:27 0.00.350.668 I print_info: EOG token             = 151643 '<|endoftext|>'
+2026-07-08 21:06:27 0.00.350.668 I print_info: EOG token             = 151645 '<|im_end|>'
+2026-07-08 21:06:27 0.00.350.668 I print_info: max token length      = 256
+2026-07-08 21:06:27 0.00.350.671 I load_tensors: loading model tensors, this can take a while... (mmap = false, direct_io = false)
+2026-07-08 21:06:27 0.00.372.472 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:27 0.00.387.333 D [~impl] closing socket 5
+2026-07-08 21:06:27 0.00.402.934 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:27 0.00.409.290 D [~impl] closing socket 5
+2026-07-08 21:06:27 0.00.409.361 D load_tensors: layer   0 assigned to device CPU, is_swa = 0
+2026-07-08 21:06:27 0.00.409.362 D load_tensors: layer   1 assigned to device CPU, is_swa = 0
+2026-07-08 21:06:27 0.00.409.362 D load_tensors: layer   2 assigned to device CPU, is_swa = 0
+2026-07-08 21:06:27 0.00.409.362 D load_tensors: layer   3 assigned to device CPU, is_swa = 0
+2026-07-08 21:06:27 0.00.409.363 D load_tensors: layer   4 assigned to device CPU, is_swa = 0
+2026-07-08 21:06:27 0.00.409.363 D load_tensors: layer   5 assigned to device CPU, is_swa = 0
+2026-07-08 21:06:27 0.00.409.363 D load_tensors: layer   6 assigned to device CPU, is_swa = 0
+2026-07-08 21:06:27 0.00.409.363 D load_tensors: layer   7 assigned to device CPU, is_swa = 0
+2026-07-08 21:06:27 0.00.409.364 D load_tensors: layer   8 assigned to device CPU, is_swa = 0
+2026-07-08 21:06:27 0.00.409.364 D load_tensors: layer   9 assigned to device CPU, is_swa = 0
+2026-07-08 21:06:27 0.00.409.364 D load_tensors: layer  10 assigned to device CPU, is_swa = 0
+2026-07-08 21:06:27 0.00.409.365 D load_tensors: layer  11 assigned to device CPU, is_swa = 0
+2026-07-08 21:06:27 0.00.409.365 D load_tensors: layer  12 assigned to device CPU, is_swa = 0
+2026-07-08 21:06:27 0.00.409.365 D load_tensors: layer  13 assigned to device CPU, is_swa = 0
+2026-07-08 21:06:27 0.00.409.365 D load_tensors: layer  14 assigned to device CPU, is_swa = 0
+2026-07-08 21:06:27 0.00.409.366 D load_tensors: layer  15 assigned to device CPU, is_swa = 0
+2026-07-08 21:06:27 0.00.409.366 D load_tensors: layer  16 assigned to device CPU, is_swa = 0
+2026-07-08 21:06:27 0.00.409.366 D load_tensors: layer  17 assigned to device CPU, is_swa = 0
+2026-07-08 21:06:27 0.00.409.366 D load_tensors: layer  18 assigned to device CPU, is_swa = 0
+2026-07-08 21:06:27 0.00.409.367 D load_tensors: layer  19 assigned to device CPU, is_swa = 0
+2026-07-08 21:06:27 0.00.409.367 D load_tensors: layer  20 assigned to device CPU, is_swa = 0
+2026-07-08 21:06:27 0.00.409.369 D load_tensors: layer  21 assigned to device RPC0, is_swa = 0
+2026-07-08 21:06:27 0.00.409.369 D load_tensors: layer  22 assigned to device RPC0, is_swa = 0
+2026-07-08 21:06:27 0.00.409.369 D load_tensors: layer  23 assigned to device RPC0, is_swa = 0
+2026-07-08 21:06:27 0.00.409.370 D load_tensors: layer  24 assigned to device RPC0, is_swa = 0
+2026-07-08 21:06:27 0.00.409.531 D create_tensor: loading tensor token_embd.weight
+2026-07-08 21:06:27 0.00.409.585 D create_tensor: loading tensor output_norm.weight
+2026-07-08 21:06:27 0.00.409.602 D create_tensor: loading tensor token_embd.weight
+2026-07-08 21:06:27 0.00.409.611 D create_tensor: loading tensor blk.0.attn_norm.weight
+2026-07-08 21:06:27 0.00.409.644 D create_tensor: loading tensor blk.0.attn_q.weight
+2026-07-08 21:06:27 0.00.409.677 D create_tensor: loading tensor blk.0.attn_k.weight
+2026-07-08 21:06:27 0.00.409.685 D create_tensor: loading tensor blk.0.attn_v.weight
+2026-07-08 21:06:27 0.00.409.693 D create_tensor: loading tensor blk.0.attn_q.bias
+2026-07-08 21:06:27 0.00.409.699 D create_tensor: loading tensor blk.0.attn_k.bias
+2026-07-08 21:06:27 0.00.409.705 D create_tensor: loading tensor blk.0.attn_v.bias
+2026-07-08 21:06:27 0.00.409.714 D create_tensor: loading tensor blk.0.attn_output.weight
+2026-07-08 21:06:27 0.00.409.721 D create_tensor: loading tensor blk.0.ffn_norm.weight
+2026-07-08 21:06:27 0.00.409.750 D create_tensor: loading tensor blk.0.ffn_gate.weight
+2026-07-08 21:06:27 0.00.409.757 D create_tensor: loading tensor blk.0.ffn_down.weight
+2026-07-08 21:06:27 0.00.409.764 D create_tensor: loading tensor blk.0.ffn_up.weight
+2026-07-08 21:06:27 0.00.409.771 D create_tensor: loading tensor blk.1.attn_norm.weight
+2026-07-08 21:06:27 0.00.409.781 D create_tensor: loading tensor blk.1.attn_q.weight
+2026-07-08 21:06:27 0.00.409.787 D create_tensor: loading tensor blk.1.attn_k.weight
+2026-07-08 21:06:27 0.00.409.792 D create_tensor: loading tensor blk.1.attn_v.weight
+2026-07-08 21:06:27 0.00.409.798 D create_tensor: loading tensor blk.1.attn_q.bias
+2026-07-08 21:06:27 0.00.409.804 D create_tensor: loading tensor blk.1.attn_k.bias
+2026-07-08 21:06:27 0.00.409.809 D create_tensor: loading tensor blk.1.attn_v.bias
+2026-07-08 21:06:27 0.00.409.815 D create_tensor: loading tensor blk.1.attn_output.weight
+2026-07-08 21:06:27 0.00.409.828 D create_tensor: loading tensor blk.1.ffn_norm.weight
+2026-07-08 21:06:27 0.00.409.833 D create_tensor: loading tensor blk.1.ffn_gate.weight
+2026-07-08 21:06:27 0.00.409.839 D create_tensor: loading tensor blk.1.ffn_down.weight
+2026-07-08 21:06:27 0.00.409.849 D create_tensor: loading tensor blk.1.ffn_up.weight
+2026-07-08 21:06:27 0.00.409.855 D create_tensor: loading tensor blk.2.attn_norm.weight
+2026-07-08 21:06:27 0.00.409.863 D create_tensor: loading tensor blk.2.attn_q.weight
+2026-07-08 21:06:27 0.00.409.868 D create_tensor: loading tensor blk.2.attn_k.weight
+2026-07-08 21:06:27 0.00.409.874 D create_tensor: loading tensor blk.2.attn_v.weight
+2026-07-08 21:06:27 0.00.409.880 D create_tensor: loading tensor blk.2.attn_q.bias
+2026-07-08 21:06:27 0.00.409.888 D create_tensor: loading tensor blk.2.attn_k.bias
+2026-07-08 21:06:27 0.00.409.917 D create_tensor: loading tensor blk.2.attn_v.bias
+2026-07-08 21:06:27 0.00.409.925 D create_tensor: loading tensor blk.2.attn_output.weight
+2026-07-08 21:06:27 0.00.409.932 D create_tensor: loading tensor blk.2.ffn_norm.weight
+2026-07-08 21:06:27 0.00.409.961 D create_tensor: loading tensor blk.2.ffn_gate.weight
+2026-07-08 21:06:27 0.00.409.967 D create_tensor: loading tensor blk.2.ffn_down.weight
+2026-07-08 21:06:27 0.00.409.974 D create_tensor: loading tensor blk.2.ffn_up.weight
+2026-07-08 21:06:27 0.00.409.982 D create_tensor: loading tensor blk.3.attn_norm.weight
+2026-07-08 21:06:27 0.00.409.991 D create_tensor: loading tensor blk.3.attn_q.weight
+2026-07-08 21:06:27 0.00.409.998 D create_tensor: loading tensor blk.3.attn_k.weight
+2026-07-08 21:06:27 0.00.410.003 D create_tensor: loading tensor blk.3.attn_v.weight
+2026-07-08 21:06:27 0.00.410.013 D create_tensor: loading tensor blk.3.attn_q.bias
+2026-07-08 21:06:27 0.00.410.019 D create_tensor: loading tensor blk.3.attn_k.bias
+2026-07-08 21:06:27 0.00.410.025 D create_tensor: loading tensor blk.3.attn_v.bias
+2026-07-08 21:06:27 0.00.410.033 D create_tensor: loading tensor blk.3.attn_output.weight
+2026-07-08 21:06:27 0.00.410.041 D create_tensor: loading tensor blk.3.ffn_norm.weight
+2026-07-08 21:06:27 0.00.410.047 D create_tensor: loading tensor blk.3.ffn_gate.weight
+2026-07-08 21:06:27 0.00.410.053 D create_tensor: loading tensor blk.3.ffn_down.weight
+2026-07-08 21:06:27 0.00.410.060 D create_tensor: loading tensor blk.3.ffn_up.weight
+2026-07-08 21:06:27 0.00.410.066 D create_tensor: loading tensor blk.4.attn_norm.weight
+2026-07-08 21:06:27 0.00.410.092 D create_tensor: loading tensor blk.4.attn_q.weight
+2026-07-08 21:06:27 0.00.410.122 D create_tensor: loading tensor blk.4.attn_k.weight
+2026-07-08 21:06:27 0.00.410.129 D create_tensor: loading tensor blk.4.attn_v.weight
+2026-07-08 21:06:27 0.00.410.136 D create_tensor: loading tensor blk.4.attn_q.bias
+2026-07-08 21:06:27 0.00.410.142 D create_tensor: loading tensor blk.4.attn_k.bias
+2026-07-08 21:06:27 0.00.410.152 D create_tensor: loading tensor blk.4.attn_v.bias
+2026-07-08 21:06:27 0.00.410.158 D create_tensor: loading tensor blk.4.attn_output.weight
+2026-07-08 21:06:27 0.00.410.166 D create_tensor: loading tensor blk.4.ffn_norm.weight
+2026-07-08 21:06:27 0.00.410.197 D create_tensor: loading tensor blk.4.ffn_gate.weight
+2026-07-08 21:06:27 0.00.410.204 D create_tensor: loading tensor blk.4.ffn_down.weight
+2026-07-08 21:06:27 0.00.410.212 D create_tensor: loading tensor blk.4.ffn_up.weight
+2026-07-08 21:06:27 0.00.410.223 D create_tensor: loading tensor blk.5.attn_norm.weight
+2026-07-08 21:06:27 0.00.410.232 D create_tensor: loading tensor blk.5.attn_q.weight
+2026-07-08 21:06:27 0.00.410.262 D create_tensor: loading tensor blk.5.attn_k.weight
+2026-07-08 21:06:27 0.00.410.270 D create_tensor: loading tensor blk.5.attn_v.weight
+2026-07-08 21:06:27 0.00.410.277 D create_tensor: loading tensor blk.5.attn_q.bias
+2026-07-08 21:06:27 0.00.410.283 D create_tensor: loading tensor blk.5.attn_k.bias
+2026-07-08 21:06:27 0.00.410.290 D create_tensor: loading tensor blk.5.attn_v.bias
+2026-07-08 21:06:27 0.00.410.297 D create_tensor: loading tensor blk.5.attn_output.weight
+2026-07-08 21:06:27 0.00.410.304 D create_tensor: loading tensor blk.5.ffn_norm.weight
+2026-07-08 21:06:27 0.00.410.310 D create_tensor: loading tensor blk.5.ffn_gate.weight
+2026-07-08 21:06:27 0.00.410.322 D create_tensor: loading tensor blk.5.ffn_down.weight
+2026-07-08 21:06:27 0.00.410.328 D create_tensor: loading tensor blk.5.ffn_up.weight
+2026-07-08 21:06:27 0.00.410.337 D create_tensor: loading tensor blk.6.attn_norm.weight
+2026-07-08 21:06:27 0.00.410.345 D create_tensor: loading tensor blk.6.attn_q.weight
+2026-07-08 21:06:27 0.00.410.351 D create_tensor: loading tensor blk.6.attn_k.weight
+2026-07-08 21:06:27 0.00.410.357 D create_tensor: loading tensor blk.6.attn_v.weight
+2026-07-08 21:06:27 0.00.410.363 D create_tensor: loading tensor blk.6.attn_q.bias
+2026-07-08 21:06:27 0.00.410.374 D create_tensor: loading tensor blk.6.attn_k.bias
+2026-07-08 21:06:27 0.00.410.380 D create_tensor: loading tensor blk.6.attn_v.bias
+2026-07-08 21:06:27 0.00.410.389 D create_tensor: loading tensor blk.6.attn_output.weight
+2026-07-08 21:06:27 0.00.410.398 D create_tensor: loading tensor blk.6.ffn_norm.weight
+2026-07-08 21:06:27 0.00.410.404 D create_tensor: loading tensor blk.6.ffn_gate.weight
+2026-07-08 21:06:27 0.00.410.434 D create_tensor: loading tensor blk.6.ffn_down.weight
+2026-07-08 21:06:27 0.00.410.442 D create_tensor: loading tensor blk.6.ffn_up.weight
+2026-07-08 21:06:27 0.00.410.450 D create_tensor: loading tensor blk.7.attn_norm.weight
+2026-07-08 21:06:27 0.00.410.459 D create_tensor: loading tensor blk.7.attn_q.weight
+2026-07-08 21:06:27 0.00.410.467 D create_tensor: loading tensor blk.7.attn_k.weight
+2026-07-08 21:06:27 0.00.410.473 D create_tensor: loading tensor blk.7.attn_v.weight
+2026-07-08 21:06:27 0.00.410.502 D create_tensor: loading tensor blk.7.attn_q.bias
+2026-07-08 21:06:27 0.00.410.510 D create_tensor: loading tensor blk.7.attn_k.bias
+2026-07-08 21:06:27 0.00.410.517 D create_tensor: loading tensor blk.7.attn_v.bias
+2026-07-08 21:06:27 0.00.410.524 D create_tensor: loading tensor blk.7.attn_output.weight
+2026-07-08 21:06:27 0.00.410.532 D create_tensor: loading tensor blk.7.ffn_norm.weight
+2026-07-08 21:06:27 0.00.410.539 D create_tensor: loading tensor blk.7.ffn_gate.weight
+2026-07-08 21:06:27 0.00.410.546 D create_tensor: loading tensor blk.7.ffn_down.weight
+2026-07-08 21:06:27 0.00.410.552 D create_tensor: loading tensor blk.7.ffn_up.weight
+2026-07-08 21:06:27 0.00.410.583 D create_tensor: loading tensor blk.8.attn_norm.weight
+2026-07-08 21:06:27 0.00.410.594 D create_tensor: loading tensor blk.8.attn_q.weight
+2026-07-08 21:06:27 0.00.410.605 D create_tensor: loading tensor blk.8.attn_k.weight
+2026-07-08 21:06:27 0.00.410.612 D create_tensor: loading tensor blk.8.attn_v.weight
+2026-07-08 21:06:27 0.00.410.619 D create_tensor: loading tensor blk.8.attn_q.bias
+2026-07-08 21:06:27 0.00.410.626 D create_tensor: loading tensor blk.8.attn_k.bias
+2026-07-08 21:06:27 0.00.410.632 D create_tensor: loading tensor blk.8.attn_v.bias
+2026-07-08 21:06:27 0.00.410.639 D create_tensor: loading tensor blk.8.attn_output.weight
+2026-07-08 21:06:27 0.00.410.647 D create_tensor: loading tensor blk.8.ffn_norm.weight
+2026-07-08 21:06:27 0.00.410.657 D create_tensor: loading tensor blk.8.ffn_gate.weight
+2026-07-08 21:06:27 0.00.410.664 D create_tensor: loading tensor blk.8.ffn_down.weight
+2026-07-08 21:06:27 0.00.410.672 D create_tensor: loading tensor blk.8.ffn_up.weight
+2026-07-08 21:06:27 0.00.410.678 D create_tensor: loading tensor blk.9.attn_norm.weight
+2026-07-08 21:06:27 0.00.410.688 D create_tensor: loading tensor blk.9.attn_q.weight
+2026-07-08 21:06:27 0.00.410.694 D create_tensor: loading tensor blk.9.attn_k.weight
+2026-07-08 21:06:27 0.00.410.700 D create_tensor: loading tensor blk.9.attn_v.weight
+2026-07-08 21:06:27 0.00.410.707 D create_tensor: loading tensor blk.9.attn_q.bias
+2026-07-08 21:06:27 0.00.410.737 D create_tensor: loading tensor blk.9.attn_k.bias
+2026-07-08 21:06:27 0.00.410.744 D create_tensor: loading tensor blk.9.attn_v.bias
+2026-07-08 21:06:27 0.00.410.752 D create_tensor: loading tensor blk.9.attn_output.weight
+2026-07-08 21:06:27 0.00.410.761 D create_tensor: loading tensor blk.9.ffn_norm.weight
+2026-07-08 21:06:27 0.00.410.768 D create_tensor: loading tensor blk.9.ffn_gate.weight
+2026-07-08 21:06:27 0.00.410.799 D create_tensor: loading tensor blk.9.ffn_down.weight
+2026-07-08 21:06:27 0.00.410.812 D create_tensor: loading tensor blk.9.ffn_up.weight
+2026-07-08 21:06:27 0.00.410.821 D create_tensor: loading tensor blk.10.attn_norm.weight
+2026-07-08 21:06:27 0.00.410.852 D create_tensor: loading tensor blk.10.attn_q.weight
+2026-07-08 21:06:27 0.00.410.859 D create_tensor: loading tensor blk.10.attn_k.weight
+2026-07-08 21:06:27 0.00.410.866 D create_tensor: loading tensor blk.10.attn_v.weight
+2026-07-08 21:06:27 0.00.410.873 D create_tensor: loading tensor blk.10.attn_q.bias
+2026-07-08 21:06:27 0.00.410.881 D create_tensor: loading tensor blk.10.attn_k.bias
+2026-07-08 21:06:27 0.00.410.888 D create_tensor: loading tensor blk.10.attn_v.bias
+2026-07-08 21:06:27 0.00.410.916 D create_tensor: loading tensor blk.10.attn_output.weight
+2026-07-08 21:06:27 0.00.410.925 D create_tensor: loading tensor blk.10.ffn_norm.weight
+2026-07-08 21:06:27 0.00.410.931 D create_tensor: loading tensor blk.10.ffn_gate.weight
+2026-07-08 21:06:27 0.00.410.938 D create_tensor: loading tensor blk.10.ffn_down.weight
+2026-07-08 21:06:27 0.00.410.944 D create_tensor: loading tensor blk.10.ffn_up.weight
+2026-07-08 21:06:27 0.00.410.956 D create_tensor: loading tensor blk.11.attn_norm.weight
+2026-07-08 21:06:27 0.00.410.968 D create_tensor: loading tensor blk.11.attn_q.weight
+2026-07-08 21:06:27 0.00.410.975 D create_tensor: loading tensor blk.11.attn_k.weight
+2026-07-08 21:06:27 0.00.410.980 D create_tensor: loading tensor blk.11.attn_v.weight
+2026-07-08 21:06:27 0.00.410.994 D create_tensor: loading tensor blk.11.attn_q.bias
+2026-07-08 21:06:27 0.00.411.002 D create_tensor: loading tensor blk.11.attn_k.bias
+2026-07-08 21:06:27 0.00.411.008 D create_tensor: loading tensor blk.11.attn_v.bias
+2026-07-08 21:06:27 0.00.411.035 D create_tensor: loading tensor blk.11.attn_output.weight
+2026-07-08 21:06:27 0.00.411.043 D create_tensor: loading tensor blk.11.ffn_norm.weight
+2026-07-08 21:06:27 0.00.411.050 D create_tensor: loading tensor blk.11.ffn_gate.weight
+2026-07-08 21:06:27 0.00.411.071 D create_tensor: loading tensor blk.11.ffn_down.weight
+2026-07-08 21:06:27 0.00.411.080 D create_tensor: loading tensor blk.11.ffn_up.weight
+2026-07-08 21:06:27 0.00.411.088 D create_tensor: loading tensor blk.12.attn_norm.weight
+2026-07-08 21:06:27 0.00.411.097 D create_tensor: loading tensor blk.12.attn_q.weight
+2026-07-08 21:06:27 0.00.411.108 D create_tensor: loading tensor blk.12.attn_k.weight
+2026-07-08 21:06:27 0.00.411.114 D create_tensor: loading tensor blk.12.attn_v.weight
+2026-07-08 21:06:27 0.00.411.141 D create_tensor: loading tensor blk.12.attn_q.bias
+2026-07-08 21:06:27 0.00.411.149 D create_tensor: loading tensor blk.12.attn_k.bias
+2026-07-08 21:06:27 0.00.411.156 D create_tensor: loading tensor blk.12.attn_v.bias
+2026-07-08 21:06:27 0.00.411.163 D create_tensor: loading tensor blk.12.attn_output.weight
+2026-07-08 21:06:27 0.00.411.170 D create_tensor: loading tensor blk.12.ffn_norm.weight
+2026-07-08 21:06:27 0.00.411.177 D create_tensor: loading tensor blk.12.ffn_gate.weight
+2026-07-08 21:06:27 0.00.411.182 D create_tensor: loading tensor blk.12.ffn_down.weight
+2026-07-08 21:06:27 0.00.411.188 D create_tensor: loading tensor blk.12.ffn_up.weight
+2026-07-08 21:06:27 0.00.411.197 D create_tensor: loading tensor blk.13.attn_norm.weight
+2026-07-08 21:06:27 0.00.411.205 D create_tensor: loading tensor blk.13.attn_q.weight
+2026-07-08 21:06:27 0.00.411.242 D create_tensor: loading tensor blk.13.attn_k.weight
+2026-07-08 21:06:27 0.00.411.249 D create_tensor: loading tensor blk.13.attn_v.weight
+2026-07-08 21:06:27 0.00.411.281 D create_tensor: loading tensor blk.13.attn_q.bias
+2026-07-08 21:06:27 0.00.411.289 D create_tensor: loading tensor blk.13.attn_k.bias
+2026-07-08 21:06:27 0.00.411.293 D create_tensor: loading tensor blk.13.attn_v.bias
+2026-07-08 21:06:27 0.00.411.298 D create_tensor: loading tensor blk.13.attn_output.weight
+2026-07-08 21:06:27 0.00.411.303 D create_tensor: loading tensor blk.13.ffn_norm.weight
+2026-07-08 21:06:27 0.00.411.323 D create_tensor: loading tensor blk.13.ffn_gate.weight
+2026-07-08 21:06:27 0.00.411.328 D create_tensor: loading tensor blk.13.ffn_down.weight
+2026-07-08 21:06:27 0.00.411.333 D create_tensor: loading tensor blk.13.ffn_up.weight
+2026-07-08 21:06:27 0.00.411.338 D create_tensor: loading tensor blk.14.attn_norm.weight
+2026-07-08 21:06:27 0.00.411.344 D create_tensor: loading tensor blk.14.attn_q.weight
+2026-07-08 21:06:27 0.00.411.349 D create_tensor: loading tensor blk.14.attn_k.weight
+2026-07-08 21:06:27 0.00.411.352 D create_tensor: loading tensor blk.14.attn_v.weight
+2026-07-08 21:06:27 0.00.411.357 D create_tensor: loading tensor blk.14.attn_q.bias
+2026-07-08 21:06:27 0.00.411.377 D create_tensor: loading tensor blk.14.attn_k.bias
+2026-07-08 21:06:27 0.00.411.381 D create_tensor: loading tensor blk.14.attn_v.bias
+2026-07-08 21:06:27 0.00.411.386 D create_tensor: loading tensor blk.14.attn_output.weight
+2026-07-08 21:06:27 0.00.411.395 D create_tensor: loading tensor blk.14.ffn_norm.weight
+2026-07-08 21:06:27 0.00.411.400 D create_tensor: loading tensor blk.14.ffn_gate.weight
+2026-07-08 21:06:27 0.00.411.403 D create_tensor: loading tensor blk.14.ffn_down.weight
+2026-07-08 21:06:27 0.00.411.407 D create_tensor: loading tensor blk.14.ffn_up.weight
+2026-07-08 21:06:27 0.00.411.411 D create_tensor: loading tensor blk.15.attn_norm.weight
+2026-07-08 21:06:27 0.00.411.417 D create_tensor: loading tensor blk.15.attn_q.weight
+2026-07-08 21:06:27 0.00.411.421 D create_tensor: loading tensor blk.15.attn_k.weight
+2026-07-08 21:06:27 0.00.411.441 D create_tensor: loading tensor blk.15.attn_v.weight
+2026-07-08 21:06:27 0.00.411.447 D create_tensor: loading tensor blk.15.attn_q.bias
+2026-07-08 21:06:27 0.00.411.451 D create_tensor: loading tensor blk.15.attn_k.bias
+2026-07-08 21:06:27 0.00.411.457 D create_tensor: loading tensor blk.15.attn_v.bias
+2026-07-08 21:06:27 0.00.411.462 D create_tensor: loading tensor blk.15.attn_output.weight
+2026-07-08 21:06:27 0.00.411.467 D create_tensor: loading tensor blk.15.ffn_norm.weight
+2026-07-08 21:06:27 0.00.411.487 D create_tensor: loading tensor blk.15.ffn_gate.weight
+2026-07-08 21:06:27 0.00.411.492 D create_tensor: loading tensor blk.15.ffn_down.weight
+2026-07-08 21:06:27 0.00.411.497 D create_tensor: loading tensor blk.15.ffn_up.weight
+2026-07-08 21:06:27 0.00.411.502 D create_tensor: loading tensor blk.16.attn_norm.weight
+2026-07-08 21:06:27 0.00.411.508 D create_tensor: loading tensor blk.16.attn_q.weight
+2026-07-08 21:06:27 0.00.411.514 D create_tensor: loading tensor blk.16.attn_k.weight
+2026-07-08 21:06:27 0.00.411.519 D create_tensor: loading tensor blk.16.attn_v.weight
+2026-07-08 21:06:27 0.00.411.523 D create_tensor: loading tensor blk.16.attn_q.bias
+2026-07-08 21:06:27 0.00.411.543 D create_tensor: loading tensor blk.16.attn_k.bias
+2026-07-08 21:06:27 0.00.411.548 D create_tensor: loading tensor blk.16.attn_v.bias
+2026-07-08 21:06:27 0.00.411.553 D create_tensor: loading tensor blk.16.attn_output.weight
+2026-07-08 21:06:27 0.00.411.558 D create_tensor: loading tensor blk.16.ffn_norm.weight
+2026-07-08 21:06:27 0.00.411.562 D create_tensor: loading tensor blk.16.ffn_gate.weight
+2026-07-08 21:06:27 0.00.411.566 D create_tensor: loading tensor blk.16.ffn_down.weight
+2026-07-08 21:06:27 0.00.411.571 D create_tensor: loading tensor blk.16.ffn_up.weight
+2026-07-08 21:06:27 0.00.411.576 D create_tensor: loading tensor blk.17.attn_norm.weight
+2026-07-08 21:06:27 0.00.411.597 D create_tensor: loading tensor blk.17.attn_q.weight
+2026-07-08 21:06:27 0.00.411.602 D create_tensor: loading tensor blk.17.attn_k.weight
+2026-07-08 21:06:27 0.00.411.606 D create_tensor: loading tensor blk.17.attn_v.weight
+2026-07-08 21:06:27 0.00.411.611 D create_tensor: loading tensor blk.17.attn_q.bias
+2026-07-08 21:06:27 0.00.411.615 D create_tensor: loading tensor blk.17.attn_k.bias
+2026-07-08 21:06:27 0.00.411.620 D create_tensor: loading tensor blk.17.attn_v.bias
+2026-07-08 21:06:27 0.00.411.625 D create_tensor: loading tensor blk.17.attn_output.weight
+2026-07-08 21:06:27 0.00.411.644 D create_tensor: loading tensor blk.17.ffn_norm.weight
+2026-07-08 21:06:27 0.00.411.652 D create_tensor: loading tensor blk.17.ffn_gate.weight
+2026-07-08 21:06:27 0.00.411.658 D create_tensor: loading tensor blk.17.ffn_down.weight
+2026-07-08 21:06:27 0.00.411.663 D create_tensor: loading tensor blk.17.ffn_up.weight
+2026-07-08 21:06:27 0.00.411.668 D create_tensor: loading tensor blk.18.attn_norm.weight
+2026-07-08 21:06:27 0.00.411.673 D create_tensor: loading tensor blk.18.attn_q.weight
+2026-07-08 21:06:27 0.00.411.693 D create_tensor: loading tensor blk.18.attn_k.weight
+2026-07-08 21:06:27 0.00.411.697 D create_tensor: loading tensor blk.18.attn_v.weight
+2026-07-08 21:06:27 0.00.411.702 D create_tensor: loading tensor blk.18.attn_q.bias
+2026-07-08 21:06:27 0.00.411.706 D create_tensor: loading tensor blk.18.attn_k.bias
+2026-07-08 21:06:27 0.00.411.710 D create_tensor: loading tensor blk.18.attn_v.bias
+2026-07-08 21:06:27 0.00.411.714 D create_tensor: loading tensor blk.18.attn_output.weight
+2026-07-08 21:06:27 0.00.411.719 D create_tensor: loading tensor blk.18.ffn_norm.weight
+2026-07-08 21:06:27 0.00.411.723 D create_tensor: loading tensor blk.18.ffn_gate.weight
+2026-07-08 21:06:27 0.00.411.726 D create_tensor: loading tensor blk.18.ffn_down.weight
+2026-07-08 21:06:27 0.00.411.730 D create_tensor: loading tensor blk.18.ffn_up.weight
+2026-07-08 21:06:27 0.00.411.734 D create_tensor: loading tensor blk.19.attn_norm.weight
+2026-07-08 21:06:27 0.00.411.756 D create_tensor: loading tensor blk.19.attn_q.weight
+2026-07-08 21:06:27 0.00.411.761 D create_tensor: loading tensor blk.19.attn_k.weight
+2026-07-08 21:06:27 0.00.411.767 D create_tensor: loading tensor blk.19.attn_v.weight
+2026-07-08 21:06:27 0.00.411.772 D create_tensor: loading tensor blk.19.attn_q.bias
+2026-07-08 21:06:27 0.00.411.776 D create_tensor: loading tensor blk.19.attn_k.bias
+2026-07-08 21:06:27 0.00.411.796 D create_tensor: loading tensor blk.19.attn_v.bias
+2026-07-08 21:06:27 0.00.411.801 D create_tensor: loading tensor blk.19.attn_output.weight
+2026-07-08 21:06:27 0.00.411.807 D create_tensor: loading tensor blk.19.ffn_norm.weight
+2026-07-08 21:06:27 0.00.411.811 D create_tensor: loading tensor blk.19.ffn_gate.weight
+2026-07-08 21:06:27 0.00.411.815 D create_tensor: loading tensor blk.19.ffn_down.weight
+2026-07-08 21:06:27 0.00.411.819 D create_tensor: loading tensor blk.19.ffn_up.weight
+2026-07-08 21:06:27 0.00.411.825 D create_tensor: loading tensor blk.20.attn_norm.weight
+2026-07-08 21:06:27 0.00.411.833 D create_tensor: loading tensor blk.20.attn_q.weight
+2026-07-08 21:06:27 0.00.411.853 D create_tensor: loading tensor blk.20.attn_k.weight
+2026-07-08 21:06:27 0.00.411.857 D create_tensor: loading tensor blk.20.attn_v.weight
+2026-07-08 21:06:27 0.00.411.862 D create_tensor: loading tensor blk.20.attn_q.bias
+2026-07-08 21:06:27 0.00.411.866 D create_tensor: loading tensor blk.20.attn_k.bias
+2026-07-08 21:06:27 0.00.411.870 D create_tensor: loading tensor blk.20.attn_v.bias
+2026-07-08 21:06:27 0.00.411.875 D create_tensor: loading tensor blk.20.attn_output.weight
+2026-07-08 21:06:27 0.00.411.880 D create_tensor: loading tensor blk.20.ffn_norm.weight
+2026-07-08 21:06:27 0.00.411.884 D create_tensor: loading tensor blk.20.ffn_gate.weight
+2026-07-08 21:06:27 0.00.411.888 D create_tensor: loading tensor blk.20.ffn_down.weight
+2026-07-08 21:06:27 0.00.411.894 D create_tensor: loading tensor blk.20.ffn_up.weight
+2026-07-08 21:06:27 0.00.411.914 D create_tensor: loading tensor blk.21.attn_norm.weight
+2026-07-08 21:06:27 0.00.411.922 D create_tensor: loading tensor blk.21.attn_q.weight
+2026-07-08 21:06:27 0.00.411.926 D create_tensor: loading tensor blk.21.attn_k.weight
+2026-07-08 21:06:27 0.00.411.930 D create_tensor: loading tensor blk.21.attn_v.weight
+2026-07-08 21:06:27 0.00.411.934 D create_tensor: loading tensor blk.21.attn_q.bias
+2026-07-08 21:06:27 0.00.411.938 D create_tensor: loading tensor blk.21.attn_k.bias
+2026-07-08 21:06:27 0.00.411.958 D create_tensor: loading tensor blk.21.attn_v.bias
+2026-07-08 21:06:27 0.00.411.963 D create_tensor: loading tensor blk.21.attn_output.weight
+2026-07-08 21:06:27 0.00.411.970 D create_tensor: loading tensor blk.21.ffn_norm.weight
+2026-07-08 21:06:27 0.00.411.973 D create_tensor: loading tensor blk.21.ffn_gate.weight
+2026-07-08 21:06:27 0.00.411.977 D create_tensor: loading tensor blk.21.ffn_down.weight
+2026-07-08 21:06:27 0.00.411.981 D create_tensor: loading tensor blk.21.ffn_up.weight
+2026-07-08 21:06:27 0.00.411.998 D create_tensor: loading tensor blk.22.attn_norm.weight
+2026-07-08 21:06:27 0.00.412.004 D create_tensor: loading tensor blk.22.attn_q.weight
+2026-07-08 21:06:27 0.00.412.008 D create_tensor: loading tensor blk.22.attn_k.weight
+2026-07-08 21:06:27 0.00.412.011 D create_tensor: loading tensor blk.22.attn_v.weight
+2026-07-08 21:06:27 0.00.412.017 D create_tensor: loading tensor blk.22.attn_q.bias
+2026-07-08 21:06:27 0.00.412.041 D create_tensor: loading tensor blk.22.attn_k.bias
+2026-07-08 21:06:27 0.00.412.046 D create_tensor: loading tensor blk.22.attn_v.bias
+2026-07-08 21:06:27 0.00.412.051 D create_tensor: loading tensor blk.22.attn_output.weight
+2026-07-08 21:06:27 0.00.412.067 D create_tensor: loading tensor blk.22.ffn_norm.weight
+2026-07-08 21:06:27 0.00.412.072 D create_tensor: loading tensor blk.22.ffn_gate.weight
+2026-07-08 21:06:27 0.00.412.075 D create_tensor: loading tensor blk.22.ffn_down.weight
+2026-07-08 21:06:27 0.00.412.079 D create_tensor: loading tensor blk.22.ffn_up.weight
+2026-07-08 21:06:27 0.00.412.084 D create_tensor: loading tensor blk.23.attn_norm.weight
+2026-07-08 21:06:27 0.00.412.089 D create_tensor: loading tensor blk.23.attn_q.weight
+2026-07-08 21:06:27 0.00.412.106 D create_tensor: loading tensor blk.23.attn_k.weight
+2026-07-08 21:06:27 0.00.412.111 D create_tensor: loading tensor blk.23.attn_v.weight
+2026-07-08 21:06:27 0.00.412.119 D create_tensor: loading tensor blk.23.attn_q.bias
+2026-07-08 21:06:27 0.00.412.124 D create_tensor: loading tensor blk.23.attn_k.bias
+2026-07-08 21:06:27 0.00.412.128 D create_tensor: loading tensor blk.23.attn_v.bias
+2026-07-08 21:06:27 0.00.412.133 D create_tensor: loading tensor blk.23.attn_output.weight
+2026-07-08 21:06:27 0.00.412.137 D create_tensor: loading tensor blk.23.ffn_norm.weight
+2026-07-08 21:06:27 0.00.412.141 D create_tensor: loading tensor blk.23.ffn_gate.weight
+2026-07-08 21:06:27 0.00.412.146 D create_tensor: loading tensor blk.23.ffn_down.weight
+2026-07-08 21:06:27 0.00.412.163 D create_tensor: loading tensor blk.23.ffn_up.weight
+2026-07-08 21:06:27 0.00.412.539 D done_getting_tensors: tensor 'token_embd.weight' (q8_0) (and 105 others) cannot be used with preferred buffer type CPU_REPACK, using CPU instead
+2026-07-08 21:06:27 0.00.427.345 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:27 0.00.434.068 D [~impl] closing socket 5
+2026-07-08 21:06:27 0.00.434.133 I load_tensors: offloading output layer to GPU
+2026-07-08 21:06:27 0.00.434.146 I load_tensors: offloading 3 repeating layers to GPU
+2026-07-08 21:06:27 0.00.434.146 I load_tensors: offloaded 4/25 layers to GPU
+2026-07-08 21:06:27 0.00.434.162 I load_tensors:          CPU model buffer size =     0.00 MiB
+2026-07-08 21:06:27 0.00.434.163 I load_tensors:   CPU_REPACK model buffer size =     0.00 MiB
+2026-07-08 21:06:27 0.00.434.164 I load_tensors: RPC0[192.168.1.7:50052] model buffer size =     0.00 MiB
+2026-07-08 21:06:27 0.00.436.284 I llama_context: constructing llama_context
+2026-07-08 21:06:27 0.00.436.304 I llama_context: n_seq_max     = 1
+2026-07-08 21:06:27 0.00.436.305 I llama_context: n_ctx         = 32768
+2026-07-08 21:06:27 0.00.436.305 I llama_context: n_ctx_seq     = 32768
+2026-07-08 21:06:27 0.00.436.305 I llama_context: n_batch       = 2048
+2026-07-08 21:06:27 0.00.436.305 I llama_context: n_ubatch      = 512
+2026-07-08 21:06:27 0.00.436.305 I llama_context: causal_attn   = 1
+2026-07-08 21:06:27 0.00.436.308 I llama_context: flash_attn    = auto
+2026-07-08 21:06:27 0.00.436.308 I llama_context: kv_unified    = false
+2026-07-08 21:06:27 0.00.436.310 I llama_context: freq_base     = 1000000.0
+2026-07-08 21:06:27 0.00.436.311 I llama_context: freq_scale    = 1
+2026-07-08 21:06:27 0.00.436.311 I llama_context: n_rs_seq      = 0
+2026-07-08 21:06:27 0.00.436.311 I llama_context: n_outputs_max = 2048
+2026-07-08 21:06:27 0.00.436.346 D set_abort_callback: call
+2026-07-08 21:06:27 0.00.436.386 I llama_context:        CPU  output buffer size =     0.58 MiB
+2026-07-08 21:06:27 0.00.436.608 D llama_kv_cache: layer   0: dev = CPU
+2026-07-08 21:06:27 0.00.436.644 D llama_kv_cache: layer   1: dev = CPU
+2026-07-08 21:06:27 0.00.436.645 D llama_kv_cache: layer   2: dev = CPU
+2026-07-08 21:06:27 0.00.436.646 D llama_kv_cache: layer   3: dev = CPU
+2026-07-08 21:06:27 0.00.436.647 D llama_kv_cache: layer   4: dev = CPU
+2026-07-08 21:06:27 0.00.436.647 D llama_kv_cache: layer   5: dev = CPU
+2026-07-08 21:06:27 0.00.436.648 D llama_kv_cache: layer   6: dev = CPU
+2026-07-08 21:06:27 0.00.436.648 D llama_kv_cache: layer   7: dev = CPU
+2026-07-08 21:06:27 0.00.436.649 D llama_kv_cache: layer   8: dev = CPU
+2026-07-08 21:06:27 0.00.436.650 D llama_kv_cache: layer   9: dev = CPU
+2026-07-08 21:06:27 0.00.436.650 D llama_kv_cache: layer  10: dev = CPU
+2026-07-08 21:06:27 0.00.436.651 D llama_kv_cache: layer  11: dev = CPU
+2026-07-08 21:06:27 0.00.436.651 D llama_kv_cache: layer  12: dev = CPU
+2026-07-08 21:06:27 0.00.436.652 D llama_kv_cache: layer  13: dev = CPU
+2026-07-08 21:06:27 0.00.436.653 D llama_kv_cache: layer  14: dev = CPU
+2026-07-08 21:06:27 0.00.436.654 D llama_kv_cache: layer  15: dev = CPU
+2026-07-08 21:06:27 0.00.436.654 D llama_kv_cache: layer  16: dev = CPU
+2026-07-08 21:06:27 0.00.436.655 D llama_kv_cache: layer  17: dev = CPU
+2026-07-08 21:06:27 0.00.436.656 D llama_kv_cache: layer  18: dev = CPU
+2026-07-08 21:06:27 0.00.436.656 D llama_kv_cache: layer  19: dev = CPU
+2026-07-08 21:06:27 0.00.436.657 D llama_kv_cache: layer  20: dev = CPU
+2026-07-08 21:06:27 0.00.436.660 D llama_kv_cache: layer  21: dev = RPC0
+2026-07-08 21:06:27 0.00.436.662 D llama_kv_cache: layer  22: dev = RPC0
+2026-07-08 21:06:27 0.00.436.663 D llama_kv_cache: layer  23: dev = RPC0
+2026-07-08 21:06:27 0.00.436.666 I llama_kv_cache:        CPU KV buffer size =     0.00 MiB
+2026-07-08 21:06:27 0.00.436.668 I llama_kv_cache: RPC0[192.168.1.7:50052] KV buffer size =     0.00 MiB
+2026-07-08 21:06:27 0.00.436.672 I llama_kv_cache: size =  384.00 MiB ( 32768 cells,  24 layers,  1/1 seqs), K (f16):  192.00 MiB, V (f16):  192.00 MiB
+2026-07-08 21:06:27 0.00.436.673 I llama_kv_cache: attn_rot_k = 0, n_embd_head_k_all = 64
+2026-07-08 21:06:27 0.00.436.673 I llama_kv_cache: attn_rot_v = 0, n_embd_head_k_all = 64
+2026-07-08 21:06:27 0.00.436.674 D llama_context: enumerating backends
+2026-07-08 21:06:27 0.00.436.689 D llama_context: backend_ptrs.size() = 2
+2026-07-08 21:06:27 0.00.436.690 I sched_reserve: reserving ...
+2026-07-08 21:06:27 0.00.436.694 D sched_reserve: max_nodes = 2328
+2026-07-08 21:06:27 0.00.437.111 D sched_reserve: reserving full memory module
+2026-07-08 21:06:27 0.00.437.153 D sched_reserve: worst-case: n_tokens = 512, n_seqs = 1, n_outputs = 1
+2026-07-08 21:06:27 0.00.437.161 D graph_reserve: reserving a graph for ubatch with n_tokens =    1, n_seqs =  1, n_outputs =    1
+2026-07-08 21:06:27 0.00.437.433 D 
+2026-07-08 21:06:27 ## SPLIT #0: CPU # 0 inputs0.00.437.447 D 
+2026-07-08 21:06:27 0.00.437.448 D 
+2026-07-08 21:06:27 ## SPLIT #1: RPC0[192.168.1.7:50052] # 7 inputs0.00.437.449 D : 0.00.437.452 D [ffn_out-20 (   3K)] 0.00.437.452 D [ffn_inp-20 (   3K)] 0.00.437.453 D [leaf_6 (   0K)] 0.00.437.453 D [leaf_11 (   0K)] 0.00.437.453 D [leaf_13 (   0K)] 0.00.437.453 D [attn_inp_kq_mask (  64K)] 0.00.437.453 D [leaf_342 (   0K)] 0.00.437.453 D 
+2026-07-08 21:06:27 0.00.437.475 I sched_reserve: Flash Attention was auto, set to enabled
+2026-07-08 21:06:27 0.00.437.475 I sched_reserve: resolving fused Gated Delta Net support:
+2026-07-08 21:06:27 0.00.437.475 D graph_reserve: reserving a graph for ubatch with n_tokens =    1, n_seqs =  1, n_outputs =    1
+2026-07-08 21:06:27 0.00.437.630 D 
+2026-07-08 21:06:27 ## SPLIT #0: CPU # 0 inputs0.00.437.641 D 
+2026-07-08 21:06:27 0.00.437.643 D 
+2026-07-08 21:06:27 ## SPLIT #1: RPC0[192.168.1.7:50052] # 7 inputs0.00.437.643 D : 0.00.437.643 D [ffn_out-20 (   3K)] 0.00.437.644 D [ffn_inp-20 (   3K)] 0.00.437.644 D [leaf_6 (   0K)] 0.00.437.644 D [leaf_11 (   0K)] 0.00.437.644 D [leaf_13 (   0K)] 0.00.437.644 D [attn_inp_kq_mask (  64K)] 0.00.437.645 D [leaf_342 (   0K)] 0.00.437.645 D 
+2026-07-08 21:06:27 0.00.437.653 I sched_reserve: fused Gated Delta Net (autoregressive) enabled
+2026-07-08 21:06:27 0.00.437.653 D graph_reserve: reserving a graph for ubatch with n_tokens =   16, n_seqs =  1, n_outputs =   16
+2026-07-08 21:06:27 0.00.437.800 D 
+2026-07-08 21:06:27 ## SPLIT #0: CPU # 0 inputs0.00.437.810 D 
+2026-07-08 21:06:27 0.00.437.812 D 
+2026-07-08 21:06:27 ## SPLIT #1: RPC0[192.168.1.7:50052] # 7 inputs0.00.437.812 D : 0.00.437.812 D [ffn_out-20 (  56K)] 0.00.437.813 D [ffn_inp-20 (  56K)] 0.00.437.813 D [leaf_6 (   0K)] 0.00.437.813 D [leaf_11 (   0K)] 0.00.437.813 D [leaf_13 (   0K)] 0.00.437.814 D [attn_inp_kq_mask (   1M)] 0.00.437.814 D [leaf_342 (   0K)] 0.00.437.814 D 
+2026-07-08 21:06:27 0.00.437.822 I sched_reserve: fused Gated Delta Net (chunked) enabled
+2026-07-08 21:06:27 0.00.437.822 D graph_reserve: reserving a graph for ubatch with n_tokens =  512, n_seqs =  1, n_outputs =  512
+2026-07-08 21:06:27 0.00.437.969 D 
+2026-07-08 21:06:27 ## SPLIT #0: CPU # 0 inputs0.00.437.981 D 
+2026-07-08 21:06:27 0.00.437.983 D 
+2026-07-08 21:06:27 ## SPLIT #1: RPC0[192.168.1.7:50052] # 7 inputs0.00.437.983 D : 0.00.437.984 D [ffn_out-20 (   1M)] 0.00.437.984 D [ffn_inp-20 (   1M)] 0.00.437.984 D [leaf_6 (   2K)] 0.00.437.984 D [leaf_11 (   4K)] 0.00.437.984 D [leaf_13 (   4K)] 0.00.437.985 D [attn_inp_kq_mask (  32M)] 0.00.437.985 D [leaf_342 (   2K)] 0.00.437.985 D 
+2026-07-08 21:06:27 0.00.455.325 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:27 0.00.463.717 D [~impl] closing socket 4
+2026-07-08 21:06:27 0.00.480.264 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:27 0.00.492.240 D [~impl] closing socket 4
+2026-07-08 21:06:27 0.00.505.985 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:27 0.00.512.804 D [~impl] closing socket 4
+2026-07-08 21:06:27 0.00.526.372 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:27 0.00.533.175 D [~impl] closing socket 4
+2026-07-08 21:06:27 0.00.547.084 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:27 0.00.556.172 D [~impl] closing socket 4
+2026-07-08 21:06:27 0.00.569.321 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:27 0.00.575.085 D [~impl] closing socket 4
+2026-07-08 21:06:27 0.00.588.574 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:27 0.00.595.546 D [~impl] closing socket 4
+2026-07-08 21:06:27 0.00.607.395 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:27 0.00.614.219 D [~impl] closing socket 4
+2026-07-08 21:06:27 0.00.628.042 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:27 0.00.634.269 D [~impl] closing socket 4
+2026-07-08 21:06:27 0.00.684.104 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:27 0.00.690.815 D [~impl] closing socket 4
+2026-07-08 21:06:27 0.00.702.556 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:27 0.00.707.889 D [~impl] closing socket 4
+2026-07-08 21:06:27 0.00.720.241 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:27 0.00.727.084 D [~impl] closing socket 4
+2026-07-08 21:06:27 0.00.741.269 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:27 0.00.749.035 D [~impl] closing socket 4
+2026-07-08 21:06:27 0.00.766.459 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:27 0.00.778.387 D [~impl] closing socket 4
+2026-07-08 21:06:27 0.00.794.632 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:27 0.00.804.484 D [~impl] closing socket 4
+2026-07-08 21:06:27 0.00.823.295 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:27 0.00.833.039 D [~impl] closing socket 4
+2026-07-08 21:06:27 0.00.858.018 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:27 0.00.865.099 D [~impl] closing socket 4
+2026-07-08 21:06:27 0.00.881.102 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:27 0.00.887.918 D [~impl] closing socket 4
+2026-07-08 21:06:27 0.00.901.140 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:27 0.00.906.965 D [~impl] closing socket 4
+2026-07-08 21:06:27 0.00.919.797 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:27 0.00.941.869 D [~impl] closing socket 4
+2026-07-08 21:06:27 0.00.954.902 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:27 0.00.961.506 D [~impl] closing socket 4
+2026-07-08 21:06:27 0.00.972.453 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:27 0.00.978.917 D [~impl] closing socket 4
+2026-07-08 21:06:27 0.00.991.509 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:27 0.01.001.099 D [~impl] closing socket 4
+2026-07-08 21:06:27 0.01.023.221 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:27 0.01.029.234 D [~impl] closing socket 4
+2026-07-08 21:06:27 0.01.043.406 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:27 0.01.058.107 D [~impl] closing socket 4
+2026-07-08 21:06:28 0.01.073.404 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:28 0.01.079.587 D [~impl] closing socket 4
+2026-07-08 21:06:28 0.01.092.227 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:28 0.01.098.402 D [~impl] closing socket 4
+2026-07-08 21:06:28 0.01.111.138 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:28 0.01.117.115 D [~impl] closing socket 4
+2026-07-08 21:06:28 0.01.129.693 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:28 0.01.135.474 D [~impl] closing socket 4
+2026-07-08 21:06:28 0.01.148.128 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:28 0.01.156.090 D [~impl] closing socket 4
+2026-07-08 21:06:28 0.01.173.387 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:28 0.01.181.852 D [~impl] closing socket 4
+2026-07-08 21:06:28 0.01.192.785 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:28 0.01.199.188 D [~impl] closing socket 4
+2026-07-08 21:06:28 0.01.211.237 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:28 0.01.216.491 D [~impl] closing socket 4
+2026-07-08 21:06:28 0.01.229.498 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:28 0.01.235.167 D [~impl] closing socket 4
+2026-07-08 21:06:28 0.01.247.004 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:28 0.01.252.707 D [~impl] closing socket 4
+2026-07-08 21:06:28 0.01.264.674 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:28 0.01.273.044 D [~impl] closing socket 4
+2026-07-08 21:06:28 0.01.284.422 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:28 0.01.289.748 D [~impl] closing socket 4
+2026-07-08 21:06:28 0.01.300.565 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:28 0.01.305.923 D [~impl] closing socket 4
+2026-07-08 21:06:29 0.02.451.590 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:29 0.02.458.747 D [~impl] closing socket 4
+2026-07-08 21:06:29 0.02.471.183 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:29 0.02.478.658 D [~impl] closing socket 4
+2026-07-08 21:06:29 0.02.492.508 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:29 0.02.501.869 D [~impl] closing socket 4
+2026-07-08 21:06:29 0.02.517.102 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:29 0.02.524.524 D [~impl] closing socket 4
+2026-07-08 21:06:29 0.02.537.476 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:29 0.02.544.071 D [~impl] closing socket 4
+2026-07-08 21:06:29 0.02.557.326 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:29 0.02.562.881 D [~impl] closing socket 4
+2026-07-08 21:06:29 0.02.611.331 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:29 0.02.619.230 D [~impl] closing socket 4
+2026-07-08 21:06:29 0.02.637.974 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:29 0.02.645.602 D [~impl] closing socket 4
+2026-07-08 21:06:29 0.02.656.952 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:29 0.02.665.623 D [~impl] closing socket 4
+2026-07-08 21:06:29 0.02.680.709 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:29 0.02.688.215 D [~impl] closing socket 4
+2026-07-08 21:06:29 0.02.701.248 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:29 0.02.707.219 D [~impl] closing socket 4
+2026-07-08 21:06:29 0.02.717.334 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:29 0.02.723.631 D [~impl] closing socket 4
+2026-07-08 21:06:29 0.02.737.154 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:29 0.02.749.595 D [~impl] closing socket 4
+2026-07-08 21:06:29 0.02.762.929 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:29 0.02.770.506 D [~impl] closing socket 4
+2026-07-08 21:06:29 0.02.785.605 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:29 0.02.792.023 D [~impl] closing socket 4
+2026-07-08 21:06:29 0.02.803.510 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:29 0.02.808.883 D [~impl] closing socket 4
+2026-07-08 21:06:29 0.02.821.091 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:29 0.02.827.977 D [~impl] closing socket 4
+2026-07-08 21:06:29 0.02.842.428 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:29 0.02.852.978 D [~impl] closing socket 4
+2026-07-08 21:06:29 0.02.864.247 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:29 0.02.871.213 D [~impl] closing socket 4
+2026-07-08 21:06:29 0.02.882.520 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:29 0.02.889.060 D [~impl] closing socket 4
+2026-07-08 21:06:29 0.02.900.032 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:29 0.02.906.346 D [~impl] closing socket 4
+2026-07-08 21:06:29 0.02.918.113 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:29 0.02.924.636 D [~impl] closing socket 4
+2026-07-08 21:06:29 0.02.939.921 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:29 0.02.948.180 D [~impl] closing socket 4
+2026-07-08 21:06:29 0.02.965.082 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:29 0.02.972.962 D [~impl] closing socket 4
+2026-07-08 21:06:29 0.02.985.967 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:29 0.03.007.764 D [~impl] closing socket 4
+2026-07-08 21:06:29 0.03.018.883 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:29 0.03.026.144 D [~impl] closing socket 4
+2026-07-08 21:06:29 0.03.037.077 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:29 0.03.043.304 D [~impl] closing socket 4
+2026-07-08 21:06:29 0.03.055.154 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:29 0.03.060.500 D [~impl] closing socket 4
+2026-07-08 21:06:30 0.03.072.985 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:30 0.03.082.247 D [~impl] closing socket 4
+2026-07-08 21:06:30 0.03.094.292 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:30 0.03.099.925 D [~impl] closing socket 4
+2026-07-08 21:06:30 0.03.111.676 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:30 0.03.118.514 D [~impl] closing socket 4
+2026-07-08 21:06:30 0.03.132.803 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:30 0.03.138.860 D [~impl] closing socket 4
+2026-07-08 21:06:30 0.03.150.454 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:30 0.03.157.426 D [~impl] closing socket 4
+2026-07-08 21:06:30 0.03.167.810 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:30 0.03.175.499 D [~impl] closing socket 4
+2026-07-08 21:06:30 0.03.194.803 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:30 0.03.201.281 D [~impl] closing socket 4
+2026-07-08 21:06:30 0.03.214.577 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:30 0.03.222.582 D [~impl] closing socket 4
+2026-07-08 21:06:30 0.03.241.971 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:30 0.03.250.299 D [~impl] closing socket 4
+2026-07-08 21:06:30 0.03.265.612 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:30 0.03.274.424 D [~impl] closing socket 4
+2026-07-08 21:06:30 0.03.298.924 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:30 0.03.309.303 D [~impl] closing socket 4
+2026-07-08 21:06:30 0.03.326.210 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:30 0.03.332.312 D [~impl] closing socket 4
+2026-07-08 21:06:30 0.03.345.312 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:30 0.03.353.847 D [~impl] closing socket 4
+2026-07-08 21:06:30 0.03.366.203 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:30 0.03.372.674 D [~impl] closing socket 4
+2026-07-08 21:06:30 0.03.383.917 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:30 0.03.391.736 D [~impl] closing socket 4
+2026-07-08 21:06:30 0.03.403.332 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:30 0.03.408.993 D [~impl] closing socket 4
+2026-07-08 21:06:30 0.03.421.981 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:30 0.03.430.168 D [~impl] closing socket 4
+2026-07-08 21:06:30 0.03.445.760 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:30 0.03.452.257 D [~impl] closing socket 4
+2026-07-08 21:06:30 0.03.462.957 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:30 0.03.471.183 D [~impl] closing socket 4
+2026-07-08 21:06:30 0.03.482.358 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:30 0.03.488.995 D [~impl] closing socket 4
+2026-07-08 21:06:30 0.03.500.272 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:30 0.03.507.197 D [~impl] closing socket 4
+2026-07-08 21:06:30 0.03.520.346 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:30 0.03.532.087 D [~impl] closing socket 4
+2026-07-08 21:06:30 0.03.544.528 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:30 0.03.550.143 D [~impl] closing socket 4
+2026-07-08 21:06:30 0.03.562.708 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:30 0.03.573.578 D [~impl] closing socket 4
+2026-07-08 21:06:30 0.03.607.586 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:30 0.03.616.919 D [~impl] closing socket 4
+2026-07-08 21:06:30 0.03.635.041 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:30 0.03.645.855 D [~impl] closing socket 4
+2026-07-08 21:06:30 0.03.666.334 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:30 0.03.673.173 D [~impl] closing socket 4
+2026-07-08 21:06:30 0.03.686.652 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:30 0.03.698.060 D [~impl] closing socket 4
+2026-07-08 21:06:30 0.03.714.506 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:30 0.03.722.415 D [~impl] closing socket 4
+2026-07-08 21:06:30 0.03.741.085 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:30 0.03.750.629 D [~impl] closing socket 4
+2026-07-08 21:06:30 0.03.765.321 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:30 0.03.777.497 D [~impl] closing socket 4
+2026-07-08 21:06:30 0.03.793.657 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:30 0.03.801.782 D [~impl] closing socket 4
+2026-07-08 21:06:30 0.03.817.030 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:30 0.03.827.280 D [~impl] closing socket 4
+2026-07-08 21:06:30 0.03.841.547 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:30 0.03.847.392 D [~impl] closing socket 4
+2026-07-08 21:06:30 0.03.863.642 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:30 0.03.870.227 D [~impl] closing socket 4
+2026-07-08 21:06:30 0.03.889.092 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:30 0.03.899.632 D [~impl] closing socket 4
+2026-07-08 21:06:30 0.03.916.594 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:30 0.03.924.404 D [~impl] closing socket 4
+2026-07-08 21:06:30 0.03.937.387 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:30 0.03.943.557 D [~impl] closing socket 4
+2026-07-08 21:06:30 0.03.958.565 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:30 0.03.970.218 D [~impl] closing socket 4
+2026-07-08 21:06:30 0.03.981.084 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:30 0.03.987.593 D [~impl] closing socket 4
+2026-07-08 21:06:30 0.04.002.626 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:30 0.04.009.082 D [~impl] closing socket 4
+2026-07-08 21:06:30 0.04.023.295 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:30 0.04.032.600 D [~impl] closing socket 4
+2026-07-08 21:06:30 0.04.045.199 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:30 0.04.053.171 D [~impl] closing socket 4
+2026-07-08 21:06:31 0.04.064.177 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:31 0.04.069.662 D [~impl] closing socket 4
+2026-07-08 21:06:31 0.04.084.092 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:31 0.04.092.247 D [~impl] closing socket 4
+2026-07-08 21:06:31 0.04.104.723 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:31 0.04.124.238 D [~impl] closing socket 4
+2026-07-08 21:06:31 0.04.140.496 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:31 0.04.146.042 D [~impl] closing socket 4
+2026-07-08 21:06:31 0.04.158.900 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:31 0.04.164.893 D [~impl] closing socket 4
+2026-07-08 21:06:31 0.04.178.830 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:31 0.04.184.852 D [~impl] closing socket 4
+2026-07-08 21:06:31 0.04.198.305 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:31 0.04.204.911 D [~impl] closing socket 4
+2026-07-08 21:06:31 0.04.217.096 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:31 0.04.234.672 D [~impl] closing socket 4
+2026-07-08 21:06:31 0.04.248.033 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:31 0.04.255.373 D [~impl] closing socket 4
+2026-07-08 21:06:31 0.04.265.969 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:31 0.04.273.158 D [~impl] closing socket 4
+2026-07-08 21:06:31 0.04.286.997 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:31 0.04.294.099 D [~impl] closing socket 4
+2026-07-08 21:06:31 0.04.308.719 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:31 0.04.315.282 D [~impl] closing socket 4
+2026-07-08 21:06:31 0.04.327.706 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:31 0.04.334.780 D [~impl] closing socket 4
+2026-07-08 21:06:31 0.04.348.696 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:31 0.04.355.007 D [~impl] closing socket 4
+2026-07-08 21:06:31 0.04.366.095 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:31 0.04.374.630 D [~impl] closing socket 4
+2026-07-08 21:06:31 0.04.387.898 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:31 0.04.397.559 D [~impl] closing socket 4
+2026-07-08 21:06:31 0.04.411.686 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:31 0.04.422.932 D [~impl] closing socket 4
+2026-07-08 21:06:31 0.04.434.705 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:31 0.04.442.490 D [~impl] closing socket 4
+2026-07-08 21:06:31 0.04.454.807 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:31 0.04.461.093 D [~impl] closing socket 4
+2026-07-08 21:06:31 0.04.473.740 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:31 0.04.479.983 D [~impl] closing socket 4
+2026-07-08 21:06:31 0.04.490.611 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:31 0.04.500.596 D [~impl] closing socket 4
+2026-07-08 21:06:31 0.04.513.974 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:31 0.04.519.936 D [~impl] closing socket 4
+2026-07-08 21:06:31 0.04.535.729 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:31 0.04.543.110 D [~impl] closing socket 4
+2026-07-08 21:06:31 0.04.554.045 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:31 0.04.560.106 D [~impl] closing socket 4
+2026-07-08 21:06:31 0.04.574.012 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:31 0.04.580.084 D [~impl] closing socket 4
+2026-07-08 21:06:31 0.04.598.729 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:31 0.04.604.827 D [~impl] closing socket 4
+2026-07-08 21:06:31 0.04.617.346 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:31 0.04.622.780 D [~impl] closing socket 4
+2026-07-08 21:06:31 0.04.636.974 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:31 0.04.643.237 D [~impl] closing socket 4
+2026-07-08 21:06:31 0.04.653.201 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:31 0.04.659.934 D [~impl] closing socket 4
+2026-07-08 21:06:32 0.05.762.087 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:32 0.05.768.279 D [~impl] closing socket 4
+2026-07-08 21:06:32 0.05.780.090 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:32 0.05.788.592 D [~impl] closing socket 4
+2026-07-08 21:06:32 0.05.801.042 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:32 0.05.809.510 D [~impl] closing socket 4
+2026-07-08 21:06:32 0.05.820.407 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:32 0.05.828.407 D [~impl] closing socket 4
+2026-07-08 21:06:32 0.05.843.970 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:32 0.05.852.208 D [~impl] closing socket 4
+2026-07-08 21:06:32 0.05.865.676 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:32 0.05.876.609 D [~impl] closing socket 4
+2026-07-08 21:06:32 0.05.889.917 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:32 0.05.896.173 D [~impl] closing socket 4
+2026-07-08 21:06:32 0.05.908.299 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:32 0.05.915.627 D [~impl] closing socket 4
+2026-07-08 21:06:32 0.05.928.220 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:32 0.05.934.982 D [~impl] closing socket 4
+2026-07-08 21:06:32 0.05.950.334 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:32 0.05.955.786 D [~impl] closing socket 4
+2026-07-08 21:06:32 0.05.967.811 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:32 0.05.974.898 D [~impl] closing socket 4
+2026-07-08 21:06:32 0.05.993.464 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:32 0.06.003.014 D [~impl] closing socket 4
+2026-07-08 21:06:32 0.06.016.622 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:32 0.06.023.279 D [~impl] closing socket 4
+2026-07-08 21:06:32 0.06.033.260 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:32 0.06.038.476 D [~impl] closing socket 4
+2026-07-08 21:06:32 0.06.051.087 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:32 0.06.056.375 D [~impl] closing socket 4
+2026-07-08 21:06:33 0.06.068.915 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:33 0.06.076.041 D [~impl] closing socket 4
+2026-07-08 21:06:33 0.06.088.463 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:33 0.06.094.450 D [~impl] closing socket 4
+2026-07-08 21:06:33 0.06.109.189 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:33 0.06.117.329 D [~impl] closing socket 4
+2026-07-08 21:06:33 0.06.128.617 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:33 0.06.137.558 D [~impl] closing socket 4
+2026-07-08 21:06:33 0.06.150.252 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:33 0.06.156.376 D [~impl] closing socket 4
+2026-07-08 21:06:33 0.06.170.202 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:33 0.06.179.904 D [~impl] closing socket 4
+2026-07-08 21:06:33 0.06.197.542 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:33 0.06.203.954 D [~impl] closing socket 4
+2026-07-08 21:06:33 0.06.215.160 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:33 0.06.221.116 D [~impl] closing socket 4
+2026-07-08 21:06:33 0.06.232.549 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:33 0.06.238.217 D [~impl] closing socket 4
+2026-07-08 21:06:33 0.06.250.641 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:33 0.06.257.756 D [~impl] closing socket 4
+2026-07-08 21:06:33 0.06.269.318 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:33 0.06.276.870 D [~impl] closing socket 4
+2026-07-08 21:06:33 0.06.290.393 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:33 0.06.296.865 D [~impl] closing socket 4
+2026-07-08 21:06:33 0.06.317.366 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:33 0.06.326.703 D [~impl] closing socket 4
+2026-07-08 21:06:33 0.06.341.746 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:33 0.06.348.111 D [~impl] closing socket 4
+2026-07-08 21:06:33 0.06.359.163 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:33 0.06.364.156 D [~impl] closing socket 4
+2026-07-08 21:06:33 0.06.376.229 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:33 0.06.386.234 D [~impl] closing socket 4
+2026-07-08 21:06:33 0.06.399.749 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:33 0.06.405.752 D [~impl] closing socket 4
+2026-07-08 21:06:33 0.06.418.342 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:33 0.06.423.944 D [~impl] closing socket 4
+2026-07-08 21:06:33 0.06.434.724 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:33 0.06.441.804 D [~impl] closing socket 4
+2026-07-08 21:06:33 0.06.454.296 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:33 0.06.461.764 D [~impl] closing socket 4
+2026-07-08 21:06:33 0.06.475.504 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:33 0.06.481.008 D [~impl] closing socket 4
+2026-07-08 21:06:33 0.06.495.128 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:33 0.06.501.217 D [~impl] closing socket 4
+2026-07-08 21:06:33 0.06.512.591 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:33 0.06.520.162 D [~impl] closing socket 4
+2026-07-08 21:06:33 0.06.539.182 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:33 0.06.550.174 D [~impl] closing socket 4
+2026-07-08 21:06:33 0.06.564.283 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:33 0.06.573.386 D [~impl] closing socket 4
+2026-07-08 21:06:33 0.06.587.540 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:33 0.06.610.216 D [~impl] closing socket 4
+2026-07-08 21:06:33 0.06.635.545 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:33 0.06.642.490 D [~impl] closing socket 4
+2026-07-08 21:06:33 0.06.658.630 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:33 0.06.665.791 D [~impl] closing socket 4
+2026-07-08 21:06:33 0.06.679.282 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:33 0.06.684.974 D [~impl] closing socket 4
+2026-07-08 21:06:33 0.06.711.852 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:33 0.06.719.495 D [~impl] closing socket 4
+2026-07-08 21:06:33 0.06.734.023 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:33 0.06.741.375 D [~impl] closing socket 4
+2026-07-08 21:06:33 0.06.764.626 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:33 0.06.772.781 D [~impl] closing socket 4
+2026-07-08 21:06:33 0.06.789.824 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:33 0.06.802.676 D [~impl] closing socket 4
+2026-07-08 21:06:33 0.06.821.031 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:33 0.06.833.960 D [~impl] closing socket 4
+2026-07-08 21:06:33 0.06.848.632 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:33 0.06.856.799 D [~impl] closing socket 4
+2026-07-08 21:06:33 0.06.868.834 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:33 0.06.878.967 D [~impl] closing socket 4
+2026-07-08 21:06:33 0.06.893.768 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:33 0.06.900.927 D [~impl] closing socket 4
+2026-07-08 21:06:33 0.06.912.099 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:33 0.06.918.237 D [~impl] closing socket 4
+2026-07-08 21:06:33 0.06.930.997 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:33 0.06.942.281 D [~impl] closing socket 4
+2026-07-08 21:06:33 0.06.952.778 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:33 0.06.959.243 D [~impl] closing socket 4
+2026-07-08 21:06:33 0.06.970.753 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:33 0.06.976.882 D [~impl] closing socket 4
+2026-07-08 21:06:33 0.06.989.115 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:33 0.07.002.165 D [~impl] closing socket 4
+2026-07-08 21:06:33 0.07.013.697 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:33 0.07.020.747 D [~impl] closing socket 4
+2026-07-08 21:06:33 0.07.035.019 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:33 0.07.046.208 D [~impl] closing socket 4
+2026-07-08 21:06:33 0.07.061.599 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:34 0.07.068.515 D [~impl] closing socket 4
+2026-07-08 21:06:34 0.07.079.601 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:34 0.07.085.430 D [~impl] closing socket 4
+2026-07-08 21:06:34 0.07.097.024 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:34 0.07.102.729 D [~impl] closing socket 4
+2026-07-08 21:06:34 0.07.115.680 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:34 0.07.122.434 D [~impl] closing socket 4
+2026-07-08 21:06:34 0.07.135.584 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:34 0.07.143.336 D [~impl] closing socket 4
+2026-07-08 21:06:34 0.07.155.529 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:34 0.07.162.327 D [~impl] closing socket 4
+2026-07-08 21:06:34 0.07.175.677 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:34 0.07.182.206 D [~impl] closing socket 4
+2026-07-08 21:06:34 0.07.194.509 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:34 0.07.200.574 D [~impl] closing socket 4
+2026-07-08 21:06:34 0.07.212.590 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:34 0.07.221.992 D [~impl] closing socket 4
+2026-07-08 21:06:34 0.07.238.605 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:34 0.07.247.637 D [~impl] closing socket 4
+2026-07-08 21:06:34 0.07.258.827 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:34 0.07.265.798 D [~impl] closing socket 4
+2026-07-08 21:06:34 0.07.276.873 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:34 0.07.282.942 D [~impl] closing socket 4
+2026-07-08 21:06:34 0.07.296.361 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:34 0.07.305.361 D [~impl] closing socket 4
+2026-07-08 21:06:34 0.07.319.023 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:34 0.07.324.292 D [~impl] closing socket 4
+2026-07-08 21:06:34 0.07.337.149 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:34 0.07.343.075 D [~impl] closing socket 4
+2026-07-08 21:06:34 0.07.369.797 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:34 0.07.376.903 D [~impl] closing socket 4
+2026-07-08 21:06:34 0.07.387.764 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:34 0.07.394.015 D [~impl] closing socket 4
+2026-07-08 21:06:34 0.07.408.653 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:34 0.07.414.747 D [~impl] closing socket 4
+2026-07-08 21:06:34 0.07.447.784 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:34 0.07.455.985 D [~impl] closing socket 4
+2026-07-08 21:06:34 0.07.467.219 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:34 0.07.472.178 D [~impl] closing socket 4
+2026-07-08 21:06:34 0.07.485.263 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:34 0.07.493.178 D [~impl] closing socket 4
+2026-07-08 21:06:34 0.07.505.966 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:34 0.07.511.947 D [~impl] closing socket 4
+2026-07-08 21:06:34 0.07.522.624 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:34 0.07.527.989 D [~impl] closing socket 4
+2026-07-08 21:06:34 0.07.541.494 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:34 0.07.553.628 D [~impl] closing socket 4
+2026-07-08 21:06:34 0.07.571.935 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:34 0.07.579.666 D [~impl] closing socket 4
+2026-07-08 21:06:34 0.07.592.688 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:34 0.07.599.089 D [~impl] closing socket 4
+2026-07-08 21:06:34 0.07.613.166 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:34 0.07.625.417 D [~impl] closing socket 4
+2026-07-08 21:06:34 0.07.636.302 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:34 0.07.642.622 D [~impl] closing socket 4
+2026-07-08 21:06:34 0.07.658.660 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:34 0.07.672.141 D [~impl] closing socket 4
+2026-07-08 21:06:34 0.07.684.244 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:34 0.07.691.736 D [~impl] closing socket 4
+2026-07-08 21:06:34 0.07.705.319 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:34 0.07.713.375 D [~impl] closing socket 4
+2026-07-08 21:06:34 0.07.723.618 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:34 0.07.729.413 D [~impl] closing socket 4
+2026-07-08 21:06:34 0.07.742.041 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:34 0.07.748.808 D [~impl] closing socket 4
+2026-07-08 21:06:34 0.07.759.287 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:34 0.07.765.713 D [~impl] closing socket 4
+2026-07-08 21:06:34 0.07.777.078 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:34 0.07.784.008 D [~impl] closing socket 4
+2026-07-08 21:06:34 0.07.795.856 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:34 0.07.804.616 D [~impl] closing socket 4
+2026-07-08 21:06:34 0.07.816.378 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:34 0.07.822.626 D [~impl] closing socket 4
+2026-07-08 21:06:34 0.07.835.426 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:34 0.07.842.315 D [~impl] closing socket 4
+2026-07-08 21:06:34 0.07.854.269 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:34 0.07.860.145 D [~impl] closing socket 4
+2026-07-08 21:06:34 0.07.873.977 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:34 0.07.885.552 D [~impl] closing socket 4
+2026-07-08 21:06:34 0.07.898.366 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:34 0.07.904.430 D [~impl] closing socket 4
+2026-07-08 21:06:36 0.09.625.698 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:36 0.09.635.167 D [~impl] closing socket 4
+2026-07-08 21:06:36 0.09.652.954 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:36 0.09.663.032 D [~impl] closing socket 4
+2026-07-08 21:06:36 0.09.674.860 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:36 0.09.680.750 D [~impl] closing socket 4
+2026-07-08 21:06:36 0.09.698.847 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:36 0.09.708.132 D [~impl] closing socket 4
+2026-07-08 21:06:36 0.09.725.196 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:36 0.09.753.238 D [~impl] closing socket 4
+2026-07-08 21:06:36 0.09.770.549 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:36 0.09.776.695 D [~impl] closing socket 4
+2026-07-08 21:06:36 0.09.789.716 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:36 0.09.800.891 D [~impl] closing socket 4
+2026-07-08 21:06:36 0.09.814.541 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:36 0.09.823.704 D [~impl] closing socket 4
+2026-07-08 21:06:36 0.09.835.730 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:36 0.09.841.902 D [~impl] closing socket 4
+2026-07-08 21:06:36 0.09.860.465 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:36 0.09.866.503 D [~impl] closing socket 4
+2026-07-08 21:06:36 0.09.878.889 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:36 0.09.885.853 D [~impl] closing socket 4
+2026-07-08 21:06:36 0.09.900.298 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:36 0.09.907.329 D [~impl] closing socket 4
+2026-07-08 21:06:36 0.09.918.457 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:36 0.09.923.307 D [~impl] closing socket 4
+2026-07-08 21:06:36 0.09.933.292 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:36 0.09.941.563 D [~impl] closing socket 4
+2026-07-08 21:06:36 0.09.955.511 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:36 0.09.962.944 D [~impl] closing socket 4
+2026-07-08 21:06:36 0.09.975.733 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:36 0.09.983.072 D [~impl] closing socket 4
+2026-07-08 21:06:36 0.09.995.659 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:36 0.10.001.157 D [~impl] closing socket 4
+2026-07-08 21:06:36 0.10.012.904 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:36 0.10.019.099 D [~impl] closing socket 4
+2026-07-08 21:06:36 0.10.030.890 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:36 0.10.039.483 D [~impl] closing socket 4
+2026-07-08 21:06:36 0.10.052.138 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:36 0.10.060.464 D [~impl] closing socket 4
+2026-07-08 21:06:37 0.10.072.158 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:37 0.10.078.165 D [~impl] closing socket 4
+2026-07-08 21:06:37 0.10.089.034 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:37 0.10.095.580 D [~impl] closing socket 4
+2026-07-08 21:06:37 0.10.108.144 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:37 0.10.119.414 D [~impl] closing socket 4
+2026-07-08 21:06:37 0.10.133.080 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:37 0.10.139.374 D [~impl] closing socket 4
+2026-07-08 21:06:37 0.10.153.127 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:37 0.10.159.812 D [~impl] closing socket 4
+2026-07-08 21:06:37 0.10.170.782 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:37 0.10.177.441 D [~impl] closing socket 4
+2026-07-08 21:06:37 0.10.189.080 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:37 0.10.195.063 D [~impl] closing socket 4
+2026-07-08 21:06:37 0.10.209.596 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:37 0.10.219.867 D [~impl] closing socket 4
+2026-07-08 21:06:37 0.10.231.077 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:37 0.10.236.262 D [~impl] closing socket 4
+2026-07-08 21:06:37 0.10.249.775 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:37 0.10.258.900 D [~impl] closing socket 4
+2026-07-08 21:06:37 0.10.272.299 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:37 0.10.283.774 D [~impl] closing socket 4
+2026-07-08 21:06:37 0.10.295.874 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:37 0.10.304.740 D [~impl] closing socket 4
+2026-07-08 21:06:37 0.10.314.924 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:37 0.10.320.912 D [~impl] closing socket 4
+2026-07-08 21:06:37 0.10.333.547 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:37 0.10.341.001 D [~impl] closing socket 4
+2026-07-08 21:06:37 0.10.352.296 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:37 0.10.360.399 D [~impl] closing socket 4
+2026-07-08 21:06:37 0.10.374.667 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:37 0.10.380.426 D [~impl] closing socket 4
+2026-07-08 21:06:37 0.10.392.134 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:37 0.10.397.436 D [~impl] closing socket 4
+2026-07-08 21:06:37 0.10.409.275 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:37 0.10.415.220 D [~impl] closing socket 4
+2026-07-08 21:06:37 0.10.428.525 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:37 0.10.433.896 D [~impl] closing socket 4
+2026-07-08 21:06:37 0.10.444.477 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:37 0.10.451.152 D [~impl] closing socket 4
+2026-07-08 21:06:37 0.10.465.617 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:37 0.10.471.278 D [~impl] closing socket 4
+2026-07-08 21:06:37 0.10.481.333 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:37 0.10.487.205 D [~impl] closing socket 4
+2026-07-08 21:06:37 0.10.498.839 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:37 0.10.506.844 D [~impl] closing socket 4
+2026-07-08 21:06:37 0.10.522.444 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:37 0.10.528.687 D [~impl] closing socket 4
+2026-07-08 21:06:37 0.10.544.269 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:37 0.10.555.169 D [~impl] closing socket 4
+2026-07-08 21:06:37 0.10.568.992 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:37 0.10.577.640 D [~impl] closing socket 4
+2026-07-08 21:06:37 0.10.592.143 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:37 0.10.598.352 D [~impl] closing socket 4
+2026-07-08 21:06:37 0.10.610.187 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:37 0.10.621.187 D [~impl] closing socket 4
+2026-07-08 21:06:37 0.10.632.357 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:37 0.10.640.435 D [~impl] closing socket 4
+2026-07-08 21:06:37 0.10.655.007 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:37 0.10.661.029 D [~impl] closing socket 4
+2026-07-08 21:06:37 0.10.676.775 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:37 0.10.683.351 D [~impl] closing socket 4
+2026-07-08 21:06:37 0.10.699.220 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:37 0.10.706.612 D [~impl] closing socket 4
+2026-07-08 21:06:37 0.10.721.009 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:37 0.10.726.946 D [~impl] closing socket 4
+2026-07-08 21:06:37 0.10.740.271 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:37 0.10.749.620 D [~impl] closing socket 4
+2026-07-08 21:06:37 0.10.761.086 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:37 0.10.767.877 D [~impl] closing socket 4
+2026-07-08 21:06:37 0.10.780.716 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:37 0.10.788.165 D [~impl] closing socket 4
+2026-07-08 21:06:37 0.10.802.567 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:37 0.10.810.011 D [~impl] closing socket 4
+2026-07-08 21:06:37 0.10.823.704 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:37 0.10.832.234 D [~impl] closing socket 4
+2026-07-08 21:06:37 0.10.843.428 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:37 0.10.849.902 D [~impl] closing socket 4
+2026-07-08 21:06:37 0.10.862.033 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:37 0.10.868.226 D [~impl] closing socket 4
+2026-07-08 21:06:37 0.10.883.296 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:37 0.10.890.141 D [~impl] closing socket 4
+2026-07-08 21:06:37 0.10.906.494 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:37 0.10.915.390 D [~impl] closing socket 4
+2026-07-08 21:06:37 0.10.927.201 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:37 0.10.935.609 D [~impl] closing socket 4
+2026-07-08 21:06:37 0.10.949.260 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:37 0.10.957.699 D [~impl] closing socket 4
+2026-07-08 21:06:37 0.10.977.658 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:37 0.10.987.879 D [~impl] closing socket 4
+2026-07-08 21:06:37 0.11.002.004 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:37 0.11.013.954 D [~impl] closing socket 4
+2026-07-08 21:06:37 0.11.025.664 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:37 0.11.032.883 D [~impl] closing socket 4
+2026-07-08 21:06:37 0.11.046.371 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:37 0.11.051.556 D [~impl] closing socket 4
+2026-07-08 21:06:38 0.11.066.422 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:38 0.11.074.604 D [~impl] closing socket 4
+2026-07-08 21:06:38 0.11.086.887 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:38 0.11.093.972 D [~impl] closing socket 4
+2026-07-08 21:06:38 0.11.110.791 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:38 0.11.119.389 D [~impl] closing socket 4
+2026-07-08 21:06:38 0.11.133.012 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:38 0.11.140.018 D [~impl] closing socket 4
+2026-07-08 21:06:38 0.11.150.669 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:38 0.11.156.277 D [~impl] closing socket 4
+2026-07-08 21:06:38 0.11.168.368 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:38 0.11.175.848 D [~impl] closing socket 4
+2026-07-08 21:06:38 0.11.189.174 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:38 0.11.195.751 D [~impl] closing socket 4
+2026-07-08 21:06:38 0.11.205.986 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:38 0.11.214.692 D [~impl] closing socket 4
+2026-07-08 21:06:38 0.11.225.142 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:38 0.11.232.508 D [~impl] closing socket 4
+2026-07-08 21:06:38 0.11.245.639 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:38 0.11.254.424 D [~impl] closing socket 4
+2026-07-08 21:06:38 0.11.266.207 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:38 0.11.271.737 D [~impl] closing socket 4
+2026-07-08 21:06:38 0.11.283.033 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:38 0.11.289.218 D [~impl] closing socket 4
+2026-07-08 21:06:38 0.11.302.098 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:38 0.11.308.926 D [~impl] closing socket 4
+2026-07-08 21:06:38 0.11.320.963 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:38 0.11.325.824 D [~impl] closing socket 4
+2026-07-08 21:06:38 0.11.338.292 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:38 0.11.346.611 D [~impl] closing socket 4
+2026-07-08 21:06:38 0.11.358.901 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:38 0.11.365.515 D [~impl] closing socket 4
+2026-07-08 21:06:38 0.11.376.797 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:38 0.11.382.462 D [~impl] closing socket 4
+2026-07-08 21:06:38 0.11.395.168 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:38 0.11.403.272 D [~impl] closing socket 4
+2026-07-08 21:06:38 0.11.417.237 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:38 0.11.423.698 D [~impl] closing socket 4
+2026-07-08 21:06:38 0.11.434.613 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:38 0.11.440.959 D [~impl] closing socket 4
+2026-07-08 21:06:38 0.11.455.328 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:38 0.11.461.175 D [~impl] closing socket 4
+2026-07-08 21:06:38 0.11.473.881 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:38 0.11.481.611 D [~impl] closing socket 4
+2026-07-08 21:06:38 0.11.492.748 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:38 0.11.500.315 D [~impl] closing socket 4
+2026-07-08 21:06:38 0.11.514.257 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:38 0.11.522.284 D [~impl] closing socket 4
+2026-07-08 21:06:38 0.11.537.444 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:38 0.11.543.893 D [~impl] closing socket 4
+2026-07-08 21:06:38 0.11.555.044 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:38 0.11.563.048 D [~impl] closing socket 4
+2026-07-08 21:06:38 0.11.574.609 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:38 0.11.581.299 D [~impl] closing socket 4
+2026-07-08 21:06:38 0.11.595.626 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:38 0.11.603.965 D [~impl] closing socket 4
+2026-07-08 21:06:38 0.11.615.037 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:38 0.11.622.760 D [~impl] closing socket 4
+2026-07-08 21:06:38 0.11.633.653 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:38 0.11.641.517 D [~impl] closing socket 4
+2026-07-08 21:06:38 0.11.653.141 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:38 0.11.659.539 D [~impl] closing socket 4
+2026-07-08 21:06:38 0.11.676.796 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:38 0.11.685.191 D [~impl] closing socket 4
+2026-07-08 21:06:38 0.11.702.000 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:38 0.11.710.978 D [~impl] closing socket 4
+2026-07-08 21:06:38 0.11.738.608 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:38 0.11.746.734 D [~impl] closing socket 4
+2026-07-08 21:06:38 0.11.758.248 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:38 0.11.764.376 D [~impl] closing socket 4
+2026-07-08 21:06:39 0.12.836.629 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:39 0.12.845.563 D [~impl] closing socket 4
+2026-07-08 21:06:39 0.12.857.165 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:39 0.12.864.203 D [~impl] closing socket 4
+2026-07-08 21:06:39 0.12.876.704 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:39 0.12.883.022 D [~impl] closing socket 4
+2026-07-08 21:06:39 0.12.903.121 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:39 0.12.914.567 D [~impl] closing socket 4
+2026-07-08 21:06:39 0.12.927.509 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:39 0.12.934.843 D [~impl] closing socket 4
+2026-07-08 21:06:39 0.12.945.740 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:39 0.12.953.441 D [~impl] closing socket 4
+2026-07-08 21:06:39 0.12.966.486 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:39 0.12.972.844 D [~impl] closing socket 4
+2026-07-08 21:06:39 0.12.983.870 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:39 0.12.989.860 D [~impl] closing socket 4
+2026-07-08 21:06:39 0.13.001.510 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:39 0.13.007.384 D [~impl] closing socket 4
+2026-07-08 21:06:39 0.13.018.805 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:39 0.13.026.016 D [~impl] closing socket 4
+2026-07-08 21:06:39 0.13.054.455 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:39 0.13.061.342 D [~impl] closing socket 4
+2026-07-08 21:06:39 0.13.061.436 D graph_reserve: reserving a graph for ubatch with n_tokens =    1, n_seqs =  1, n_outputs =    1
+2026-07-08 21:06:39 0.13.061.896 D 
+2026-07-08 21:06:39 ## SPLIT #0: CPU # 0 inputs0.13.061.923 D 
+2026-07-08 21:06:39 0.13.061.927 D 
+2026-07-08 21:06:39 ## SPLIT #1: RPC0[192.168.1.7:50052] # 7 inputs0.13.061.927 D : 0.13.061.929 D [ffn_out-20 (   3K)] 0.13.061.930 D [ffn_inp-20 (   3K)] 0.13.061.930 D [leaf_6 (   0K)] 0.13.061.931 D [leaf_11 (   0K)] 0.13.061.931 D [leaf_13 (   0K)] 0.13.061.931 D [attn_inp_kq_mask (  64K)] 0.13.061.932 D [leaf_342 (   0K)] 0.13.061.932 D 
+2026-07-08 21:06:39 0.13.061.948 D graph_reserve: reserving a graph for ubatch with n_tokens =  512, n_seqs =  1, n_outputs =  512
+2026-07-08 21:06:39 0.13.062.261 D 
+2026-07-08 21:06:39 ## SPLIT #0: CPU # 0 inputs0.13.062.283 D 
+2026-07-08 21:06:39 0.13.062.288 D 
+2026-07-08 21:06:39 ## SPLIT #1: RPC0[192.168.1.7:50052] # 7 inputs0.13.062.289 D : 0.13.062.290 D [ffn_out-20 (   1M)] 0.13.062.290 D [ffn_inp-20 (   1M)] 0.13.062.290 D [leaf_6 (   2K)] 0.13.062.291 D [leaf_11 (   4K)] 0.13.062.292 D [leaf_13 (   4K)] 0.13.062.292 D [attn_inp_kq_mask (  32M)] 0.13.062.292 D [leaf_342 (   2K)] 0.13.062.293 D 
+2026-07-08 21:06:39 0.13.062.317 I sched_reserve: RPC0[192.168.1.7:50052] compute buffer size =   298.50 MiB
+2026-07-08 21:06:39 0.13.062.319 I sched_reserve:        CPU compute buffer size =    67.51 MiB
+2026-07-08 21:06:39 0.13.062.320 I sched_reserve: graph nodes  = 822
+2026-07-08 21:06:39 0.13.062.321 I sched_reserve: graph splits = 2
+2026-07-08 21:06:39 0.13.062.328 I sched_reserve: reserve took 11972.80 ms, sched copies = 1
+2026-07-08 21:06:40 0.13.074.355 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:40 0.13.079.857 D [~impl] closing socket 4
+2026-07-08 21:06:40 0.13.091.695 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:40 0.13.099.902 D [~impl] closing socket 4
+2026-07-08 21:06:40 0.13.114.268 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:40 0.13.123.737 D [~impl] closing socket 4
+2026-07-08 21:06:40 0.13.136.434 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:40 0.13.145.990 D [~impl] closing socket 4
+2026-07-08 21:06:40 0.13.159.015 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:40 0.13.166.544 D [~impl] closing socket 4
+2026-07-08 21:06:40 0.13.177.907 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:40 0.13.185.236 D [~impl] closing socket 4
+2026-07-08 21:06:40 0.13.196.178 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:40 0.13.202.404 D [~impl] closing socket 4
+2026-07-08 21:06:40 0.13.214.658 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:40 0.13.223.442 D [~impl] closing socket 4
+2026-07-08 21:06:40 0.13.233.998 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:40 0.13.240.199 D [~impl] closing socket 4
+2026-07-08 21:06:40 0.13.256.222 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:40 0.13.264.933 D [~impl] closing socket 4
+2026-07-08 21:06:40 0.13.277.104 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:40 0.13.284.607 D [~impl] closing socket 4
+2026-07-08 21:06:40 0.13.297.052 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:40 0.13.303.663 D [~impl] closing socket 4
+2026-07-08 21:06:40 0.13.317.091 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:40 0.13.326.359 D [~impl] closing socket 4
+2026-07-08 21:06:40 0.13.338.982 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:40 0.13.348.310 D [~impl] closing socket 4
+2026-07-08 21:06:40 0.13.359.689 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:40 0.13.368.618 D [~impl] closing socket 4
+2026-07-08 21:06:40 0.13.380.328 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:40 0.13.385.090 D [~impl] closing socket 4
+2026-07-08 21:06:40 0.13.398.145 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:40 0.13.406.096 D [~impl] closing socket 4
+2026-07-08 21:06:40 0.13.420.582 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:40 0.13.430.485 D [~impl] closing socket 4
+2026-07-08 21:06:40 0.13.442.224 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:40 0.13.450.322 D [~impl] closing socket 4
+2026-07-08 21:06:40 0.13.463.081 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:40 0.13.468.996 D [~impl] closing socket 4
+2026-07-08 21:06:40 0.13.479.579 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:40 0.13.485.825 D [~impl] closing socket 4
+2026-07-08 21:06:40 0.13.498.453 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:40 0.13.503.284 D [~impl] closing socket 4
+2026-07-08 21:06:40 0.13.517.177 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:40 0.13.525.240 D [~impl] closing socket 4
+2026-07-08 21:06:40 0.13.539.949 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:40 0.13.544.814 D [~impl] closing socket 4
+2026-07-08 21:06:40 0.13.556.788 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:40 0.13.564.738 D [~impl] closing socket 4
+2026-07-08 21:06:40 0.13.577.419 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:40 0.13.582.621 D [~impl] closing socket 4
+2026-07-08 21:06:40 0.13.598.340 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:40 0.13.604.122 D [~impl] closing socket 4
+2026-07-08 21:06:40 0.13.616.261 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:40 0.13.622.289 D [~impl] closing socket 4
+2026-07-08 21:06:40 0.13.633.982 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:40 0.13.639.163 D [~impl] closing socket 4
+2026-07-08 21:06:40 0.13.650.995 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:40 0.13.655.489 D [~impl] closing socket 4
+2026-07-08 21:06:40 0.13.668.630 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:40 0.13.674.927 D [~impl] closing socket 4
+2026-07-08 21:06:40 0.13.687.236 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:40 0.13.694.134 D [~impl] closing socket 4
+2026-07-08 21:06:40 0.13.705.480 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:40 0.13.711.533 D [~impl] closing socket 4
+2026-07-08 21:06:40 0.13.723.517 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:40 0.13.731.339 D [~impl] closing socket 4
+2026-07-08 21:06:40 0.13.743.362 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:40 0.13.748.788 D [~impl] closing socket 4
+2026-07-08 21:06:40 0.13.759.980 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:40 0.13.767.353 D [~impl] closing socket 4
+2026-07-08 21:06:40 0.13.778.004 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:40 0.13.783.723 D [~impl] closing socket 4
+2026-07-08 21:06:40 0.13.794.330 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:40 0.13.801.044 D [~impl] closing socket 4
+2026-07-08 21:06:40 0.13.813.569 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:40 0.13.824.292 D [~impl] closing socket 4
+2026-07-08 21:06:40 0.13.835.237 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:40 0.13.840.679 D [~impl] closing socket 4
+2026-07-08 21:06:40 0.13.852.757 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:40 0.13.861.037 D [~impl] closing socket 4
+2026-07-08 21:06:40 0.13.873.010 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:40 0.13.882.496 D [~impl] closing socket 4
+2026-07-08 21:06:40 0.13.892.695 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:40 0.13.899.244 D [~impl] closing socket 4
+2026-07-08 21:06:40 0.13.911.433 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:40 0.13.917.069 D [~impl] closing socket 4
+2026-07-08 21:06:40 0.13.934.959 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:40 0.13.941.892 D [~impl] closing socket 4
+2026-07-08 21:06:40 0.13.953.471 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:40 0.13.959.144 D [~impl] closing socket 4
+2026-07-08 21:06:40 0.13.959.233 I common_memory_breakdown_print: | memory breakdown [MiB]       | total   free    self   model   context   compute    unaccounted |
+2026-07-08 21:06:40 0.13.959.233 I common_memory_breakdown_print: |   - RPC0 (192.168.1.7:50052) |  7488 = 7488 + ( 508 =   161 +      48 +     298) +        -508 |
+2026-07-08 21:06:40 0.13.959.234 I common_memory_breakdown_print: |   - Host                     |                  541 =   138 +     336 +      67                |
+2026-07-08 21:06:40 0.13.959.235 I common_memory_breakdown_print: |   - CPU_REPACK               |                  167 =   167 +       0 +       0                |
+2026-07-08 21:06:40 0.14.002.180 I common_params_fit_impl: projected to use 508 MiB of device memory vs. 7488 MiB of free device memory
+2026-07-08 21:06:40 0.14.002.225 I common_params_fit_impl: will leave 6980 >= 1024 MiB of free device memory, no changes needed
+2026-07-08 21:06:40 0.14.002.226 I common_fit_params: successfully fit params to free device memory
+2026-07-08 21:06:40 0.14.002.237 I common_fit_params: fitting params to free memory took 13.29 seconds
+2026-07-08 21:06:40 0.14.025.193 I llama_model_loader: loaded meta data with 21 key-value pairs and 290 tensors from /home/atituiset/models/qwen2-0.5b-instruct-q4_0.gguf (version GGUF V3 (latest))
+2026-07-08 21:06:40 0.14.025.242 I llama_model_loader: Dumping metadata keys/values. Note: KV overrides do not apply in this output.
+2026-07-08 21:06:40 0.14.025.247 I llama_model_loader: - kv   0:                       general.architecture str              = qwen2
+2026-07-08 21:06:40 0.14.025.247 I llama_model_loader: - kv   1:                               general.name str              = Qwen2-0.5B-Instruct
+2026-07-08 21:06:40 0.14.025.249 I llama_model_loader: - kv   2:                          qwen2.block_count u32              = 24
+2026-07-08 21:06:40 0.14.025.250 I llama_model_loader: - kv   3:                       qwen2.context_length u32              = 32768
+2026-07-08 21:06:40 0.14.025.251 I llama_model_loader: - kv   4:                     qwen2.embedding_length u32              = 896
+2026-07-08 21:06:40 0.14.025.251 I llama_model_loader: - kv   5:                  qwen2.feed_forward_length u32              = 4864
+2026-07-08 21:06:40 0.14.025.251 I llama_model_loader: - kv   6:                 qwen2.attention.head_count u32              = 14
+2026-07-08 21:06:40 0.14.025.252 I llama_model_loader: - kv   7:              qwen2.attention.head_count_kv u32              = 2
+2026-07-08 21:06:40 0.14.025.257 I llama_model_loader: - kv   8:                       qwen2.rope.freq_base f32              = 1000000.000000
+2026-07-08 21:06:40 0.14.025.258 I llama_model_loader: - kv   9:     qwen2.attention.layer_norm_rms_epsilon f32              = 0.000001
+2026-07-08 21:06:40 0.14.025.258 I llama_model_loader: - kv  10:                          general.file_type u32              = 2
+2026-07-08 21:06:40 0.14.025.259 I llama_model_loader: - kv  11:                       tokenizer.ggml.model str              = gpt2
+2026-07-08 21:06:40 0.14.025.259 I llama_model_loader: - kv  12:                         tokenizer.ggml.pre str              = qwen2
+2026-07-08 21:06:40 0.14.036.792 I llama_model_loader: - kv  13:                      tokenizer.ggml.tokens arr[str,151936]  = ["!", "\"", "#", "$", "%", "&", "'", ...
+2026-07-08 21:06:40 0.14.039.732 I llama_model_loader: - kv  14:                  tokenizer.ggml.token_type arr[i32,151936]  = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, ...
+2026-07-08 21:06:40 0.14.051.296 I llama_model_loader: - kv  15:                      tokenizer.ggml.merges arr[str,151387]  = ["Ġ Ġ", "ĠĠ ĠĠ", "i n", "Ġ t",...
+2026-07-08 21:06:40 0.14.051.343 I llama_model_loader: - kv  16:                tokenizer.ggml.eos_token_id u32              = 151645
+2026-07-08 21:06:40 0.14.051.344 I llama_model_loader: - kv  17:            tokenizer.ggml.padding_token_id u32              = 151643
+2026-07-08 21:06:40 0.14.051.345 I llama_model_loader: - kv  18:                tokenizer.ggml.bos_token_id u32              = 151643
+2026-07-08 21:06:40 0.14.051.348 I llama_model_loader: - kv  19:                    tokenizer.chat_template str              = {% for message in messages %}{% if lo...
+2026-07-08 21:06:40 0.14.051.348 I llama_model_loader: - kv  20:               general.quantization_version u32              = 2
+2026-07-08 21:06:40 0.14.051.350 I llama_model_loader: - type  f32:  121 tensors
+2026-07-08 21:06:40 0.14.051.351 I llama_model_loader: - type q4_0:  168 tensors
+2026-07-08 21:06:40 0.14.051.351 I llama_model_loader: - type q8_0:    1 tensors
+2026-07-08 21:06:40 0.14.051.353 I print_info: file format = GGUF V3 (latest)
+2026-07-08 21:06:40 0.14.051.354 I print_info: file type   = Q4_0
+2026-07-08 21:06:40 0.14.051.360 I print_info: file size   = 330.17 MiB (5.61 BPW) 
+2026-07-08 21:06:41 0.14.064.724 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:41 0.14.071.165 D [~impl] closing socket 5
+2026-07-08 21:06:41 0.14.071.243 I llama_prepare_model_devices: using device RPC0 (192.168.1.7:50052) (unknown id) - 7488 MiB free
+2026-07-08 21:06:41 0.14.135.632 D init_tokenizer: initializing tokenizer for type 2
+2026-07-08 21:06:41 0.14.184.536 I load: 0 unused tokens
+2026-07-08 21:06:41 0.14.185.912 W load: control-looking token: 128247 '</s>' was not control-type; this is probably a bug in the model. its type will be overridden
+2026-07-08 21:06:41 0.14.208.519 D load: control token: 151644 '<|im_start|>' is not marked as EOG
+2026-07-08 21:06:41 0.14.224.631 I load: printing all EOG tokens:
+2026-07-08 21:06:41 0.14.224.653 I load:   - 128247 ('</s>')
+2026-07-08 21:06:41 0.14.224.654 I load:   - 151643 ('<|endoftext|>')
+2026-07-08 21:06:41 0.14.224.655 I load:   - 151645 ('<|im_end|>')
+2026-07-08 21:06:41 0.14.225.070 I load: special tokens cache size = 294
+2026-07-08 21:06:41 0.14.259.849 I load: token to piece cache size = 0.9338 MB
+2026-07-08 21:06:41 0.14.259.892 I print_info: arch                  = qwen2
+2026-07-08 21:06:41 0.14.259.894 I print_info: vocab_only            = 0
+2026-07-08 21:06:41 0.14.259.894 I print_info: no_alloc              = 0
+2026-07-08 21:06:41 0.14.259.894 I print_info: n_ctx_train           = 32768
+2026-07-08 21:06:41 0.14.259.895 I print_info: n_embd_inp            = 896
+2026-07-08 21:06:41 0.14.259.895 I print_info: n_embd                = 896
+2026-07-08 21:06:41 0.14.259.895 I print_info: n_embd_out            = 896
+2026-07-08 21:06:41 0.14.259.896 I print_info: n_layer               = 24
+2026-07-08 21:06:41 0.14.259.896 I print_info: n_layer_all           = 24
+2026-07-08 21:06:41 0.14.259.908 I print_info: n_head                = 14
+2026-07-08 21:06:41 0.14.259.909 I print_info: n_head_kv             = 2
+2026-07-08 21:06:41 0.14.259.909 I print_info: n_rot                 = 64
+2026-07-08 21:06:41 0.14.259.909 I print_info: n_swa                 = 0
+2026-07-08 21:06:41 0.14.259.910 I print_info: is_swa_any            = 0
+2026-07-08 21:06:41 0.14.259.910 I print_info: n_embd_head_k         = 64
+2026-07-08 21:06:41 0.14.259.910 I print_info: n_embd_head_v         = 64
+2026-07-08 21:06:41 0.14.259.911 I print_info: n_gqa                 = 7
+2026-07-08 21:06:41 0.14.259.911 I print_info: n_embd_k_gqa          = 128
+2026-07-08 21:06:41 0.14.259.913 I print_info: n_embd_v_gqa          = 128
+2026-07-08 21:06:41 0.14.259.913 I print_info: f_norm_eps            = 0.0e+00
+2026-07-08 21:06:41 0.14.259.914 I print_info: f_norm_rms_eps        = 1.0e-06
+2026-07-08 21:06:41 0.14.259.914 I print_info: f_clamp_kqv           = 0.0e+00
+2026-07-08 21:06:41 0.14.259.914 I print_info: f_max_alibi_bias      = 0.0e+00
+2026-07-08 21:06:41 0.14.259.914 I print_info: f_logit_scale         = 0.0e+00
+2026-07-08 21:06:41 0.14.259.914 I print_info: f_attn_scale          = 0.0e+00
+2026-07-08 21:06:41 0.14.259.915 I print_info: f_attn_value_scale    = 0.0000
+2026-07-08 21:06:41 0.14.259.915 I print_info: n_ff                  = 4864
+2026-07-08 21:06:41 0.14.259.915 I print_info: n_expert              = 0
+2026-07-08 21:06:41 0.14.259.916 I print_info: n_expert_used         = 0
+2026-07-08 21:06:41 0.14.259.916 I print_info: n_expert_groups       = 0
+2026-07-08 21:06:41 0.14.259.916 I print_info: n_group_used          = 0
+2026-07-08 21:06:41 0.14.259.916 I print_info: causal attn           = 1
+2026-07-08 21:06:41 0.14.259.916 I print_info: pooling type          = -1
+2026-07-08 21:06:41 0.14.259.917 I print_info: rope type             = 2
+2026-07-08 21:06:41 0.14.259.917 I print_info: rope scaling          = linear
+2026-07-08 21:06:41 0.14.259.918 I print_info: freq_base_train       = 1000000.0
+2026-07-08 21:06:41 0.14.259.918 I print_info: freq_scale_train      = 1
+2026-07-08 21:06:41 0.14.259.918 I print_info: n_ctx_orig_yarn       = 32768
+2026-07-08 21:06:41 0.14.259.919 I print_info: rope_yarn_log_mul     = 0.0000
+2026-07-08 21:06:41 0.14.259.919 I print_info: rope_finetuned        = unknown
+2026-07-08 21:06:41 0.14.259.920 I print_info: model type            = 1B
+2026-07-08 21:06:41 0.14.259.920 I print_info: model params          = 494.03 M
+2026-07-08 21:06:41 0.14.259.921 I print_info: general.name          = Qwen2-0.5B-Instruct
+2026-07-08 21:06:41 0.14.259.923 I print_info: vocab type            = BPE
+2026-07-08 21:06:41 0.14.259.923 I print_info: n_vocab               = 151936
+2026-07-08 21:06:41 0.14.259.923 I print_info: n_merges              = 151387
+2026-07-08 21:06:41 0.14.259.924 I print_info: BOS token             = 151643 '<|endoftext|>'
+2026-07-08 21:06:41 0.14.259.924 I print_info: EOS token             = 151645 '<|im_end|>'
+2026-07-08 21:06:41 0.14.259.924 I print_info: EOT token             = 151645 '<|im_end|>'
+2026-07-08 21:06:41 0.14.259.924 I print_info: PAD token             = 151643 '<|endoftext|>'
+2026-07-08 21:06:41 0.14.259.925 I print_info: LF token              = 198 'Ċ'
+2026-07-08 21:06:41 0.14.259.926 I print_info: EOG token             = 128247 '</s>'
+2026-07-08 21:06:41 0.14.259.926 I print_info: EOG token             = 151643 '<|endoftext|>'
+2026-07-08 21:06:41 0.14.259.926 I print_info: EOG token             = 151645 '<|im_end|>'
+2026-07-08 21:06:41 0.14.259.927 I print_info: max token length      = 256
+2026-07-08 21:06:41 0.14.259.928 I load_tensors: loading model tensors, this can take a while... (mmap = true, direct_io = false)
+2026-07-08 21:06:41 0.14.278.382 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:41 0.14.283.929 D [~impl] closing socket 5
+2026-07-08 21:06:41 0.14.283.979 D load_tensors: layer   0 assigned to device CPU, is_swa = 0
+2026-07-08 21:06:41 0.14.283.979 D load_tensors: layer   1 assigned to device CPU, is_swa = 0
+2026-07-08 21:06:41 0.14.283.980 D load_tensors: layer   2 assigned to device CPU, is_swa = 0
+2026-07-08 21:06:41 0.14.283.980 D load_tensors: layer   3 assigned to device CPU, is_swa = 0
+2026-07-08 21:06:41 0.14.283.980 D load_tensors: layer   4 assigned to device CPU, is_swa = 0
+2026-07-08 21:06:41 0.14.283.980 D load_tensors: layer   5 assigned to device CPU, is_swa = 0
+2026-07-08 21:06:41 0.14.283.980 D load_tensors: layer   6 assigned to device CPU, is_swa = 0
+2026-07-08 21:06:41 0.14.283.980 D load_tensors: layer   7 assigned to device CPU, is_swa = 0
+2026-07-08 21:06:41 0.14.283.980 D load_tensors: layer   8 assigned to device CPU, is_swa = 0
+2026-07-08 21:06:41 0.14.283.981 D load_tensors: layer   9 assigned to device CPU, is_swa = 0
+2026-07-08 21:06:41 0.14.283.981 D load_tensors: layer  10 assigned to device CPU, is_swa = 0
+2026-07-08 21:06:41 0.14.283.981 D load_tensors: layer  11 assigned to device CPU, is_swa = 0
+2026-07-08 21:06:41 0.14.283.981 D load_tensors: layer  12 assigned to device CPU, is_swa = 0
+2026-07-08 21:06:41 0.14.283.981 D load_tensors: layer  13 assigned to device CPU, is_swa = 0
+2026-07-08 21:06:41 0.14.283.981 D load_tensors: layer  14 assigned to device CPU, is_swa = 0
+2026-07-08 21:06:41 0.14.283.982 D load_tensors: layer  15 assigned to device CPU, is_swa = 0
+2026-07-08 21:06:41 0.14.283.982 D load_tensors: layer  16 assigned to device CPU, is_swa = 0
+2026-07-08 21:06:41 0.14.283.982 D load_tensors: layer  17 assigned to device CPU, is_swa = 0
+2026-07-08 21:06:41 0.14.283.982 D load_tensors: layer  18 assigned to device CPU, is_swa = 0
+2026-07-08 21:06:41 0.14.283.982 D load_tensors: layer  19 assigned to device CPU, is_swa = 0
+2026-07-08 21:06:41 0.14.283.982 D load_tensors: layer  20 assigned to device CPU, is_swa = 0
+2026-07-08 21:06:41 0.14.283.985 D load_tensors: layer  21 assigned to device RPC0, is_swa = 0
+2026-07-08 21:06:41 0.14.283.986 D load_tensors: layer  22 assigned to device RPC0, is_swa = 0
+2026-07-08 21:06:41 0.14.283.986 D load_tensors: layer  23 assigned to device RPC0, is_swa = 0
+2026-07-08 21:06:41 0.14.283.986 D load_tensors: layer  24 assigned to device RPC0, is_swa = 0
+2026-07-08 21:06:41 0.14.284.134 D create_tensor: loading tensor token_embd.weight
+2026-07-08 21:06:41 0.14.284.159 D create_tensor: loading tensor output_norm.weight
+2026-07-08 21:06:41 0.14.284.181 D create_tensor: loading tensor token_embd.weight
+2026-07-08 21:06:41 0.14.284.187 D create_tensor: loading tensor blk.0.attn_norm.weight
+2026-07-08 21:06:41 0.14.284.202 D create_tensor: loading tensor blk.0.attn_q.weight
+2026-07-08 21:06:41 0.14.284.208 D create_tensor: loading tensor blk.0.attn_k.weight
+2026-07-08 21:06:41 0.14.284.226 D create_tensor: loading tensor blk.0.attn_v.weight
+2026-07-08 21:06:41 0.14.284.231 D create_tensor: loading tensor blk.0.attn_q.bias
+2026-07-08 21:06:41 0.14.284.235 D create_tensor: loading tensor blk.0.attn_k.bias
+2026-07-08 21:06:41 0.14.284.239 D create_tensor: loading tensor blk.0.attn_v.bias
+2026-07-08 21:06:41 0.14.284.256 D create_tensor: loading tensor blk.0.attn_output.weight
+2026-07-08 21:06:41 0.14.284.262 D create_tensor: loading tensor blk.0.ffn_norm.weight
+2026-07-08 21:06:41 0.14.284.278 D create_tensor: loading tensor blk.0.ffn_gate.weight
+2026-07-08 21:06:41 0.14.284.282 D create_tensor: loading tensor blk.0.ffn_down.weight
+2026-07-08 21:06:41 0.14.284.286 D create_tensor: loading tensor blk.0.ffn_up.weight
+2026-07-08 21:06:41 0.14.284.291 D create_tensor: loading tensor blk.1.attn_norm.weight
+2026-07-08 21:06:41 0.14.284.297 D create_tensor: loading tensor blk.1.attn_q.weight
+2026-07-08 21:06:41 0.14.284.300 D create_tensor: loading tensor blk.1.attn_k.weight
+2026-07-08 21:06:41 0.14.284.304 D create_tensor: loading tensor blk.1.attn_v.weight
+2026-07-08 21:06:41 0.14.284.308 D create_tensor: loading tensor blk.1.attn_q.bias
+2026-07-08 21:06:41 0.14.284.325 D create_tensor: loading tensor blk.1.attn_k.bias
+2026-07-08 21:06:41 0.14.284.329 D create_tensor: loading tensor blk.1.attn_v.bias
+2026-07-08 21:06:41 0.14.284.333 D create_tensor: loading tensor blk.1.attn_output.weight
+2026-07-08 21:06:41 0.14.284.338 D create_tensor: loading tensor blk.1.ffn_norm.weight
+2026-07-08 21:06:41 0.14.284.342 D create_tensor: loading tensor blk.1.ffn_gate.weight
+2026-07-08 21:06:41 0.14.284.346 D create_tensor: loading tensor blk.1.ffn_down.weight
+2026-07-08 21:06:41 0.14.284.351 D create_tensor: loading tensor blk.1.ffn_up.weight
+2026-07-08 21:06:41 0.14.284.358 D create_tensor: loading tensor blk.2.attn_norm.weight
+2026-07-08 21:06:41 0.14.284.363 D create_tensor: loading tensor blk.2.attn_q.weight
+2026-07-08 21:06:41 0.14.284.367 D create_tensor: loading tensor blk.2.attn_k.weight
+2026-07-08 21:06:41 0.14.284.370 D create_tensor: loading tensor blk.2.attn_v.weight
+2026-07-08 21:06:41 0.14.284.373 D create_tensor: loading tensor blk.2.attn_q.bias
+2026-07-08 21:06:41 0.14.284.376 D create_tensor: loading tensor blk.2.attn_k.bias
+2026-07-08 21:06:41 0.14.284.380 D create_tensor: loading tensor blk.2.attn_v.bias
+2026-07-08 21:06:41 0.14.284.383 D create_tensor: loading tensor blk.2.attn_output.weight
+2026-07-08 21:06:41 0.14.284.389 D create_tensor: loading tensor blk.2.ffn_norm.weight
+2026-07-08 21:06:41 0.14.284.394 D create_tensor: loading tensor blk.2.ffn_gate.weight
+2026-07-08 21:06:41 0.14.284.397 D create_tensor: loading tensor blk.2.ffn_down.weight
+2026-07-08 21:06:41 0.14.284.418 D create_tensor: loading tensor blk.2.ffn_up.weight
+2026-07-08 21:06:41 0.14.284.436 D create_tensor: loading tensor blk.3.attn_norm.weight
+2026-07-08 21:06:41 0.14.284.443 D create_tensor: loading tensor blk.3.attn_q.weight
+2026-07-08 21:06:41 0.14.284.447 D create_tensor: loading tensor blk.3.attn_k.weight
+2026-07-08 21:06:41 0.14.284.450 D create_tensor: loading tensor blk.3.attn_v.weight
+2026-07-08 21:06:41 0.14.284.454 D create_tensor: loading tensor blk.3.attn_q.bias
+2026-07-08 21:06:41 0.14.284.458 D create_tensor: loading tensor blk.3.attn_k.bias
+2026-07-08 21:06:41 0.14.284.462 D create_tensor: loading tensor blk.3.attn_v.bias
+2026-07-08 21:06:41 0.14.284.468 D create_tensor: loading tensor blk.3.attn_output.weight
+2026-07-08 21:06:41 0.14.284.472 D create_tensor: loading tensor blk.3.ffn_norm.weight
+2026-07-08 21:06:41 0.14.284.476 D create_tensor: loading tensor blk.3.ffn_gate.weight
+2026-07-08 21:06:41 0.14.284.480 D create_tensor: loading tensor blk.3.ffn_down.weight
+2026-07-08 21:06:41 0.14.284.484 D create_tensor: loading tensor blk.3.ffn_up.weight
+2026-07-08 21:06:41 0.14.284.488 D create_tensor: loading tensor blk.4.attn_norm.weight
+2026-07-08 21:06:41 0.14.284.493 D create_tensor: loading tensor blk.4.attn_q.weight
+2026-07-08 21:06:41 0.14.284.496 D create_tensor: loading tensor blk.4.attn_k.weight
+2026-07-08 21:06:41 0.14.284.500 D create_tensor: loading tensor blk.4.attn_v.weight
+2026-07-08 21:06:41 0.14.284.505 D create_tensor: loading tensor blk.4.attn_q.bias
+2026-07-08 21:06:41 0.14.284.509 D create_tensor: loading tensor blk.4.attn_k.bias
+2026-07-08 21:06:41 0.14.284.513 D create_tensor: loading tensor blk.4.attn_v.bias
+2026-07-08 21:06:41 0.14.284.516 D create_tensor: loading tensor blk.4.attn_output.weight
+2026-07-08 21:06:41 0.14.284.520 D create_tensor: loading tensor blk.4.ffn_norm.weight
+2026-07-08 21:06:41 0.14.284.524 D create_tensor: loading tensor blk.4.ffn_gate.weight
+2026-07-08 21:06:41 0.14.284.527 D create_tensor: loading tensor blk.4.ffn_down.weight
+2026-07-08 21:06:41 0.14.284.530 D create_tensor: loading tensor blk.4.ffn_up.weight
+2026-07-08 21:06:41 0.14.284.534 D create_tensor: loading tensor blk.5.attn_norm.weight
+2026-07-08 21:06:41 0.14.284.538 D create_tensor: loading tensor blk.5.attn_q.weight
+2026-07-08 21:06:41 0.14.284.542 D create_tensor: loading tensor blk.5.attn_k.weight
+2026-07-08 21:06:41 0.14.284.545 D create_tensor: loading tensor blk.5.attn_v.weight
+2026-07-08 21:06:41 0.14.284.549 D create_tensor: loading tensor blk.5.attn_q.bias
+2026-07-08 21:06:41 0.14.284.552 D create_tensor: loading tensor blk.5.attn_k.bias
+2026-07-08 21:06:41 0.14.284.555 D create_tensor: loading tensor blk.5.attn_v.bias
+2026-07-08 21:06:41 0.14.284.559 D create_tensor: loading tensor blk.5.attn_output.weight
+2026-07-08 21:06:41 0.14.284.562 D create_tensor: loading tensor blk.5.ffn_norm.weight
+2026-07-08 21:06:41 0.14.284.567 D create_tensor: loading tensor blk.5.ffn_gate.weight
+2026-07-08 21:06:41 0.14.284.570 D create_tensor: loading tensor blk.5.ffn_down.weight
+2026-07-08 21:06:41 0.14.284.574 D create_tensor: loading tensor blk.5.ffn_up.weight
+2026-07-08 21:06:41 0.14.284.579 D create_tensor: loading tensor blk.6.attn_norm.weight
+2026-07-08 21:06:41 0.14.284.584 D create_tensor: loading tensor blk.6.attn_q.weight
+2026-07-08 21:06:41 0.14.284.588 D create_tensor: loading tensor blk.6.attn_k.weight
+2026-07-08 21:06:41 0.14.284.591 D create_tensor: loading tensor blk.6.attn_v.weight
+2026-07-08 21:06:41 0.14.284.595 D create_tensor: loading tensor blk.6.attn_q.bias
+2026-07-08 21:06:41 0.14.284.602 D create_tensor: loading tensor blk.6.attn_k.bias
+2026-07-08 21:06:41 0.14.284.606 D create_tensor: loading tensor blk.6.attn_v.bias
+2026-07-08 21:06:41 0.14.284.609 D create_tensor: loading tensor blk.6.attn_output.weight
+2026-07-08 21:06:41 0.14.284.614 D create_tensor: loading tensor blk.6.ffn_norm.weight
+2026-07-08 21:06:41 0.14.284.617 D create_tensor: loading tensor blk.6.ffn_gate.weight
+2026-07-08 21:06:41 0.14.284.621 D create_tensor: loading tensor blk.6.ffn_down.weight
+2026-07-08 21:06:41 0.14.284.624 D create_tensor: loading tensor blk.6.ffn_up.weight
+2026-07-08 21:06:41 0.14.284.627 D create_tensor: loading tensor blk.7.attn_norm.weight
+2026-07-08 21:06:41 0.14.284.631 D create_tensor: loading tensor blk.7.attn_q.weight
+2026-07-08 21:06:41 0.14.284.637 D create_tensor: loading tensor blk.7.attn_k.weight
+2026-07-08 21:06:41 0.14.284.641 D create_tensor: loading tensor blk.7.attn_v.weight
+2026-07-08 21:06:41 0.14.284.644 D create_tensor: loading tensor blk.7.attn_q.bias
+2026-07-08 21:06:41 0.14.284.648 D create_tensor: loading tensor blk.7.attn_k.bias
+2026-07-08 21:06:41 0.14.284.651 D create_tensor: loading tensor blk.7.attn_v.bias
+2026-07-08 21:06:41 0.14.284.654 D create_tensor: loading tensor blk.7.attn_output.weight
+2026-07-08 21:06:41 0.14.284.660 D create_tensor: loading tensor blk.7.ffn_norm.weight
+2026-07-08 21:06:41 0.14.284.677 D create_tensor: loading tensor blk.7.ffn_gate.weight
+2026-07-08 21:06:41 0.14.284.681 D create_tensor: loading tensor blk.7.ffn_down.weight
+2026-07-08 21:06:41 0.14.284.685 D create_tensor: loading tensor blk.7.ffn_up.weight
+2026-07-08 21:06:41 0.14.284.689 D create_tensor: loading tensor blk.8.attn_norm.weight
+2026-07-08 21:06:41 0.14.284.697 D create_tensor: loading tensor blk.8.attn_q.weight
+2026-07-08 21:06:41 0.14.284.700 D create_tensor: loading tensor blk.8.attn_k.weight
+2026-07-08 21:06:41 0.14.284.704 D create_tensor: loading tensor blk.8.attn_v.weight
+2026-07-08 21:06:41 0.14.284.709 D create_tensor: loading tensor blk.8.attn_q.bias
+2026-07-08 21:06:41 0.14.284.713 D create_tensor: loading tensor blk.8.attn_k.bias
+2026-07-08 21:06:41 0.14.284.716 D create_tensor: loading tensor blk.8.attn_v.bias
+2026-07-08 21:06:41 0.14.284.720 D create_tensor: loading tensor blk.8.attn_output.weight
+2026-07-08 21:06:41 0.14.284.723 D create_tensor: loading tensor blk.8.ffn_norm.weight
+2026-07-08 21:06:41 0.14.284.727 D create_tensor: loading tensor blk.8.ffn_gate.weight
+2026-07-08 21:06:41 0.14.284.730 D create_tensor: loading tensor blk.8.ffn_down.weight
+2026-07-08 21:06:41 0.14.284.733 D create_tensor: loading tensor blk.8.ffn_up.weight
+2026-07-08 21:06:41 0.14.284.737 D create_tensor: loading tensor blk.9.attn_norm.weight
+2026-07-08 21:06:41 0.14.284.742 D create_tensor: loading tensor blk.9.attn_q.weight
+2026-07-08 21:06:41 0.14.284.747 D create_tensor: loading tensor blk.9.attn_k.weight
+2026-07-08 21:06:41 0.14.284.751 D create_tensor: loading tensor blk.9.attn_v.weight
+2026-07-08 21:06:41 0.14.284.755 D create_tensor: loading tensor blk.9.attn_q.bias
+2026-07-08 21:06:41 0.14.284.758 D create_tensor: loading tensor blk.9.attn_k.bias
+2026-07-08 21:06:41 0.14.284.763 D create_tensor: loading tensor blk.9.attn_v.bias
+2026-07-08 21:06:41 0.14.284.766 D create_tensor: loading tensor blk.9.attn_output.weight
+2026-07-08 21:06:41 0.14.284.770 D create_tensor: loading tensor blk.9.ffn_norm.weight
+2026-07-08 21:06:41 0.14.284.774 D create_tensor: loading tensor blk.9.ffn_gate.weight
+2026-07-08 21:06:41 0.14.284.781 D create_tensor: loading tensor blk.9.ffn_down.weight
+2026-07-08 21:06:41 0.14.284.784 D create_tensor: loading tensor blk.9.ffn_up.weight
+2026-07-08 21:06:41 0.14.284.789 D create_tensor: loading tensor blk.10.attn_norm.weight
+2026-07-08 21:06:41 0.14.284.794 D create_tensor: loading tensor blk.10.attn_q.weight
+2026-07-08 21:06:41 0.14.284.798 D create_tensor: loading tensor blk.10.attn_k.weight
+2026-07-08 21:06:41 0.14.284.802 D create_tensor: loading tensor blk.10.attn_v.weight
+2026-07-08 21:06:41 0.14.284.805 D create_tensor: loading tensor blk.10.attn_q.bias
+2026-07-08 21:06:41 0.14.284.811 D create_tensor: loading tensor blk.10.attn_k.bias
+2026-07-08 21:06:41 0.14.284.815 D create_tensor: loading tensor blk.10.attn_v.bias
+2026-07-08 21:06:41 0.14.284.818 D create_tensor: loading tensor blk.10.attn_output.weight
+2026-07-08 21:06:41 0.14.284.822 D create_tensor: loading tensor blk.10.ffn_norm.weight
+2026-07-08 21:06:41 0.14.284.825 D create_tensor: loading tensor blk.10.ffn_gate.weight
+2026-07-08 21:06:41 0.14.284.829 D create_tensor: loading tensor blk.10.ffn_down.weight
+2026-07-08 21:06:41 0.14.284.833 D create_tensor: loading tensor blk.10.ffn_up.weight
+2026-07-08 21:06:41 0.14.284.836 D create_tensor: loading tensor blk.11.attn_norm.weight
+2026-07-08 21:06:41 0.14.284.840 D create_tensor: loading tensor blk.11.attn_q.weight
+2026-07-08 21:06:41 0.14.284.843 D create_tensor: loading tensor blk.11.attn_k.weight
+2026-07-08 21:06:41 0.14.284.846 D create_tensor: loading tensor blk.11.attn_v.weight
+2026-07-08 21:06:41 0.14.284.849 D create_tensor: loading tensor blk.11.attn_q.bias
+2026-07-08 21:06:41 0.14.284.852 D create_tensor: loading tensor blk.11.attn_k.bias
+2026-07-08 21:06:41 0.14.284.855 D create_tensor: loading tensor blk.11.attn_v.bias
+2026-07-08 21:06:41 0.14.284.857 D create_tensor: loading tensor blk.11.attn_output.weight
+2026-07-08 21:06:41 0.14.284.860 D create_tensor: loading tensor blk.11.ffn_norm.weight
+2026-07-08 21:06:41 0.14.284.863 D create_tensor: loading tensor blk.11.ffn_gate.weight
+2026-07-08 21:06:41 0.14.284.866 D create_tensor: loading tensor blk.11.ffn_down.weight
+2026-07-08 21:06:41 0.14.284.869 D create_tensor: loading tensor blk.11.ffn_up.weight
+2026-07-08 21:06:41 0.14.284.872 D create_tensor: loading tensor blk.12.attn_norm.weight
+2026-07-08 21:06:41 0.14.284.876 D create_tensor: loading tensor blk.12.attn_q.weight
+2026-07-08 21:06:41 0.14.284.878 D create_tensor: loading tensor blk.12.attn_k.weight
+2026-07-08 21:06:41 0.14.284.882 D create_tensor: loading tensor blk.12.attn_v.weight
+2026-07-08 21:06:41 0.14.284.886 D create_tensor: loading tensor blk.12.attn_q.bias
+2026-07-08 21:06:41 0.14.284.889 D create_tensor: loading tensor blk.12.attn_k.bias
+2026-07-08 21:06:41 0.14.284.893 D create_tensor: loading tensor blk.12.attn_v.bias
+2026-07-08 21:06:41 0.14.284.896 D create_tensor: loading tensor blk.12.attn_output.weight
+2026-07-08 21:06:41 0.14.284.899 D create_tensor: loading tensor blk.12.ffn_norm.weight
+2026-07-08 21:06:41 0.14.284.902 D create_tensor: loading tensor blk.12.ffn_gate.weight
+2026-07-08 21:06:41 0.14.284.904 D create_tensor: loading tensor blk.12.ffn_down.weight
+2026-07-08 21:06:41 0.14.284.907 D create_tensor: loading tensor blk.12.ffn_up.weight
+2026-07-08 21:06:41 0.14.284.910 D create_tensor: loading tensor blk.13.attn_norm.weight
+2026-07-08 21:06:41 0.14.284.914 D create_tensor: loading tensor blk.13.attn_q.weight
+2026-07-08 21:06:41 0.14.284.916 D create_tensor: loading tensor blk.13.attn_k.weight
+2026-07-08 21:06:41 0.14.284.919 D create_tensor: loading tensor blk.13.attn_v.weight
+2026-07-08 21:06:41 0.14.284.922 D create_tensor: loading tensor blk.13.attn_q.bias
+2026-07-08 21:06:41 0.14.284.925 D create_tensor: loading tensor blk.13.attn_k.bias
+2026-07-08 21:06:41 0.14.284.927 D create_tensor: loading tensor blk.13.attn_v.bias
+2026-07-08 21:06:41 0.14.284.930 D create_tensor: loading tensor blk.13.attn_output.weight
+2026-07-08 21:06:41 0.14.284.933 D create_tensor: loading tensor blk.13.ffn_norm.weight
+2026-07-08 21:06:41 0.14.284.935 D create_tensor: loading tensor blk.13.ffn_gate.weight
+2026-07-08 21:06:41 0.14.284.938 D create_tensor: loading tensor blk.13.ffn_down.weight
+2026-07-08 21:06:41 0.14.284.941 D create_tensor: loading tensor blk.13.ffn_up.weight
+2026-07-08 21:06:41 0.14.284.945 D create_tensor: loading tensor blk.14.attn_norm.weight
+2026-07-08 21:06:41 0.14.284.950 D create_tensor: loading tensor blk.14.attn_q.weight
+2026-07-08 21:06:41 0.14.284.952 D create_tensor: loading tensor blk.14.attn_k.weight
+2026-07-08 21:06:41 0.14.284.955 D create_tensor: loading tensor blk.14.attn_v.weight
+2026-07-08 21:06:41 0.14.284.958 D create_tensor: loading tensor blk.14.attn_q.bias
+2026-07-08 21:06:41 0.14.284.961 D create_tensor: loading tensor blk.14.attn_k.bias
+2026-07-08 21:06:41 0.14.284.964 D create_tensor: loading tensor blk.14.attn_v.bias
+2026-07-08 21:06:41 0.14.284.968 D create_tensor: loading tensor blk.14.attn_output.weight
+2026-07-08 21:06:41 0.14.284.971 D create_tensor: loading tensor blk.14.ffn_norm.weight
+2026-07-08 21:06:41 0.14.284.973 D create_tensor: loading tensor blk.14.ffn_gate.weight
+2026-07-08 21:06:41 0.14.284.976 D create_tensor: loading tensor blk.14.ffn_down.weight
+2026-07-08 21:06:41 0.14.284.979 D create_tensor: loading tensor blk.14.ffn_up.weight
+2026-07-08 21:06:41 0.14.284.982 D create_tensor: loading tensor blk.15.attn_norm.weight
+2026-07-08 21:06:41 0.14.284.986 D create_tensor: loading tensor blk.15.attn_q.weight
+2026-07-08 21:06:41 0.14.284.989 D create_tensor: loading tensor blk.15.attn_k.weight
+2026-07-08 21:06:41 0.14.284.992 D create_tensor: loading tensor blk.15.attn_v.weight
+2026-07-08 21:06:41 0.14.284.995 D create_tensor: loading tensor blk.15.attn_q.bias
+2026-07-08 21:06:41 0.14.284.997 D create_tensor: loading tensor blk.15.attn_k.bias
+2026-07-08 21:06:41 0.14.285.000 D create_tensor: loading tensor blk.15.attn_v.bias
+2026-07-08 21:06:41 0.14.285.003 D create_tensor: loading tensor blk.15.attn_output.weight
+2026-07-08 21:06:41 0.14.285.008 D create_tensor: loading tensor blk.15.ffn_norm.weight
+2026-07-08 21:06:41 0.14.285.010 D create_tensor: loading tensor blk.15.ffn_gate.weight
+2026-07-08 21:06:41 0.14.285.013 D create_tensor: loading tensor blk.15.ffn_down.weight
+2026-07-08 21:06:41 0.14.285.016 D create_tensor: loading tensor blk.15.ffn_up.weight
+2026-07-08 21:06:41 0.14.285.019 D create_tensor: loading tensor blk.16.attn_norm.weight
+2026-07-08 21:06:41 0.14.285.024 D create_tensor: loading tensor blk.16.attn_q.weight
+2026-07-08 21:06:41 0.14.285.026 D create_tensor: loading tensor blk.16.attn_k.weight
+2026-07-08 21:06:41 0.14.285.029 D create_tensor: loading tensor blk.16.attn_v.weight
+2026-07-08 21:06:41 0.14.285.032 D create_tensor: loading tensor blk.16.attn_q.bias
+2026-07-08 21:06:41 0.14.285.035 D create_tensor: loading tensor blk.16.attn_k.bias
+2026-07-08 21:06:41 0.14.285.038 D create_tensor: loading tensor blk.16.attn_v.bias
+2026-07-08 21:06:41 0.14.285.040 D create_tensor: loading tensor blk.16.attn_output.weight
+2026-07-08 21:06:41 0.14.285.043 D create_tensor: loading tensor blk.16.ffn_norm.weight
+2026-07-08 21:06:41 0.14.285.047 D create_tensor: loading tensor blk.16.ffn_gate.weight
+2026-07-08 21:06:41 0.14.285.050 D create_tensor: loading tensor blk.16.ffn_down.weight
+2026-07-08 21:06:41 0.14.285.053 D create_tensor: loading tensor blk.16.ffn_up.weight
+2026-07-08 21:06:41 0.14.285.056 D create_tensor: loading tensor blk.17.attn_norm.weight
+2026-07-08 21:06:41 0.14.285.060 D create_tensor: loading tensor blk.17.attn_q.weight
+2026-07-08 21:06:41 0.14.285.064 D create_tensor: loading tensor blk.17.attn_k.weight
+2026-07-08 21:06:41 0.14.285.067 D create_tensor: loading tensor blk.17.attn_v.weight
+2026-07-08 21:06:41 0.14.285.074 D create_tensor: loading tensor blk.17.attn_q.bias
+2026-07-08 21:06:41 0.14.285.077 D create_tensor: loading tensor blk.17.attn_k.bias
+2026-07-08 21:06:41 0.14.285.080 D create_tensor: loading tensor blk.17.attn_v.bias
+2026-07-08 21:06:41 0.14.285.083 D create_tensor: loading tensor blk.17.attn_output.weight
+2026-07-08 21:06:41 0.14.285.086 D create_tensor: loading tensor blk.17.ffn_norm.weight
+2026-07-08 21:06:41 0.14.285.088 D create_tensor: loading tensor blk.17.ffn_gate.weight
+2026-07-08 21:06:41 0.14.285.091 D create_tensor: loading tensor blk.17.ffn_down.weight
+2026-07-08 21:06:41 0.14.285.094 D create_tensor: loading tensor blk.17.ffn_up.weight
+2026-07-08 21:06:41 0.14.285.097 D create_tensor: loading tensor blk.18.attn_norm.weight
+2026-07-08 21:06:41 0.14.285.101 D create_tensor: loading tensor blk.18.attn_q.weight
+2026-07-08 21:06:41 0.14.285.104 D create_tensor: loading tensor blk.18.attn_k.weight
+2026-07-08 21:06:41 0.14.285.107 D create_tensor: loading tensor blk.18.attn_v.weight
+2026-07-08 21:06:41 0.14.285.110 D create_tensor: loading tensor blk.18.attn_q.bias
+2026-07-08 21:06:41 0.14.285.113 D create_tensor: loading tensor blk.18.attn_k.bias
+2026-07-08 21:06:41 0.14.285.116 D create_tensor: loading tensor blk.18.attn_v.bias
+2026-07-08 21:06:41 0.14.285.118 D create_tensor: loading tensor blk.18.attn_output.weight
+2026-07-08 21:06:41 0.14.285.121 D create_tensor: loading tensor blk.18.ffn_norm.weight
+2026-07-08 21:06:41 0.14.285.124 D create_tensor: loading tensor blk.18.ffn_gate.weight
+2026-07-08 21:06:41 0.14.285.128 D create_tensor: loading tensor blk.18.ffn_down.weight
+2026-07-08 21:06:41 0.14.285.131 D create_tensor: loading tensor blk.18.ffn_up.weight
+2026-07-08 21:06:41 0.14.285.134 D create_tensor: loading tensor blk.19.attn_norm.weight
+2026-07-08 21:06:41 0.14.285.138 D create_tensor: loading tensor blk.19.attn_q.weight
+2026-07-08 21:06:41 0.14.285.141 D create_tensor: loading tensor blk.19.attn_k.weight
+2026-07-08 21:06:41 0.14.285.144 D create_tensor: loading tensor blk.19.attn_v.weight
+2026-07-08 21:06:41 0.14.285.147 D create_tensor: loading tensor blk.19.attn_q.bias
+2026-07-08 21:06:41 0.14.285.152 D create_tensor: loading tensor blk.19.attn_k.bias
+2026-07-08 21:06:41 0.14.285.155 D create_tensor: loading tensor blk.19.attn_v.bias
+2026-07-08 21:06:41 0.14.285.157 D create_tensor: loading tensor blk.19.attn_output.weight
+2026-07-08 21:06:41 0.14.285.160 D create_tensor: loading tensor blk.19.ffn_norm.weight
+2026-07-08 21:06:41 0.14.285.163 D create_tensor: loading tensor blk.19.ffn_gate.weight
+2026-07-08 21:06:41 0.14.285.167 D create_tensor: loading tensor blk.19.ffn_down.weight
+2026-07-08 21:06:41 0.14.285.172 D create_tensor: loading tensor blk.19.ffn_up.weight
+2026-07-08 21:06:41 0.14.285.175 D create_tensor: loading tensor blk.20.attn_norm.weight
+2026-07-08 21:06:41 0.14.285.179 D create_tensor: loading tensor blk.20.attn_q.weight
+2026-07-08 21:06:41 0.14.285.182 D create_tensor: loading tensor blk.20.attn_k.weight
+2026-07-08 21:06:41 0.14.285.187 D create_tensor: loading tensor blk.20.attn_v.weight
+2026-07-08 21:06:41 0.14.285.190 D create_tensor: loading tensor blk.20.attn_q.bias
+2026-07-08 21:06:41 0.14.285.194 D create_tensor: loading tensor blk.20.attn_k.bias
+2026-07-08 21:06:41 0.14.285.197 D create_tensor: loading tensor blk.20.attn_v.bias
+2026-07-08 21:06:41 0.14.285.200 D create_tensor: loading tensor blk.20.attn_output.weight
+2026-07-08 21:06:41 0.14.285.203 D create_tensor: loading tensor blk.20.ffn_norm.weight
+2026-07-08 21:06:41 0.14.285.205 D create_tensor: loading tensor blk.20.ffn_gate.weight
+2026-07-08 21:06:41 0.14.285.208 D create_tensor: loading tensor blk.20.ffn_down.weight
+2026-07-08 21:06:41 0.14.285.211 D create_tensor: loading tensor blk.20.ffn_up.weight
+2026-07-08 21:06:41 0.14.285.214 D create_tensor: loading tensor blk.21.attn_norm.weight
+2026-07-08 21:06:41 0.14.285.218 D create_tensor: loading tensor blk.21.attn_q.weight
+2026-07-08 21:06:41 0.14.285.221 D create_tensor: loading tensor blk.21.attn_k.weight
+2026-07-08 21:06:41 0.14.285.224 D create_tensor: loading tensor blk.21.attn_v.weight
+2026-07-08 21:06:41 0.14.285.227 D create_tensor: loading tensor blk.21.attn_q.bias
+2026-07-08 21:06:41 0.14.285.230 D create_tensor: loading tensor blk.21.attn_k.bias
+2026-07-08 21:06:41 0.14.285.233 D create_tensor: loading tensor blk.21.attn_v.bias
+2026-07-08 21:06:41 0.14.285.236 D create_tensor: loading tensor blk.21.attn_output.weight
+2026-07-08 21:06:41 0.14.285.239 D create_tensor: loading tensor blk.21.ffn_norm.weight
+2026-07-08 21:06:41 0.14.285.243 D create_tensor: loading tensor blk.21.ffn_gate.weight
+2026-07-08 21:06:41 0.14.285.247 D create_tensor: loading tensor blk.21.ffn_down.weight
+2026-07-08 21:06:41 0.14.285.250 D create_tensor: loading tensor blk.21.ffn_up.weight
+2026-07-08 21:06:41 0.14.285.256 D create_tensor: loading tensor blk.22.attn_norm.weight
+2026-07-08 21:06:41 0.14.285.260 D create_tensor: loading tensor blk.22.attn_q.weight
+2026-07-08 21:06:41 0.14.285.263 D create_tensor: loading tensor blk.22.attn_k.weight
+2026-07-08 21:06:41 0.14.285.266 D create_tensor: loading tensor blk.22.attn_v.weight
+2026-07-08 21:06:41 0.14.285.269 D create_tensor: loading tensor blk.22.attn_q.bias
+2026-07-08 21:06:41 0.14.285.273 D create_tensor: loading tensor blk.22.attn_k.bias
+2026-07-08 21:06:41 0.14.285.276 D create_tensor: loading tensor blk.22.attn_v.bias
+2026-07-08 21:06:41 0.14.285.279 D create_tensor: loading tensor blk.22.attn_output.weight
+2026-07-08 21:06:41 0.14.285.282 D create_tensor: loading tensor blk.22.ffn_norm.weight
+2026-07-08 21:06:41 0.14.285.285 D create_tensor: loading tensor blk.22.ffn_gate.weight
+2026-07-08 21:06:41 0.14.285.288 D create_tensor: loading tensor blk.22.ffn_down.weight
+2026-07-08 21:06:41 0.14.285.293 D create_tensor: loading tensor blk.22.ffn_up.weight
+2026-07-08 21:06:41 0.14.285.297 D create_tensor: loading tensor blk.23.attn_norm.weight
+2026-07-08 21:06:41 0.14.285.302 D create_tensor: loading tensor blk.23.attn_q.weight
+2026-07-08 21:06:41 0.14.285.305 D create_tensor: loading tensor blk.23.attn_k.weight
+2026-07-08 21:06:41 0.14.285.308 D create_tensor: loading tensor blk.23.attn_v.weight
+2026-07-08 21:06:41 0.14.285.312 D create_tensor: loading tensor blk.23.attn_q.bias
+2026-07-08 21:06:41 0.14.285.316 D create_tensor: loading tensor blk.23.attn_k.bias
+2026-07-08 21:06:41 0.14.285.319 D create_tensor: loading tensor blk.23.attn_v.bias
+2026-07-08 21:06:41 0.14.285.323 D create_tensor: loading tensor blk.23.attn_output.weight
+2026-07-08 21:06:41 0.14.285.326 D create_tensor: loading tensor blk.23.ffn_norm.weight
+2026-07-08 21:06:41 0.14.285.333 D create_tensor: loading tensor blk.23.ffn_gate.weight
+2026-07-08 21:06:41 0.14.285.336 D create_tensor: loading tensor blk.23.ffn_down.weight
+2026-07-08 21:06:41 0.14.285.342 D create_tensor: loading tensor blk.23.ffn_up.weight
+2026-07-08 21:06:41 0.14.285.686 D done_getting_tensors: tensor 'token_embd.weight' (q8_0) (and 105 others) cannot be used with preferred buffer type CPU_REPACK, using CPU instead
+2026-07-08 21:06:41 0.14.307.472 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:41 0.14.317.377 D [~impl] closing socket 5
+2026-07-08 21:06:41 0.14.328.746 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:41 0.14.335.103 D [~impl] closing socket 5
+2026-07-08 21:06:41 0.14.347.616 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:41 0.14.353.254 D [~impl] closing socket 5
+2026-07-08 21:06:41 0.14.367.978 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:41 0.14.377.819 D [~impl] closing socket 5
+2026-07-08 21:06:41 0.14.389.509 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:41 0.14.396.908 D [~impl] closing socket 5
+2026-07-08 21:06:41 0.14.407.639 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:41 0.14.414.984 D [~impl] closing socket 5
+2026-07-08 21:06:41 0.14.426.442 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:41 0.14.431.879 D [~impl] closing socket 5
+2026-07-08 21:06:41 0.14.442.697 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:41 0.14.448.662 D [~impl] closing socket 5
+2026-07-08 21:06:41 0.14.459.241 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:41 0.14.465.018 D [~impl] closing socket 5
+2026-07-08 21:06:41 0.14.476.443 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:41 0.14.481.169 D [~impl] closing socket 5
+2026-07-08 21:06:41 0.14.495.763 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:41 0.14.501.487 D [~impl] closing socket 5
+2026-07-08 21:06:41 0.14.512.914 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:41 0.14.523.925 D [~impl] closing socket 5
+2026-07-08 21:06:41 0.14.536.404 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:41 0.14.541.769 D [~impl] closing socket 5
+2026-07-08 21:06:41 0.14.551.576 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:41 0.14.556.523 D [~impl] closing socket 5
+2026-07-08 21:06:41 0.14.566.696 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:41 0.14.572.479 D [~impl] closing socket 5
+2026-07-08 21:06:41 0.14.586.825 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:41 0.14.595.142 D [~impl] closing socket 5
+2026-07-08 21:06:41 0.14.605.281 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:41 0.14.611.940 D [~impl] closing socket 5
+2026-07-08 21:06:41 0.14.625.218 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:41 0.14.630.380 D [~impl] closing socket 5
+2026-07-08 21:06:41 0.14.640.870 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:41 0.14.656.173 D [~impl] closing socket 5
+2026-07-08 21:06:41 0.14.667.448 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:41 0.14.674.358 D [~impl] closing socket 5
+2026-07-08 21:06:41 0.14.686.607 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:41 0.14.693.164 D [~impl] closing socket 5
+2026-07-08 21:06:41 0.14.707.023 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:41 0.14.716.819 D [~impl] closing socket 5
+2026-07-08 21:06:41 0.14.728.242 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:41 0.14.735.990 D [~impl] closing socket 5
+2026-07-08 21:06:41 0.14.748.017 D [get_socket] connected to 192.168.1.7:50052
+2026-07-08 21:06:42 0.15.233.310 I load_tensors: offloading output layer to GPU
+2026-07-08 21:06:42 0.15.233.344 I load_tensors: offloading 3 repeating layers to GPU
+2026-07-08 21:06:42 0.15.233.345 I load_tensors: offloaded 4/25 layers to GPU
+2026-07-08 21:06:42 0.15.233.353 I load_tensors:   CPU_Mapped model buffer size =   330.10 MiB
+2026-07-08 21:06:42 0.15.233.355 I load_tensors:   CPU_REPACK model buffer size =   167.96 MiB
+2026-07-08 21:06:42 0.15.233.357 I load_tensors: RPC0[192.168.1.7:50052] model buffer size =   161.97 MiB
+2026-07-08 21:06:42 .0.15.233.622 D repack: repack tensor blk.0.attn_q.weight with q4_0_8x8
+2026-07-08 21:06:42 0.15.234.126 D repack: repack tensor blk.0.attn_k.weight with q4_0_8x8
+2026-07-08 21:06:42 0.15.234.216 D repack: repack tensor blk.0.attn_v.weight with q4_0_8x8
+2026-07-08 21:06:42 0.15.234.297 D repack: repack tensor blk.0.attn_output.weight with q4_0_8x8
+2026-07-08 21:06:42 0.15.234.725 D repack: repack tensor blk.0.ffn_gate.weight with q4_0_8x8
+2026-07-08 21:06:42 .0.15.236.770 D repack: repack tensor blk.0.ffn_down.weight with q4_0_8x8
+2026-07-08 21:06:42 0.15.238.684 D repack: repack tensor blk.0.ffn_up.weight with q4_0_8x8
+2026-07-08 21:06:42 .0.15.242.974 D repack: repack tensor blk.1.attn_q.weight with q4_0_8x8
+2026-07-08 21:06:42 0.15.243.487 D repack: repack tensor blk.1.attn_k.weight with q4_0_8x8
+2026-07-08 21:06:42 0.15.243.640 D repack: repack tensor blk.1.attn_v.weight with q4_0_8x8
+2026-07-08 21:06:42 0.15.243.753 D repack: repack tensor blk.1.attn_output.weight with q4_0_8x8
+2026-07-08 21:06:42 0.15.244.218 D repack: repack tensor blk.1.ffn_gate.weight with q4_0_8x8
+2026-07-08 21:06:42 0.15.246.018 D repack: repack tensor blk.1.ffn_down.weight with q4_0_8x8
+2026-07-08 21:06:42 .0.15.247.773 D repack: repack tensor blk.1.ffn_up.weight with q4_0_8x8
+2026-07-08 21:06:42 0.15.249.548 D repack: repack tensor blk.2.attn_q.weight with q4_0_8x8
+2026-07-08 21:06:42 .0.15.249.893 D repack: repack tensor blk.2.attn_k.weight with q4_0_8x8
+2026-07-08 21:06:42 0.15.249.940 D repack: repack tensor blk.2.attn_v.weight with q4_0_8x8
+2026-07-08 21:06:42 0.15.250.003 D repack: repack tensor blk.2.attn_output.weight with q4_0_8x8
+2026-07-08 21:06:42 0.15.250.325 D repack: repack tensor blk.2.ffn_gate.weight with q4_0_8x8
+2026-07-08 21:06:42 0.15.252.047 D repack: repack tensor blk.2.ffn_down.weight with q4_0_8x8
+2026-07-08 21:06:42 .0.15.253.767 D repack: repack tensor blk.2.ffn_up.weight with q4_0_8x8
+2026-07-08 21:06:42 0.15.256.022 D repack: repack tensor blk.3.attn_q.weight with q4_0_8x8
+2026-07-08 21:06:42 0.15.256.508 D repack: repack tensor blk.3.attn_k.weight with q4_0_8x8
+2026-07-08 21:06:42 0.15.256.569 D repack: repack tensor blk.3.attn_v.weight with q4_0_8x8
+2026-07-08 21:06:42 0.15.256.617 D repack: repack tensor blk.3.attn_output.weight with q4_0_8x8
+2026-07-08 21:06:42 0.15.256.957 D repack: repack tensor blk.3.ffn_gate.weight with q4_0_8x8
+2026-07-08 21:06:42 .0.15.258.653 D repack: repack tensor blk.3.ffn_down.weight with q4_0_8x8
+2026-07-08 21:06:42 0.15.260.382 D repack: repack tensor blk.3.ffn_up.weight with q4_0_8x8
+2026-07-08 21:06:42 .0.15.263.532 D repack: repack tensor blk.4.attn_q.weight with q4_0_8x8
+2026-07-08 21:06:42 0.15.263.895 D repack: repack tensor blk.4.attn_k.weight with q4_0_8x8
+2026-07-08 21:06:42 0.15.263.956 D repack: repack tensor blk.4.attn_v.weight with q4_0_8x8
+2026-07-08 21:06:42 0.15.264.010 D repack: repack tensor blk.4.attn_output.weight with q4_0_8x8
+2026-07-08 21:06:42 0.15.264.378 D repack: repack tensor blk.4.ffn_gate.weight with q4_0_8x8
+2026-07-08 21:06:42 .0.15.266.209 D repack: repack tensor blk.4.ffn_down.weight with q4_0_8x8
+2026-07-08 21:06:42 0.15.267.869 D repack: repack tensor blk.4.ffn_up.weight with q4_0_8x8
+2026-07-08 21:06:42 .0.15.269.893 D repack: repack tensor blk.5.attn_q.weight with q4_0_8x8
+2026-07-08 21:06:42 0.15.270.233 D repack: repack tensor blk.5.attn_k.weight with q4_0_8x8
+2026-07-08 21:06:42 0.15.270.365 D repack: repack tensor blk.5.attn_v.weight with q4_0_8x8
+2026-07-08 21:06:42 0.15.270.762 D repack: repack tensor blk.5.attn_output.weight with q4_0_8x8
+2026-07-08 21:06:42 0.15.271.169 D repack: repack tensor blk.5.ffn_gate.weight with q4_0_8x8
+2026-07-08 21:06:42 0.15.272.903 D repack: repack tensor blk.5.ffn_down.weight with q4_0_8x8
+2026-07-08 21:06:42 .0.15.274.549 D repack: repack tensor blk.5.ffn_up.weight with q4_0_8x8
+2026-07-08 21:06:42 0.15.276.290 D repack: repack tensor blk.6.attn_q.weight with q4_0_8x8
+2026-07-08 21:06:42 0.15.276.679 D repack: repack tensor blk.6.attn_k.weight with q4_0_8x8
+2026-07-08 21:06:42 0.15.276.773 D repack: repack tensor blk.6.attn_v.weight with q4_0_8x8
+2026-07-08 21:06:42 0.15.276.845 D repack: repack tensor blk.6.attn_output.weight with q4_0_8x8
+2026-07-08 21:06:42 0.15.277.368 D repack: repack tensor blk.6.ffn_gate.weight with q4_0_8x8
+2026-07-08 21:06:42 .0.15.279.812 D repack: repack tensor blk.6.ffn_down.weight with q4_0_8x8
+2026-07-08 21:06:42 0.15.281.451 D repack: repack tensor blk.6.ffn_up.weight with q4_0_8x8
+2026-07-08 21:06:42 .0.15.283.284 D repack: repack tensor blk.7.attn_q.weight with q4_0_8x8
+2026-07-08 21:06:42 0.15.283.615 D repack: repack tensor blk.7.attn_k.weight with q4_0_8x8
+2026-07-08 21:06:42 0.15.283.679 D repack: repack tensor blk.7.attn_v.weight with q4_0_8x8
+2026-07-08 21:06:42 0.15.283.739 D repack: repack tensor blk.7.attn_output.weight with q4_0_8x8
+2026-07-08 21:06:42 0.15.284.070 D repack: repack tensor blk.7.ffn_gate.weight with q4_0_8x8
+2026-07-08 21:06:42 .0.15.286.000 D repack: repack tensor blk.7.ffn_down.weight with q4_0_8x8
+2026-07-08 21:06:42 0.15.287.643 D repack: repack tensor blk.7.ffn_up.weight with q4_0_8x8
+2026-07-08 21:06:42 .0.15.289.420 D repack: repack tensor blk.8.attn_q.weight with q4_0_8x8
+2026-07-08 21:06:42 0.15.289.742 D repack: repack tensor blk.8.attn_k.weight with q4_0_8x8
+2026-07-08 21:06:42 0.15.289.803 D repack: repack tensor blk.8.attn_v.weight with q4_0_8x8
+2026-07-08 21:06:42 0.15.289.871 D repack: repack tensor blk.8.attn_output.weight with q4_0_8x8
+2026-07-08 21:06:42 0.15.290.200 D repack: repack tensor blk.8.ffn_gate.weight with q4_0_8x8
+2026-07-08 21:06:42 0.15.291.910 D repack: repack tensor blk.8.ffn_down.weight with q4_0_8x8
+2026-07-08 21:06:42 .0.15.293.759 D repack: repack tensor blk.8.ffn_up.weight with q4_0_8x8
+2026-07-08 21:06:42 0.15.296.103 D repack: repack tensor blk.9.attn_q.weight with q4_0_8x8
+2026-07-08 21:06:42 0.15.296.431 D repack: repack tensor blk.9.attn_k.weight with q4_0_8x8
+2026-07-08 21:06:42 .0.15.296.505 D repack: repack tensor blk.9.attn_v.weight with q4_0_8x8
+2026-07-08 21:06:42 0.15.296.555 D repack: repack tensor blk.9.attn_output.weight with q4_0_8x8
+2026-07-08 21:06:42 0.15.296.878 D repack: repack tensor blk.9.ffn_gate.weight with q4_0_8x8
+2026-07-08 21:06:42 0.15.298.575 D repack: repack tensor blk.9.ffn_down.weight with q4_0_8x8
+2026-07-08 21:06:42 .0.15.300.677 D repack: repack tensor blk.9.ffn_up.weight with q4_0_8x8
+2026-07-08 21:06:42 0.15.302.374 D repack: repack tensor blk.10.attn_q.weight with q4_0_8x8
+2026-07-08 21:06:42 0.15.302.706 D repack: repack tensor blk.10.attn_k.weight with q4_0_8x8
+2026-07-08 21:06:42 0.15.302.768 D repack: repack tensor blk.10.attn_v.weight with q4_0_8x8
+2026-07-08 21:06:42 0.15.302.826 D repack: repack tensor blk.10.attn_output.weight with q4_0_8x8
+2026-07-08 21:06:42 0.15.303.153 D repack: repack tensor blk.10.ffn_gate.weight with q4_0_8x8
+2026-07-08 21:06:42 .0.15.304.919 D repack: repack tensor blk.10.ffn_down.weight with q4_0_8x8
+2026-07-08 21:06:42 0.15.306.550 D repack: repack tensor blk.10.ffn_up.weight with q4_0_8x8
+2026-07-08 21:06:42 .0.15.308.394 D repack: repack tensor blk.11.attn_q.weight with q4_0_8x8
+2026-07-08 21:06:42 0.15.308.717 D repack: repack tensor blk.11.attn_k.weight with q4_0_8x8
+2026-07-08 21:06:42 0.15.308.782 D repack: repack tensor blk.11.attn_v.weight with q4_0_8x8
+2026-07-08 21:06:42 0.15.308.840 D repack: repack tensor blk.11.attn_output.weight with q4_0_8x8
+2026-07-08 21:06:42 0.15.309.173 D repack: repack tensor blk.11.ffn_gate.weight with q4_0_8x8
+2026-07-08 21:06:42 .0.15.310.978 D repack: repack tensor blk.11.ffn_down.weight with q4_0_8x8
+2026-07-08 21:06:42 0.15.312.618 D repack: repack tensor blk.11.ffn_up.weight with q4_0_8x8
+2026-07-08 21:06:42 .0.15.314.498 D repack: repack tensor blk.12.attn_q.weight with q4_0_8x8
+2026-07-08 21:06:42 0.15.314.809 D repack: repack tensor blk.12.attn_k.weight with q4_0_8x8
+2026-07-08 21:06:42 0.15.314.870 D repack: repack tensor blk.12.attn_v.weight with q4_0_8x8
+2026-07-08 21:06:42 0.15.314.927 D repack: repack tensor blk.12.attn_output.weight with q4_0_8x8
+2026-07-08 21:06:42 0.15.315.245 D repack: repack tensor blk.12.ffn_gate.weight with q4_0_8x8
+2026-07-08 21:06:42 0.15.317.239 D repack: repack tensor blk.12.ffn_down.weight with q4_0_8x8
+2026-07-08 21:06:42 .0.15.319.052 D repack: repack tensor blk.12.ffn_up.weight with q4_0_8x8
+2026-07-08 21:06:42 0.15.320.917 D repack: repack tensor blk.13.attn_q.weight with q4_0_8x8
+2026-07-08 21:06:42 0.15.321.260 D repack: repack tensor blk.13.attn_k.weight with q4_0_8x8
+2026-07-08 21:06:42 0.15.321.336 D repack: repack tensor blk.13.attn_v.weight with q4_0_8x8
+2026-07-08 21:06:42 0.15.321.397 D repack: repack tensor blk.13.attn_output.weight with q4_0_8x8
+2026-07-08 21:06:42 0.15.321.723 D repack: repack tensor blk.13.ffn_gate.weight with q4_0_8x8
+2026-07-08 21:06:42 .0.15.323.531 D repack: repack tensor blk.13.ffn_down.weight with q4_0_8x8
+2026-07-08 21:06:42 0.15.325.206 D repack: repack tensor blk.13.ffn_up.weight with q4_0_8x8
+2026-07-08 21:06:42 .0.15.327.054 D repack: repack tensor blk.14.attn_q.weight with q4_0_8x8
+2026-07-08 21:06:42 0.15.327.378 D repack: repack tensor blk.14.attn_k.weight with q4_0_8x8
+2026-07-08 21:06:42 0.15.327.439 D repack: repack tensor blk.14.attn_v.weight with q4_0_8x8
+2026-07-08 21:06:42 0.15.327.550 D repack: repack tensor blk.14.attn_output.weight with q4_0_8x8
+2026-07-08 21:06:42 0.15.327.878 D repack: repack tensor blk.14.ffn_gate.weight with q4_0_8x8
+2026-07-08 21:06:42 .0.15.329.739 D repack: repack tensor blk.14.ffn_down.weight with q4_0_8x8
+2026-07-08 21:06:42 0.15.331.393 D repack: repack tensor blk.14.ffn_up.weight with q4_0_8x8
+2026-07-08 21:06:42 .0.15.333.185 D repack: repack tensor blk.15.attn_q.weight with q4_0_8x8
+2026-07-08 21:06:42 0.15.333.507 D repack: repack tensor blk.15.attn_k.weight with q4_0_8x8
+2026-07-08 21:06:42 0.15.333.574 D repack: repack tensor blk.15.attn_v.weight with q4_0_8x8
+2026-07-08 21:06:42 0.15.333.634 D repack: repack tensor blk.15.attn_output.weight with q4_0_8x8
+2026-07-08 21:06:42 0.15.333.978 D repack: repack tensor blk.15.ffn_gate.weight with q4_0_8x8
+2026-07-08 21:06:42 0.15.335.795 D repack: repack tensor blk.15.ffn_down.weight with q4_0_8x8
+2026-07-08 21:06:42 .0.15.338.014 D repack: repack tensor blk.15.ffn_up.weight with q4_0_8x8
+2026-07-08 21:06:42 0.15.339.828 D repack: repack tensor blk.16.attn_q.weight with q4_0_8x8
+2026-07-08 21:06:42 0.15.340.212 D repack: repack tensor blk.16.attn_k.weight with q4_0_8x8
+2026-07-08 21:06:42 0.15.340.282 D repack: repack tensor blk.16.attn_v.weight with q4_0_8x8
+2026-07-08 21:06:42 0.15.340.349 D repack: repack tensor blk.16.attn_output.weight with q4_0_8x8
+2026-07-08 21:06:42 .0.15.340.715 D repack: repack tensor blk.16.ffn_gate.weight with q4_0_8x8
+2026-07-08 21:06:42 0.15.342.734 D repack: repack tensor blk.16.ffn_down.weight with q4_0_8x8
+2026-07-08 21:06:42 .0.15.344.480 D repack: repack tensor blk.16.ffn_up.weight with q4_0_8x8
+2026-07-08 21:06:42 0.15.346.360 D repack: repack tensor blk.17.attn_q.weight with q4_0_8x8
+2026-07-08 21:06:42 0.15.346.702 D repack: repack tensor blk.17.attn_k.weight with q4_0_8x8
+2026-07-08 21:06:42 0.15.346.767 D repack: repack tensor blk.17.attn_v.weight with q4_0_8x8
+2026-07-08 21:06:42 0.15.346.827 D repack: repack tensor blk.17.attn_output.weight with q4_0_8x8
+2026-07-08 21:06:42 0.15.347.144 D repack: repack tensor blk.17.ffn_gate.weight with q4_0_8x8
+2026-07-08 21:06:42 .0.15.349.094 D repack: repack tensor blk.17.ffn_down.weight with q4_0_8x8
+2026-07-08 21:06:42 0.15.350.820 D repack: repack tensor blk.17.ffn_up.weight with q4_0_8x8
+2026-07-08 21:06:42 .0.15.352.611 D repack: repack tensor blk.18.attn_q.weight with q4_0_8x8
+2026-07-08 21:06:42 0.15.352.928 D repack: repack tensor blk.18.attn_k.weight with q4_0_8x8
+2026-07-08 21:06:42 0.15.352.987 D repack: repack tensor blk.18.attn_v.weight with q4_0_8x8
+2026-07-08 21:06:42 0.15.353.031 D repack: repack tensor blk.18.attn_output.weight with q4_0_8x8
+2026-07-08 21:06:42 0.15.353.353 D repack: repack tensor blk.18.ffn_gate.weight with q4_0_8x8
+2026-07-08 21:06:42 0.15.355.193 D repack: repack tensor blk.18.ffn_down.weight with q4_0_8x8
+2026-07-08 21:06:42 .0.15.356.939 D repack: repack tensor blk.18.ffn_up.weight with q4_0_8x8
+2026-07-08 21:06:42 0.15.358.780 D repack: repack tensor blk.19.attn_q.weight with q4_0_8x8
+2026-07-08 21:06:42 .0.15.359.110 D repack: repack tensor blk.19.attn_k.weight with q4_0_8x8
+2026-07-08 21:06:42 0.15.359.161 D repack: repack tensor blk.19.attn_v.weight with q4_0_8x8
+2026-07-08 21:06:42 0.15.359.220 D repack: repack tensor blk.19.attn_output.weight with q4_0_8x8
+2026-07-08 21:06:42 0.15.359.549 D repack: repack tensor blk.19.ffn_gate.weight with q4_0_8x8
+2026-07-08 21:06:42 0.15.361.473 D repack: repack tensor blk.19.ffn_down.weight with q4_0_8x8
+2026-07-08 21:06:42 .0.15.363.162 D repack: repack tensor blk.19.ffn_up.weight with q4_0_8x8
+2026-07-08 21:06:42 0.15.364.886 D repack: repack tensor blk.20.attn_q.weight with q4_0_8x8
+2026-07-08 21:06:42 0.15.365.196 D repack: repack tensor blk.20.attn_k.weight with q4_0_8x8
+2026-07-08 21:06:42 0.15.365.257 D repack: repack tensor blk.20.attn_v.weight with q4_0_8x8
+2026-07-08 21:06:42 0.15.365.314 D repack: repack tensor blk.20.attn_output.weight with q4_0_8x8
+2026-07-08 21:06:42 0.15.365.624 D repack: repack tensor blk.20.ffn_gate.weight with q4_0_8x8
+2026-07-08 21:06:42 .0.15.367.418 D repack: repack tensor blk.20.ffn_down.weight with q4_0_8x8
+2026-07-08 21:06:42 0.15.369.128 D repack: repack tensor blk.20.ffn_up.weight with q4_0_8x8
+2026-07-08 21:06:44 ........
+2026-07-08 21:06:44 0.17.107.157 I cmn  common_init_: added </s> logit bias = -inf
+2026-07-08 21:06:44 0.17.107.291 I cmn  common_init_: added <|endoftext|> logit bias = -inf
+2026-07-08 21:06:44 0.17.107.307 I cmn  common_init_: added <|im_end|> logit bias = -inf
+2026-07-08 21:06:44 0.17.107.438 I llama_context: constructing llama_context
+2026-07-08 21:06:44 0.17.107.453 I llama_context: n_seq_max     = 1
+2026-07-08 21:06:44 0.17.107.454 I llama_context: n_ctx         = 32768
+2026-07-08 21:06:44 0.17.107.454 I llama_context: n_ctx_seq     = 32768
+2026-07-08 21:06:44 0.17.107.454 I llama_context: n_batch       = 2048
+2026-07-08 21:06:44 0.17.107.454 I llama_context: n_ubatch      = 512
+2026-07-08 21:06:44 0.17.107.454 I llama_context: causal_attn   = 1
+2026-07-08 21:06:44 0.17.107.455 I llama_context: flash_attn    = auto
+2026-07-08 21:06:44 0.17.107.456 I llama_context: kv_unified    = false
+2026-07-08 21:06:44 0.17.107.460 I llama_context: freq_base     = 1000000.0
+2026-07-08 21:06:44 0.17.107.460 I llama_context: freq_scale    = 1
+2026-07-08 21:06:44 0.17.107.461 I llama_context: n_rs_seq      = 0
+2026-07-08 21:06:44 0.17.107.461 I llama_context: n_outputs_max = 2048
+2026-07-08 21:06:44 0.17.107.483 D set_abort_callback: call
+2026-07-08 21:06:44 0.17.107.544 I llama_context:        CPU  output buffer size =     0.58 MiB
+2026-07-08 21:06:44 0.17.107.743 D llama_kv_cache: layer   0: dev = CPU
+2026-07-08 21:06:44 0.17.107.770 D llama_kv_cache: layer   1: dev = CPU
+2026-07-08 21:06:44 0.17.107.771 D llama_kv_cache: layer   2: dev = CPU
+2026-07-08 21:06:44 0.17.107.772 D llama_kv_cache: layer   3: dev = CPU
+2026-07-08 21:06:44 0.17.107.772 D llama_kv_cache: layer   4: dev = CPU
+2026-07-08 21:06:44 0.17.107.773 D llama_kv_cache: layer   5: dev = CPU
+2026-07-08 21:06:44 0.17.107.774 D llama_kv_cache: layer   6: dev = CPU
+2026-07-08 21:06:44 0.17.107.774 D llama_kv_cache: layer   7: dev = CPU
+2026-07-08 21:06:44 0.17.107.775 D llama_kv_cache: layer   8: dev = CPU
+2026-07-08 21:06:44 0.17.107.776 D llama_kv_cache: layer   9: dev = CPU
+2026-07-08 21:06:44 0.17.107.777 D llama_kv_cache: layer  10: dev = CPU
+2026-07-08 21:06:44 0.17.107.777 D llama_kv_cache: layer  11: dev = CPU
+2026-07-08 21:06:44 0.17.107.778 D llama_kv_cache: layer  12: dev = CPU
+2026-07-08 21:06:44 0.17.107.778 D llama_kv_cache: layer  13: dev = CPU
+2026-07-08 21:06:44 0.17.107.780 D llama_kv_cache: layer  14: dev = CPU
+2026-07-08 21:06:44 0.17.107.781 D llama_kv_cache: layer  15: dev = CPU
+2026-07-08 21:06:44 0.17.107.781 D llama_kv_cache: layer  16: dev = CPU
+2026-07-08 21:06:44 0.17.107.782 D llama_kv_cache: layer  17: dev = CPU
+2026-07-08 21:06:44 0.17.107.783 D llama_kv_cache: layer  18: dev = CPU
+2026-07-08 21:06:44 0.17.107.783 D llama_kv_cache: layer  19: dev = CPU
+2026-07-08 21:06:44 0.17.107.784 D llama_kv_cache: layer  20: dev = CPU
+2026-07-08 21:06:44 0.17.107.787 D llama_kv_cache: layer  21: dev = RPC0
+2026-07-08 21:06:44 0.17.107.790 D llama_kv_cache: layer  22: dev = RPC0
+2026-07-08 21:06:44 0.17.107.791 D llama_kv_cache: layer  23: dev = RPC0
+2026-07-08 21:06:44 0.17.107.825 I llama_kv_cache:        CPU KV buffer size =   336.00 MiB
+2026-07-08 21:06:44 0.17.351.798 I llama_kv_cache: RPC0[192.168.1.7:50052] KV buffer size =    48.00 MiB
+2026-07-08 21:06:44 0.17.403.410 I llama_kv_cache: size =  384.00 MiB ( 32768 cells,  24 layers,  1/1 seqs), K (f16):  192.00 MiB, V (f16):  192.00 MiB
+2026-07-08 21:06:44 0.17.403.452 I llama_kv_cache: attn_rot_k = 0, n_embd_head_k_all = 64
+2026-07-08 21:06:44 0.17.403.452 I llama_kv_cache: attn_rot_v = 0, n_embd_head_k_all = 64
+2026-07-08 21:06:44 0.17.403.456 D llama_context: enumerating backends
+2026-07-08 21:06:44 0.17.403.477 D llama_context: backend_ptrs.size() = 2
+2026-07-08 21:06:44 0.17.403.479 I sched_reserve: reserving ...
+2026-07-08 21:06:44 0.17.403.482 D sched_reserve: max_nodes = 2328
+2026-07-08 21:06:44 0.17.404.236 D sched_reserve: reserving full memory module
+2026-07-08 21:06:44 0.17.404.266 D sched_reserve: worst-case: n_tokens = 512, n_seqs = 1, n_outputs = 1
+2026-07-08 21:06:44 0.17.404.269 D graph_reserve: reserving a graph for ubatch with n_tokens =    1, n_seqs =  1, n_outputs =    1
+2026-07-08 21:06:44 0.17.404.685 D 
+2026-07-08 21:06:44 ## SPLIT #0: CPU # 0 inputs0.17.404.707 D 
+2026-07-08 21:06:44 0.17.404.711 D 
+2026-07-08 21:06:44 ## SPLIT #1: RPC0[192.168.1.7:50052] # 7 inputs0.17.404.711 D : 0.17.404.713 D [ffn_out-20 (   3K)] 0.17.404.714 D [ffn_inp-20 (   3K)] 0.17.404.714 D [leaf_6 (   0K)] 0.17.404.714 D [leaf_11 (   0K)] 0.17.404.715 D [leaf_13 (   0K)] 0.17.404.715 D [attn_inp_kq_mask (  64K)] 0.17.404.715 D [leaf_342 (   0K)] 0.17.404.716 D 
+2026-07-08 21:06:44 0.17.404.747 I sched_reserve: Flash Attention was auto, set to enabled
+2026-07-08 21:06:44 0.17.404.747 I sched_reserve: resolving fused Gated Delta Net support:
+2026-07-08 21:06:44 0.17.404.748 D graph_reserve: reserving a graph for ubatch with n_tokens =    1, n_seqs =  1, n_outputs =    1
+2026-07-08 21:06:44 0.17.405.083 D 
+2026-07-08 21:06:44 ## SPLIT #0: CPU # 0 inputs0.17.405.099 D 
+2026-07-08 21:06:44 0.17.405.102 D 
+2026-07-08 21:06:44 ## SPLIT #1: RPC0[192.168.1.7:50052] # 7 inputs0.17.405.102 D : 0.17.405.103 D [ffn_out-20 (   3K)] 0.17.405.104 D [ffn_inp-20 (   3K)] 0.17.405.104 D [leaf_6 (   0K)] 0.17.405.105 D [leaf_11 (   0K)] 0.17.405.105 D [leaf_13 (   0K)] 0.17.405.105 D [attn_inp_kq_mask (  64K)] 0.17.405.105 D [leaf_342 (   0K)] 0.17.405.106 D 
+2026-07-08 21:06:44 0.17.405.122 I sched_reserve: fused Gated Delta Net (autoregressive) enabled
+2026-07-08 21:06:44 0.17.405.122 D graph_reserve: reserving a graph for ubatch with n_tokens =   16, n_seqs =  1, n_outputs =   16
+2026-07-08 21:06:44 0.17.405.397 D 
+2026-07-08 21:06:44 ## SPLIT #0: CPU # 0 inputs0.17.405.415 D 
+2026-07-08 21:06:44 0.17.405.418 D 
+2026-07-08 21:06:44 ## SPLIT #1: RPC0[192.168.1.7:50052] # 7 inputs0.17.405.418 D : 0.17.405.419 D [ffn_out-20 (  56K)] 0.17.405.420 D [ffn_inp-20 (  56K)] 0.17.405.420 D [leaf_6 (   0K)] 0.17.405.420 D [leaf_11 (   0K)] 0.17.405.421 D [leaf_13 (   0K)] 0.17.405.422 D [attn_inp_kq_mask (   1M)] 0.17.405.422 D [leaf_342 (   0K)] 0.17.405.423 D 
+2026-07-08 21:06:44 0.17.405.438 I sched_reserve: fused Gated Delta Net (chunked) enabled
+2026-07-08 21:06:44 0.17.405.439 D graph_reserve: reserving a graph for ubatch with n_tokens =  512, n_seqs =  1, n_outputs =  512
+2026-07-08 21:06:44 0.17.405.739 D 
+2026-07-08 21:06:44 ## SPLIT #0: CPU # 0 inputs0.17.405.758 D 
+2026-07-08 21:06:44 0.17.405.760 D 
+2026-07-08 21:06:44 ## SPLIT #1: RPC0[192.168.1.7:50052] # 7 inputs0.17.405.761 D : 0.17.405.762 D [ffn_out-20 (   1M)] 0.17.405.762 D [ffn_inp-20 (   1M)] 0.17.405.762 D [leaf_6 (   2K)] 0.17.405.763 D [leaf_11 (   4K)] 0.17.405.763 D [leaf_13 (   4K)] 0.17.405.763 D [attn_inp_kq_mask (  32M)] 0.17.405.764 D [leaf_342 (   2K)] 0.17.405.764 D 
+2026-07-08 21:06:44 0.17.487.292 D graph_reserve: reserving a graph for ubatch with n_tokens =    1, n_seqs =  1, n_outputs =    1
+2026-07-08 21:06:44 0.17.487.635 D 
+2026-07-08 21:06:44 ## SPLIT #0: CPU # 0 inputs0.17.487.661 D 
+2026-07-08 21:06:44 0.17.487.664 D 
+2026-07-08 21:06:44 ## SPLIT #1: RPC0[192.168.1.7:50052] # 7 inputs0.17.487.664 D : 0.17.487.666 D [ffn_out-20 (   3K)] 0.17.487.666 D [ffn_inp-20 (   3K)] 0.17.487.667 D [leaf_6 (   0K)] 0.17.487.667 D [leaf_11 (   0K)] 0.17.487.667 D [leaf_13 (   0K)] 0.17.487.668 D [attn_inp_kq_mask (  64K)] 0.17.487.668 D [leaf_342 (   0K)] 0.17.487.668 D 
+2026-07-08 21:06:44 0.17.581.040 D graph_reserve: reserving a graph for ubatch with n_tokens =  512, n_seqs =  1, n_outputs =  512
+2026-07-08 21:06:44 0.17.581.343 D 
+2026-07-08 21:06:44 ## SPLIT #0: CPU # 0 inputs0.17.581.361 D 
+2026-07-08 21:06:44 0.17.581.363 D 
+2026-07-08 21:06:44 ## SPLIT #1: RPC0[192.168.1.7:50052] # 7 inputs0.17.581.363 D : 0.17.581.364 D [ffn_out-20 (   1M)] 0.17.581.366 D [ffn_inp-20 (   1M)] 0.17.581.366 D [leaf_6 (   2K)] 0.17.581.367 D [leaf_11 (   4K)] 0.17.581.367 D [leaf_13 (   4K)] 0.17.581.367 D [attn_inp_kq_mask (  32M)] 0.17.581.367 D [leaf_342 (   2K)] 0.17.581.368 D 
+2026-07-08 21:06:44 0.17.671.793 I sched_reserve: RPC0[192.168.1.7:50052] compute buffer size =   298.50 MiB
+2026-07-08 21:06:44 0.17.671.809 I sched_reserve:        CPU compute buffer size =    67.51 MiB
+2026-07-08 21:06:44 0.17.671.811 I sched_reserve: graph nodes  = 822
+2026-07-08 21:06:44 0.17.671.811 I sched_reserve: graph splits = 2
+2026-07-08 21:06:44 0.17.671.813 I sched_reserve: reserve took 268.33 ms, sched copies = 1
+2026-07-08 21:06:44 0.17.671.995 D set_adapters_lora: adapters = (nil)
+2026-07-08 21:06:44 0.17.672.018 D adapters_lora_are_same: adapters = (nil)
+2026-07-08 21:06:44 0.17.672.020 I cmn  common_init_: warming up the model with an empty run - please wait ... (--no-warmup to disable)
+2026-07-08 21:06:44 0.17.672.372 D 
+2026-07-08 21:06:44 ## SPLIT #0: CPU # 0 inputs0.17.672.389 D 
+2026-07-08 21:06:44 0.17.672.390 D 
+2026-07-08 21:06:44 ## SPLIT #1: RPC0[192.168.1.7:50052] # 7 inputs0.17.672.391 D : 0.17.672.392 D [ffn_out-20 (   7K)] 0.17.672.392 D [ffn_inp-20 (   7K)] 0.17.672.393 D [leaf_6 (   0K)] 0.17.672.393 D [leaf_11 (   0K)] 0.17.672.393 D [leaf_13 (   0K)] 0.17.672.393 D [attn_inp_kq_mask (   1K)] 0.17.672.393 D [leaf_342 (   0K)] 0.17.672.393 D 
+2026-07-08 21:06:44 0.17.972.401 I llama_completion: llama threadpool init, n_threads = 9
+2026-07-08 21:06:44 0.17.972.462 D attach_threadpool: call
+2026-07-08 21:06:44 0.17.972.468 I llama_completion: chat template is available, enabling conversation mode (disable it with -no-cnv)
+2026-07-08 21:06:44 0.17.972.469 W *** User-specified prompt will pre-start conversation, did you mean to set --system-prompt (-sys) instead?
+2026-07-08 21:06:44 0.17.972.628 I llama_completion: chat template example:
+2026-07-08 21:06:44 <|im_start|>system
+2026-07-08 21:06:44 You are a helpful assistant<|im_end|>
+2026-07-08 21:06:44 <|im_start|>user
+2026-07-08 21:06:44 Hello<|im_end|>
+2026-07-08 21:06:44 <|im_start|>assistant
+2026-07-08 21:06:44 Hi there<|im_end|>
+2026-07-08 21:06:44 <|im_start|>user
+2026-07-08 21:06:44 How are you?<|im_end|>
+2026-07-08 21:06:44 <|im_start|>assistant
+2026-07-08 21:06:44 
+2026-07-08 21:06:44 0.17.972.640 I 
+2026-07-08 21:06:44 0.17.972.730 I system_info: n_threads = 9 (n_threads_batch = 9) / 18 | CPU : SSE3 = 1 | SSSE3 = 1 | AVX = 1 | AVX_VNNI = 1 | AVX2 = 1 | F16C = 1 | FMA = 1 | BMI2 = 1 | LLAMAFILE = 1 | OPENMP = 1 | REPACK = 1 | 
+2026-07-08 21:06:44 0.17.972.741 I 
+2026-07-08 21:06:44 0.17.972.744 D n_ctx: 32768, add_bos: 0
+2026-07-08 21:06:44 0.17.972.758 D formatted: '<|im_start|>user
+2026-07-08 21:06:44 你好<|im_end|>
+2026-07-08 21:06:44 <|im_start|>assistant
+2026-07-08 21:06:44 '
+2026-07-08 21:06:44 0.17.972.763 D tokenize the prompt
+2026-07-08 21:06:44 0.17.972.944 D prompt: "<|im_start|>user
+2026-07-08 21:06:44 你好<|im_end|>
+2026-07-08 21:06:44 <|im_start|>assistant
+2026-07-08 21:06:44 "
+2026-07-08 21:06:44 0.17.972.989 D tokens: [ '<|im_start|>':151644, 'user':872, '
+2026-07-08 21:06:44 ':198, '你好':108386, '<|im_end|>':151645, '
+2026-07-08 21:06:44 ':198, '<|im_start|>':151644, 'assistant':77091, '
+2026-07-08 21:06:44 ':198 ]
+2026-07-08 21:06:44 0.17.973.002 I llama_completion: interactive mode on.
+2026-07-08 21:06:44 0.17.973.006 I sampler seed: 1969113844
+2026-07-08 21:06:44 0.17.973.016 I sampler params: 
+2026-07-08 21:06:44 	repeat_last_n = 64, repeat_penalty = 1.000, frequency_penalty = 0.000, presence_penalty = 0.000
+2026-07-08 21:06:44 	dry_multiplier = 0.000, dry_base = 1.750, dry_allowed_length = 2, dry_penalty_last_n = -1
+2026-07-08 21:06:44 	top_k = 40, top_p = 0.950, min_p = 0.050, xtc_probability = 0.000, xtc_threshold = 0.100, typical_p = 1.000, top_n_sigma = -1.000, temp = 0.800
+2026-07-08 21:06:44 	mirostat = 0, mirostat_lr = 0.100, mirostat_ent = 5.000, adaptive_target = -1.000, adaptive_decay = 0.900
+2026-07-08 21:06:44 0.17.973.033 I sampler chain: logits -> ?penalties -> ?dry -> ?top-n-sigma -> top-k -> ?typical -> top-p -> min-p -> ?xtc -> temp-ext -> dist 
+2026-07-08 21:06:44 0.17.973.034 I generate: n_ctx = 32768, n_batch = 2048, n_predict = 5, n_keep = 0
+2026-07-08 21:06:44 0.17.973.034 I 
+2026-07-08 21:06:44 0.17.973.034 I == Running in interactive mode. ==
+2026-07-08 21:06:44 0.17.973.034 I  - Press Ctrl+C to interject at any time.
+2026-07-08 21:06:44 0.17.973.035 I  - Press Return to return control to the AI.
+2026-07-08 21:06:44  - To return control without starting a new line, end your input with '/'.
+2026-07-08 21:06:44  - If you want to submit another line, end your input with '\'.
+2026-07-08 21:06:44 0.17.973.035 I  - Not using system message. To change it, set a different value via -sys PROMPT
+2026-07-08 21:06:44 0.17.973.035 I 
+2026-07-08 21:06:44 0.17.973.050 D embd_inp.size(): 9, n_consumed: 0
+2026-07-08 21:06:44 user
+2026-07-08 21:06:44 你好
+2026-07-08 21:06:44 assistant
+2026-07-08 21:06:44 0.17.973.339 D 
+2026-07-08 21:06:44 ## SPLIT #0: CPU # 0 inputs0.17.973.357 D 
+2026-07-08 21:06:44 0.17.973.360 D 
+2026-07-08 21:06:44 ## SPLIT #1: RPC0[192.168.1.7:50052] # 7 inputs0.17.973.360 D : 0.17.973.361 D [ffn_out-20 (  31K)] 0.17.973.362 D [ffn_inp-20 (  31K)] 0.17.973.362 D [leaf_6 (   0K)] 0.17.973.362 D [leaf_11 (   0K)] 0.17.973.362 D [leaf_13 (   0K)] 0.17.973.362 D [attn_inp_kq_mask (   4K)] 0.17.973.362 D [leaf_342 (   0K)] 0.17.973.363 D 
+2026-07-08 21:06:45 0.18.235.174 D n_past = 9
+2026-07-08 21:06:45 0.18.235.970 D n_remain: 4
+2026-07-08 21:06:45 您好0.18.236.288 D 
+2026-07-08 21:06:45 ## SPLIT #0: CPU # 0 inputs0.18.236.304 D 
+2026-07-08 21:06:45 0.18.236.306 D 
+2026-07-08 21:06:45 ## SPLIT #1: RPC0[192.168.1.7:50052] # 7 inputs0.18.236.306 D : 0.18.236.307 D [ffn_out-20 (   3K)] 0.18.236.308 D [ffn_inp-20 (   3K)] 0.18.236.308 D [leaf_6 (   0K)] 0.18.236.308 D [leaf_11 (   0K)] 0.18.236.308 D [leaf_13 (   0K)] 0.18.236.308 D [attn_inp_kq_mask (   0K)] 0.18.236.308 D [leaf_342 (   0K)] 0.18.236.309 D 
+2026-07-08 21:06:45 0.18.409.675 D n_past = 10
+2026-07-08 21:06:45 0.18.410.261 D n_remain: 3
+2026-07-08 21:06:45 ！0.18.498.088 D n_past = 11
+2026-07-08 21:06:45 0.18.498.693 D n_remain: 2
+2026-07-08 21:06:45 有什么0.18.615.019 D n_past = 12
+2026-07-08 21:06:45 0.18.615.570 D n_remain: 1
+2026-07-08 21:06:45 可以帮助0.18.710.331 D n_past = 13
+2026-07-08 21:06:45 0.18.710.810 D n_remain: 0
+2026-07-08 21:06:45 您的0.18.786.920 D n_past = 14
+2026-07-08 21:06:45 0.18.786.977 D embd_inp.size(): 9, n_consumed: 9
+2026-07-08 21:06:45 0.18.786.985 D waiting for user input
+2026-07-08 21:06:45 
+2026-07-08 21:06:45 > EOF by user
+2026-07-08 21:06:45 
+2026-07-08 21:06:45 
+2026-07-08 21:06:45 0.18.787.266 I common_perf_print:    sampling time =       2.63 ms
+2026-07-08 21:06:45 0.18.787.289 I common_perf_print:    samplers time =       0.88 ms /    14 tokens
+2026-07-08 21:06:45 0.18.787.333 I common_perf_print:        load time =    3900.03 ms
+2026-07-08 21:06:45 0.18.787.335 I common_perf_print: prompt eval time =     262.12 ms /     9 tokens (   29.12 ms per token,    34.34 tokens per second)
+2026-07-08 21:06:45 0.18.787.337 I common_perf_print:        eval time =     472.57 ms /     4 runs   (  118.14 ms per token,     8.46 tokens per second)
+2026-07-08 21:06:45 0.18.787.339 I common_perf_print:       total time =     814.92 ms /    13 tokens
+2026-07-08 21:06:45 0.18.787.341 I common_perf_print: unaccounted time =      77.60 ms /   9.5 %      (total - sampling - prompt eval - eval) / (total)
+2026-07-08 21:06:45 0.18.787.341 I common_perf_print:    graphs reused =          4
+2026-07-08 21:06:45 0.18.793.127 I common_memory_breakdown_print: | memory breakdown [MiB]       | total   free    self   model   context   compute    unaccounted |
+2026-07-08 21:06:45 0.18.793.153 I common_memory_breakdown_print: |   - RPC0 (192.168.1.7:50052) |  7488 = 7488 + ( 508 =   161 +      48 +     298) +        -508 |
+2026-07-08 21:06:45 0.18.793.154 I common_memory_breakdown_print: |   - Host                     |                  733 =   330 +     336 +      67                |
+2026-07-08 21:06:45 0.18.793.154 I common_memory_breakdown_print: |   - CPU_REPACK               |                  167 =   167 +       0 +       0                |
+2026-07-08 21:06:45 0.18.793.283 D ~llama_context: RPC0[192.168.1.7:50052] compute buffer size is 298.5000 MiB, matches expectation of 298.5000 MiB
+2026-07-08 21:06:45 0.18.793.310 D ~llama_context:        CPU compute buffer size is  67.5137 MiB, matches expectation of  67.5137 MiB
+2026-07-08 21:06:45 0.18.885.080 D [~impl] closing socket 5

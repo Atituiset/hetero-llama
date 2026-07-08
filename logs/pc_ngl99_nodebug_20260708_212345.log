@@ -1,0 +1,59 @@
+2026-07-08 21:23:55 === PC 端 RPC 推理 ===
+2026-07-08 21:23:55   model    : /home/atituiset/models/qwen2-0.5b-instruct-q4_0.gguf
+2026-07-08 21:23:55   rpc      : 192.168.1.7:50052
+2026-07-08 21:23:55   ngl      : 99
+2026-07-08 21:23:55   prompt   : 你好
+2026-07-08 21:23:55   n        : 5
+2026-07-08 21:23:55 
+2026-07-08 21:23:55 0.00.230.313 I llama_completion: llama backend init
+2026-07-08 21:23:55 0.00.230.383 I llama_completion: load the model and apply lora adapter, if any
+2026-07-08 21:24:21 0.25.609.873 W load: control-looking token: 128247 '</s>' was not control-type; this is probably a bug in the model. its type will be overridden
+2026-07-08 21:24:41 0.46.085.520 I llama_completion: llama threadpool init, n_threads = 9
+2026-07-08 21:24:41 0.46.085.614 I llama_completion: chat template is available, enabling conversation mode (disable it with -no-cnv)
+2026-07-08 21:24:41 0.46.085.615 W *** User-specified prompt will pre-start conversation, did you mean to set --system-prompt (-sys) instead?
+2026-07-08 21:24:41 0.46.085.805 I llama_completion: chat template example:
+2026-07-08 21:24:41 <|im_start|>system
+2026-07-08 21:24:41 You are a helpful assistant<|im_end|>
+2026-07-08 21:24:41 <|im_start|>user
+2026-07-08 21:24:41 Hello<|im_end|>
+2026-07-08 21:24:41 <|im_start|>assistant
+2026-07-08 21:24:41 Hi there<|im_end|>
+2026-07-08 21:24:41 <|im_start|>user
+2026-07-08 21:24:41 How are you?<|im_end|>
+2026-07-08 21:24:41 <|im_start|>assistant
+2026-07-08 21:24:41 
+2026-07-08 21:24:41 0.46.085.830 I 
+2026-07-08 21:24:41 0.46.085.969 I system_info: n_threads = 9 (n_threads_batch = 9) / 18 | CPU : SSE3 = 1 | SSSE3 = 1 | AVX = 1 | AVX_VNNI = 1 | AVX2 = 1 | F16C = 1 | FMA = 1 | BMI2 = 1 | LLAMAFILE = 1 | OPENMP = 1 | REPACK = 1 | 
+2026-07-08 21:24:41 0.46.085.988 I 
+2026-07-08 21:24:41 0.46.086.174 I llama_completion: interactive mode on.
+2026-07-08 21:24:41 0.46.086.201 I sampler seed: 2146943002
+2026-07-08 21:24:41 0.46.086.216 I sampler params: 
+2026-07-08 21:24:41 	repeat_last_n = 64, repeat_penalty = 1.000, frequency_penalty = 0.000, presence_penalty = 0.000
+2026-07-08 21:24:41 	dry_multiplier = 0.000, dry_base = 1.750, dry_allowed_length = 2, dry_penalty_last_n = -1
+2026-07-08 21:24:41 	top_k = 40, top_p = 0.950, min_p = 0.050, xtc_probability = 0.000, xtc_threshold = 0.100, typical_p = 1.000, top_n_sigma = -1.000, temp = 0.800
+2026-07-08 21:24:41 	mirostat = 0, mirostat_lr = 0.100, mirostat_ent = 5.000, adaptive_target = -1.000, adaptive_decay = 0.900
+2026-07-08 21:24:41 0.46.086.229 I sampler chain: logits -> ?penalties -> ?dry -> ?top-n-sigma -> top-k -> ?typical -> top-p -> min-p -> ?xtc -> temp-ext -> dist 
+2026-07-08 21:24:41 0.46.086.230 I generate: n_ctx = 32768, n_batch = 2048, n_predict = 5, n_keep = 0
+2026-07-08 21:24:41 0.46.086.231 I 
+2026-07-08 21:24:41 0.46.086.231 I == Running in interactive mode. ==
+2026-07-08 21:24:41 0.46.086.231 I  - Press Ctrl+C to interject at any time.
+2026-07-08 21:24:41 0.46.086.232 I  - Press Return to return control to the AI.
+2026-07-08 21:24:41  - To return control without starting a new line, end your input with '/'.
+2026-07-08 21:24:41  - If you want to submit another line, end your input with '\'.
+2026-07-08 21:24:41 0.46.086.232 I  - Not using system message. To change it, set a different value via -sys PROMPT
+2026-07-08 21:24:41 0.46.086.232 I 
+2026-07-08 21:24:41 user
+2026-07-08 21:24:41 你好
+2026-07-08 21:24:41 assistant
+2026-07-08 21:24:43 你好！有什么可以帮助你的
+2026-07-08 21:24:43 > EOF by user
+2026-07-08 21:24:43 
+2026-07-08 21:24:43 
+2026-07-08 21:24:43 0.48.376.392 I common_perf_print:    sampling time =       2.34 ms
+2026-07-08 21:24:43 0.48.376.394 I common_perf_print:    samplers time =       0.71 ms /    14 tokens
+2026-07-08 21:24:43 0.48.376.405 I common_perf_print:        load time =   19862.40 ms
+2026-07-08 21:24:43 0.48.376.407 I common_perf_print: prompt eval time =     924.94 ms /     9 tokens (  102.77 ms per token,     9.73 tokens per second)
+2026-07-08 21:24:43 0.48.376.409 I common_perf_print:        eval time =    1190.27 ms /     4 runs   (  297.57 ms per token,     3.36 tokens per second)
+2026-07-08 21:24:43 0.48.376.409 I common_perf_print:       total time =    2290.89 ms /    13 tokens
+2026-07-08 21:24:43 0.48.376.410 I common_perf_print: unaccounted time =     173.35 ms /   7.6 %      (total - sampling - prompt eval - eval) / (total)
+2026-07-08 21:24:43 0.48.376.411 I common_perf_print:    graphs reused =          4

@@ -1,0 +1,41 @@
+# llama.cpp 源码（只记录 commit，不推送源码）
+llama.cpp/
+
+# 构建产物
+build-*/
+build/
+*.o
+*.a
+*.so
+*.exe
+
+# 模型文件（通常几百 MB 到几十 GB，不提交）
+models/
+*.gguf
+*.ggml
+*.bin
+
+# 运行时日志（本地生成；当前仓库保留部分日志作为实验证据）
+# 如需默认忽略，取消下面两行的注释：
+# logs/
+# *.log
+
+# RPC 缓存（手机端生成本地缓存）
+*.cache/
+
+# 环境变量与敏感信息
+.env
+.env.*
+
+# Claude Code / IDE
+.claude/
+*.lock
+lock/
+
+# 系统文件
+.DS_Store
+Thumbs.db
+
+# 临时文件
+*.tmp
+/tmp/

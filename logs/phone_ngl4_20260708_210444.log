@@ -1,0 +1,2790 @@
+2026-07-08 21:06:26 Accepted client connection
+2026-07-08 21:06:26 [hello] version: 4.0.1
+2026-07-08 21:06:26 Client connection closed
+2026-07-08 21:06:26 recv returned 0 (peer closed?)
+2026-07-08 21:06:26 [~impl] closing socket 4
+2026-07-08 21:06:27 Accepted client connection
+2026-07-08 21:06:27 [hello] version: 4.0.1
+2026-07-08 21:06:27 [get_device_memory] device: 0, free_mem: 7852646400, total_mem: 7852646400
+2026-07-08 21:06:27 Client connection closed
+2026-07-08 21:06:27 recv returned 0 (peer closed?)
+2026-07-08 21:06:27 [~impl] closing socket 4
+2026-07-08 21:06:27 Accepted client connection
+2026-07-08 21:06:27 [hello] version: 4.0.1
+2026-07-08 21:06:27 [get_alignment] device: 0, alignment: 32
+2026-07-08 21:06:27 [get_max_size] device: 0, max_size: 18446744073709551615
+2026-07-08 21:06:27 recv returned 0 (peer closed?)
+2026-07-08 21:06:27 Client connection closed
+2026-07-08 21:06:27 [~impl] closing socket 4
+2026-07-08 21:06:27 Accepted client connection
+2026-07-08 21:06:27 [hello] version: 4.0.1
+2026-07-08 21:06:27 [get_device_memory] device: 0, free_mem: 7852646400, total_mem: 7852646400
+2026-07-08 21:06:27 Client connection closed
+2026-07-08 21:06:27 recv returned 0 (peer closed?)
+2026-07-08 21:06:27 [~impl] closing socket 4
+2026-07-08 21:06:27 Accepted client connection
+2026-07-08 21:06:27 [hello] version: 4.0.1
+2026-07-08 21:06:27 [get_device_memory] device: 0, free_mem: 7852646400, total_mem: 7852646400
+2026-07-08 21:06:27 Client connection closed
+2026-07-08 21:06:27 recv returned 0 (peer closed?)
+2026-07-08 21:06:27 [~impl] closing socket 4
+2026-07-08 21:06:27 Accepted client connection
+2026-07-08 21:06:27 [hello] version: 4.0.1
+2026-07-08 21:06:27 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:27 Client connection closed
+2026-07-08 21:06:27 recv returned 0 (peer closed?)
+2026-07-08 21:06:27 [~impl] closing socket 4
+2026-07-08 21:06:27 Accepted client connection
+2026-07-08 21:06:27 [hello] version: 4.0.1
+2026-07-08 21:06:27 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:27 recv returned 0 (peer closed?)
+2026-07-08 21:06:27 Client connection closed
+2026-07-08 21:06:27 [~impl] closing socket 4
+2026-07-08 21:06:27 Accepted client connection
+2026-07-08 21:06:27 [hello] version: 4.0.1
+2026-07-08 21:06:27 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:27 recv returned 0 (peer closed?)
+2026-07-08 21:06:27 Client connection closed
+2026-07-08 21:06:27 [~impl] closing socket 4
+2026-07-08 21:06:27 Accepted client connection
+2026-07-08 21:06:27 [hello] version: 4.0.1
+2026-07-08 21:06:27 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:27 recv returned 0 (peer closed?)
+2026-07-08 21:06:27 Client connection closed
+2026-07-08 21:06:27 [~impl] closing socket 4
+2026-07-08 21:06:27 Accepted client connection
+2026-07-08 21:06:27 [hello] version: 4.0.1
+2026-07-08 21:06:27 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:27 Client connection closed
+2026-07-08 21:06:27 recv returned 0 (peer closed?)
+2026-07-08 21:06:27 [~impl] closing socket 4
+2026-07-08 21:06:27 Accepted client connection
+2026-07-08 21:06:27 [hello] version: 4.0.1
+2026-07-08 21:06:27 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:27 recv returned 0 (peer closed?)
+2026-07-08 21:06:27 Client connection closed
+2026-07-08 21:06:27 [~impl] closing socket 4
+2026-07-08 21:06:27 Accepted client connection
+2026-07-08 21:06:27 [hello] version: 4.0.1
+2026-07-08 21:06:27 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:27 recv returned 0 (peer closed?)
+2026-07-08 21:06:27 Client connection closed
+2026-07-08 21:06:27 [~impl] closing socket 4
+2026-07-08 21:06:27 Accepted client connection
+2026-07-08 21:06:27 [hello] version: 4.0.1
+2026-07-08 21:06:27 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:27 Client connection closed
+2026-07-08 21:06:27 recv returned 0 (peer closed?)
+2026-07-08 21:06:27 [~impl] closing socket 4
+2026-07-08 21:06:27 Accepted client connection
+2026-07-08 21:06:27 [hello] version: 4.0.1
+2026-07-08 21:06:27 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:27 Client connection closed
+2026-07-08 21:06:27 recv returned 0 (peer closed?)
+2026-07-08 21:06:27 [~impl] closing socket 4
+2026-07-08 21:06:27 Accepted client connection
+2026-07-08 21:06:27 [hello] version: 4.0.1
+2026-07-08 21:06:27 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:27 Client connection closed
+2026-07-08 21:06:27 recv returned 0 (peer closed?)
+2026-07-08 21:06:27 [~impl] closing socket 4
+2026-07-08 21:06:27 Accepted client connection
+2026-07-08 21:06:27 [hello] version: 4.0.1
+2026-07-08 21:06:27 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:27 Client connection closed
+2026-07-08 21:06:27 recv returned 0 (peer closed?)
+2026-07-08 21:06:27 [~impl] closing socket 4
+2026-07-08 21:06:27 Accepted client connection
+2026-07-08 21:06:27 [hello] version: 4.0.1
+2026-07-08 21:06:27 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:27 Client connection closed
+2026-07-08 21:06:27 recv returned 0 (peer closed?)
+2026-07-08 21:06:27 [~impl] closing socket 4
+2026-07-08 21:06:27 Accepted client connection
+2026-07-08 21:06:27 [hello] version: 4.0.1
+2026-07-08 21:06:27 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:27 recv returned 0 (peer closed?)
+2026-07-08 21:06:27 Client connection closed
+2026-07-08 21:06:27 [~impl] closing socket 4
+2026-07-08 21:06:27 Accepted client connection
+2026-07-08 21:06:27 [hello] version: 4.0.1
+2026-07-08 21:06:27 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:27 recv returned 0 (peer closed?)
+2026-07-08 21:06:27 Client connection closed
+2026-07-08 21:06:27 [~impl] closing socket 4
+2026-07-08 21:06:27 Accepted client connection
+2026-07-08 21:06:27 [hello] version: 4.0.1
+2026-07-08 21:06:27 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:27 recv returned 0 (peer closed?)
+2026-07-08 21:06:27 Client connection closed
+2026-07-08 21:06:27 [~impl] closing socket 4
+2026-07-08 21:06:27 Accepted client connection
+2026-07-08 21:06:27 [hello] version: 4.0.1
+2026-07-08 21:06:27 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:27 Client connection closed
+2026-07-08 21:06:27 recv returned 0 (peer closed?)
+2026-07-08 21:06:27 [~impl] closing socket 4
+2026-07-08 21:06:27 Accepted client connection
+2026-07-08 21:06:27 [hello] version: 4.0.1
+2026-07-08 21:06:27 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:27 Client connection closed
+2026-07-08 21:06:27 recv returned 0 (peer closed?)
+2026-07-08 21:06:27 [~impl] closing socket 4
+2026-07-08 21:06:27 Accepted client connection
+2026-07-08 21:06:27 [hello] version: 4.0.1
+2026-07-08 21:06:27 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:27 Client connection closed
+2026-07-08 21:06:27 recv returned 0 (peer closed?)
+2026-07-08 21:06:27 [~impl] closing socket 4
+2026-07-08 21:06:27 Accepted client connection
+2026-07-08 21:06:27 [hello] version: 4.0.1
+2026-07-08 21:06:27 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:27 Client connection closed
+2026-07-08 21:06:27 recv returned 0 (peer closed?)
+2026-07-08 21:06:27 [~impl] closing socket 4
+2026-07-08 21:06:27 Accepted client connection
+2026-07-08 21:06:27 [hello] version: 4.0.1
+2026-07-08 21:06:27 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:27 Client connection closed
+2026-07-08 21:06:27 recv returned 0 (peer closed?)
+2026-07-08 21:06:27 [~impl] closing socket 4
+2026-07-08 21:06:27 Accepted client connection
+2026-07-08 21:06:27 [hello] version: 4.0.1
+2026-07-08 21:06:27 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:27 Client connection closed
+2026-07-08 21:06:27 recv returned 0 (peer closed?)
+2026-07-08 21:06:27 [~impl] closing socket 4
+2026-07-08 21:06:27 Accepted client connection
+2026-07-08 21:06:27 [hello] version: 4.0.1
+2026-07-08 21:06:27 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:27 Client connection closed
+2026-07-08 21:06:27 recv returned 0 (peer closed?)
+2026-07-08 21:06:27 [~impl] closing socket 4
+2026-07-08 21:06:27 Accepted client connection
+2026-07-08 21:06:27 [hello] version: 4.0.1
+2026-07-08 21:06:27 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:27 Client connection closed
+2026-07-08 21:06:27 recv returned 0 (peer closed?)
+2026-07-08 21:06:27 [~impl] closing socket 4
+2026-07-08 21:06:27 Accepted client connection
+2026-07-08 21:06:27 [hello] version: 4.0.1
+2026-07-08 21:06:27 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:27 Client connection closed
+2026-07-08 21:06:27 recv returned 0 (peer closed?)
+2026-07-08 21:06:27 [~impl] closing socket 4
+2026-07-08 21:06:27 Accepted client connection
+2026-07-08 21:06:27 [hello] version: 4.0.1
+2026-07-08 21:06:27 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:28 Client connection closed
+2026-07-08 21:06:28 recv returned 0 (peer closed?)
+2026-07-08 21:06:28 [~impl] closing socket 4
+2026-07-08 21:06:28 Accepted client connection
+2026-07-08 21:06:28 [hello] version: 4.0.1
+2026-07-08 21:06:28 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:28 Client connection closed
+2026-07-08 21:06:28 recv returned 0 (peer closed?)
+2026-07-08 21:06:28 [~impl] closing socket 4
+2026-07-08 21:06:28 Accepted client connection
+2026-07-08 21:06:28 [hello] version: 4.0.1
+2026-07-08 21:06:28 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:28 recv returned 0 (peer closed?)
+2026-07-08 21:06:28 Client connection closed
+2026-07-08 21:06:28 [~impl] closing socket 4
+2026-07-08 21:06:28 Accepted client connection
+2026-07-08 21:06:28 [hello] version: 4.0.1
+2026-07-08 21:06:28 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:28 Client connection closed
+2026-07-08 21:06:28 recv returned 0 (peer closed?)
+2026-07-08 21:06:28 [~impl] closing socket 4
+2026-07-08 21:06:28 Accepted client connection
+2026-07-08 21:06:28 [hello] version: 4.0.1
+2026-07-08 21:06:28 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:28 Client connection closed
+2026-07-08 21:06:28 recv returned 0 (peer closed?)
+2026-07-08 21:06:28 [~impl] closing socket 4
+2026-07-08 21:06:28 Accepted client connection
+2026-07-08 21:06:28 [hello] version: 4.0.1
+2026-07-08 21:06:28 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:28 Client connection closed
+2026-07-08 21:06:28 recv returned 0 (peer closed?)
+2026-07-08 21:06:28 [~impl] closing socket 4
+2026-07-08 21:06:28 Accepted client connection
+2026-07-08 21:06:28 [hello] version: 4.0.1
+2026-07-08 21:06:28 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:28 recv returned 0 (peer closed?)
+2026-07-08 21:06:28 Client connection closed
+2026-07-08 21:06:28 [~impl] closing socket 4
+2026-07-08 21:06:28 Accepted client connection
+2026-07-08 21:06:28 [hello] version: 4.0.1
+2026-07-08 21:06:28 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:28 Client connection closed
+2026-07-08 21:06:28 recv returned 0 (peer closed?)
+2026-07-08 21:06:28 [~impl] closing socket 4
+2026-07-08 21:06:28 Accepted client connection
+2026-07-08 21:06:28 [hello] version: 4.0.1
+2026-07-08 21:06:28 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:28 Client connection closed
+2026-07-08 21:06:28 recv returned 0 (peer closed?)
+2026-07-08 21:06:28 [~impl] closing socket 4
+2026-07-08 21:06:28 Accepted client connection
+2026-07-08 21:06:28 [hello] version: 4.0.1
+2026-07-08 21:06:28 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:28 Client connection closed
+2026-07-08 21:06:28 recv returned 0 (peer closed?)
+2026-07-08 21:06:28 [~impl] closing socket 4
+2026-07-08 21:06:28 Accepted client connection
+2026-07-08 21:06:28 [hello] version: 4.0.1
+2026-07-08 21:06:28 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:28 Client connection closed
+2026-07-08 21:06:28 recv returned 0 (peer closed?)
+2026-07-08 21:06:28 [~impl] closing socket 4
+2026-07-08 21:06:28 Accepted client connection
+2026-07-08 21:06:28 [hello] version: 4.0.1
+2026-07-08 21:06:28 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:28 Client connection closed
+2026-07-08 21:06:28 recv returned 0 (peer closed?)
+2026-07-08 21:06:28 [~impl] closing socket 4
+2026-07-08 21:06:28 Accepted client connection
+2026-07-08 21:06:28 [hello] version: 4.0.1
+2026-07-08 21:06:28 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:28 Client connection closed
+2026-07-08 21:06:28 recv returned 0 (peer closed?)
+2026-07-08 21:06:28 [~impl] closing socket 4
+2026-07-08 21:06:28 Accepted client connection
+2026-07-08 21:06:28 [hello] version: 4.0.1
+2026-07-08 21:06:28 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:28 Client connection closed
+2026-07-08 21:06:28 recv returned 0 (peer closed?)
+2026-07-08 21:06:28 [~impl] closing socket 4
+2026-07-08 21:06:29 Accepted client connection
+2026-07-08 21:06:29 [hello] version: 4.0.1
+2026-07-08 21:06:29 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:29 Client connection closed
+2026-07-08 21:06:29 recv returned 0 (peer closed?)
+2026-07-08 21:06:29 [~impl] closing socket 4
+2026-07-08 21:06:29 Accepted client connection
+2026-07-08 21:06:29 [hello] version: 4.0.1
+2026-07-08 21:06:29 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:29 Client connection closed
+2026-07-08 21:06:29 recv returned 0 (peer closed?)
+2026-07-08 21:06:29 [~impl] closing socket 4
+2026-07-08 21:06:29 Accepted client connection
+2026-07-08 21:06:29 [hello] version: 4.0.1
+2026-07-08 21:06:29 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:29 recv returned 0 (peer closed?)
+2026-07-08 21:06:29 Client connection closed
+2026-07-08 21:06:29 [~impl] closing socket 4
+2026-07-08 21:06:29 Accepted client connection
+2026-07-08 21:06:29 [hello] version: 4.0.1
+2026-07-08 21:06:29 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:29 Client connection closed
+2026-07-08 21:06:29 recv returned 0 (peer closed?)
+2026-07-08 21:06:29 [~impl] closing socket 4
+2026-07-08 21:06:29 Accepted client connection
+2026-07-08 21:06:29 [hello] version: 4.0.1
+2026-07-08 21:06:29 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:29 Client connection closed
+2026-07-08 21:06:29 recv returned 0 (peer closed?)
+2026-07-08 21:06:29 [~impl] closing socket 4
+2026-07-08 21:06:29 Accepted client connection
+2026-07-08 21:06:29 [hello] version: 4.0.1
+2026-07-08 21:06:29 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:29 Client connection closed
+2026-07-08 21:06:29 recv returned 0 (peer closed?)
+2026-07-08 21:06:29 [~impl] closing socket 4
+2026-07-08 21:06:29 Accepted client connection
+2026-07-08 21:06:29 [hello] version: 4.0.1
+2026-07-08 21:06:29 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:29 Client connection closed
+2026-07-08 21:06:29 recv returned 0 (peer closed?)
+2026-07-08 21:06:29 [~impl] closing socket 4
+2026-07-08 21:06:29 Accepted client connection
+2026-07-08 21:06:29 [hello] version: 4.0.1
+2026-07-08 21:06:29 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:29 recv returned 0 (peer closed?)
+2026-07-08 21:06:29 Client connection closed
+2026-07-08 21:06:29 [~impl] closing socket 4
+2026-07-08 21:06:29 Accepted client connection
+2026-07-08 21:06:29 [hello] version: 4.0.1
+2026-07-08 21:06:29 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:29 Client connection closed
+2026-07-08 21:06:29 recv returned 0 (peer closed?)
+2026-07-08 21:06:29 [~impl] closing socket 4
+2026-07-08 21:06:29 Accepted client connection
+2026-07-08 21:06:29 [hello] version: 4.0.1
+2026-07-08 21:06:29 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:29 Client connection closed
+2026-07-08 21:06:29 recv returned 0 (peer closed?)
+2026-07-08 21:06:29 [~impl] closing socket 4
+2026-07-08 21:06:29 Accepted client connection
+2026-07-08 21:06:29 [hello] version: 4.0.1
+2026-07-08 21:06:29 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:29 recv returned 0 (peer closed?)
+2026-07-08 21:06:29 Client connection closed
+2026-07-08 21:06:29 [~impl] closing socket 4
+2026-07-08 21:06:29 Accepted client connection
+2026-07-08 21:06:29 [hello] version: 4.0.1
+2026-07-08 21:06:29 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:29 Client connection closed
+2026-07-08 21:06:29 recv returned 0 (peer closed?)
+2026-07-08 21:06:29 [~impl] closing socket 4
+2026-07-08 21:06:29 Accepted client connection
+2026-07-08 21:06:29 [hello] version: 4.0.1
+2026-07-08 21:06:29 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:29 recv returned 0 (peer closed?)
+2026-07-08 21:06:29 Client connection closed
+2026-07-08 21:06:29 [~impl] closing socket 4
+2026-07-08 21:06:29 Accepted client connection
+2026-07-08 21:06:29 [hello] version: 4.0.1
+2026-07-08 21:06:29 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:29 Client connection closed
+2026-07-08 21:06:29 recv returned 0 (peer closed?)
+2026-07-08 21:06:29 [~impl] closing socket 4
+2026-07-08 21:06:29 Accepted client connection
+2026-07-08 21:06:29 [hello] version: 4.0.1
+2026-07-08 21:06:29 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:29 Client connection closed
+2026-07-08 21:06:29 recv returned 0 (peer closed?)
+2026-07-08 21:06:29 [~impl] closing socket 4
+2026-07-08 21:06:29 Accepted client connection
+2026-07-08 21:06:29 [hello] version: 4.0.1
+2026-07-08 21:06:29 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:29 Client connection closed
+2026-07-08 21:06:29 recv returned 0 (peer closed?)
+2026-07-08 21:06:29 [~impl] closing socket 4
+2026-07-08 21:06:29 Accepted client connection
+2026-07-08 21:06:29 [hello] version: 4.0.1
+2026-07-08 21:06:29 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:29 Client connection closed
+2026-07-08 21:06:29 recv returned 0 (peer closed?)
+2026-07-08 21:06:29 [~impl] closing socket 4
+2026-07-08 21:06:29 Accepted client connection
+2026-07-08 21:06:29 [hello] version: 4.0.1
+2026-07-08 21:06:29 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:29 Client connection closed
+2026-07-08 21:06:29 recv returned 0 (peer closed?)
+2026-07-08 21:06:29 [~impl] closing socket 4
+2026-07-08 21:06:29 Accepted client connection
+2026-07-08 21:06:29 [hello] version: 4.0.1
+2026-07-08 21:06:29 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:29 recv returned 0 (peer closed?)
+2026-07-08 21:06:29 Client connection closed
+2026-07-08 21:06:29 [~impl] closing socket 4
+2026-07-08 21:06:29 Accepted client connection
+2026-07-08 21:06:29 [hello] version: 4.0.1
+2026-07-08 21:06:29 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:29 recv returned 0 (peer closed?)
+2026-07-08 21:06:29 Client connection closed
+2026-07-08 21:06:29 [~impl] closing socket 4
+2026-07-08 21:06:29 Accepted client connection
+2026-07-08 21:06:29 [hello] version: 4.0.1
+2026-07-08 21:06:29 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:29 Client connection closed
+2026-07-08 21:06:29 recv returned 0 (peer closed?)
+2026-07-08 21:06:29 [~impl] closing socket 4
+2026-07-08 21:06:29 Accepted client connection
+2026-07-08 21:06:29 [hello] version: 4.0.1
+2026-07-08 21:06:29 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:29 Client connection closed
+2026-07-08 21:06:29 recv returned 0 (peer closed?)
+2026-07-08 21:06:29 [~impl] closing socket 4
+2026-07-08 21:06:29 Accepted client connection
+2026-07-08 21:06:29 [hello] version: 4.0.1
+2026-07-08 21:06:29 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:29 recv returned 0 (peer closed?)
+2026-07-08 21:06:29 Client connection closed
+2026-07-08 21:06:29 [~impl] closing socket 4
+2026-07-08 21:06:29 Accepted client connection
+2026-07-08 21:06:29 [hello] version: 4.0.1
+2026-07-08 21:06:29 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:29 recv returned 0 (peer closed?)
+2026-07-08 21:06:29 Client connection closed
+2026-07-08 21:06:29 [~impl] closing socket 4
+2026-07-08 21:06:29 Accepted client connection
+2026-07-08 21:06:29 [hello] version: 4.0.1
+2026-07-08 21:06:29 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:29 Client connection closed
+2026-07-08 21:06:29 recv returned 0 (peer closed?)
+2026-07-08 21:06:29 [~impl] closing socket 4
+2026-07-08 21:06:29 Accepted client connection
+2026-07-08 21:06:29 [hello] version: 4.0.1
+2026-07-08 21:06:29 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:29 Client connection closed
+2026-07-08 21:06:29 recv returned 0 (peer closed?)
+2026-07-08 21:06:29 [~impl] closing socket 4
+2026-07-08 21:06:29 Accepted client connection
+2026-07-08 21:06:29 [hello] version: 4.0.1
+2026-07-08 21:06:29 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:29 recv returned 0 (peer closed?)
+2026-07-08 21:06:29 Client connection closed
+2026-07-08 21:06:29 [~impl] closing socket 4
+2026-07-08 21:06:29 Accepted client connection
+2026-07-08 21:06:29 [hello] version: 4.0.1
+2026-07-08 21:06:29 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:29 recv returned 0 (peer closed?)
+2026-07-08 21:06:29 Client connection closed
+2026-07-08 21:06:29 [~impl] closing socket 4
+2026-07-08 21:06:30 Accepted client connection
+2026-07-08 21:06:30 [hello] version: 4.0.1
+2026-07-08 21:06:30 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:30 Client connection closed
+2026-07-08 21:06:30 recv returned 0 (peer closed?)
+2026-07-08 21:06:30 [~impl] closing socket 4
+2026-07-08 21:06:30 Accepted client connection
+2026-07-08 21:06:30 [hello] version: 4.0.1
+2026-07-08 21:06:30 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:30 Client connection closed
+2026-07-08 21:06:30 recv returned 0 (peer closed?)
+2026-07-08 21:06:30 [~impl] closing socket 4
+2026-07-08 21:06:30 Accepted client connection
+2026-07-08 21:06:30 [hello] version: 4.0.1
+2026-07-08 21:06:30 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:30 Client connection closed
+2026-07-08 21:06:30 recv returned 0 (peer closed?)
+2026-07-08 21:06:30 [~impl] closing socket 4
+2026-07-08 21:06:30 Accepted client connection
+2026-07-08 21:06:30 [hello] version: 4.0.1
+2026-07-08 21:06:30 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:30 Client connection closed
+2026-07-08 21:06:30 recv returned 0 (peer closed?)
+2026-07-08 21:06:30 [~impl] closing socket 4
+2026-07-08 21:06:30 Accepted client connection
+2026-07-08 21:06:30 [hello] version: 4.0.1
+2026-07-08 21:06:30 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:30 Client connection closed
+2026-07-08 21:06:30 recv returned 0 (peer closed?)
+2026-07-08 21:06:30 [~impl] closing socket 4
+2026-07-08 21:06:30 Accepted client connection
+2026-07-08 21:06:30 [hello] version: 4.0.1
+2026-07-08 21:06:30 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:30 Client connection closed
+2026-07-08 21:06:30 recv returned 0 (peer closed?)
+2026-07-08 21:06:30 [~impl] closing socket 4
+2026-07-08 21:06:30 Accepted client connection
+2026-07-08 21:06:30 [hello] version: 4.0.1
+2026-07-08 21:06:30 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:30 Client connection closed
+2026-07-08 21:06:30 recv returned 0 (peer closed?)
+2026-07-08 21:06:30 [~impl] closing socket 4
+2026-07-08 21:06:30 Accepted client connection
+2026-07-08 21:06:30 [hello] version: 4.0.1
+2026-07-08 21:06:30 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:30 recv returned 0 (peer closed?)
+2026-07-08 21:06:30 Client connection closed
+2026-07-08 21:06:30 [~impl] closing socket 4
+2026-07-08 21:06:30 Accepted client connection
+2026-07-08 21:06:30 [hello] version: 4.0.1
+2026-07-08 21:06:30 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:30 recv returned 0 (peer closed?)
+2026-07-08 21:06:30 Client connection closed
+2026-07-08 21:06:30 [~impl] closing socket 4
+2026-07-08 21:06:30 Accepted client connection
+2026-07-08 21:06:30 [hello] version: 4.0.1
+2026-07-08 21:06:30 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:30 Client connection closed
+2026-07-08 21:06:30 recv returned 0 (peer closed?)
+2026-07-08 21:06:30 [~impl] closing socket 4
+2026-07-08 21:06:30 Accepted client connection
+2026-07-08 21:06:30 [hello] version: 4.0.1
+2026-07-08 21:06:30 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:30 recv returned 0 (peer closed?)
+2026-07-08 21:06:30 Client connection closed
+2026-07-08 21:06:30 Accepted client connection
+2026-07-08 21:06:30 [~impl] closing socket 4
+2026-07-08 21:06:30 [hello] version: 4.0.1
+2026-07-08 21:06:30 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:30 recv returned 0 (peer closed?)
+2026-07-08 21:06:30 Client connection closed
+2026-07-08 21:06:30 [~impl] closing socket 4
+2026-07-08 21:06:30 Accepted client connection
+2026-07-08 21:06:30 [hello] version: 4.0.1
+2026-07-08 21:06:30 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:30 recv returned 0 (peer closed?)
+2026-07-08 21:06:30 [~impl] closing socket 4
+2026-07-08 21:06:30 Client connection closed
+2026-07-08 21:06:30 Accepted client connection
+2026-07-08 21:06:30 [hello] version: 4.0.1
+2026-07-08 21:06:30 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:30 Client connection closed
+2026-07-08 21:06:30 recv returned 0 (peer closed?)
+2026-07-08 21:06:30 [~impl] closing socket 4
+2026-07-08 21:06:30 Accepted client connection
+2026-07-08 21:06:30 [hello] version: 4.0.1
+2026-07-08 21:06:30 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:30 Client connection closed
+2026-07-08 21:06:30 recv returned 0 (peer closed?)
+2026-07-08 21:06:30 [~impl] closing socket 4
+2026-07-08 21:06:30 Accepted client connection
+2026-07-08 21:06:30 [hello] version: 4.0.1
+2026-07-08 21:06:30 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:30 Client connection closed
+2026-07-08 21:06:30 recv returned 0 (peer closed?)
+2026-07-08 21:06:30 [~impl] closing socket 4
+2026-07-08 21:06:30 Accepted client connection
+2026-07-08 21:06:30 [hello] version: 4.0.1
+2026-07-08 21:06:30 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:30 Client connection closed
+2026-07-08 21:06:30 recv returned 0 (peer closed?)
+2026-07-08 21:06:30 [~impl] closing socket 4
+2026-07-08 21:06:30 Accepted client connection
+2026-07-08 21:06:30 [hello] version: 4.0.1
+2026-07-08 21:06:30 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:30 Client connection closed
+2026-07-08 21:06:30 recv returned 0 (peer closed?)
+2026-07-08 21:06:30 [~impl] closing socket 4
+2026-07-08 21:06:30 Accepted client connection
+2026-07-08 21:06:30 [hello] version: 4.0.1
+2026-07-08 21:06:30 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:30 Client connection closed
+2026-07-08 21:06:30 recv returned 0 (peer closed?)
+2026-07-08 21:06:30 [~impl] closing socket 4
+2026-07-08 21:06:30 Accepted client connection
+2026-07-08 21:06:30 [hello] version: 4.0.1
+2026-07-08 21:06:30 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:30 Client connection closed
+2026-07-08 21:06:30 recv returned 0 (peer closed?)
+2026-07-08 21:06:30 [~impl] closing socket 4
+2026-07-08 21:06:30 Accepted client connection
+2026-07-08 21:06:30 [hello] version: 4.0.1
+2026-07-08 21:06:30 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:30 Client connection closed
+2026-07-08 21:06:30 recv returned 0 (peer closed?)
+2026-07-08 21:06:30 [~impl] closing socket 4
+2026-07-08 21:06:30 Accepted client connection
+2026-07-08 21:06:30 [hello] version: 4.0.1
+2026-07-08 21:06:30 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:30 Client connection closed
+2026-07-08 21:06:30 recv returned 0 (peer closed?)
+2026-07-08 21:06:30 [~impl] closing socket 4
+2026-07-08 21:06:30 Accepted client connection
+2026-07-08 21:06:30 [hello] version: 4.0.1
+2026-07-08 21:06:30 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:30 Client connection closed
+2026-07-08 21:06:30 recv returned 0 (peer closed?)
+2026-07-08 21:06:30 [~impl] closing socket 4
+2026-07-08 21:06:30 Accepted client connection
+2026-07-08 21:06:30 [hello] version: 4.0.1
+2026-07-08 21:06:30 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:30 Client connection closed
+2026-07-08 21:06:30 recv returned 0 (peer closed?)
+2026-07-08 21:06:30 [~impl] closing socket 4
+2026-07-08 21:06:30 Accepted client connection
+2026-07-08 21:06:30 [hello] version: 4.0.1
+2026-07-08 21:06:30 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:30 Client connection closed
+2026-07-08 21:06:30 recv returned 0 (peer closed?)
+2026-07-08 21:06:30 [~impl] closing socket 4
+2026-07-08 21:06:30 Accepted client connection
+2026-07-08 21:06:30 [hello] version: 4.0.1
+2026-07-08 21:06:30 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:30 Client connection closed
+2026-07-08 21:06:30 recv returned 0 (peer closed?)
+2026-07-08 21:06:30 [~impl] closing socket 4
+2026-07-08 21:06:30 Accepted client connection
+2026-07-08 21:06:30 [hello] version: 4.0.1
+2026-07-08 21:06:30 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:30 Client connection closed
+2026-07-08 21:06:30 recv returned 0 (peer closed?)
+2026-07-08 21:06:30 [~impl] closing socket 4
+2026-07-08 21:06:30 Accepted client connection
+2026-07-08 21:06:30 [hello] version: 4.0.1
+2026-07-08 21:06:30 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:30 Client connection closed
+2026-07-08 21:06:30 recv returned 0 (peer closed?)
+2026-07-08 21:06:30 [~impl] closing socket 4
+2026-07-08 21:06:30 Accepted client connection
+2026-07-08 21:06:30 [hello] version: 4.0.1
+2026-07-08 21:06:30 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:30 Client connection closed
+2026-07-08 21:06:30 recv returned 0 (peer closed?)
+2026-07-08 21:06:30 [~impl] closing socket 4
+2026-07-08 21:06:30 Accepted client connection
+2026-07-08 21:06:30 [hello] version: 4.0.1
+2026-07-08 21:06:30 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:30 Client connection closed
+2026-07-08 21:06:30 recv returned 0 (peer closed?)
+2026-07-08 21:06:30 [~impl] closing socket 4
+2026-07-08 21:06:30 Accepted client connection
+2026-07-08 21:06:30 [hello] version: 4.0.1
+2026-07-08 21:06:30 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:30 Client connection closed
+2026-07-08 21:06:30 recv returned 0 (peer closed?)
+2026-07-08 21:06:30 [~impl] closing socket 4
+2026-07-08 21:06:30 Accepted client connection
+2026-07-08 21:06:30 [hello] version: 4.0.1
+2026-07-08 21:06:30 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:30 Client connection closed
+2026-07-08 21:06:30 recv returned 0 (peer closed?)
+2026-07-08 21:06:30 [~impl] closing socket 4
+2026-07-08 21:06:30 Accepted client connection
+2026-07-08 21:06:30 [hello] version: 4.0.1
+2026-07-08 21:06:30 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:30 Client connection closed
+2026-07-08 21:06:30 recv returned 0 (peer closed?)
+2026-07-08 21:06:30 [~impl] closing socket 4
+2026-07-08 21:06:30 Accepted client connection
+2026-07-08 21:06:30 [hello] version: 4.0.1
+2026-07-08 21:06:30 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:30 Client connection closed
+2026-07-08 21:06:30 recv returned 0 (peer closed?)
+2026-07-08 21:06:30 [~impl] closing socket 4
+2026-07-08 21:06:30 Accepted client connection
+2026-07-08 21:06:30 [hello] version: 4.0.1
+2026-07-08 21:06:30 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:30 Client connection closed
+2026-07-08 21:06:30 recv returned 0 (peer closed?)
+2026-07-08 21:06:30 [~impl] closing socket 4
+2026-07-08 21:06:30 Accepted client connection
+2026-07-08 21:06:30 [hello] version: 4.0.1
+2026-07-08 21:06:30 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:30 Client connection closed
+2026-07-08 21:06:30 recv returned 0 (peer closed?)
+2026-07-08 21:06:30 [~impl] closing socket 4
+2026-07-08 21:06:30 Accepted client connection
+2026-07-08 21:06:30 [hello] version: 4.0.1
+2026-07-08 21:06:30 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:30 Client connection closed
+2026-07-08 21:06:30 recv returned 0 (peer closed?)
+2026-07-08 21:06:30 [~impl] closing socket 4
+2026-07-08 21:06:30 Accepted client connection
+2026-07-08 21:06:30 [hello] version: 4.0.1
+2026-07-08 21:06:30 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:30 Client connection closed
+2026-07-08 21:06:30 recv returned 0 (peer closed?)
+2026-07-08 21:06:30 [~impl] closing socket 4
+2026-07-08 21:06:30 Accepted client connection
+2026-07-08 21:06:30 [hello] version: 4.0.1
+2026-07-08 21:06:30 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:30 Client connection closed
+2026-07-08 21:06:30 recv returned 0 (peer closed?)
+2026-07-08 21:06:30 [~impl] closing socket 4
+2026-07-08 21:06:30 Accepted client connection
+2026-07-08 21:06:30 [hello] version: 4.0.1
+2026-07-08 21:06:30 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:30 Client connection closed
+2026-07-08 21:06:30 recv returned 0 (peer closed?)
+2026-07-08 21:06:30 [~impl] closing socket 4
+2026-07-08 21:06:30 Accepted client connection
+2026-07-08 21:06:30 [hello] version: 4.0.1
+2026-07-08 21:06:30 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:30 Client connection closed
+2026-07-08 21:06:30 recv returned 0 (peer closed?)
+2026-07-08 21:06:30 [~impl] closing socket 4
+2026-07-08 21:06:30 Accepted client connection
+2026-07-08 21:06:30 [hello] version: 4.0.1
+2026-07-08 21:06:30 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:30 Client connection closed
+2026-07-08 21:06:30 recv returned 0 (peer closed?)
+2026-07-08 21:06:30 [~impl] closing socket 4
+2026-07-08 21:06:30 Accepted client connection
+2026-07-08 21:06:30 [hello] version: 4.0.1
+2026-07-08 21:06:30 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:30 Client connection closed
+2026-07-08 21:06:30 recv returned 0 (peer closed?)
+2026-07-08 21:06:30 [~impl] closing socket 4
+2026-07-08 21:06:31 Accepted client connection
+2026-07-08 21:06:31 [hello] version: 4.0.1
+2026-07-08 21:06:31 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:31 Client connection closed
+2026-07-08 21:06:31 recv returned 0 (peer closed?)
+2026-07-08 21:06:31 [~impl] closing socket 4
+2026-07-08 21:06:31 Accepted client connection
+2026-07-08 21:06:31 [hello] version: 4.0.1
+2026-07-08 21:06:31 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:31 Client connection closed
+2026-07-08 21:06:31 recv returned 0 (peer closed?)
+2026-07-08 21:06:31 [~impl] closing socket 4
+2026-07-08 21:06:31 Accepted client connection
+2026-07-08 21:06:31 [hello] version: 4.0.1
+2026-07-08 21:06:31 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:31 Client connection closed
+2026-07-08 21:06:31 recv returned 0 (peer closed?)
+2026-07-08 21:06:31 [~impl] closing socket 4
+2026-07-08 21:06:31 Accepted client connection
+2026-07-08 21:06:31 [hello] version: 4.0.1
+2026-07-08 21:06:31 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:31 Client connection closed
+2026-07-08 21:06:31 recv returned 0 (peer closed?)
+2026-07-08 21:06:31 [~impl] closing socket 4
+2026-07-08 21:06:31 Accepted client connection
+2026-07-08 21:06:31 [hello] version: 4.0.1
+2026-07-08 21:06:31 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:31 Client connection closed
+2026-07-08 21:06:31 recv returned 0 (peer closed?)
+2026-07-08 21:06:31 [~impl] closing socket 4
+2026-07-08 21:06:31 Accepted client connection
+2026-07-08 21:06:31 [hello] version: 4.0.1
+2026-07-08 21:06:31 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:31 Client connection closed
+2026-07-08 21:06:31 recv returned 0 (peer closed?)
+2026-07-08 21:06:31 [~impl] closing socket 4
+2026-07-08 21:06:31 Accepted client connection
+2026-07-08 21:06:31 [hello] version: 4.0.1
+2026-07-08 21:06:31 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:31 Client connection closed
+2026-07-08 21:06:31 recv returned 0 (peer closed?)
+2026-07-08 21:06:31 [~impl] closing socket 4
+2026-07-08 21:06:31 Accepted client connection
+2026-07-08 21:06:31 [hello] version: 4.0.1
+2026-07-08 21:06:31 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:31 Client connection closed
+2026-07-08 21:06:31 recv returned 0 (peer closed?)
+2026-07-08 21:06:31 [~impl] closing socket 4
+2026-07-08 21:06:31 Accepted client connection
+2026-07-08 21:06:31 [hello] version: 4.0.1
+2026-07-08 21:06:31 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:31 Client connection closed
+2026-07-08 21:06:31 recv returned 0 (peer closed?)
+2026-07-08 21:06:31 [~impl] closing socket 4
+2026-07-08 21:06:31 Accepted client connection
+2026-07-08 21:06:31 [hello] version: 4.0.1
+2026-07-08 21:06:31 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:31 Client connection closed
+2026-07-08 21:06:31 recv returned 0 (peer closed?)
+2026-07-08 21:06:31 [~impl] closing socket 4
+2026-07-08 21:06:31 Accepted client connection
+2026-07-08 21:06:31 [hello] version: 4.0.1
+2026-07-08 21:06:31 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:31 Client connection closed
+2026-07-08 21:06:31 recv returned 0 (peer closed?)
+2026-07-08 21:06:31 [~impl] closing socket 4
+2026-07-08 21:06:31 Accepted client connection
+2026-07-08 21:06:31 [hello] version: 4.0.1
+2026-07-08 21:06:31 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:31 Client connection closed
+2026-07-08 21:06:31 recv returned 0 (peer closed?)
+2026-07-08 21:06:31 [~impl] closing socket 4
+2026-07-08 21:06:31 Accepted client connection
+2026-07-08 21:06:31 [hello] version: 4.0.1
+2026-07-08 21:06:31 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:31 Client connection closed
+2026-07-08 21:06:31 recv returned 0 (peer closed?)
+2026-07-08 21:06:31 [~impl] closing socket 4
+2026-07-08 21:06:31 Accepted client connection
+2026-07-08 21:06:31 [hello] version: 4.0.1
+2026-07-08 21:06:31 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:31 Client connection closed
+2026-07-08 21:06:31 recv returned 0 (peer closed?)
+2026-07-08 21:06:31 [~impl] closing socket 4
+2026-07-08 21:06:31 Accepted client connection
+2026-07-08 21:06:31 [hello] version: 4.0.1
+2026-07-08 21:06:31 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:31 Client connection closed
+2026-07-08 21:06:31 recv returned 0 (peer closed?)
+2026-07-08 21:06:31 [~impl] closing socket 4
+2026-07-08 21:06:31 Accepted client connection
+2026-07-08 21:06:31 [hello] version: 4.0.1
+2026-07-08 21:06:31 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:31 Client connection closed
+2026-07-08 21:06:31 recv returned 0 (peer closed?)
+2026-07-08 21:06:31 [~impl] closing socket 4
+2026-07-08 21:06:31 Accepted client connection
+2026-07-08 21:06:31 [hello] version: 4.0.1
+2026-07-08 21:06:31 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:31 Client connection closed
+2026-07-08 21:06:31 recv returned 0 (peer closed?)
+2026-07-08 21:06:31 [~impl] closing socket 4
+2026-07-08 21:06:31 Accepted client connection
+2026-07-08 21:06:31 [hello] version: 4.0.1
+2026-07-08 21:06:31 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:31 Client connection closed
+2026-07-08 21:06:31 recv returned 0 (peer closed?)
+2026-07-08 21:06:31 [~impl] closing socket 4
+2026-07-08 21:06:31 Accepted client connection
+2026-07-08 21:06:31 [hello] version: 4.0.1
+2026-07-08 21:06:31 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:31 Client connection closed
+2026-07-08 21:06:31 recv returned 0 (peer closed?)
+2026-07-08 21:06:31 [~impl] closing socket 4
+2026-07-08 21:06:31 Accepted client connection
+2026-07-08 21:06:31 [hello] version: 4.0.1
+2026-07-08 21:06:31 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:31 Client connection closed
+2026-07-08 21:06:31 recv returned 0 (peer closed?)
+2026-07-08 21:06:31 [~impl] closing socket 4
+2026-07-08 21:06:31 Accepted client connection
+2026-07-08 21:06:31 [hello] version: 4.0.1
+2026-07-08 21:06:31 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:31 Client connection closed
+2026-07-08 21:06:31 recv returned 0 (peer closed?)
+2026-07-08 21:06:31 [~impl] closing socket 4
+2026-07-08 21:06:31 Accepted client connection
+2026-07-08 21:06:31 [hello] version: 4.0.1
+2026-07-08 21:06:31 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:31 Client connection closed
+2026-07-08 21:06:31 recv returned 0 (peer closed?)
+2026-07-08 21:06:31 [~impl] closing socket 4
+2026-07-08 21:06:31 Accepted client connection
+2026-07-08 21:06:31 [hello] version: 4.0.1
+2026-07-08 21:06:31 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:31 Client connection closed
+2026-07-08 21:06:31 recv returned 0 (peer closed?)
+2026-07-08 21:06:31 [~impl] closing socket 4
+2026-07-08 21:06:31 Accepted client connection
+2026-07-08 21:06:31 [hello] version: 4.0.1
+2026-07-08 21:06:31 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:31 Client connection closed
+2026-07-08 21:06:31 recv returned 0 (peer closed?)
+2026-07-08 21:06:31 [~impl] closing socket 4
+2026-07-08 21:06:31 Accepted client connection
+2026-07-08 21:06:31 [hello] version: 4.0.1
+2026-07-08 21:06:31 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:31 Client connection closed
+2026-07-08 21:06:31 recv returned 0 (peer closed?)
+2026-07-08 21:06:31 [~impl] closing socket 4
+2026-07-08 21:06:31 Accepted client connection
+2026-07-08 21:06:31 [hello] version: 4.0.1
+2026-07-08 21:06:31 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:31 Client connection closed
+2026-07-08 21:06:31 recv returned 0 (peer closed?)
+2026-07-08 21:06:31 [~impl] closing socket 4
+2026-07-08 21:06:31 Accepted client connection
+2026-07-08 21:06:31 [hello] version: 4.0.1
+2026-07-08 21:06:31 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:31 Client connection closed
+2026-07-08 21:06:31 recv returned 0 (peer closed?)
+2026-07-08 21:06:31 [~impl] closing socket 4
+2026-07-08 21:06:31 Accepted client connection
+2026-07-08 21:06:31 [hello] version: 4.0.1
+2026-07-08 21:06:31 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:31 Client connection closed
+2026-07-08 21:06:31 recv returned 0 (peer closed?)
+2026-07-08 21:06:31 [~impl] closing socket 4
+2026-07-08 21:06:31 Accepted client connection
+2026-07-08 21:06:31 [hello] version: 4.0.1
+2026-07-08 21:06:31 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:31 Client connection closed
+2026-07-08 21:06:31 recv returned 0 (peer closed?)
+2026-07-08 21:06:31 [~impl] closing socket 4
+2026-07-08 21:06:32 Accepted client connection
+2026-07-08 21:06:32 [hello] version: 4.0.1
+2026-07-08 21:06:32 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:32 Client connection closed
+2026-07-08 21:06:32 recv returned 0 (peer closed?)
+2026-07-08 21:06:32 [~impl] closing socket 4
+2026-07-08 21:06:32 Accepted client connection
+2026-07-08 21:06:32 [hello] version: 4.0.1
+2026-07-08 21:06:32 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:32 Client connection closed
+2026-07-08 21:06:32 recv returned 0 (peer closed?)
+2026-07-08 21:06:32 [~impl] closing socket 4
+2026-07-08 21:06:32 Accepted client connection
+2026-07-08 21:06:32 [hello] version: 4.0.1
+2026-07-08 21:06:32 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:32 Client connection closed
+2026-07-08 21:06:32 recv returned 0 (peer closed?)
+2026-07-08 21:06:32 [~impl] closing socket 4
+2026-07-08 21:06:32 Accepted client connection
+2026-07-08 21:06:32 [hello] version: 4.0.1
+2026-07-08 21:06:32 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:32 Client connection closed
+2026-07-08 21:06:32 recv returned 0 (peer closed?)
+2026-07-08 21:06:32 [~impl] closing socket 4
+2026-07-08 21:06:32 Accepted client connection
+2026-07-08 21:06:32 [hello] version: 4.0.1
+2026-07-08 21:06:32 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:32 Client connection closed
+2026-07-08 21:06:32 recv returned 0 (peer closed?)
+2026-07-08 21:06:32 [~impl] closing socket 4
+2026-07-08 21:06:32 Accepted client connection
+2026-07-08 21:06:32 [hello] version: 4.0.1
+2026-07-08 21:06:32 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:32 Client connection closed
+2026-07-08 21:06:32 recv returned 0 (peer closed?)
+2026-07-08 21:06:32 [~impl] closing socket 4
+2026-07-08 21:06:32 Accepted client connection
+2026-07-08 21:06:32 [hello] version: 4.0.1
+2026-07-08 21:06:32 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:32 Client connection closed
+2026-07-08 21:06:32 recv returned 0 (peer closed?)
+2026-07-08 21:06:32 [~impl] closing socket 4
+2026-07-08 21:06:32 Accepted client connection
+2026-07-08 21:06:32 [hello] version: 4.0.1
+2026-07-08 21:06:32 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:32 Client connection closed
+2026-07-08 21:06:32 recv returned 0 (peer closed?)
+2026-07-08 21:06:32 [~impl] closing socket 4
+2026-07-08 21:06:32 Accepted client connection
+2026-07-08 21:06:32 [hello] version: 4.0.1
+2026-07-08 21:06:32 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:32 Client connection closed
+2026-07-08 21:06:32 recv returned 0 (peer closed?)
+2026-07-08 21:06:32 [~impl] closing socket 4
+2026-07-08 21:06:32 Accepted client connection
+2026-07-08 21:06:32 [hello] version: 4.0.1
+2026-07-08 21:06:32 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:32 Client connection closed
+2026-07-08 21:06:32 recv returned 0 (peer closed?)
+2026-07-08 21:06:32 [~impl] closing socket 4
+2026-07-08 21:06:32 Accepted client connection
+2026-07-08 21:06:32 [hello] version: 4.0.1
+2026-07-08 21:06:32 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:32 Client connection closed
+2026-07-08 21:06:32 recv returned 0 (peer closed?)
+2026-07-08 21:06:32 [~impl] closing socket 4
+2026-07-08 21:06:32 Accepted client connection
+2026-07-08 21:06:32 [hello] version: 4.0.1
+2026-07-08 21:06:32 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:32 Client connection closed
+2026-07-08 21:06:32 recv returned 0 (peer closed?)
+2026-07-08 21:06:32 [~impl] closing socket 4
+2026-07-08 21:06:32 Accepted client connection
+2026-07-08 21:06:32 [hello] version: 4.0.1
+2026-07-08 21:06:32 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:32 Client connection closed
+2026-07-08 21:06:32 recv returned 0 (peer closed?)
+2026-07-08 21:06:32 [~impl] closing socket 4
+2026-07-08 21:06:32 Accepted client connection
+2026-07-08 21:06:32 [hello] version: 4.0.1
+2026-07-08 21:06:32 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:32 Client connection closed
+2026-07-08 21:06:32 recv returned 0 (peer closed?)
+2026-07-08 21:06:32 [~impl] closing socket 4
+2026-07-08 21:06:32 Accepted client connection
+2026-07-08 21:06:32 [hello] version: 4.0.1
+2026-07-08 21:06:32 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:33 Client connection closed
+2026-07-08 21:06:33 recv returned 0 (peer closed?)
+2026-07-08 21:06:33 [~impl] closing socket 4
+2026-07-08 21:06:33 Accepted client connection
+2026-07-08 21:06:33 [hello] version: 4.0.1
+2026-07-08 21:06:33 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:33 Client connection closed
+2026-07-08 21:06:33 recv returned 0 (peer closed?)
+2026-07-08 21:06:33 [~impl] closing socket 4
+2026-07-08 21:06:33 Accepted client connection
+2026-07-08 21:06:33 [hello] version: 4.0.1
+2026-07-08 21:06:33 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:33 Client connection closed
+2026-07-08 21:06:33 recv returned 0 (peer closed?)
+2026-07-08 21:06:33 [~impl] closing socket 4
+2026-07-08 21:06:33 Accepted client connection
+2026-07-08 21:06:33 [hello] version: 4.0.1
+2026-07-08 21:06:33 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:33 Client connection closed
+2026-07-08 21:06:33 recv returned 0 (peer closed?)
+2026-07-08 21:06:33 [~impl] closing socket 4
+2026-07-08 21:06:33 Accepted client connection
+2026-07-08 21:06:33 [hello] version: 4.0.1
+2026-07-08 21:06:33 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:33 Client connection closed
+2026-07-08 21:06:33 recv returned 0 (peer closed?)
+2026-07-08 21:06:33 [~impl] closing socket 4
+2026-07-08 21:06:33 Accepted client connection
+2026-07-08 21:06:33 [hello] version: 4.0.1
+2026-07-08 21:06:33 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:33 Client connection closed
+2026-07-08 21:06:33 recv returned 0 (peer closed?)
+2026-07-08 21:06:33 [~impl] closing socket 4
+2026-07-08 21:06:33 Accepted client connection
+2026-07-08 21:06:33 [hello] version: 4.0.1
+2026-07-08 21:06:33 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:33 Client connection closed
+2026-07-08 21:06:33 recv returned 0 (peer closed?)
+2026-07-08 21:06:33 [~impl] closing socket 4
+2026-07-08 21:06:33 Accepted client connection
+2026-07-08 21:06:33 [hello] version: 4.0.1
+2026-07-08 21:06:33 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:33 Client connection closed
+2026-07-08 21:06:33 recv returned 0 (peer closed?)
+2026-07-08 21:06:33 [~impl] closing socket 4
+2026-07-08 21:06:33 Accepted client connection
+2026-07-08 21:06:33 [hello] version: 4.0.1
+2026-07-08 21:06:33 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:33 Client connection closed
+2026-07-08 21:06:33 recv returned 0 (peer closed?)
+2026-07-08 21:06:33 [~impl] closing socket 4
+2026-07-08 21:06:33 Accepted client connection
+2026-07-08 21:06:33 [hello] version: 4.0.1
+2026-07-08 21:06:33 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:33 Client connection closed
+2026-07-08 21:06:33 recv returned 0 (peer closed?)
+2026-07-08 21:06:33 [~impl] closing socket 4
+2026-07-08 21:06:33 Accepted client connection
+2026-07-08 21:06:33 [hello] version: 4.0.1
+2026-07-08 21:06:33 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:33 Client connection closed
+2026-07-08 21:06:33 recv returned 0 (peer closed?)
+2026-07-08 21:06:33 [~impl] closing socket 4
+2026-07-08 21:06:33 Accepted client connection
+2026-07-08 21:06:33 [hello] version: 4.0.1
+2026-07-08 21:06:33 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:33 Client connection closed
+2026-07-08 21:06:33 recv returned 0 (peer closed?)
+2026-07-08 21:06:33 [~impl] closing socket 4
+2026-07-08 21:06:33 Accepted client connection
+2026-07-08 21:06:33 [hello] version: 4.0.1
+2026-07-08 21:06:33 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:33 Client connection closed
+2026-07-08 21:06:33 recv returned 0 (peer closed?)
+2026-07-08 21:06:33 [~impl] closing socket 4
+2026-07-08 21:06:33 Accepted client connection
+2026-07-08 21:06:33 [hello] version: 4.0.1
+2026-07-08 21:06:33 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:33 Client connection closed
+2026-07-08 21:06:33 recv returned 0 (peer closed?)
+2026-07-08 21:06:33 [~impl] closing socket 4
+2026-07-08 21:06:33 Accepted client connection
+2026-07-08 21:06:33 [hello] version: 4.0.1
+2026-07-08 21:06:33 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:33 Client connection closed
+2026-07-08 21:06:33 recv returned 0 (peer closed?)
+2026-07-08 21:06:33 [~impl] closing socket 4
+2026-07-08 21:06:33 Accepted client connection
+2026-07-08 21:06:33 [hello] version: 4.0.1
+2026-07-08 21:06:33 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:33 Client connection closed
+2026-07-08 21:06:33 recv returned 0 (peer closed?)
+2026-07-08 21:06:33 [~impl] closing socket 4
+2026-07-08 21:06:33 Accepted client connection
+2026-07-08 21:06:33 [hello] version: 4.0.1
+2026-07-08 21:06:33 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:33 Client connection closed
+2026-07-08 21:06:33 recv returned 0 (peer closed?)
+2026-07-08 21:06:33 [~impl] closing socket 4
+2026-07-08 21:06:33 Accepted client connection
+2026-07-08 21:06:33 [hello] version: 4.0.1
+2026-07-08 21:06:33 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:33 Client connection closed
+2026-07-08 21:06:33 recv returned 0 (peer closed?)
+2026-07-08 21:06:33 [~impl] closing socket 4
+2026-07-08 21:06:33 Accepted client connection
+2026-07-08 21:06:33 [hello] version: 4.0.1
+2026-07-08 21:06:33 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:33 Client connection closed
+2026-07-08 21:06:33 recv returned 0 (peer closed?)
+2026-07-08 21:06:33 [~impl] closing socket 4
+2026-07-08 21:06:33 Accepted client connection
+2026-07-08 21:06:33 [hello] version: 4.0.1
+2026-07-08 21:06:33 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:33 Client connection closed
+2026-07-08 21:06:33 recv returned 0 (peer closed?)
+2026-07-08 21:06:33 [~impl] closing socket 4
+2026-07-08 21:06:33 Accepted client connection
+2026-07-08 21:06:33 [hello] version: 4.0.1
+2026-07-08 21:06:33 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:33 Client connection closed
+2026-07-08 21:06:33 recv returned 0 (peer closed?)
+2026-07-08 21:06:33 [~impl] closing socket 4
+2026-07-08 21:06:33 Accepted client connection
+2026-07-08 21:06:33 [hello] version: 4.0.1
+2026-07-08 21:06:33 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:33 Client connection closed
+2026-07-08 21:06:33 recv returned 0 (peer closed?)
+2026-07-08 21:06:33 [~impl] closing socket 4
+2026-07-08 21:06:33 Accepted client connection
+2026-07-08 21:06:33 [hello] version: 4.0.1
+2026-07-08 21:06:33 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:33 Client connection closed
+2026-07-08 21:06:33 recv returned 0 (peer closed?)
+2026-07-08 21:06:33 [~impl] closing socket 4
+2026-07-08 21:06:33 Accepted client connection
+2026-07-08 21:06:33 [hello] version: 4.0.1
+2026-07-08 21:06:33 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:33 Client connection closed
+2026-07-08 21:06:33 recv returned 0 (peer closed?)
+2026-07-08 21:06:33 [~impl] closing socket 4
+2026-07-08 21:06:33 Accepted client connection
+2026-07-08 21:06:33 [hello] version: 4.0.1
+2026-07-08 21:06:33 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:33 Client connection closed
+2026-07-08 21:06:33 recv returned 0 (peer closed?)
+2026-07-08 21:06:33 [~impl] closing socket 4
+2026-07-08 21:06:33 Accepted client connection
+2026-07-08 21:06:33 [hello] version: 4.0.1
+2026-07-08 21:06:33 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:33 Client connection closed
+2026-07-08 21:06:33 recv returned 0 (peer closed?)
+2026-07-08 21:06:33 [~impl] closing socket 4
+2026-07-08 21:06:33 Accepted client connection
+2026-07-08 21:06:33 [hello] version: 4.0.1
+2026-07-08 21:06:33 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:33 Client connection closed
+2026-07-08 21:06:33 recv returned 0 (peer closed?)
+2026-07-08 21:06:33 [~impl] closing socket 4
+2026-07-08 21:06:33 Accepted client connection
+2026-07-08 21:06:33 [hello] version: 4.0.1
+2026-07-08 21:06:33 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:33 Client connection closed
+2026-07-08 21:06:33 recv returned 0 (peer closed?)
+2026-07-08 21:06:33 [~impl] closing socket 4
+2026-07-08 21:06:33 Accepted client connection
+2026-07-08 21:06:33 [hello] version: 4.0.1
+2026-07-08 21:06:33 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:33 Client connection closed
+2026-07-08 21:06:33 recv returned 0 (peer closed?)
+2026-07-08 21:06:33 [~impl] closing socket 4
+2026-07-08 21:06:33 Accepted client connection
+2026-07-08 21:06:33 [hello] version: 4.0.1
+2026-07-08 21:06:33 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:33 Client connection closed
+2026-07-08 21:06:33 recv returned 0 (peer closed?)
+2026-07-08 21:06:33 [~impl] closing socket 4
+2026-07-08 21:06:33 Accepted client connection
+2026-07-08 21:06:33 [hello] version: 4.0.1
+2026-07-08 21:06:33 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:33 Client connection closed
+2026-07-08 21:06:33 recv returned 0 (peer closed?)
+2026-07-08 21:06:33 [~impl] closing socket 4
+2026-07-08 21:06:33 Accepted client connection
+2026-07-08 21:06:33 [hello] version: 4.0.1
+2026-07-08 21:06:33 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:33 Client connection closed
+2026-07-08 21:06:33 recv returned 0 (peer closed?)
+2026-07-08 21:06:33 [~impl] closing socket 4
+2026-07-08 21:06:33 Accepted client connection
+2026-07-08 21:06:33 [hello] version: 4.0.1
+2026-07-08 21:06:33 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:33 Client connection closed
+2026-07-08 21:06:33 recv returned 0 (peer closed?)
+2026-07-08 21:06:33 [~impl] closing socket 4
+2026-07-08 21:06:33 Accepted client connection
+2026-07-08 21:06:33 [hello] version: 4.0.1
+2026-07-08 21:06:33 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:33 Client connection closed
+2026-07-08 21:06:33 recv returned 0 (peer closed?)
+2026-07-08 21:06:33 [~impl] closing socket 4
+2026-07-08 21:06:33 Accepted client connection
+2026-07-08 21:06:33 [hello] version: 4.0.1
+2026-07-08 21:06:33 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:33 Client connection closed
+2026-07-08 21:06:33 recv returned 0 (peer closed?)
+2026-07-08 21:06:33 [~impl] closing socket 4
+2026-07-08 21:06:33 Accepted client connection
+2026-07-08 21:06:33 [hello] version: 4.0.1
+2026-07-08 21:06:33 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:33 Client connection closed
+2026-07-08 21:06:33 recv returned 0 (peer closed?)
+2026-07-08 21:06:33 [~impl] closing socket 4
+2026-07-08 21:06:33 Accepted client connection
+2026-07-08 21:06:33 [hello] version: 4.0.1
+2026-07-08 21:06:33 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:33 Client connection closed
+2026-07-08 21:06:33 recv returned 0 (peer closed?)
+2026-07-08 21:06:33 [~impl] closing socket 4
+2026-07-08 21:06:33 Accepted client connection
+2026-07-08 21:06:33 [hello] version: 4.0.1
+2026-07-08 21:06:33 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:33 Client connection closed
+2026-07-08 21:06:33 recv returned 0 (peer closed?)
+2026-07-08 21:06:33 [~impl] closing socket 4
+2026-07-08 21:06:33 Accepted client connection
+2026-07-08 21:06:33 [hello] version: 4.0.1
+2026-07-08 21:06:33 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:33 Client connection closed
+2026-07-08 21:06:33 recv returned 0 (peer closed?)
+2026-07-08 21:06:33 [~impl] closing socket 4
+2026-07-08 21:06:33 Accepted client connection
+2026-07-08 21:06:33 [hello] version: 4.0.1
+2026-07-08 21:06:33 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:33 Client connection closed
+2026-07-08 21:06:33 recv returned 0 (peer closed?)
+2026-07-08 21:06:33 [~impl] closing socket 4
+2026-07-08 21:06:33 Accepted client connection
+2026-07-08 21:06:33 [hello] version: 4.0.1
+2026-07-08 21:06:33 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:33 Client connection closed
+2026-07-08 21:06:33 recv returned 0 (peer closed?)
+2026-07-08 21:06:33 [~impl] closing socket 4
+2026-07-08 21:06:33 Accepted client connection
+2026-07-08 21:06:33 [hello] version: 4.0.1
+2026-07-08 21:06:33 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:33 Client connection closed
+2026-07-08 21:06:33 recv returned 0 (peer closed?)
+2026-07-08 21:06:33 [~impl] closing socket 4
+2026-07-08 21:06:33 Accepted client connection
+2026-07-08 21:06:33 [hello] version: 4.0.1
+2026-07-08 21:06:33 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:33 Client connection closed
+2026-07-08 21:06:33 recv returned 0 (peer closed?)
+2026-07-08 21:06:33 [~impl] closing socket 4
+2026-07-08 21:06:33 Accepted client connection
+2026-07-08 21:06:33 [hello] version: 4.0.1
+2026-07-08 21:06:33 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:33 Client connection closed
+2026-07-08 21:06:33 recv returned 0 (peer closed?)
+2026-07-08 21:06:33 [~impl] closing socket 4
+2026-07-08 21:06:33 Accepted client connection
+2026-07-08 21:06:33 [hello] version: 4.0.1
+2026-07-08 21:06:33 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:33 Client connection closed
+2026-07-08 21:06:33 recv returned 0 (peer closed?)
+2026-07-08 21:06:33 [~impl] closing socket 4
+2026-07-08 21:06:33 Accepted client connection
+2026-07-08 21:06:33 [hello] version: 4.0.1
+2026-07-08 21:06:34 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:34 Client connection closed
+2026-07-08 21:06:34 recv returned 0 (peer closed?)
+2026-07-08 21:06:34 [~impl] closing socket 4
+2026-07-08 21:06:34 Accepted client connection
+2026-07-08 21:06:34 [hello] version: 4.0.1
+2026-07-08 21:06:34 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:34 Client connection closed
+2026-07-08 21:06:34 recv returned 0 (peer closed?)
+2026-07-08 21:06:34 [~impl] closing socket 4
+2026-07-08 21:06:34 Accepted client connection
+2026-07-08 21:06:34 [hello] version: 4.0.1
+2026-07-08 21:06:34 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:34 Client connection closed
+2026-07-08 21:06:34 recv returned 0 (peer closed?)
+2026-07-08 21:06:34 [~impl] closing socket 4
+2026-07-08 21:06:34 Accepted client connection
+2026-07-08 21:06:34 [hello] version: 4.0.1
+2026-07-08 21:06:34 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:34 Client connection closed
+2026-07-08 21:06:34 recv returned 0 (peer closed?)
+2026-07-08 21:06:34 [~impl] closing socket 4
+2026-07-08 21:06:34 Accepted client connection
+2026-07-08 21:06:34 [hello] version: 4.0.1
+2026-07-08 21:06:34 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:34 Client connection closed
+2026-07-08 21:06:34 recv returned 0 (peer closed?)
+2026-07-08 21:06:34 [~impl] closing socket 4
+2026-07-08 21:06:34 Accepted client connection
+2026-07-08 21:06:34 [hello] version: 4.0.1
+2026-07-08 21:06:34 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:34 Client connection closed
+2026-07-08 21:06:34 recv returned 0 (peer closed?)
+2026-07-08 21:06:34 [~impl] closing socket 4
+2026-07-08 21:06:34 Accepted client connection
+2026-07-08 21:06:34 [hello] version: 4.0.1
+2026-07-08 21:06:34 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:34 Client connection closed
+2026-07-08 21:06:34 recv returned 0 (peer closed?)
+2026-07-08 21:06:34 [~impl] closing socket 4
+2026-07-08 21:06:34 Accepted client connection
+2026-07-08 21:06:34 [hello] version: 4.0.1
+2026-07-08 21:06:34 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:34 Client connection closed
+2026-07-08 21:06:34 recv returned 0 (peer closed?)
+2026-07-08 21:06:34 [~impl] closing socket 4
+2026-07-08 21:06:34 Accepted client connection
+2026-07-08 21:06:34 [hello] version: 4.0.1
+2026-07-08 21:06:34 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:34 Client connection closed
+2026-07-08 21:06:34 recv returned 0 (peer closed?)
+2026-07-08 21:06:34 [~impl] closing socket 4
+2026-07-08 21:06:34 Accepted client connection
+2026-07-08 21:06:34 [hello] version: 4.0.1
+2026-07-08 21:06:34 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:34 Client connection closed
+2026-07-08 21:06:34 recv returned 0 (peer closed?)
+2026-07-08 21:06:34 [~impl] closing socket 4
+2026-07-08 21:06:34 Accepted client connection
+2026-07-08 21:06:34 [hello] version: 4.0.1
+2026-07-08 21:06:34 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:34 Client connection closed
+2026-07-08 21:06:34 recv returned 0 (peer closed?)
+2026-07-08 21:06:34 [~impl] closing socket 4
+2026-07-08 21:06:34 Accepted client connection
+2026-07-08 21:06:34 [hello] version: 4.0.1
+2026-07-08 21:06:34 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:34 Client connection closed
+2026-07-08 21:06:34 recv returned 0 (peer closed?)
+2026-07-08 21:06:34 [~impl] closing socket 4
+2026-07-08 21:06:34 Accepted client connection
+2026-07-08 21:06:34 [hello] version: 4.0.1
+2026-07-08 21:06:34 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:34 Client connection closed
+2026-07-08 21:06:34 recv returned 0 (peer closed?)
+2026-07-08 21:06:34 [~impl] closing socket 4
+2026-07-08 21:06:34 Accepted client connection
+2026-07-08 21:06:34 [hello] version: 4.0.1
+2026-07-08 21:06:34 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:34 Client connection closed
+2026-07-08 21:06:34 recv returned 0 (peer closed?)
+2026-07-08 21:06:34 [~impl] closing socket 4
+2026-07-08 21:06:34 Accepted client connection
+2026-07-08 21:06:34 [hello] version: 4.0.1
+2026-07-08 21:06:34 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:34 Client connection closed
+2026-07-08 21:06:34 recv returned 0 (peer closed?)
+2026-07-08 21:06:34 [~impl] closing socket 4
+2026-07-08 21:06:34 Accepted client connection
+2026-07-08 21:06:34 [hello] version: 4.0.1
+2026-07-08 21:06:34 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:34 Client connection closed
+2026-07-08 21:06:34 recv returned 0 (peer closed?)
+2026-07-08 21:06:34 [~impl] closing socket 4
+2026-07-08 21:06:34 Accepted client connection
+2026-07-08 21:06:34 [hello] version: 4.0.1
+2026-07-08 21:06:34 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:34 Client connection closed
+2026-07-08 21:06:34 recv returned 0 (peer closed?)
+2026-07-08 21:06:34 [~impl] closing socket 4
+2026-07-08 21:06:34 Accepted client connection
+2026-07-08 21:06:34 [hello] version: 4.0.1
+2026-07-08 21:06:34 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:34 Client connection closed
+2026-07-08 21:06:34 recv returned 0 (peer closed?)
+2026-07-08 21:06:34 [~impl] closing socket 4
+2026-07-08 21:06:34 Accepted client connection
+2026-07-08 21:06:34 [hello] version: 4.0.1
+2026-07-08 21:06:34 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:34 Client connection closed
+2026-07-08 21:06:34 recv returned 0 (peer closed?)
+2026-07-08 21:06:34 [~impl] closing socket 4
+2026-07-08 21:06:34 Accepted client connection
+2026-07-08 21:06:34 [hello] version: 4.0.1
+2026-07-08 21:06:34 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:34 Client connection closed
+2026-07-08 21:06:34 recv returned 0 (peer closed?)
+2026-07-08 21:06:34 [~impl] closing socket 4
+2026-07-08 21:06:34 Accepted client connection
+2026-07-08 21:06:34 [hello] version: 4.0.1
+2026-07-08 21:06:34 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:34 Client connection closed
+2026-07-08 21:06:34 recv returned 0 (peer closed?)
+2026-07-08 21:06:34 [~impl] closing socket 4
+2026-07-08 21:06:34 Accepted client connection
+2026-07-08 21:06:34 [hello] version: 4.0.1
+2026-07-08 21:06:34 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:34 Client connection closed
+2026-07-08 21:06:34 recv returned 0 (peer closed?)
+2026-07-08 21:06:34 [~impl] closing socket 4
+2026-07-08 21:06:34 Accepted client connection
+2026-07-08 21:06:34 [hello] version: 4.0.1
+2026-07-08 21:06:34 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:34 Client connection closed
+2026-07-08 21:06:34 recv returned 0 (peer closed?)
+2026-07-08 21:06:34 [~impl] closing socket 4
+2026-07-08 21:06:34 Accepted client connection
+2026-07-08 21:06:34 [hello] version: 4.0.1
+2026-07-08 21:06:34 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:34 Client connection closed
+2026-07-08 21:06:34 recv returned 0 (peer closed?)
+2026-07-08 21:06:34 [~impl] closing socket 4
+2026-07-08 21:06:34 Accepted client connection
+2026-07-08 21:06:34 [hello] version: 4.0.1
+2026-07-08 21:06:34 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:34 Client connection closed
+2026-07-08 21:06:34 recv returned 0 (peer closed?)
+2026-07-08 21:06:34 [~impl] closing socket 4
+2026-07-08 21:06:34 Accepted client connection
+2026-07-08 21:06:34 [hello] version: 4.0.1
+2026-07-08 21:06:34 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:34 Client connection closed
+2026-07-08 21:06:34 recv returned 0 (peer closed?)
+2026-07-08 21:06:34 [~impl] closing socket 4
+2026-07-08 21:06:34 Accepted client connection
+2026-07-08 21:06:34 [hello] version: 4.0.1
+2026-07-08 21:06:34 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:34 Client connection closed
+2026-07-08 21:06:34 recv returned 0 (peer closed?)
+2026-07-08 21:06:34 [~impl] closing socket 4
+2026-07-08 21:06:34 Accepted client connection
+2026-07-08 21:06:34 [hello] version: 4.0.1
+2026-07-08 21:06:34 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:34 Client connection closed
+2026-07-08 21:06:34 recv returned 0 (peer closed?)
+2026-07-08 21:06:34 [~impl] closing socket 4
+2026-07-08 21:06:34 Accepted client connection
+2026-07-08 21:06:34 [hello] version: 4.0.1
+2026-07-08 21:06:34 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:34 Client connection closed
+2026-07-08 21:06:34 recv returned 0 (peer closed?)
+2026-07-08 21:06:34 [~impl] closing socket 4
+2026-07-08 21:06:34 Accepted client connection
+2026-07-08 21:06:34 [hello] version: 4.0.1
+2026-07-08 21:06:34 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:34 Client connection closed
+2026-07-08 21:06:34 recv returned 0 (peer closed?)
+2026-07-08 21:06:34 [~impl] closing socket 4
+2026-07-08 21:06:34 Accepted client connection
+2026-07-08 21:06:34 [hello] version: 4.0.1
+2026-07-08 21:06:34 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:34 Client connection closed
+2026-07-08 21:06:34 recv returned 0 (peer closed?)
+2026-07-08 21:06:34 [~impl] closing socket 4
+2026-07-08 21:06:34 Accepted client connection
+2026-07-08 21:06:34 [hello] version: 4.0.1
+2026-07-08 21:06:34 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:34 Client connection closed
+2026-07-08 21:06:34 recv returned 0 (peer closed?)
+2026-07-08 21:06:34 [~impl] closing socket 4
+2026-07-08 21:06:34 Accepted client connection
+2026-07-08 21:06:34 [hello] version: 4.0.1
+2026-07-08 21:06:34 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:34 Client connection closed
+2026-07-08 21:06:34 recv returned 0 (peer closed?)
+2026-07-08 21:06:34 [~impl] closing socket 4
+2026-07-08 21:06:34 Accepted client connection
+2026-07-08 21:06:34 [hello] version: 4.0.1
+2026-07-08 21:06:34 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:34 Client connection closed
+2026-07-08 21:06:34 recv returned 0 (peer closed?)
+2026-07-08 21:06:34 [~impl] closing socket 4
+2026-07-08 21:06:34 Accepted client connection
+2026-07-08 21:06:34 [hello] version: 4.0.1
+2026-07-08 21:06:34 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:34 Client connection closed
+2026-07-08 21:06:34 recv returned 0 (peer closed?)
+2026-07-08 21:06:34 [~impl] closing socket 4
+2026-07-08 21:06:34 Accepted client connection
+2026-07-08 21:06:34 [hello] version: 4.0.1
+2026-07-08 21:06:34 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:34 Client connection closed
+2026-07-08 21:06:34 recv returned 0 (peer closed?)
+2026-07-08 21:06:34 [~impl] closing socket 4
+2026-07-08 21:06:34 Accepted client connection
+2026-07-08 21:06:34 [hello] version: 4.0.1
+2026-07-08 21:06:34 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:34 Client connection closed
+2026-07-08 21:06:34 recv returned 0 (peer closed?)
+2026-07-08 21:06:34 [~impl] closing socket 4
+2026-07-08 21:06:34 Accepted client connection
+2026-07-08 21:06:34 [hello] version: 4.0.1
+2026-07-08 21:06:34 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:34 Client connection closed
+2026-07-08 21:06:34 recv returned 0 (peer closed?)
+2026-07-08 21:06:34 [~impl] closing socket 4
+2026-07-08 21:06:34 Accepted client connection
+2026-07-08 21:06:34 [hello] version: 4.0.1
+2026-07-08 21:06:34 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:34 Client connection closed
+2026-07-08 21:06:34 recv returned 0 (peer closed?)
+2026-07-08 21:06:34 [~impl] closing socket 4
+2026-07-08 21:06:34 Accepted client connection
+2026-07-08 21:06:34 [hello] version: 4.0.1
+2026-07-08 21:06:34 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:34 Client connection closed
+2026-07-08 21:06:34 recv returned 0 (peer closed?)
+2026-07-08 21:06:34 [~impl] closing socket 4
+2026-07-08 21:06:34 Accepted client connection
+2026-07-08 21:06:34 [hello] version: 4.0.1
+2026-07-08 21:06:34 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:34 Client connection closed
+2026-07-08 21:06:34 recv returned 0 (peer closed?)
+2026-07-08 21:06:34 [~impl] closing socket 4
+2026-07-08 21:06:36 Accepted client connection
+2026-07-08 21:06:36 [hello] version: 4.0.1
+2026-07-08 21:06:36 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:36 Client connection closed
+2026-07-08 21:06:36 recv returned 0 (peer closed?)
+2026-07-08 21:06:36 [~impl] closing socket 4
+2026-07-08 21:06:36 Accepted client connection
+2026-07-08 21:06:36 [hello] version: 4.0.1
+2026-07-08 21:06:36 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:36 Client connection closed
+2026-07-08 21:06:36 recv returned 0 (peer closed?)
+2026-07-08 21:06:36 [~impl] closing socket 4
+2026-07-08 21:06:36 Accepted client connection
+2026-07-08 21:06:36 [hello] version: 4.0.1
+2026-07-08 21:06:36 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:36 Client connection closed
+2026-07-08 21:06:36 recv returned 0 (peer closed?)
+2026-07-08 21:06:36 [~impl] closing socket 4
+2026-07-08 21:06:36 Accepted client connection
+2026-07-08 21:06:36 [hello] version: 4.0.1
+2026-07-08 21:06:36 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:36 Client connection closed
+2026-07-08 21:06:36 recv returned 0 (peer closed?)
+2026-07-08 21:06:36 [~impl] closing socket 4
+2026-07-08 21:06:36 Accepted client connection
+2026-07-08 21:06:36 [hello] version: 4.0.1
+2026-07-08 21:06:36 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:36 Client connection closed
+2026-07-08 21:06:36 recv returned 0 (peer closed?)
+2026-07-08 21:06:36 [~impl] closing socket 4
+2026-07-08 21:06:36 Accepted client connection
+2026-07-08 21:06:36 [hello] version: 4.0.1
+2026-07-08 21:06:36 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:36 Client connection closed
+2026-07-08 21:06:36 recv returned 0 (peer closed?)
+2026-07-08 21:06:36 [~impl] closing socket 4
+2026-07-08 21:06:36 Accepted client connection
+2026-07-08 21:06:36 [hello] version: 4.0.1
+2026-07-08 21:06:36 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:36 Client connection closed
+2026-07-08 21:06:36 recv returned 0 (peer closed?)
+2026-07-08 21:06:36 [~impl] closing socket 4
+2026-07-08 21:06:36 Accepted client connection
+2026-07-08 21:06:36 [hello] version: 4.0.1
+2026-07-08 21:06:36 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:36 Client connection closed
+2026-07-08 21:06:36 recv returned 0 (peer closed?)
+2026-07-08 21:06:36 [~impl] closing socket 4
+2026-07-08 21:06:36 Accepted client connection
+2026-07-08 21:06:36 [hello] version: 4.0.1
+2026-07-08 21:06:36 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:36 Client connection closed
+2026-07-08 21:06:36 recv returned 0 (peer closed?)
+2026-07-08 21:06:36 [~impl] closing socket 4
+2026-07-08 21:06:36 Accepted client connection
+2026-07-08 21:06:36 [hello] version: 4.0.1
+2026-07-08 21:06:36 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:36 Client connection closed
+2026-07-08 21:06:36 recv returned 0 (peer closed?)
+2026-07-08 21:06:36 [~impl] closing socket 4
+2026-07-08 21:06:36 Accepted client connection
+2026-07-08 21:06:36 [hello] version: 4.0.1
+2026-07-08 21:06:36 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:36 Client connection closed
+2026-07-08 21:06:36 recv returned 0 (peer closed?)
+2026-07-08 21:06:36 [~impl] closing socket 4
+2026-07-08 21:06:36 Accepted client connection
+2026-07-08 21:06:36 [hello] version: 4.0.1
+2026-07-08 21:06:36 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:36 Client connection closed
+2026-07-08 21:06:36 recv returned 0 (peer closed?)
+2026-07-08 21:06:36 [~impl] closing socket 4
+2026-07-08 21:06:36 Accepted client connection
+2026-07-08 21:06:36 [hello] version: 4.0.1
+2026-07-08 21:06:36 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:36 Client connection closed
+2026-07-08 21:06:36 recv returned 0 (peer closed?)
+2026-07-08 21:06:36 [~impl] closing socket 4
+2026-07-08 21:06:36 Accepted client connection
+2026-07-08 21:06:36 [hello] version: 4.0.1
+2026-07-08 21:06:36 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:36 Client connection closed
+2026-07-08 21:06:36 recv returned 0 (peer closed?)
+2026-07-08 21:06:36 [~impl] closing socket 4
+2026-07-08 21:06:36 Accepted client connection
+2026-07-08 21:06:36 [hello] version: 4.0.1
+2026-07-08 21:06:36 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:36 Client connection closed
+2026-07-08 21:06:36 recv returned 0 (peer closed?)
+2026-07-08 21:06:36 [~impl] closing socket 4
+2026-07-08 21:06:36 Accepted client connection
+2026-07-08 21:06:36 [hello] version: 4.0.1
+2026-07-08 21:06:36 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:36 Client connection closed
+2026-07-08 21:06:36 recv returned 0 (peer closed?)
+2026-07-08 21:06:36 [~impl] closing socket 4
+2026-07-08 21:06:36 Accepted client connection
+2026-07-08 21:06:36 [hello] version: 4.0.1
+2026-07-08 21:06:36 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:36 Client connection closed
+2026-07-08 21:06:36 recv returned 0 (peer closed?)
+2026-07-08 21:06:36 [~impl] closing socket 4
+2026-07-08 21:06:36 Accepted client connection
+2026-07-08 21:06:36 [hello] version: 4.0.1
+2026-07-08 21:06:36 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:36 Client connection closed
+2026-07-08 21:06:36 recv returned 0 (peer closed?)
+2026-07-08 21:06:36 [~impl] closing socket 4
+2026-07-08 21:06:36 Accepted client connection
+2026-07-08 21:06:36 [hello] version: 4.0.1
+2026-07-08 21:06:36 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:36 Client connection closed
+2026-07-08 21:06:36 recv returned 0 (peer closed?)
+2026-07-08 21:06:36 [~impl] closing socket 4
+2026-07-08 21:06:36 Accepted client connection
+2026-07-08 21:06:36 [hello] version: 4.0.1
+2026-07-08 21:06:36 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:37 Client connection closed
+2026-07-08 21:06:37 recv returned 0 (peer closed?)
+2026-07-08 21:06:37 [~impl] closing socket 4
+2026-07-08 21:06:37 Accepted client connection
+2026-07-08 21:06:37 [hello] version: 4.0.1
+2026-07-08 21:06:37 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:37 Client connection closed
+2026-07-08 21:06:37 recv returned 0 (peer closed?)
+2026-07-08 21:06:37 [~impl] closing socket 4
+2026-07-08 21:06:37 Accepted client connection
+2026-07-08 21:06:37 [hello] version: 4.0.1
+2026-07-08 21:06:37 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:37 Client connection closed
+2026-07-08 21:06:37 recv returned 0 (peer closed?)
+2026-07-08 21:06:37 [~impl] closing socket 4
+2026-07-08 21:06:37 Accepted client connection
+2026-07-08 21:06:37 [hello] version: 4.0.1
+2026-07-08 21:06:37 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:37 Client connection closed
+2026-07-08 21:06:37 recv returned 0 (peer closed?)
+2026-07-08 21:06:37 [~impl] closing socket 4
+2026-07-08 21:06:37 Accepted client connection
+2026-07-08 21:06:37 [hello] version: 4.0.1
+2026-07-08 21:06:37 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:37 Client connection closed
+2026-07-08 21:06:37 recv returned 0 (peer closed?)
+2026-07-08 21:06:37 [~impl] closing socket 4
+2026-07-08 21:06:37 Accepted client connection
+2026-07-08 21:06:37 [hello] version: 4.0.1
+2026-07-08 21:06:37 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:37 Client connection closed
+2026-07-08 21:06:37 recv returned 0 (peer closed?)
+2026-07-08 21:06:37 [~impl] closing socket 4
+2026-07-08 21:06:37 Accepted client connection
+2026-07-08 21:06:37 [hello] version: 4.0.1
+2026-07-08 21:06:37 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:37 Client connection closed
+2026-07-08 21:06:37 recv returned 0 (peer closed?)
+2026-07-08 21:06:37 [~impl] closing socket 4
+2026-07-08 21:06:37 Accepted client connection
+2026-07-08 21:06:37 [hello] version: 4.0.1
+2026-07-08 21:06:37 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:37 Client connection closed
+2026-07-08 21:06:37 recv returned 0 (peer closed?)
+2026-07-08 21:06:37 [~impl] closing socket 4
+2026-07-08 21:06:37 Accepted client connection
+2026-07-08 21:06:37 [hello] version: 4.0.1
+2026-07-08 21:06:37 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:37 recv returned 0 (peer closed?)
+2026-07-08 21:06:37 Client connection closed
+2026-07-08 21:06:37 [~impl] closing socket 4
+2026-07-08 21:06:37 Accepted client connection
+2026-07-08 21:06:37 [hello] version: 4.0.1
+2026-07-08 21:06:37 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:37 Client connection closed
+2026-07-08 21:06:37 recv returned 0 (peer closed?)
+2026-07-08 21:06:37 [~impl] closing socket 4
+2026-07-08 21:06:37 Accepted client connection
+2026-07-08 21:06:37 [hello] version: 4.0.1
+2026-07-08 21:06:37 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:37 Client connection closed
+2026-07-08 21:06:37 recv returned 0 (peer closed?)
+2026-07-08 21:06:37 [~impl] closing socket 4
+2026-07-08 21:06:37 Accepted client connection
+2026-07-08 21:06:37 [hello] version: 4.0.1
+2026-07-08 21:06:37 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:37 Client connection closed
+2026-07-08 21:06:37 recv returned 0 (peer closed?)
+2026-07-08 21:06:37 [~impl] closing socket 4
+2026-07-08 21:06:37 Accepted client connection
+2026-07-08 21:06:37 [hello] version: 4.0.1
+2026-07-08 21:06:37 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:37 Client connection closed
+2026-07-08 21:06:37 recv returned 0 (peer closed?)
+2026-07-08 21:06:37 [~impl] closing socket 4
+2026-07-08 21:06:37 Accepted client connection
+2026-07-08 21:06:37 [hello] version: 4.0.1
+2026-07-08 21:06:37 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:37 Client connection closed
+2026-07-08 21:06:37 recv returned 0 (peer closed?)
+2026-07-08 21:06:37 [~impl] closing socket 4
+2026-07-08 21:06:37 Accepted client connection
+2026-07-08 21:06:37 [hello] version: 4.0.1
+2026-07-08 21:06:37 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:37 Client connection closed
+2026-07-08 21:06:37 recv returned 0 (peer closed?)
+2026-07-08 21:06:37 [~impl] closing socket 4
+2026-07-08 21:06:37 Accepted client connection
+2026-07-08 21:06:37 [hello] version: 4.0.1
+2026-07-08 21:06:37 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:37 Client connection closed
+2026-07-08 21:06:37 recv returned 0 (peer closed?)
+2026-07-08 21:06:37 [~impl] closing socket 4
+2026-07-08 21:06:37 Accepted client connection
+2026-07-08 21:06:37 [hello] version: 4.0.1
+2026-07-08 21:06:37 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:37 Client connection closed
+2026-07-08 21:06:37 recv returned 0 (peer closed?)
+2026-07-08 21:06:37 [~impl] closing socket 4
+2026-07-08 21:06:37 Accepted client connection
+2026-07-08 21:06:37 [hello] version: 4.0.1
+2026-07-08 21:06:37 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:37 Client connection closed
+2026-07-08 21:06:37 recv returned 0 (peer closed?)
+2026-07-08 21:06:37 [~impl] closing socket 4
+2026-07-08 21:06:37 Accepted client connection
+2026-07-08 21:06:37 [hello] version: 4.0.1
+2026-07-08 21:06:37 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:37 Client connection closed
+2026-07-08 21:06:37 recv returned 0 (peer closed?)
+2026-07-08 21:06:37 [~impl] closing socket 4
+2026-07-08 21:06:37 Accepted client connection
+2026-07-08 21:06:37 [hello] version: 4.0.1
+2026-07-08 21:06:37 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:37 Client connection closed
+2026-07-08 21:06:37 recv returned 0 (peer closed?)
+2026-07-08 21:06:37 [~impl] closing socket 4
+2026-07-08 21:06:37 Accepted client connection
+2026-07-08 21:06:37 [hello] version: 4.0.1
+2026-07-08 21:06:37 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:37 Client connection closed
+2026-07-08 21:06:37 recv returned 0 (peer closed?)
+2026-07-08 21:06:37 [~impl] closing socket 4
+2026-07-08 21:06:37 Accepted client connection
+2026-07-08 21:06:37 [hello] version: 4.0.1
+2026-07-08 21:06:37 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:37 Client connection closed
+2026-07-08 21:06:37 recv returned 0 (peer closed?)
+2026-07-08 21:06:37 [~impl] closing socket 4
+2026-07-08 21:06:37 Accepted client connection
+2026-07-08 21:06:37 [hello] version: 4.0.1
+2026-07-08 21:06:37 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:37 Client connection closed
+2026-07-08 21:06:37 recv returned 0 (peer closed?)
+2026-07-08 21:06:37 [~impl] closing socket 4
+2026-07-08 21:06:37 Accepted client connection
+2026-07-08 21:06:37 [hello] version: 4.0.1
+2026-07-08 21:06:37 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:37 Client connection closed
+2026-07-08 21:06:37 recv returned 0 (peer closed?)
+2026-07-08 21:06:37 [~impl] closing socket 4
+2026-07-08 21:06:37 Accepted client connection
+2026-07-08 21:06:37 [hello] version: 4.0.1
+2026-07-08 21:06:37 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:37 Client connection closed
+2026-07-08 21:06:37 recv returned 0 (peer closed?)
+2026-07-08 21:06:37 [~impl] closing socket 4
+2026-07-08 21:06:37 Accepted client connection
+2026-07-08 21:06:37 [hello] version: 4.0.1
+2026-07-08 21:06:37 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:37 Client connection closed
+2026-07-08 21:06:37 recv returned 0 (peer closed?)
+2026-07-08 21:06:37 [~impl] closing socket 4
+2026-07-08 21:06:37 Accepted client connection
+2026-07-08 21:06:37 [hello] version: 4.0.1
+2026-07-08 21:06:37 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:37 Client connection closed
+2026-07-08 21:06:37 recv returned 0 (peer closed?)
+2026-07-08 21:06:37 [~impl] closing socket 4
+2026-07-08 21:06:37 Accepted client connection
+2026-07-08 21:06:37 [hello] version: 4.0.1
+2026-07-08 21:06:37 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:37 Client connection closed
+2026-07-08 21:06:37 recv returned 0 (peer closed?)
+2026-07-08 21:06:37 [~impl] closing socket 4
+2026-07-08 21:06:37 Accepted client connection
+2026-07-08 21:06:37 [hello] version: 4.0.1
+2026-07-08 21:06:37 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:37 Client connection closed
+2026-07-08 21:06:37 recv returned 0 (peer closed?)
+2026-07-08 21:06:37 [~impl] closing socket 4
+2026-07-08 21:06:37 Accepted client connection
+2026-07-08 21:06:37 [hello] version: 4.0.1
+2026-07-08 21:06:37 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:37 Client connection closed
+2026-07-08 21:06:37 recv returned 0 (peer closed?)
+2026-07-08 21:06:37 [~impl] closing socket 4
+2026-07-08 21:06:37 Accepted client connection
+2026-07-08 21:06:37 [hello] version: 4.0.1
+2026-07-08 21:06:37 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:37 Client connection closed
+2026-07-08 21:06:37 recv returned 0 (peer closed?)
+2026-07-08 21:06:37 [~impl] closing socket 4
+2026-07-08 21:06:37 Accepted client connection
+2026-07-08 21:06:37 [hello] version: 4.0.1
+2026-07-08 21:06:37 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:37 Client connection closed
+2026-07-08 21:06:37 recv returned 0 (peer closed?)
+2026-07-08 21:06:37 [~impl] closing socket 4
+2026-07-08 21:06:37 Accepted client connection
+2026-07-08 21:06:37 [hello] version: 4.0.1
+2026-07-08 21:06:37 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:37 Client connection closed
+2026-07-08 21:06:37 recv returned 0 (peer closed?)
+2026-07-08 21:06:37 [~impl] closing socket 4
+2026-07-08 21:06:37 Accepted client connection
+2026-07-08 21:06:37 [hello] version: 4.0.1
+2026-07-08 21:06:37 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:37 Client connection closed
+2026-07-08 21:06:37 recv returned 0 (peer closed?)
+2026-07-08 21:06:37 [~impl] closing socket 4
+2026-07-08 21:06:37 Accepted client connection
+2026-07-08 21:06:37 [hello] version: 4.0.1
+2026-07-08 21:06:37 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:37 Client connection closed
+2026-07-08 21:06:37 recv returned 0 (peer closed?)
+2026-07-08 21:06:37 [~impl] closing socket 4
+2026-07-08 21:06:37 Accepted client connection
+2026-07-08 21:06:37 [hello] version: 4.0.1
+2026-07-08 21:06:37 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:37 Client connection closed
+2026-07-08 21:06:37 recv returned 0 (peer closed?)
+2026-07-08 21:06:37 [~impl] closing socket 4
+2026-07-08 21:06:37 Accepted client connection
+2026-07-08 21:06:37 [hello] version: 4.0.1
+2026-07-08 21:06:37 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:37 Client connection closed
+2026-07-08 21:06:37 recv returned 0 (peer closed?)
+2026-07-08 21:06:37 [~impl] closing socket 4
+2026-07-08 21:06:37 Accepted client connection
+2026-07-08 21:06:37 [hello] version: 4.0.1
+2026-07-08 21:06:37 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:37 Client connection closed
+2026-07-08 21:06:37 recv returned 0 (peer closed?)
+2026-07-08 21:06:37 [~impl] closing socket 4
+2026-07-08 21:06:37 Accepted client connection
+2026-07-08 21:06:37 [hello] version: 4.0.1
+2026-07-08 21:06:37 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:37 Client connection closed
+2026-07-08 21:06:37 recv returned 0 (peer closed?)
+2026-07-08 21:06:37 [~impl] closing socket 4
+2026-07-08 21:06:37 Accepted client connection
+2026-07-08 21:06:37 [hello] version: 4.0.1
+2026-07-08 21:06:37 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:37 Client connection closed
+2026-07-08 21:06:37 recv returned 0 (peer closed?)
+2026-07-08 21:06:37 [~impl] closing socket 4
+2026-07-08 21:06:37 Accepted client connection
+2026-07-08 21:06:37 [hello] version: 4.0.1
+2026-07-08 21:06:37 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:37 Client connection closed
+2026-07-08 21:06:37 recv returned 0 (peer closed?)
+2026-07-08 21:06:37 [~impl] closing socket 4
+2026-07-08 21:06:37 Accepted client connection
+2026-07-08 21:06:37 [hello] version: 4.0.1
+2026-07-08 21:06:37 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:37 Client connection closed
+2026-07-08 21:06:37 recv returned 0 (peer closed?)
+2026-07-08 21:06:37 [~impl] closing socket 4
+2026-07-08 21:06:37 Accepted client connection
+2026-07-08 21:06:37 [hello] version: 4.0.1
+2026-07-08 21:06:37 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:37 Client connection closed
+2026-07-08 21:06:37 recv returned 0 (peer closed?)
+2026-07-08 21:06:37 [~impl] closing socket 4
+2026-07-08 21:06:37 Accepted client connection
+2026-07-08 21:06:37 [hello] version: 4.0.1
+2026-07-08 21:06:37 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:37 Client connection closed
+2026-07-08 21:06:37 recv returned 0 (peer closed?)
+2026-07-08 21:06:37 [~impl] closing socket 4
+2026-07-08 21:06:37 Accepted client connection
+2026-07-08 21:06:37 [hello] version: 4.0.1
+2026-07-08 21:06:37 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:37 Client connection closed
+2026-07-08 21:06:37 recv returned 0 (peer closed?)
+2026-07-08 21:06:37 [~impl] closing socket 4
+2026-07-08 21:06:37 Accepted client connection
+2026-07-08 21:06:37 [hello] version: 4.0.1
+2026-07-08 21:06:37 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:37 Client connection closed
+2026-07-08 21:06:37 recv returned 0 (peer closed?)
+2026-07-08 21:06:37 [~impl] closing socket 4
+2026-07-08 21:06:37 Accepted client connection
+2026-07-08 21:06:37 [hello] version: 4.0.1
+2026-07-08 21:06:37 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:37 Client connection closed
+2026-07-08 21:06:37 recv returned 0 (peer closed?)
+2026-07-08 21:06:37 [~impl] closing socket 4
+2026-07-08 21:06:37 Accepted client connection
+2026-07-08 21:06:37 [hello] version: 4.0.1
+2026-07-08 21:06:37 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:37 Client connection closed
+2026-07-08 21:06:37 recv returned 0 (peer closed?)
+2026-07-08 21:06:37 [~impl] closing socket 4
+2026-07-08 21:06:37 Accepted client connection
+2026-07-08 21:06:37 [hello] version: 4.0.1
+2026-07-08 21:06:37 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:37 Client connection closed
+2026-07-08 21:06:37 recv returned 0 (peer closed?)
+2026-07-08 21:06:37 [~impl] closing socket 4
+2026-07-08 21:06:38 Accepted client connection
+2026-07-08 21:06:38 [hello] version: 4.0.1
+2026-07-08 21:06:38 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:38 Client connection closed
+2026-07-08 21:06:38 recv returned 0 (peer closed?)
+2026-07-08 21:06:38 [~impl] closing socket 4
+2026-07-08 21:06:38 Accepted client connection
+2026-07-08 21:06:38 [hello] version: 4.0.1
+2026-07-08 21:06:38 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:38 Client connection closed
+2026-07-08 21:06:38 recv returned 0 (peer closed?)
+2026-07-08 21:06:38 [~impl] closing socket 4
+2026-07-08 21:06:38 Accepted client connection
+2026-07-08 21:06:38 [hello] version: 4.0.1
+2026-07-08 21:06:38 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:38 Client connection closed
+2026-07-08 21:06:38 recv returned 0 (peer closed?)
+2026-07-08 21:06:38 [~impl] closing socket 4
+2026-07-08 21:06:38 Accepted client connection
+2026-07-08 21:06:38 [hello] version: 4.0.1
+2026-07-08 21:06:38 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:38 Client connection closed
+2026-07-08 21:06:38 recv returned 0 (peer closed?)
+2026-07-08 21:06:38 [~impl] closing socket 4
+2026-07-08 21:06:38 Accepted client connection
+2026-07-08 21:06:38 [hello] version: 4.0.1
+2026-07-08 21:06:38 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:38 Client connection closed
+2026-07-08 21:06:38 recv returned 0 (peer closed?)
+2026-07-08 21:06:38 [~impl] closing socket 4
+2026-07-08 21:06:38 Accepted client connection
+2026-07-08 21:06:38 [hello] version: 4.0.1
+2026-07-08 21:06:38 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:38 Client connection closed
+2026-07-08 21:06:38 recv returned 0 (peer closed?)
+2026-07-08 21:06:38 [~impl] closing socket 4
+2026-07-08 21:06:38 Accepted client connection
+2026-07-08 21:06:38 [hello] version: 4.0.1
+2026-07-08 21:06:38 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:38 Client connection closed
+2026-07-08 21:06:38 recv returned 0 (peer closed?)
+2026-07-08 21:06:38 [~impl] closing socket 4
+2026-07-08 21:06:38 Accepted client connection
+2026-07-08 21:06:38 [hello] version: 4.0.1
+2026-07-08 21:06:38 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:38 Client connection closed
+2026-07-08 21:06:38 recv returned 0 (peer closed?)
+2026-07-08 21:06:38 [~impl] closing socket 4
+2026-07-08 21:06:38 Accepted client connection
+2026-07-08 21:06:38 [hello] version: 4.0.1
+2026-07-08 21:06:38 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:38 Client connection closed
+2026-07-08 21:06:38 recv returned 0 (peer closed?)
+2026-07-08 21:06:38 [~impl] closing socket 4
+2026-07-08 21:06:38 Accepted client connection
+2026-07-08 21:06:38 [hello] version: 4.0.1
+2026-07-08 21:06:38 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:38 Client connection closed
+2026-07-08 21:06:38 recv returned 0 (peer closed?)
+2026-07-08 21:06:38 [~impl] closing socket 4
+2026-07-08 21:06:38 Accepted client connection
+2026-07-08 21:06:38 [hello] version: 4.0.1
+2026-07-08 21:06:38 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:38 Client connection closed
+2026-07-08 21:06:38 recv returned 0 (peer closed?)
+2026-07-08 21:06:38 [~impl] closing socket 4
+2026-07-08 21:06:38 Accepted client connection
+2026-07-08 21:06:38 [hello] version: 4.0.1
+2026-07-08 21:06:38 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:38 Client connection closed
+2026-07-08 21:06:38 recv returned 0 (peer closed?)
+2026-07-08 21:06:38 [~impl] closing socket 4
+2026-07-08 21:06:38 Accepted client connection
+2026-07-08 21:06:38 [hello] version: 4.0.1
+2026-07-08 21:06:38 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:38 Client connection closed
+2026-07-08 21:06:38 recv returned 0 (peer closed?)
+2026-07-08 21:06:38 [~impl] closing socket 4
+2026-07-08 21:06:38 Accepted client connection
+2026-07-08 21:06:38 [hello] version: 4.0.1
+2026-07-08 21:06:38 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:38 Client connection closed
+2026-07-08 21:06:38 recv returned 0 (peer closed?)
+2026-07-08 21:06:38 [~impl] closing socket 4
+2026-07-08 21:06:38 Accepted client connection
+2026-07-08 21:06:38 [hello] version: 4.0.1
+2026-07-08 21:06:38 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:38 Client connection closed
+2026-07-08 21:06:38 recv returned 0 (peer closed?)
+2026-07-08 21:06:38 [~impl] closing socket 4
+2026-07-08 21:06:38 Accepted client connection
+2026-07-08 21:06:38 [hello] version: 4.0.1
+2026-07-08 21:06:38 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:38 Client connection closed
+2026-07-08 21:06:38 recv returned 0 (peer closed?)
+2026-07-08 21:06:38 [~impl] closing socket 4
+2026-07-08 21:06:38 Accepted client connection
+2026-07-08 21:06:38 [hello] version: 4.0.1
+2026-07-08 21:06:38 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:38 Client connection closed
+2026-07-08 21:06:38 recv returned 0 (peer closed?)
+2026-07-08 21:06:38 [~impl] closing socket 4
+2026-07-08 21:06:38 Accepted client connection
+2026-07-08 21:06:38 [hello] version: 4.0.1
+2026-07-08 21:06:38 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:38 Client connection closed
+2026-07-08 21:06:38 recv returned 0 (peer closed?)
+2026-07-08 21:06:38 [~impl] closing socket 4
+2026-07-08 21:06:38 Accepted client connection
+2026-07-08 21:06:38 [hello] version: 4.0.1
+2026-07-08 21:06:38 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:38 Client connection closed
+2026-07-08 21:06:38 recv returned 0 (peer closed?)
+2026-07-08 21:06:38 [~impl] closing socket 4
+2026-07-08 21:06:38 Accepted client connection
+2026-07-08 21:06:38 [hello] version: 4.0.1
+2026-07-08 21:06:38 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:38 Client connection closed
+2026-07-08 21:06:38 recv returned 0 (peer closed?)
+2026-07-08 21:06:38 [~impl] closing socket 4
+2026-07-08 21:06:38 Accepted client connection
+2026-07-08 21:06:38 [hello] version: 4.0.1
+2026-07-08 21:06:38 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:38 Client connection closed
+2026-07-08 21:06:38 recv returned 0 (peer closed?)
+2026-07-08 21:06:38 [~impl] closing socket 4
+2026-07-08 21:06:38 Accepted client connection
+2026-07-08 21:06:38 [hello] version: 4.0.1
+2026-07-08 21:06:38 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:38 Client connection closed
+2026-07-08 21:06:38 recv returned 0 (peer closed?)
+2026-07-08 21:06:38 [~impl] closing socket 4
+2026-07-08 21:06:38 Accepted client connection
+2026-07-08 21:06:38 [hello] version: 4.0.1
+2026-07-08 21:06:38 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:38 Client connection closed
+2026-07-08 21:06:38 recv returned 0 (peer closed?)
+2026-07-08 21:06:38 [~impl] closing socket 4
+2026-07-08 21:06:38 Accepted client connection
+2026-07-08 21:06:38 [hello] version: 4.0.1
+2026-07-08 21:06:38 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:38 Client connection closed
+2026-07-08 21:06:38 recv returned 0 (peer closed?)
+2026-07-08 21:06:38 [~impl] closing socket 4
+2026-07-08 21:06:38 Accepted client connection
+2026-07-08 21:06:38 [hello] version: 4.0.1
+2026-07-08 21:06:38 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:38 Client connection closed
+2026-07-08 21:06:38 recv returned 0 (peer closed?)
+2026-07-08 21:06:38 [~impl] closing socket 4
+2026-07-08 21:06:38 Accepted client connection
+2026-07-08 21:06:38 [hello] version: 4.0.1
+2026-07-08 21:06:38 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:38 Client connection closed
+2026-07-08 21:06:38 recv returned 0 (peer closed?)
+2026-07-08 21:06:38 [~impl] closing socket 4
+2026-07-08 21:06:38 Accepted client connection
+2026-07-08 21:06:38 [hello] version: 4.0.1
+2026-07-08 21:06:38 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:38 Client connection closed
+2026-07-08 21:06:38 recv returned 0 (peer closed?)
+2026-07-08 21:06:38 [~impl] closing socket 4
+2026-07-08 21:06:38 Accepted client connection
+2026-07-08 21:06:38 [hello] version: 4.0.1
+2026-07-08 21:06:38 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:38 Client connection closed
+2026-07-08 21:06:38 recv returned 0 (peer closed?)
+2026-07-08 21:06:38 [~impl] closing socket 4
+2026-07-08 21:06:38 Accepted client connection
+2026-07-08 21:06:38 [hello] version: 4.0.1
+2026-07-08 21:06:38 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:38 Client connection closed
+2026-07-08 21:06:38 recv returned 0 (peer closed?)
+2026-07-08 21:06:38 [~impl] closing socket 4
+2026-07-08 21:06:38 Accepted client connection
+2026-07-08 21:06:38 [hello] version: 4.0.1
+2026-07-08 21:06:38 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:38 Client connection closed
+2026-07-08 21:06:38 recv returned 0 (peer closed?)
+2026-07-08 21:06:38 [~impl] closing socket 4
+2026-07-08 21:06:38 Accepted client connection
+2026-07-08 21:06:38 [hello] version: 4.0.1
+2026-07-08 21:06:38 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:38 Client connection closed
+2026-07-08 21:06:38 recv returned 0 (peer closed?)
+2026-07-08 21:06:38 [~impl] closing socket 4
+2026-07-08 21:06:38 Accepted client connection
+2026-07-08 21:06:38 [hello] version: 4.0.1
+2026-07-08 21:06:38 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:38 Client connection closed
+2026-07-08 21:06:38 recv returned 0 (peer closed?)
+2026-07-08 21:06:38 [~impl] closing socket 4
+2026-07-08 21:06:38 Accepted client connection
+2026-07-08 21:06:38 [hello] version: 4.0.1
+2026-07-08 21:06:38 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:38 Client connection closed
+2026-07-08 21:06:38 recv returned 0 (peer closed?)
+2026-07-08 21:06:38 [~impl] closing socket 4
+2026-07-08 21:06:38 Accepted client connection
+2026-07-08 21:06:38 [hello] version: 4.0.1
+2026-07-08 21:06:38 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:38 Client connection closed
+2026-07-08 21:06:38 recv returned 0 (peer closed?)
+2026-07-08 21:06:38 [~impl] closing socket 4
+2026-07-08 21:06:38 Accepted client connection
+2026-07-08 21:06:38 [hello] version: 4.0.1
+2026-07-08 21:06:38 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:38 Client connection closed
+2026-07-08 21:06:38 recv returned 0 (peer closed?)
+2026-07-08 21:06:38 [~impl] closing socket 4
+2026-07-08 21:06:39 Accepted client connection
+2026-07-08 21:06:39 [hello] version: 4.0.1
+2026-07-08 21:06:39 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:39 Client connection closed
+2026-07-08 21:06:39 recv returned 0 (peer closed?)
+2026-07-08 21:06:39 [~impl] closing socket 4
+2026-07-08 21:06:39 Accepted client connection
+2026-07-08 21:06:39 [hello] version: 4.0.1
+2026-07-08 21:06:39 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:39 Client connection closed
+2026-07-08 21:06:39 recv returned 0 (peer closed?)
+2026-07-08 21:06:39 [~impl] closing socket 4
+2026-07-08 21:06:39 Accepted client connection
+2026-07-08 21:06:39 [hello] version: 4.0.1
+2026-07-08 21:06:39 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:39 Client connection closed
+2026-07-08 21:06:39 recv returned 0 (peer closed?)
+2026-07-08 21:06:39 [~impl] closing socket 4
+2026-07-08 21:06:39 Accepted client connection
+2026-07-08 21:06:39 [hello] version: 4.0.1
+2026-07-08 21:06:39 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:39 Client connection closed
+2026-07-08 21:06:39 recv returned 0 (peer closed?)
+2026-07-08 21:06:39 [~impl] closing socket 4
+2026-07-08 21:06:39 Accepted client connection
+2026-07-08 21:06:39 [hello] version: 4.0.1
+2026-07-08 21:06:39 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:39 Client connection closed
+2026-07-08 21:06:39 recv returned 0 (peer closed?)
+2026-07-08 21:06:39 [~impl] closing socket 4
+2026-07-08 21:06:39 Accepted client connection
+2026-07-08 21:06:39 [hello] version: 4.0.1
+2026-07-08 21:06:39 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:39 Client connection closed
+2026-07-08 21:06:39 recv returned 0 (peer closed?)
+2026-07-08 21:06:39 [~impl] closing socket 4
+2026-07-08 21:06:39 Accepted client connection
+2026-07-08 21:06:39 [hello] version: 4.0.1
+2026-07-08 21:06:39 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:39 Client connection closed
+2026-07-08 21:06:39 recv returned 0 (peer closed?)
+2026-07-08 21:06:39 [~impl] closing socket 4
+2026-07-08 21:06:39 Accepted client connection
+2026-07-08 21:06:39 [hello] version: 4.0.1
+2026-07-08 21:06:39 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:39 Client connection closed
+2026-07-08 21:06:39 recv returned 0 (peer closed?)
+2026-07-08 21:06:39 [~impl] closing socket 4
+2026-07-08 21:06:39 Accepted client connection
+2026-07-08 21:06:39 [hello] version: 4.0.1
+2026-07-08 21:06:39 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:39 Client connection closed
+2026-07-08 21:06:39 recv returned 0 (peer closed?)
+2026-07-08 21:06:39 [~impl] closing socket 4
+2026-07-08 21:06:39 Accepted client connection
+2026-07-08 21:06:39 [hello] version: 4.0.1
+2026-07-08 21:06:39 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:39 Client connection closed
+2026-07-08 21:06:39 recv returned 0 (peer closed?)
+2026-07-08 21:06:39 [~impl] closing socket 4
+2026-07-08 21:06:39 Accepted client connection
+2026-07-08 21:06:39 [hello] version: 4.0.1
+2026-07-08 21:06:39 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:40 Client connection closed
+2026-07-08 21:06:40 recv returned 0 (peer closed?)
+2026-07-08 21:06:40 [~impl] closing socket 4
+2026-07-08 21:06:40 Accepted client connection
+2026-07-08 21:06:40 [hello] version: 4.0.1
+2026-07-08 21:06:40 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:40 Client connection closed
+2026-07-08 21:06:40 recv returned 0 (peer closed?)
+2026-07-08 21:06:40 [~impl] closing socket 4
+2026-07-08 21:06:40 Accepted client connection
+2026-07-08 21:06:40 [hello] version: 4.0.1
+2026-07-08 21:06:40 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:40 Client connection closed
+2026-07-08 21:06:40 recv returned 0 (peer closed?)
+2026-07-08 21:06:40 [~impl] closing socket 4
+2026-07-08 21:06:40 Accepted client connection
+2026-07-08 21:06:40 [hello] version: 4.0.1
+2026-07-08 21:06:40 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:40 Client connection closed
+2026-07-08 21:06:40 recv returned 0 (peer closed?)
+2026-07-08 21:06:40 [~impl] closing socket 4
+2026-07-08 21:06:40 Accepted client connection
+2026-07-08 21:06:40 [hello] version: 4.0.1
+2026-07-08 21:06:40 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:40 Client connection closed
+2026-07-08 21:06:40 recv returned 0 (peer closed?)
+2026-07-08 21:06:40 [~impl] closing socket 4
+2026-07-08 21:06:40 Accepted client connection
+2026-07-08 21:06:40 [hello] version: 4.0.1
+2026-07-08 21:06:40 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:40 Client connection closed
+2026-07-08 21:06:40 recv returned 0 (peer closed?)
+2026-07-08 21:06:40 [~impl] closing socket 4
+2026-07-08 21:06:40 Accepted client connection
+2026-07-08 21:06:40 [hello] version: 4.0.1
+2026-07-08 21:06:40 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:40 Client connection closed
+2026-07-08 21:06:40 recv returned 0 (peer closed?)
+2026-07-08 21:06:40 [~impl] closing socket 4
+2026-07-08 21:06:40 Accepted client connection
+2026-07-08 21:06:40 [hello] version: 4.0.1
+2026-07-08 21:06:40 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:40 Client connection closed
+2026-07-08 21:06:40 recv returned 0 (peer closed?)
+2026-07-08 21:06:40 [~impl] closing socket 4
+2026-07-08 21:06:40 Accepted client connection
+2026-07-08 21:06:40 [hello] version: 4.0.1
+2026-07-08 21:06:40 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:40 Client connection closed
+2026-07-08 21:06:40 recv returned 0 (peer closed?)
+2026-07-08 21:06:40 [~impl] closing socket 4
+2026-07-08 21:06:40 Accepted client connection
+2026-07-08 21:06:40 [hello] version: 4.0.1
+2026-07-08 21:06:40 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:40 Client connection closed
+2026-07-08 21:06:40 recv returned 0 (peer closed?)
+2026-07-08 21:06:40 [~impl] closing socket 4
+2026-07-08 21:06:40 Accepted client connection
+2026-07-08 21:06:40 [hello] version: 4.0.1
+2026-07-08 21:06:40 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:40 Client connection closed
+2026-07-08 21:06:40 recv returned 0 (peer closed?)
+2026-07-08 21:06:40 [~impl] closing socket 4
+2026-07-08 21:06:40 Accepted client connection
+2026-07-08 21:06:40 [hello] version: 4.0.1
+2026-07-08 21:06:40 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:40 Client connection closed
+2026-07-08 21:06:40 recv returned 0 (peer closed?)
+2026-07-08 21:06:40 [~impl] closing socket 4
+2026-07-08 21:06:40 Accepted client connection
+2026-07-08 21:06:40 [hello] version: 4.0.1
+2026-07-08 21:06:40 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:40 Client connection closed
+2026-07-08 21:06:40 recv returned 0 (peer closed?)
+2026-07-08 21:06:40 [~impl] closing socket 4
+2026-07-08 21:06:40 Accepted client connection
+2026-07-08 21:06:40 [hello] version: 4.0.1
+2026-07-08 21:06:40 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:40 Client connection closed
+2026-07-08 21:06:40 recv returned 0 (peer closed?)
+2026-07-08 21:06:40 [~impl] closing socket 4
+2026-07-08 21:06:40 Accepted client connection
+2026-07-08 21:06:40 [hello] version: 4.0.1
+2026-07-08 21:06:40 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:40 Client connection closed
+2026-07-08 21:06:40 recv returned 0 (peer closed?)
+2026-07-08 21:06:40 [~impl] closing socket 4
+2026-07-08 21:06:40 Accepted client connection
+2026-07-08 21:06:40 [hello] version: 4.0.1
+2026-07-08 21:06:40 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:40 Client connection closed
+2026-07-08 21:06:40 recv returned 0 (peer closed?)
+2026-07-08 21:06:40 [~impl] closing socket 4
+2026-07-08 21:06:40 Accepted client connection
+2026-07-08 21:06:40 [hello] version: 4.0.1
+2026-07-08 21:06:40 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:40 Client connection closed
+2026-07-08 21:06:40 recv returned 0 (peer closed?)
+2026-07-08 21:06:40 [~impl] closing socket 4
+2026-07-08 21:06:40 Accepted client connection
+2026-07-08 21:06:40 [hello] version: 4.0.1
+2026-07-08 21:06:40 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:40 Client connection closed
+2026-07-08 21:06:40 recv returned 0 (peer closed?)
+2026-07-08 21:06:40 [~impl] closing socket 4
+2026-07-08 21:06:40 Accepted client connection
+2026-07-08 21:06:40 [hello] version: 4.0.1
+2026-07-08 21:06:40 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:40 Client connection closed
+2026-07-08 21:06:40 recv returned 0 (peer closed?)
+2026-07-08 21:06:40 [~impl] closing socket 4
+2026-07-08 21:06:40 Accepted client connection
+2026-07-08 21:06:40 [hello] version: 4.0.1
+2026-07-08 21:06:40 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:40 Client connection closed
+2026-07-08 21:06:40 recv returned 0 (peer closed?)
+2026-07-08 21:06:40 [~impl] closing socket 4
+2026-07-08 21:06:40 Accepted client connection
+2026-07-08 21:06:40 [hello] version: 4.0.1
+2026-07-08 21:06:40 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:40 Client connection closed
+2026-07-08 21:06:40 recv returned 0 (peer closed?)
+2026-07-08 21:06:40 [~impl] closing socket 4
+2026-07-08 21:06:40 Accepted client connection
+2026-07-08 21:06:40 [hello] version: 4.0.1
+2026-07-08 21:06:40 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:40 Client connection closed
+2026-07-08 21:06:40 recv returned 0 (peer closed?)
+2026-07-08 21:06:40 [~impl] closing socket 4
+2026-07-08 21:06:40 Accepted client connection
+2026-07-08 21:06:40 [hello] version: 4.0.1
+2026-07-08 21:06:40 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:40 Client connection closed
+2026-07-08 21:06:40 recv returned 0 (peer closed?)
+2026-07-08 21:06:40 [~impl] closing socket 4
+2026-07-08 21:06:40 Accepted client connection
+2026-07-08 21:06:40 [hello] version: 4.0.1
+2026-07-08 21:06:40 [get_device_memory] device: 0, free_mem: 7852646400, total_mem: 7852646400
+2026-07-08 21:06:40 Client connection closed
+2026-07-08 21:06:40 recv returned 0 (peer closed?)
+2026-07-08 21:06:40 [~impl] closing socket 4
+2026-07-08 21:06:40 Accepted client connection
+2026-07-08 21:06:40 [hello] version: 4.0.1
+2026-07-08 21:06:40 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:40 Client connection closed
+2026-07-08 21:06:40 recv returned 0 (peer closed?)
+2026-07-08 21:06:40 [~impl] closing socket 4
+2026-07-08 21:06:40 Accepted client connection
+2026-07-08 21:06:40 [hello] version: 4.0.1
+2026-07-08 21:06:40 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:40 Client connection closed
+2026-07-08 21:06:40 recv returned 0 (peer closed?)
+2026-07-08 21:06:40 [~impl] closing socket 4
+2026-07-08 21:06:40 Accepted client connection
+2026-07-08 21:06:40 [hello] version: 4.0.1
+2026-07-08 21:06:40 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:40 Client connection closed
+2026-07-08 21:06:40 recv returned 0 (peer closed?)
+2026-07-08 21:06:40 [~impl] closing socket 4
+2026-07-08 21:06:40 Accepted client connection
+2026-07-08 21:06:40 [hello] version: 4.0.1
+2026-07-08 21:06:40 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:40 Client connection closed
+2026-07-08 21:06:40 recv returned 0 (peer closed?)
+2026-07-08 21:06:40 [~impl] closing socket 4
+2026-07-08 21:06:40 Accepted client connection
+2026-07-08 21:06:40 [hello] version: 4.0.1
+2026-07-08 21:06:40 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:40 Client connection closed
+2026-07-08 21:06:40 recv returned 0 (peer closed?)
+2026-07-08 21:06:40 [~impl] closing socket 4
+2026-07-08 21:06:40 Accepted client connection
+2026-07-08 21:06:40 [hello] version: 4.0.1
+2026-07-08 21:06:40 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:40 Client connection closed
+2026-07-08 21:06:40 recv returned 0 (peer closed?)
+2026-07-08 21:06:40 [~impl] closing socket 4
+2026-07-08 21:06:40 Accepted client connection
+2026-07-08 21:06:40 [hello] version: 4.0.1
+2026-07-08 21:06:40 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:40 Client connection closed
+2026-07-08 21:06:40 recv returned 0 (peer closed?)
+2026-07-08 21:06:40 [~impl] closing socket 4
+2026-07-08 21:06:40 Accepted client connection
+2026-07-08 21:06:40 [hello] version: 4.0.1
+2026-07-08 21:06:40 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:40 Client connection closed
+2026-07-08 21:06:40 recv returned 0 (peer closed?)
+2026-07-08 21:06:40 [~impl] closing socket 4
+2026-07-08 21:06:40 Accepted client connection
+2026-07-08 21:06:40 [hello] version: 4.0.1
+2026-07-08 21:06:40 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:40 Client connection closed
+2026-07-08 21:06:40 recv returned 0 (peer closed?)
+2026-07-08 21:06:40 [~impl] closing socket 4
+2026-07-08 21:06:40 Accepted client connection
+2026-07-08 21:06:40 [hello] version: 4.0.1
+2026-07-08 21:06:40 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:40 Client connection closed
+2026-07-08 21:06:40 recv returned 0 (peer closed?)
+2026-07-08 21:06:40 [~impl] closing socket 4
+2026-07-08 21:06:40 Accepted client connection
+2026-07-08 21:06:40 [hello] version: 4.0.1
+2026-07-08 21:06:40 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:40 Client connection closed
+2026-07-08 21:06:40 recv returned 0 (peer closed?)
+2026-07-08 21:06:40 [~impl] closing socket 4
+2026-07-08 21:06:40 Accepted client connection
+2026-07-08 21:06:40 [hello] version: 4.0.1
+2026-07-08 21:06:40 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:40 Client connection closed
+2026-07-08 21:06:40 recv returned 0 (peer closed?)
+2026-07-08 21:06:40 [~impl] closing socket 4
+2026-07-08 21:06:40 Accepted client connection
+2026-07-08 21:06:40 [hello] version: 4.0.1
+2026-07-08 21:06:40 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:40 Client connection closed
+2026-07-08 21:06:40 recv returned 0 (peer closed?)
+2026-07-08 21:06:40 [~impl] closing socket 4
+2026-07-08 21:06:40 Accepted client connection
+2026-07-08 21:06:40 [hello] version: 4.0.1
+2026-07-08 21:06:40 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:40 Client connection closed
+2026-07-08 21:06:40 recv returned 0 (peer closed?)
+2026-07-08 21:06:40 [~impl] closing socket 4
+2026-07-08 21:06:40 Accepted client connection
+2026-07-08 21:06:40 [hello] version: 4.0.1
+2026-07-08 21:06:40 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:40 Client connection closed
+2026-07-08 21:06:40 recv returned 0 (peer closed?)
+2026-07-08 21:06:40 [~impl] closing socket 4
+2026-07-08 21:06:40 Accepted client connection
+2026-07-08 21:06:40 [hello] version: 4.0.1
+2026-07-08 21:06:40 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:40 Client connection closed
+2026-07-08 21:06:40 recv returned 0 (peer closed?)
+2026-07-08 21:06:40 [~impl] closing socket 4
+2026-07-08 21:06:40 Accepted client connection
+2026-07-08 21:06:40 [hello] version: 4.0.1
+2026-07-08 21:06:40 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:40 Client connection closed
+2026-07-08 21:06:40 recv returned 0 (peer closed?)
+2026-07-08 21:06:40 [~impl] closing socket 4
+2026-07-08 21:06:40 Accepted client connection
+2026-07-08 21:06:40 [hello] version: 4.0.1
+2026-07-08 21:06:40 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:40 Client connection closed
+2026-07-08 21:06:40 recv returned 0 (peer closed?)
+2026-07-08 21:06:40 [~impl] closing socket 4
+2026-07-08 21:06:40 Accepted client connection
+2026-07-08 21:06:40 [hello] version: 4.0.1
+2026-07-08 21:06:40 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:40 Client connection closed
+2026-07-08 21:06:40 recv returned 0 (peer closed?)
+2026-07-08 21:06:40 [~impl] closing socket 4
+2026-07-08 21:06:40 Accepted client connection
+2026-07-08 21:06:40 [hello] version: 4.0.1
+2026-07-08 21:06:40 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:40 Client connection closed
+2026-07-08 21:06:40 recv returned 0 (peer closed?)
+2026-07-08 21:06:40 [~impl] closing socket 4
+2026-07-08 21:06:40 Accepted client connection
+2026-07-08 21:06:40 [hello] version: 4.0.1
+2026-07-08 21:06:40 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:40 Client connection closed
+2026-07-08 21:06:40 recv returned 0 (peer closed?)
+2026-07-08 21:06:40 [~impl] closing socket 4
+2026-07-08 21:06:40 Accepted client connection
+2026-07-08 21:06:40 [hello] version: 4.0.1
+2026-07-08 21:06:40 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:40 Client connection closed
+2026-07-08 21:06:40 recv returned 0 (peer closed?)
+2026-07-08 21:06:40 [~impl] closing socket 4
+2026-07-08 21:06:40 Accepted client connection
+2026-07-08 21:06:40 [hello] version: 4.0.1
+2026-07-08 21:06:40 [get_device_memory] device: 0, free_mem: 7852646400, total_mem: 7852646400
+2026-07-08 21:06:40 Client connection closed
+2026-07-08 21:06:40 recv returned 0 (peer closed?)
+2026-07-08 21:06:40 [~impl] closing socket 4
+2026-07-08 21:06:41 Accepted client connection
+2026-07-08 21:06:41 [hello] version: 4.0.1
+2026-07-08 21:06:41 Client connection closed
+2026-07-08 21:06:41 [get_device_memory] device: 0, free_mem: 7852646400, total_mem: 7852646400
+2026-07-08 21:06:41 recv returned 0 (peer closed?)
+2026-07-08 21:06:41 [~impl] closing socket 4
+2026-07-08 21:06:41 Accepted client connection
+2026-07-08 21:06:41 [hello] version: 4.0.1
+2026-07-08 21:06:41 Client connection closed
+2026-07-08 21:06:41 [get_device_memory] device: 0, free_mem: 7852646400, total_mem: 7852646400
+2026-07-08 21:06:41 recv returned 0 (peer closed?)
+2026-07-08 21:06:41 [~impl] closing socket 4
+2026-07-08 21:06:41 Accepted client connection
+2026-07-08 21:06:41 [hello] version: 4.0.1
+2026-07-08 21:06:41 [get_device_memory] device: 0, free_mem: 7852646400, total_mem: 7852646400
+2026-07-08 21:06:41 Client connection closed
+2026-07-08 21:06:41 recv returned 0 (peer closed?)
+2026-07-08 21:06:41 [~impl] closing socket 4
+2026-07-08 21:06:41 Accepted client connection
+2026-07-08 21:06:41 [hello] version: 4.0.1
+2026-07-08 21:06:41 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:41 Client connection closed
+2026-07-08 21:06:41 recv returned 0 (peer closed?)
+2026-07-08 21:06:41 [~impl] closing socket 4
+2026-07-08 21:06:41 Accepted client connection
+2026-07-08 21:06:41 [hello] version: 4.0.1
+2026-07-08 21:06:41 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:41 Client connection closed
+2026-07-08 21:06:41 recv returned 0 (peer closed?)
+2026-07-08 21:06:41 [~impl] closing socket 4
+2026-07-08 21:06:41 Accepted client connection
+2026-07-08 21:06:41 [hello] version: 4.0.1
+2026-07-08 21:06:41 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:41 Client connection closed
+2026-07-08 21:06:41 recv returned 0 (peer closed?)
+2026-07-08 21:06:41 [~impl] closing socket 4
+2026-07-08 21:06:41 Accepted client connection
+2026-07-08 21:06:41 [hello] version: 4.0.1
+2026-07-08 21:06:41 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:41 Client connection closed
+2026-07-08 21:06:41 recv returned 0 (peer closed?)
+2026-07-08 21:06:41 [~impl] closing socket 4
+2026-07-08 21:06:41 Accepted client connection
+2026-07-08 21:06:41 [hello] version: 4.0.1
+2026-07-08 21:06:41 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:41 Client connection closed
+2026-07-08 21:06:41 recv returned 0 (peer closed?)
+2026-07-08 21:06:41 [~impl] closing socket 4
+2026-07-08 21:06:41 Accepted client connection
+2026-07-08 21:06:41 [hello] version: 4.0.1
+2026-07-08 21:06:41 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:41 Client connection closed
+2026-07-08 21:06:41 recv returned 0 (peer closed?)
+2026-07-08 21:06:41 [~impl] closing socket 4
+2026-07-08 21:06:41 Accepted client connection
+2026-07-08 21:06:41 [hello] version: 4.0.1
+2026-07-08 21:06:41 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:41 Client connection closed
+2026-07-08 21:06:41 recv returned 0 (peer closed?)
+2026-07-08 21:06:41 [~impl] closing socket 4
+2026-07-08 21:06:41 Accepted client connection
+2026-07-08 21:06:41 [hello] version: 4.0.1
+2026-07-08 21:06:41 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:41 Client connection closed
+2026-07-08 21:06:41 recv returned 0 (peer closed?)
+2026-07-08 21:06:41 [~impl] closing socket 4
+2026-07-08 21:06:41 Accepted client connection
+2026-07-08 21:06:41 [hello] version: 4.0.1
+2026-07-08 21:06:41 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:41 Client connection closed
+2026-07-08 21:06:41 recv returned 0 (peer closed?)
+2026-07-08 21:06:41 [~impl] closing socket 4
+2026-07-08 21:06:41 Accepted client connection
+2026-07-08 21:06:41 [hello] version: 4.0.1
+2026-07-08 21:06:41 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:41 Client connection closed
+2026-07-08 21:06:41 recv returned 0 (peer closed?)
+2026-07-08 21:06:41 [~impl] closing socket 4
+2026-07-08 21:06:41 Accepted client connection
+2026-07-08 21:06:41 [hello] version: 4.0.1
+2026-07-08 21:06:41 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:41 Client connection closed
+2026-07-08 21:06:41 recv returned 0 (peer closed?)
+2026-07-08 21:06:41 [~impl] closing socket 4
+2026-07-08 21:06:41 Accepted client connection
+2026-07-08 21:06:41 [hello] version: 4.0.1
+2026-07-08 21:06:41 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:41 Client connection closed
+2026-07-08 21:06:41 recv returned 0 (peer closed?)
+2026-07-08 21:06:41 [~impl] closing socket 4
+2026-07-08 21:06:41 Accepted client connection
+2026-07-08 21:06:41 [hello] version: 4.0.1
+2026-07-08 21:06:41 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:41 Client connection closed
+2026-07-08 21:06:41 recv returned 0 (peer closed?)
+2026-07-08 21:06:41 [~impl] closing socket 4
+2026-07-08 21:06:41 Accepted client connection
+2026-07-08 21:06:41 [hello] version: 4.0.1
+2026-07-08 21:06:41 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:41 Client connection closed
+2026-07-08 21:06:41 recv returned 0 (peer closed?)
+2026-07-08 21:06:41 [~impl] closing socket 4
+2026-07-08 21:06:41 Accepted client connection
+2026-07-08 21:06:41 [hello] version: 4.0.1
+2026-07-08 21:06:41 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:41 Client connection closed
+2026-07-08 21:06:41 recv returned 0 (peer closed?)
+2026-07-08 21:06:41 [~impl] closing socket 4
+2026-07-08 21:06:41 Accepted client connection
+2026-07-08 21:06:41 [hello] version: 4.0.1
+2026-07-08 21:06:41 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:41 Client connection closed
+2026-07-08 21:06:41 recv returned 0 (peer closed?)
+2026-07-08 21:06:41 [~impl] closing socket 4
+2026-07-08 21:06:41 Accepted client connection
+2026-07-08 21:06:41 [hello] version: 4.0.1
+2026-07-08 21:06:41 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:41 Client connection closed
+2026-07-08 21:06:41 recv returned 0 (peer closed?)
+2026-07-08 21:06:41 [~impl] closing socket 4
+2026-07-08 21:06:41 Accepted client connection
+2026-07-08 21:06:41 [hello] version: 4.0.1
+2026-07-08 21:06:41 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:41 Client connection closed
+2026-07-08 21:06:41 recv returned 0 (peer closed?)
+2026-07-08 21:06:41 [~impl] closing socket 4
+2026-07-08 21:06:41 Accepted client connection
+2026-07-08 21:06:41 [hello] version: 4.0.1
+2026-07-08 21:06:41 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:41 Client connection closed
+2026-07-08 21:06:41 recv returned 0 (peer closed?)
+2026-07-08 21:06:41 [~impl] closing socket 4
+2026-07-08 21:06:41 Accepted client connection
+2026-07-08 21:06:41 [hello] version: 4.0.1
+2026-07-08 21:06:41 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:41 Client connection closed
+2026-07-08 21:06:41 recv returned 0 (peer closed?)
+2026-07-08 21:06:41 [~impl] closing socket 4
+2026-07-08 21:06:41 Accepted client connection
+2026-07-08 21:06:41 [hello] version: 4.0.1
+2026-07-08 21:06:41 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:41 Client connection closed
+2026-07-08 21:06:41 recv returned 0 (peer closed?)
+2026-07-08 21:06:41 [~impl] closing socket 4
+2026-07-08 21:06:41 Accepted client connection
+2026-07-08 21:06:41 [hello] version: 4.0.1
+2026-07-08 21:06:41 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:41 Client connection closed
+2026-07-08 21:06:41 recv returned 0 (peer closed?)
+2026-07-08 21:06:41 [~impl] closing socket 4
+2026-07-08 21:06:41 Accepted client connection
+2026-07-08 21:06:41 [hello] version: 4.0.1
+2026-07-08 21:06:41 [alloc_buffer] device: 0, size: 169841664 -> remote_ptr: 300005d3b0, remote_size: 169841664
+2026-07-08 21:06:41 [buffer_get_base] remote_ptr: 300005d3b0
+2026-07-08 21:06:41 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:41 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:41 [init_tensor] buffer: 0x300005d3b0, data: 0x71e2f76e40
+2026-07-08 21:06:41 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:41 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:41 [init_tensor] buffer: 0x300005d3b0, data: 0x71eb969040
+2026-07-08 21:06:41 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:41 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:41 [init_tensor] buffer: 0x300005d3b0, data: 0x71eb9d7440
+2026-07-08 21:06:41 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:41 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:41 [init_tensor] buffer: 0x300005d3b0, data: 0x71eb9e7040
+2026-07-08 21:06:41 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:41 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:41 [init_tensor] buffer: 0x300005d3b0, data: 0x71eb9f7e40
+2026-07-08 21:06:41 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:41 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:41 [init_tensor] buffer: 0x300005d3b0, data: 0x71eba67040
+2026-07-08 21:06:41 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:41 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:41 [init_tensor] buffer: 0x300005d3b0, data: 0x71ebcbd840
+2026-07-08 21:06:41 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:41 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:41 [init_tensor] buffer: 0x300005d3b0, data: 0x71ebf14040
+2026-07-08 21:06:41 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:41 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:41 [init_tensor] buffer: 0x300005d3b0, data: 0x71ec16b640
+2026-07-08 21:06:41 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:41 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:41 [init_tensor] buffer: 0x300005d3b0, data: 0x71ec1d9a40
+2026-07-08 21:06:41 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:41 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:41 [init_tensor] buffer: 0x300005d3b0, data: 0x71ec1e9640
+2026-07-08 21:06:41 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:41 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:41 [init_tensor] buffer: 0x300005d3b0, data: 0x71ec1fa440
+2026-07-08 21:06:41 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:41 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:41 [init_tensor] buffer: 0x300005d3b0, data: 0x71ec269640
+2026-07-08 21:06:41 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:41 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:41 [init_tensor] buffer: 0x300005d3b0, data: 0x71ec4bfe40
+2026-07-08 21:06:41 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:41 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:41 [init_tensor] buffer: 0x300005d3b0, data: 0x71ec716640
+2026-07-08 21:06:42 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:42 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:42 [init_tensor] buffer: 0x300005d3b0, data: 0x71ec96dc40
+2026-07-08 21:06:42 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:42 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:42 [init_tensor] buffer: 0x300005d3b0, data: 0x71ec9dc040
+2026-07-08 21:06:42 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:42 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:42 [init_tensor] buffer: 0x300005d3b0, data: 0x71ec9ebc40
+2026-07-08 21:06:42 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:42 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:42 [init_tensor] buffer: 0x300005d3b0, data: 0x71ec9fca40
+2026-07-08 21:06:42 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:42 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:42 [init_tensor] buffer: 0x300005d3b0, data: 0x71eca6bc40
+2026-07-08 21:06:42 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:42 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:42 [init_tensor] buffer: 0x300005d3b0, data: 0x71eccc2440
+2026-07-08 21:06:42 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:42 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:42 [init_tensor] buffer: 0x300005d3b0, data: 0x71ecf18c40
+2026-07-08 21:06:42 [set_tensor] buffer: 0x300005d3b0, data: 0x71e2f76040, offset: 0, size: 3584
+2026-07-08 21:06:42 [set_tensor_hash] buffer: 0x300005d3b0, data: 0x71e2f76e40, offset: 0, size: 144643072, hash: 82dd81180c3a7a43
+2026-07-08 21:06:42 [set_tensor] buffer: 0x300005d3b0, data: 0x71eb968240, offset: 0, size: 3584
+2026-07-08 21:06:42 [set_tensor] buffer: 0x300005d3b0, data: 0x71eb969040, offset: 0, size: 451584
+2026-07-08 21:06:42 [set_tensor] buffer: 0x300005d3b0, data: 0x71eb9d7440, offset: 0, size: 64512
+2026-07-08 21:06:42 [set_tensor] buffer: 0x300005d3b0, data: 0x71eb9e7040, offset: 0, size: 64512
+2026-07-08 21:06:42 [set_tensor] buffer: 0x300005d3b0, data: 0x71eb9f6c40, offset: 0, size: 3584
+2026-07-08 21:06:42 [set_tensor] buffer: 0x300005d3b0, data: 0x71eb9f7a40, offset: 0, size: 512
+2026-07-08 21:06:42 [set_tensor] buffer: 0x300005d3b0, data: 0x71eb9f7c40, offset: 0, size: 512
+2026-07-08 21:06:42 [set_tensor] buffer: 0x300005d3b0, data: 0x71eb9f7e40, offset: 0, size: 451584
+2026-07-08 21:06:42 [set_tensor] buffer: 0x300005d3b0, data: 0x71eba66240, offset: 0, size: 3584
+2026-07-08 21:06:43 [set_tensor] buffer: 0x300005d3b0, data: 0x71eba67040, offset: 0, size: 2451456
+2026-07-08 21:06:43 [set_tensor] buffer: 0x300005d3b0, data: 0x71ebcbd840, offset: 0, size: 2451456
+2026-07-08 21:06:43 [set_tensor] buffer: 0x300005d3b0, data: 0x71ebf14040, offset: 0, size: 2451456
+2026-07-08 21:06:43 [set_tensor] buffer: 0x300005d3b0, data: 0x71ec16a840, offset: 0, size: 3584
+2026-07-08 21:06:43 [set_tensor] buffer: 0x300005d3b0, data: 0x71ec16b640, offset: 0, size: 451584
+2026-07-08 21:06:43 [set_tensor] buffer: 0x300005d3b0, data: 0x71ec1d9a40, offset: 0, size: 64512
+2026-07-08 21:06:43 [set_tensor] buffer: 0x300005d3b0, data: 0x71ec1e9640, offset: 0, size: 64512
+2026-07-08 21:06:43 [set_tensor] buffer: 0x300005d3b0, data: 0x71ec1f9240, offset: 0, size: 3584
+2026-07-08 21:06:43 [set_tensor] buffer: 0x300005d3b0, data: 0x71ec1fa040, offset: 0, size: 512
+2026-07-08 21:06:43 [set_tensor] buffer: 0x300005d3b0, data: 0x71ec1fa240, offset: 0, size: 512
+2026-07-08 21:06:43 [set_tensor] buffer: 0x300005d3b0, data: 0x71ec1fa440, offset: 0, size: 451584
+2026-07-08 21:06:43 [set_tensor] buffer: 0x300005d3b0, data: 0x71ec268840, offset: 0, size: 3584
+2026-07-08 21:06:43 [set_tensor] buffer: 0x300005d3b0, data: 0x71ec269640, offset: 0, size: 2451456
+2026-07-08 21:06:43 [set_tensor] buffer: 0x300005d3b0, data: 0x71ec4bfe40, offset: 0, size: 2451456
+2026-07-08 21:06:43 [set_tensor] buffer: 0x300005d3b0, data: 0x71ec716640, offset: 0, size: 2451456
+2026-07-08 21:06:43 [set_tensor] buffer: 0x300005d3b0, data: 0x71ec96ce40, offset: 0, size: 3584
+2026-07-08 21:06:43 [set_tensor] buffer: 0x300005d3b0, data: 0x71ec96dc40, offset: 0, size: 451584
+2026-07-08 21:06:43 [set_tensor] buffer: 0x300005d3b0, data: 0x71ec9dc040, offset: 0, size: 64512
+2026-07-08 21:06:43 [set_tensor] buffer: 0x300005d3b0, data: 0x71ec9ebc40, offset: 0, size: 64512
+2026-07-08 21:06:43 [set_tensor] buffer: 0x300005d3b0, data: 0x71ec9fb840, offset: 0, size: 3584
+2026-07-08 21:06:43 [set_tensor] buffer: 0x300005d3b0, data: 0x71ec9fc640, offset: 0, size: 512
+2026-07-08 21:06:43 [set_tensor] buffer: 0x300005d3b0, data: 0x71ec9fc840, offset: 0, size: 512
+2026-07-08 21:06:43 [set_tensor] buffer: 0x300005d3b0, data: 0x71ec9fca40, offset: 0, size: 451584
+2026-07-08 21:06:43 [set_tensor] buffer: 0x300005d3b0, data: 0x71eca6ae40, offset: 0, size: 3584
+2026-07-08 21:06:43 [set_tensor] buffer: 0x300005d3b0, data: 0x71eca6bc40, offset: 0, size: 2451456
+2026-07-08 21:06:44 [set_tensor] buffer: 0x300005d3b0, data: 0x71eccc2440, offset: 0, size: 2451456
+2026-07-08 21:06:44 [set_tensor] buffer: 0x300005d3b0, data: 0x71ecf18c40, offset: 0, size: 2451456
+2026-07-08 21:06:44 [alloc_buffer] device: 0, size: 50331648 -> remote_ptr: 300005d630, remote_size: 50331648
+2026-07-08 21:06:44 [buffer_get_base] remote_ptr: 300005d630
+2026-07-08 21:06:44 [buffer_clear] remote_ptr: 300005d630, value: 0
+2026-07-08 21:06:44 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:44 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:44 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:44 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:44 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:44 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:44 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:44 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:44 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:44 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:44 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:44 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:44 [alloc_buffer] device: 0, size: 312999936 -> remote_ptr: 30000572e0, remote_size: 312999936
+2026-07-08 21:06:44 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:44 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:44 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:44 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:44 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:44 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:44 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:44 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:44 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:44 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:44 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:44 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:44 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:44 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:44 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:44 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:44 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:44 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:44 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:44 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:44 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:44 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:44 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:44 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:44 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:44 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:44 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:44 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:44 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:44 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:44 [buffer_get_base] remote_ptr: 30000572e0
+2026-07-08 21:06:44 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:44 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:44 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:44 [set_tensor] buffer: 0x30000572e0, data: 0x71cd4f4040, offset: 0, size: 7168
+2026-07-08 21:06:44 [set_tensor] buffer: 0x30000572e0, data: 0x71cd6b4040, offset: 0, size: 7168
+2026-07-08 21:06:44 [set_tensor] buffer: 0x30000572e0, data: 0x71cd874040, offset: 0, size: 8
+2026-07-08 21:06:44 [set_tensor] buffer: 0x30000572e0, data: 0x71cd874840, offset: 0, size: 16
+2026-07-08 21:06:44 [set_tensor] buffer: 0x30000572e0, data: 0x71cd875840, offset: 0, size: 16
+2026-07-08 21:06:44 [set_tensor] buffer: 0x30000572e0, data: 0x71cd876840, offset: 0, size: 1024
+2026-07-08 21:06:44 [set_tensor] buffer: 0x30000572e0, data: 0x71cf876840, offset: 0, size: 4
+2026-07-08 21:06:44 [graph_compute] device: 0, n_nodes: 108, n_tensors: 159
+2026-07-08 21:06:44 [get_tensor] buffer: 0x30000572e0, data: 0x71cd6b4040, offset: 0, size: 607744
+2026-07-08 21:06:44 [buffer_clear] remote_ptr: 300005d630, value: 0
+2026-07-08 21:06:44 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:44 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:44 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:44 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:44 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:44 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:44 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:44 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:44 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:45 [set_tensor] buffer: 0x30000572e0, data: 0x71cd4f4040, offset: 0, size: 32256
+2026-07-08 21:06:45 [set_tensor] buffer: 0x30000572e0, data: 0x71cd6b4040, offset: 0, size: 32256
+2026-07-08 21:06:45 [set_tensor] buffer: 0x30000572e0, data: 0x71cd874040, offset: 0, size: 36
+2026-07-08 21:06:45 [set_tensor] buffer: 0x30000572e0, data: 0x71cd874840, offset: 0, size: 72
+2026-07-08 21:06:45 [set_tensor] buffer: 0x30000572e0, data: 0x71cd875840, offset: 0, size: 72
+2026-07-08 21:06:45 [set_tensor] buffer: 0x30000572e0, data: 0x71cd876840, offset: 0, size: 4608
+2026-07-08 21:06:45 [set_tensor] buffer: 0x30000572e0, data: 0x71cf876840, offset: 0, size: 4
+2026-07-08 21:06:45 [graph_compute] device: 0, n_nodes: 108, n_tensors: 159
+2026-07-08 21:06:45 [get_tensor] buffer: 0x30000572e0, data: 0x71cd6b4040, offset: 0, size: 607744
+2026-07-08 21:06:45 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:45 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:45 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:45 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:45 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:45 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:45 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:45 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:45 [get_alloc_size] device: 0, buffer: (nil), data: (nil)
+2026-07-08 21:06:45 [set_tensor] buffer: 0x30000572e0, data: 0x71cd4f4040, offset: 0, size: 3584
+2026-07-08 21:06:45 [set_tensor] buffer: 0x30000572e0, data: 0x71cd6b4040, offset: 0, size: 3584
+2026-07-08 21:06:45 [set_tensor] buffer: 0x30000572e0, data: 0x71cd874040, offset: 0, size: 4
+2026-07-08 21:06:45 [set_tensor] buffer: 0x30000572e0, data: 0x71cd874840, offset: 0, size: 8
+2026-07-08 21:06:45 [set_tensor] buffer: 0x30000572e0, data: 0x71cd875840, offset: 0, size: 8
+2026-07-08 21:06:45 [set_tensor] buffer: 0x30000572e0, data: 0x71cd876840, offset: 0, size: 512
+2026-07-08 21:06:45 [set_tensor] buffer: 0x30000572e0, data: 0x71cf876840, offset: 0, size: 4
+2026-07-08 21:06:45 [graph_compute] device: 0, n_nodes: 108, n_tensors: 159
+2026-07-08 21:06:45 [get_tensor] buffer: 0x30000572e0, data: 0x71cd6b4040, offset: 0, size: 607744
+2026-07-08 21:06:45 [set_tensor] buffer: 0x30000572e0, data: 0x71cd4f4040, offset: 0, size: 3584
+2026-07-08 21:06:45 [set_tensor] buffer: 0x30000572e0, data: 0x71cd6b4040, offset: 0, size: 3584
+2026-07-08 21:06:45 [set_tensor] buffer: 0x30000572e0, data: 0x71cd874040, offset: 0, size: 4
+2026-07-08 21:06:45 [set_tensor] buffer: 0x30000572e0, data: 0x71cd874840, offset: 0, size: 8
+2026-07-08 21:06:45 [set_tensor] buffer: 0x30000572e0, data: 0x71cd875840, offset: 0, size: 8
+2026-07-08 21:06:45 [set_tensor] buffer: 0x30000572e0, data: 0x71cd876840, offset: 0, size: 512
+2026-07-08 21:06:45 [set_tensor] buffer: 0x30000572e0, data: 0x71cf876840, offset: 0, size: 4
+2026-07-08 21:06:45 [graph_recompute] device: 0
+2026-07-08 21:06:45 [get_tensor] buffer: 0x30000572e0, data: 0x71cd6b4040, offset: 0, size: 607744
+2026-07-08 21:06:45 [set_tensor] buffer: 0x30000572e0, data: 0x71cd4f4040, offset: 0, size: 3584
+2026-07-08 21:06:45 [set_tensor] buffer: 0x30000572e0, data: 0x71cd6b4040, offset: 0, size: 3584
+2026-07-08 21:06:45 [set_tensor] buffer: 0x30000572e0, data: 0x71cd874040, offset: 0, size: 4
+2026-07-08 21:06:45 [set_tensor] buffer: 0x30000572e0, data: 0x71cd874840, offset: 0, size: 8
+2026-07-08 21:06:45 [set_tensor] buffer: 0x30000572e0, data: 0x71cd875840, offset: 0, size: 8
+2026-07-08 21:06:45 [set_tensor] buffer: 0x30000572e0, data: 0x71cd876840, offset: 0, size: 512
+2026-07-08 21:06:45 [set_tensor] buffer: 0x30000572e0, data: 0x71cf876840, offset: 0, size: 4
+2026-07-08 21:06:45 [graph_recompute] device: 0
+2026-07-08 21:06:45 [get_tensor] buffer: 0x30000
