@@ -1,0 +1,32 @@
+2026-07-09 19:01:05 === GPU PC 端三机 RPC 推理（DEBUG 模式） ===
+2026-07-09 19:01:05   model    : /home/atituiset/models/qwen2-0.5b-instruct-q4_0.gguf
+2026-07-09 19:01:05   rpc      : 172.26.88.148:50053,192.168.1.7:50052
+2026-07-09 19:01:05   ngl      : 20
+2026-07-09 19:01:05   prompt   : 你好
+2026-07-09 19:01:05   n        : 5
+2026-07-09 19:01:05   log file : /tmp/llama_rpc_debug.log
+2026-07-09 19:01:05 
+2026-07-09 19:01:05 /home/atituiset/projects/gpu-cpu-phone-test/llama.cpp/ggml/src/ggml-rpc/ggml-rpc.cpp:337: Remote RPC server crashed or returned malformed response
+2026-07-09 19:01:05 0.06.968.738 D recv returned 0 (peer closed?)
+2026-07-09 19:01:05 [New LWP 30294]
+2026-07-09 19:01:05 [New LWP 30293]
+2026-07-09 19:01:05 [Thread debugging using libthread_db enabled]
+2026-07-09 19:01:05 Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
+2026-07-09 19:01:05 0x00007938fbd10813 in __GI___wait4 (pid=30301, stat_loc=0x0, options=0, usage=0x0) at ../sysdeps/unix/sysv/linux/wait4.c:30
+2026-07-09 19:01:05 warning: 30	../sysdeps/unix/sysv/linux/wait4.c: No such file or directory
+2026-07-09 19:01:05 #0  0x00007938fbd10813 in __GI___wait4 (pid=30301, stat_loc=0x0, options=0, usage=0x0) at ../sysdeps/unix/sysv/linux/wait4.c:30
+2026-07-09 19:01:05 30	in ../sysdeps/unix/sysv/linux/wait4.c
+2026-07-09 19:01:05 #1  0x00007938fbe64663 in ggml_print_backtrace () from /home/atituiset/projects/gpu-cpu-phone-test/llama.cpp/build-cuda-rpc/bin/libggml-base.so.0
+2026-07-09 19:01:05 #2  0x00007938fbe6480b in ggml_abort () from /home/atituiset/projects/gpu-cpu-phone-test/llama.cpp/build-cuda-rpc/bin/libggml-base.so.0
+2026-07-09 19:01:05 #3  0x00007938fbb04986 in get_socket(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) () from /home/atituiset/projects/gpu-cpu-phone-test/llama.cpp/build-cuda-rpc/bin/libggml-rpc.so.0
+2026-07-09 19:01:05 #4  0x00007938fbb0672c in ggml_backend_rpc_add_server () from /home/atituiset/projects/gpu-cpu-phone-test/llama.cpp/build-cuda-rpc/bin/libggml-rpc.so.0
+2026-07-09 19:01:05 #5  0x00007938fb71f0d6 in common_params_parser_init(common_params&, llama_example, void (*)(int, char**))::{lambda(common_params&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)#65}::_FUN(common_params&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) () from /home/atituiset/projects/gpu-cpu-phone-test/llama.cpp/build-cuda-rpc/bin/libllama-common.so.0
+2026-07-09 19:01:05 #6  0x00007938fb73830b in common_params_parse_ex(int, char**, common_params_context&)::{lambda()#1}::operator()() const () from /home/atituiset/projects/gpu-cpu-phone-test/llama.cpp/build-cuda-rpc/bin/libllama-common.so.0
+2026-07-09 19:01:05 #7  0x00007938fb7435a3 in common_params_parse(int, char**, common_params&, llama_example, void (*)(int, char**)) () from /home/atituiset/projects/gpu-cpu-phone-test/llama.cpp/build-cuda-rpc/bin/libllama-common.so.0
+2026-07-09 19:01:05 #8  0x00007938fbf409f3 in llama_completion(int, char**) () from /home/atituiset/projects/gpu-cpu-phone-test/llama.cpp/build-cuda-rpc/bin/libllama-completion-impl.so
+2026-07-09 19:01:05 #9  0x00007938fbc2a1ca in __libc_start_call_main (main=main@entry=0x63ea0b852060 <main>, argc=argc@entry=13, argv=argv@entry=0x7ffce4ea7428) at ../sysdeps/nptl/libc_start_call_main.h:58
+2026-07-09 19:01:05 warning: 58	../sysdeps/nptl/libc_start_call_main.h: No such file or directory
+2026-07-09 19:01:05 #10 0x00007938fbc2a28b in __libc_start_main_impl (main=0x63ea0b852060 <main>, argc=13, argv=0x7ffce4ea7428, init=<optimized out>, fini=<optimized out>, rtld_fini=<optimized out>, stack_end=0x7ffce4ea7418) at ../csu/libc-start.c:360
+2026-07-09 19:01:05 warning: 360	../csu/libc-start.c: No such file or directory
+2026-07-09 19:01:05 #11 0x000063ea0b852095 in _start ()
+2026-07-09 19:01:05 [Inferior 1 (process 30286) detached]

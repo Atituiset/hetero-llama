@@ -1,0 +1,11 @@
+=== 启动当前机器 RPC Server ===
+  endpoint : 172.26.88.148:50053
+  cache    : /home/atituiset/.cache/llama.cpp/rpc
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+WARNING: Host ('172.26.88.148') is != '127.0.0.1'
+         Never expose the RPC server to an open network!
+         This is an experimental feature and is not secure!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+

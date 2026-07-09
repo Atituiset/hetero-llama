@@ -57,11 +57,38 @@
 | 当前机器 RPC Worker | `172.26.88.148:50053` | `CURRENT_IP`, `CURRENT_PORT` |
 | Mate 40 Pro RPC Worker | `192.168.1.7:50052` | `PHONE_HOST`, `PHONE_PORT` |
 
-所有地址统一维护在 `config.env` 中。Host 通过 `--rpc` 同时连接所有 worker endpoint：
+所有地址统一维护在 `config.env` 中。
+
+### 直连模式
+
+Host 直接通过 `CURRENT_IP:50053` 和 `PHONE_HOST:50052` 连接 Worker：
 
 ```bash
 --rpc 172.26.88.148:50053,192.168.1.7:50052
 ```
+
+**要求**：Worker 的 IP:PORT 必须能从 Host 直接访问。WSL2 默认 NAT 入站受限，Android Termux 也通常拒绝入站连接，因此三机场景推荐隧道模式。
+
+### 隧道模式（推荐）
+
+当前机器作为 SSH 跳板，通过反向隧道把两个 Worker 映射到 GPU PC 的 `127.0.0.1`：
+
+```
+GPU PC Host ──SSH 反向隧道──┬── 127.0.0.1:50053 ── 当前机器 RPC Worker
+                            └── 127.0.0.1:50052 ── 当前机器 ──SSH 正向隧道── 手机 RPC Worker
+```
+
+启用方式：
+
+```bash
+# 当前机器
+TUNNEL_MODE=1 ./setup_tunnels.sh
+
+# GPU PC
+TUNNEL_MODE=1 ./run_gpu_host.sh 20 "你好" 5
+```
+
+此时 Host 的 `--rpc` 端点变为 `127.0.0.1:50053,127.0.0.1:50052`。
 
 ---
 
