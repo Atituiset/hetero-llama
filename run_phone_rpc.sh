@@ -1,15 +1,20 @@
 #!/bin/bash
 # 手机端启动 llama.cpp RPC Server
 # 用法：./run_phone_rpc.sh [host] [port]
+# 优先级：CLI 参数 > config.env > 默认值
 # 如果想看 RPC 内部日志，执行：
 #   DEBUG=1 ./run_phone_rpc.sh
 
 set -e
 
-HOST="${1:-192.168.1.7}"
-PORT="${2:-50052}"
-CACHE_DIR="/root/.cache/llama.cpp/rpc"
-SERVER="$HOME/Projects/gpu-cpu-phone-test/llama.cpp/build-rpc/bin/ggml-rpc-server"
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+# shellcheck source=config.env
+source "${SCRIPT_DIR}/config.env"
+
+HOST="${1:-${PHONE_HOST}}"
+PORT="${2:-${PHONE_PORT}}"
+CACHE_DIR="${HOME}/.cache/llama.cpp/rpc"
+SERVER="${PHONE_BUILD_DIR}/bin/ggml-rpc-server"
 
 echo "=== 启动手机 RPC Server ==="
 echo "  endpoint : ${HOST}:${PORT}"
