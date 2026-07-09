@@ -10,9 +10,9 @@
 
 ## 当前版本
 
-- **version**: v0.1
-- **updated**: 2026-07-07
-- **状态**: 初始版本，使用 llama.cpp 原生 RPC 协议，无自定义修改。
+- **version**: v0.2
+- **updated**: 2026-07-10
+- **状态**: 三机拓扑版本。GPU PC 作为 Host（CUDA），当前机器与 Mate 40 Pro 作为 RPC Worker（CPU）。
 
 ---
 
@@ -36,9 +36,32 @@
 
 ## 后端分配约定
 
-- PC 端（x86 CPU）：运行 `llama.cpp` 主程序 + RPC Client。
-- Mate 40 Pro 端：运行 `llama-rpc-server`，后端可选 CPU 或 Vulkan。
-- 默认使用 CPU 后端跑通链路，再挑战 Vulkan。
+| 节点 | 角色 | 后端 | 地址 |
+|---|---|---|---|
+| GPU PC | Host | CUDA | `192.168.1.10` |
+| 当前机器 | RPC Worker | CPU | `172.26.88.148:50053` |
+| Mate 40 Pro | RPC Worker | CPU | `192.168.1.7:50052` |
+
+- GPU PC 运行 `llama-completion` / `llama-cli`，带 `-DGGML_CUDA=ON` 编译。
+- 当前机器和手机运行 `ggml-rpc-server`。
+- 默认手机使用 CPU 后端；Vulkan 作为后续独立阶段。
+- 三端必须使用同一 llama.cpp commit，当前锁定为 `152d337fadb93c2a099653c4072d5512c92c5bfd`。
+
+---
+
+## 地址约定
+
+| 节点 | 默认地址 | 配置变量 |
+|---|---|---|
+| GPU PC Host | `192.168.1.10` | `GPU_PC_IP` |
+| 当前机器 RPC Worker | `172.26.88.148:50053` | `CURRENT_IP`, `CURRENT_PORT` |
+| Mate 40 Pro RPC Worker | `192.168.1.7:50052` | `PHONE_HOST`, `PHONE_PORT` |
+
+所有地址统一维护在 `config.env` 中。Host 通过 `--rpc` 同时连接所有 worker endpoint：
+
+```bash
+--rpc 172.26.88.148:50053,192.168.1.7:50052
+```
 
 ---
 
@@ -53,4 +76,5 @@
 
 | 版本 | 日期 | 变更内容 | 影响端 |
 |---|---|---|---|
+| v0.2 | 2026-07-10 | 新增三机拓扑：GPU PC CUDA Host + 当前机器 CPU RPC + Mate 40 Pro CPU RPC；锁定统一 commit | 三端 |
 | v0.1 | 2026-07-07 | 初始版本，使用原生 ggml-rpc 协议 | 两端 |
