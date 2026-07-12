@@ -229,16 +229,49 @@ llama.cpp 的 Vulkan backend 明确依赖 Vulkan 1.2（可能用到 timeline sem
 
 #### 为什么不是硬件不支持
 
-Mali-G78 硬件本身支持 Vulkan 1.2/1.3，但华为/Termux 当前提供的用户态驱动和 `libvulkan.so` loader 只暴露了 1.1。要升级需要：
+Mali-G78 硬件本身支持 Vulkan 1.3/1.4（已通过 [Khronos 认证](https://www.khronos.org/conformance/adopters/conformant-products/vulkan)），但华为/Termux 当前提供的用户态驱动和 `libvulkan.so` loader 只暴露了 1.1。要升级有下面几条路：
 
-1. 刷入支持 Vulkan 1.2 的 GPU 固件 + 驱动（通常需要 root + 自定义内核）。
-2. 使用 Mesa **Turnip** 驱动（开源 Adreno Vulkan 驱动，对 Mali 支持仍在实验早期，且需要 root 替换 kgsl）。
-3. 等待 Termux 官方更新 Vulkan loader/ICD。
+| 方案 | 复杂度 | 是否需要 root | 成功率 | 说明 |
+|---|---|---|---|---|
+| **A. 换用 OpenCL backend** | 低 | 否 | 中高 | Mali-G78 支持 OpenCL 2.0，llama.cpp 的 `GGML_OPENCL=ON` 可能直接识别。这是绕过 Vulkan 1.1 最快的路。 |
+| **B. 安装 `mesa-vulkan-icd-wrapper`** | 中 | 否 | 中 | Termux 社区方案，用 Mesa/PanVK 替代系统 loader。若它把 Mali-G78 驱动到 Vulkan 1.2+，则 `ggml_vulkan` 可通过。 |
+| **C. 刷入第三方 Vulkan 驱动包** | 中高 | 通常需要 | 中低 | 如 Eden/Uzuy 等模拟器预置的 Mali 驱动包，可替换系统 `libGLES_mali.so`/`libvulkan.so`，但依赖内核/firmware 匹配。 |
+| **D. 刷机 + 自定义内核 + PanVK** | 很高 | 是 | 低 | Mesa PanVK 对 Mali v10（含 G78）已有早期支持，但在 Android/Termux 上跑通需大量适配。 |
+| **E. 等华为/Termux 官方更新** | 低 | 否 | 低 | Mate 40 Pro 已停更主要版本，官方 Vulkan 1.2 更新可能性极小。 |
+
+#### 推荐先尝试 B：`mesa-vulkan-icd-wrapper`
+
+社区已经有 Mali 设备成功先例（参考 [termux-mali-gpu-acceleration](https://github.com/Theguilherm3/termux-mali-gpu-acceleration) 和 [xMeM/vulkan-wsi-layer](https://github.com/xMeM/vulkan-wsi-layer)）。在 Termux 原生 shell 中大致流程：
+
+```bash
+# 1. 移除软件 ICD，安装通用 loader
+pkg remove '*icd-swrast'
+pkg install vulkan-loader-generic wget openssl
+
+# 2. 安装 mesa-vulkan-icd-wrapper（版本号以 release 页面最新为准）
+cd
+wget https://github.com/ar37-rs/virgl-angle/releases/download/latest/mesa-vulkan-icd-wrapper_25.0.0-1_aarch64.deb
+dpkg -i mesa-vulkan-icd-wrapper_25.0.0-1_aarch64.deb
+apt --fix-broken install
+
+# 3. 指定 ICD
+export VK_ICD_FILENAMES=$PREFIX/share/vulkan/icd.d/wrapper_icd.aarch64.json
+
+# 4. 验证
+vulkaninfo --summary
+```
+
+关键看 `vulkaninfo --summary` 里的 `apiVersion`：
+
+- 如果显示 **1.2.xxx 或更高**：恭喜，Mali-G78 已可用 Vulkan 1.2+，重新编译 `GGML_VULKAN=ON` 即可。
+- 如果仍显示 **1.1.xxx**：说明 wrapper 也没有把 G78 的 Vulkan 版本提上来，只能退回方案 A（OpenCL）或方案 D（刷机）。
+
+> ⚠️ 注意：`mesa-vulkan-icd-wrapper` 并不能保证所有 Mali 设备都到 1.2；Mali-G78 在 Mesa PanVK 里的支持仍在演进中（[Phoronix 报道](https://www.phoronix.com/news/PanVK-Vulkan-Mali-v10)、[Vulkan 1.2 合并报道](https://www.phoronix.com/news/PanVK-Vulkan-1.2-Merged-Mesa)）。
 
 #### 结论
 
 - **当前 Mate 40 Pro 上 Vulkan GPU offload 不可行**。
-- 这是本次实验里手机端最根本的阻断点，比 WSL 端更难绕开。
+- **最现实的下一步**：先在手机上试 `GGML_OPENCL=ON`，因为 Mali-G78 的 OpenCL 路径成熟得多；同时可以在测试机上尝试 `mesa-vulkan-icd-wrapper` 看能不能把 Vulkan 提到 1.2。
 
 ---
 
