@@ -233,7 +233,7 @@ Mali-G78 硬件本身支持 Vulkan 1.3/1.4（已通过 [Khronos 认证](https://
 
 | 方案 | 复杂度 | 是否需要 root | 成功率 | 说明 |
 |---|---|---|---|---|
-| **A. 换用 OpenCL backend** | 低 | 否 | 中高 | Mali-G78 支持 OpenCL 2.0，llama.cpp 的 `GGML_OPENCL=ON` 可能直接识别。这是绕过 Vulkan 1.1 最快的路。 |
+| **A. 换用 OpenCL backend** | 低 | 否 | ❌ 已验证失败 | llama.cpp OpenCL 后端只支持 Adreno/Intel，Mali 被丢弃。 |
 | **B. 安装 `mesa-vulkan-icd-wrapper`** | 中 | 否 | 中 | Termux 社区方案，用 Mesa/PanVK 替代系统 loader。若它把 Mali-G78 驱动到 Vulkan 1.2+，则 `ggml_vulkan` 可通过。 |
 | **C. 刷入第三方 Vulkan 驱动包** | 中高 | 通常需要 | 中低 | 如 Eden/Uzuy 等模拟器预置的 Mali 驱动包，可替换系统 `libGLES_mali.so`/`libvulkan.so`，但依赖内核/firmware 匹配。 |
 | **D. 刷机 + 自定义内核 + PanVK** | 很高 | 是 | 低 | Mesa PanVK 对 Mali v10（含 G78）已有早期支持，但在 Android/Termux 上跑通需大量适配。 |
@@ -270,8 +270,62 @@ vulkaninfo --summary
 
 #### 结论
 
-- **当前 Mate 40 Pro 上 Vulkan GPU offload 不可行**。
-- **最现实的下一步**：先在手机上试 `GGML_OPENCL=ON`，因为 Mali-G78 的 OpenCL 路径成熟得多；同时可以在测试机上尝试 `mesa-vulkan-icd-wrapper` 看能不能把 Vulkan 提到 1.2。
+- **当前 Mate 40 Pro 上，Vulkan 和 OpenCL 都无法 GPU offload**。
+- **唯一不修改源码的出路**：接受 CPU fallback，或在测试机上尝试 `mesa-vulkan-icd-wrapper` 看能不能把 Vulkan 提到 1.2。
+
+### 3.5 补充验证：OpenCL backend 也不支持 Mali-G78
+
+我们在手机上实际安装了 Termux 的 OpenCL 环境并编译了 `GGML_OPENCL=ON`，结果遇到新的阻断点：llama.cpp OpenCL 后端目前**只支持 Adreno 和 Intel**，Mali 不在白名单里。
+
+安装命令：
+
+```bash
+pkg install -y clinfo ocl-icd opencl-headers opencl-vendor-driver
+```
+
+`clinfo` 能正确识别 Mali-G78：
+
+```text
+Number of platforms                               1
+  Platform Name                                   ARM Platform
+  Platform Version                                OpenCL 3.0 v1.r34p0-...
+Number of devices                                 1
+  Device Name                                     Mali-G78 r0p1
+  Device Version                                  OpenCL 3.0 v1.r34p0-...
+```
+
+但运行 `llama-completion` 时：
+
+```text
+0.00.155.807 W ggml_opencl: unsupported GPU 'Mali-G78 r0p1'.
+0.00.155.850 W ggml_opencl: drop unsupported device 'Mali-G78 r0p1'.
+warning: no usable GPU found, --gpu-layers option will be ignored
+```
+
+#### 根因
+
+`ggml-opencl.cpp` 的 `ggml_opencl_is_device_supported` 里硬编码了：
+
+```cpp
+if (strstr(dev_ctx->device_name.c_str(), "Adreno") ||
+    strstr(dev_ctx->device_name.c_str(), "Qualcomm") ||
+    strstr(dev_ctx->device_version.c_str(), "Adreno")) {
+    dev_ctx->gpu_family = GPU_FAMILY::ADRENO;
+} else if (strstr(dev_ctx->device_name.c_str(), "Intel")) {
+    dev_ctx->gpu_family = GPU_FAMILY::INTEL;
+} else {
+    GGML_LOG_WARN("ggml_opencl: unsupported GPU '%s'.\n", ...);
+    return false;
+}
+```
+
+后端大量分支都按 `ADRENO` / `INTEL` 写死（subgroup size、kernel 选择、buffer 策略等），把 Mali 加进去等于要写一套 Mali 专用后端，不是简单改一行能解决的。
+
+#### 结论
+
+- **Mate 40 Pro 上，llama.cpp 的 OpenCL backend 同样无法 GPU offload**。
+- 这次 fallback 到 CPU 后 eval 约 **38 t/s**（见 `logs/phone_opencl_baseline_20260712_112233.log`），比 Vulkan CPU fallback 的 5.85 t/s 快，但仍不是 GPU 加速。
+- 因此，在 **不修改 llama.cpp 源码** 的前提下，手机端目前只能接受 CPU fallback。
 
 ---
 

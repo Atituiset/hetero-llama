@@ -2,7 +2,7 @@
 
 本目录用于在 WSL（当前机器）和华为 Mate 40 Pro 上分别运行 llama.cpp 的 **Vulkan** 与 **OpenCL** 后端本地推理，验证 GPU 可用性并记录 workaround。
 
-- 状态：✅ 可运行；WSL GPU 需走 OpenCL，手机 Vulkan 暂为 CPU fallback
+- 状态：✅ 可运行；WSL GPU 需走 OpenCL，手机端（Vulkan/OpenCL）均暂为 CPU fallback
 - 模型：`Qwen2-0.5B-Instruct-Q4_0.gguf`（336 MB，24 层）
 - llama.cpp commit：`152d337fadb93c2a099653c4072d5512c92c5bfd`
 
@@ -54,6 +54,7 @@ bash /data/data/com.termux/files/usr/var/lib/proot-distro/installed-rootfs/ubunt
 | `run_wsl_vulkan_baseline.sh` | WSL Vulkan 本地推理 | 仅用于验证环境 |
 | `run_wsl_opencl_baseline.sh` | WSL OpenCL 本地 GPU 推理 | ⭐ 推荐 |
 | `run_phone_vulkan_baseline.sh` | 手机 Vulkan 本地推理 | 仅用于验证环境 |
+| `run_phone_opencl_baseline.sh` | 手机 OpenCL 本地推理 | 仅用于验证环境（Mali 不被 llama.cpp 支持） |
 
 ## 关键结论
 
@@ -62,6 +63,7 @@ bash /data/data/com.termux/files/usr/var/lib/proot-distro/installed-rootfs/ubunt
 | Vulkan / WSL | `llvmpipe` | ❌ | 89.6 t/s | WSL2 无 Intel Vulkan ICD，CPU fallback |
 | Vulkan / Mate 40 Pro | CPU fallback | ❌ | 5.85 t/s | Mali-G78 驱动仅 Vulkan 1.1，不满足 1.2 要求 |
 | OpenCL / WSL | `Intel(R) Graphics [0x7d55]` | ✅ 25/25 层 | 56.3 t/s | 可用 GPU 路径，但小模型未超 CPU |
+| OpenCL / Mate 40 Pro | CPU fallback | ❌ | 38.05 t/s | llama.cpp OpenCL 后端只支持 Adreno/Intel，Mali-G78 被丢弃 |
 
 详细分析与日志见 `docs/`。
 
@@ -105,9 +107,11 @@ cmake --build build-vulkan --target llama-completion -j$(nproc)
 |---|---|---|---|
 | `wsl_vulkan_baseline_20260711_231159.log` | `./run_wsl_vulkan_baseline.sh 99 "你好" 5` | WSL | Vulkan 无可用 GPU，fallback 到 `llvmpipe` CPU；eval 89.6 t/s |
 | `phone_vulkan_baseline_20260711_232957.log` | `./run_phone_vulkan_baseline.sh 99 "你好" 5`（Termux 原生 shell） | Mate 40 Pro | `ggml_vulkan: Error: Vulkan 1.2 required.`，fallback 到 CPU；eval 5.85 t/s |
+| `phone_opencl_build_20260712_111513.log` | `cmake -B build-opencl -DGGML_OPENCL=ON -DGGML_OPENCL_USE_ADRENO_KERNELS=OFF && cmake --build build-opencl --target llama-completion -j` | Mate 40 Pro | Termux 原生编译 OpenCL 后端成功 |
+| `phone_opencl_baseline_20260712_112233.log` | `./build-opencl/bin/llama-completion -m ... -ngl 99 -p "你好" -n 5 -no-cnv -v` | Mate 40 Pro | `ggml_opencl: unsupported GPU 'Mali-G78 r0p1'`，fallback 到 CPU；eval 38.05 t/s |
 | `wsl_opencl_baseline_20260712_083610.log` | `./run_wsl_opencl_baseline.sh 99 "你好" 5` | WSL | OpenCL 识别 `Intel(R) Graphics [0x7d55]`，25/25 层 offload；eval 56.3 t/s |
 
-> WSL Vulkan 和手机 Vulkan 日志都证明当前环境无法使用 Vulkan GPU；OpenCL 日志是目前 WSL 上唯一成功 GPU offload 的记录。
+> WSL Vulkan 和手机 Vulkan/OpenCL 日志都证明当前手机环境无法使用 GPU；OpenCL 日志是目前 WSL 上唯一成功 GPU offload 的记录。
 
 ## 文档
 
