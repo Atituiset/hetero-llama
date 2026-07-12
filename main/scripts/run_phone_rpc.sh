@@ -9,7 +9,7 @@ set -e
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 # shellcheck source=config.env
-source "${SCRIPT_DIR}/config.env"
+source "${SCRIPT_DIR}/../config.env"
 
 HOST="${1:-${PHONE_HOST}}"
 PORT="${2:-${PHONE_PORT}}"

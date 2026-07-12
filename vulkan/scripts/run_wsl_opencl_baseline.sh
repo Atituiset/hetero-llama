@@ -9,7 +9,7 @@ set -e
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 # shellcheck source=config.env
-source "${SCRIPT_DIR}/config.env"
+source "${SCRIPT_DIR}/../config.env"
 
 NGL="${1:-${DEFAULT_NGL}}"
 PROMPT="${2:-${DEFAULT_PROMPT}}"
@@ -18,7 +18,7 @@ N="${3:-${DEFAULT_N}}"
 BIN="${CURRENT_OPENCL_BUILD_DIR}/bin/llama-completion"
 MODEL="${MODEL_PATH}"
 
-LOG_DIR="${SCRIPT_DIR}/logs"
+LOG_DIR="${SCRIPT_DIR}/../logs"
 mkdir -p "${LOG_DIR}"
 TIMESTAMP=$(date +%Y%m%d_%H%M%S)
 LOG_FILE="${LOG_DIR}/wsl_opencl_baseline_${TIMESTAMP}.log"

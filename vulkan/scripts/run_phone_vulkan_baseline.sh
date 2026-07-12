@@ -8,7 +8,7 @@ set -e
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 # shellcheck source=config.env
-source "${SCRIPT_DIR}/config.env"
+source "${SCRIPT_DIR}/../config.env"
 
 NGL="${1:-${DEFAULT_NGL}}"
 PROMPT="${2:-${DEFAULT_PROMPT}}"
@@ -16,7 +16,7 @@ N="${3:-${DEFAULT_N}}"
 
 # 在 Termux 原生环境中，config.env 里的 $HOME 不是 /root，
 # 因此把路径锚定到本脚本所在的仓库根目录。
-REPO_DIR="${SCRIPT_DIR}"
+REPO_DIR="$(cd "${SCRIPT_DIR}/../.." && pwd)"
 PHONE_LLAMA_CPP_DIR="${REPO_DIR}/llama.cpp"
 # 模型存放在 proot Ubuntu 的 /root/models，从 Termux 原生路径访问：
 PHONE_MODEL_PATH="/data/data/com.termux/files/usr/var/lib/proot-distro/installed-rootfs/ubuntu/root/models/qwen2-0.5b-instruct-q4_0.gguf"
@@ -26,7 +26,7 @@ fi
 
 BIN="${PHONE_LLAMA_CPP_DIR}/build-vulkan/bin/llama-completion"
 
-LOG_DIR="${SCRIPT_DIR}/logs"
+LOG_DIR="${SCRIPT_DIR}/../logs"
 mkdir -p "${LOG_DIR}"
 TIMESTAMP=$(date +%Y%m%d_%H%M%S)
 LOG_FILE="${LOG_DIR}/phone_vulkan_baseline_${TIMESTAMP}.log"

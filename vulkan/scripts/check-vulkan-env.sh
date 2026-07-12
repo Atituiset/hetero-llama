@@ -4,7 +4,7 @@ set -euo pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
-CONFIG_ENV="${SCRIPT_DIR}/config.env"
+CONFIG_ENV="${SCRIPT_DIR}/../config.env"
 if [[ ! -f "${CONFIG_ENV}" ]]; then
   echo "ERROR: config.env not found at ${CONFIG_ENV}" >&2
   echo "Create it from config.env.example and fill in the required paths." >&2
@@ -58,7 +58,8 @@ case "${HOST_TYPE}" in
     # 手机端使用 Termux 原生编译的 Android ELF，路径以脚本所在仓库为准。
     # 如果 config.env 中的路径不存在（例如 Termux 原生 $HOME 不是 /root），
     # 则回退到脚本相对路径。
-    PHONE_BIN_FALLBACK="${SCRIPT_DIR}/llama.cpp/build-vulkan/bin/llama-completion"
+    REPO_DIR="$(cd "${SCRIPT_DIR}/../.." && pwd)"
+    PHONE_BIN_FALLBACK="${REPO_DIR}/llama.cpp/build-vulkan/bin/llama-completion"
     PHONE_BIN="${PHONE_LLAMA_CPP_DIR}/build-vulkan/bin/llama-completion"
     [ -x "${PHONE_BIN}" ] || PHONE_BIN="${PHONE_BIN_FALLBACK}"
     [ -x "${PHONE_BIN}" ] || err "Phone Vulkan binary not found: ${PHONE_BIN}"

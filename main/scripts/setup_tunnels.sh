@@ -11,19 +11,19 @@ set -e
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 # shellcheck source=config.env
-source "${SCRIPT_DIR}/config.env"
+source "${SCRIPT_DIR}/../config.env"
 
 MODE="${1:-all}"
 LOG_DIR="${HOME}/.local/log/hetero-llama"
 mkdir -p "${LOG_DIR}"
 
 TUNNEL_PID_FILE="${LOG_DIR}/tunnel_pids"
-PHONE_LOCAL_PORT="150052"
+PHONE_LOCAL_PORT="50052"
 PHONE_TUNNEL_ACTIVE=0
 
 echo "=== Hetero-LLaMA SSH 隧道启动 ==="
 echo "  GPU PC : ${GPU_PC_USER}@${GPU_PC_IP}"
-echo "  phone  : ${PHONE_HOST}:${PHONE_PORT}"
+echo "  phone  : ${PHONE_REAL_HOST}:${PHONE_PORT}"
 echo "  mode   : ${MODE}"
 echo ""
 
@@ -58,10 +58,10 @@ start_current_rpc() {
 }
 
 start_phone_tunnel() {
-    echo "[2/3] 建立到手机的 SSH 本地转发（127.0.0.1:${PHONE_LOCAL_PORT} -> ${PHONE_HOST}:${PHONE_PORT}）"
+    echo "[2/3] 建立到手机的 SSH 本地转发（127.0.0.1:${PHONE_LOCAL_PORT} -> ${PHONE_REAL_HOST}:${PHONE_PORT}）"
     if ! ssh -o ConnectTimeout=5 -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null \
          -o PasswordAuthentication=no -p 8022 -o BatchMode=yes \
-         u0_a111@${PHONE_HOST} true 2>/dev/null; then
+         u0_a111@${PHONE_REAL_HOST} true 2>/dev/null; then
         echo "      WARN: 手机 SSH 不可达，跳过手机隧道"
         return 0
     fi
@@ -72,7 +72,7 @@ start_phone_tunnel() {
     echo "      在手机上启动 RPC Server..."
     ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null \
         -o PasswordAuthentication=no -p 8022 \
-        u0_a111@${PHONE_HOST} \
+        u0_a111@${PHONE_REAL_HOST} \
         "proot-distro login ubuntu -- bash -c 'cd /root/Projects/gpu-cpu-phone-test && TUNNEL_MODE=1 nohup ./run_phone_rpc.sh 127.0.0.1 ${PHONE_PORT} > /tmp/phone_rpc.log 2>&1 & disown; sleep 2; pgrep -f \"ggml-rpc-server -H 127.0.0.1 -p ${PHONE_PORT}\"'" 2>/dev/null || true
 
     # 建立本地转发
@@ -85,7 +85,7 @@ start_phone_tunnel() {
         -o ServerAliveCountMax=3
         -L "127.0.0.1:${PHONE_LOCAL_PORT}:127.0.0.1:${PHONE_PORT}"
         -N
-        "u0_a111@${PHONE_HOST}"
+        "u0_a111@${PHONE_REAL_HOST}"
     )
     nohup ssh "${ssh_args[@]}" > "${LOG_DIR}/phone_tunnel.log" 2>&1 &
     echo $! >> "${TUNNEL_PID_FILE}"
