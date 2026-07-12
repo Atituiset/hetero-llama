@@ -4,8 +4,13 @@
 
 ## 状态
 
-- **当前 main 分支尚未包含完整 3-machine 实现**。
-- 完整脚本、配置和日志仍在独立分支：`feat/3-machine-inference`。
+- main 分支上已有的早期 3-machine 实验产物已先迁入本目录：
+  - `scripts/run_cpu_rpc_server.sh`
+  - `scripts/run_gpu_host.sh`
+  - `scripts/run_gpu_host_2node.sh`
+  - `scripts/setup_tunnels.sh`
+  - `logs/` 下的 `cpu_rpc_*`、`pc_2node_*`、`pc_3node_*`、`pc_current_*`、`pc_local_*`、`pc_ngl20_*` 日志
+- **完整、最新的 3-machine 实现仍在独立分支：`feat/3-machine-inference`**，验证稳定后会整体迁入并覆盖/合并本目录。
 
 ## 何时合入
 
