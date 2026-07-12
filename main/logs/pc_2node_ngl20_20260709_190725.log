@@ -1,0 +1,1701 @@
+2026-07-09 19:07:29 === GPU PC 端双机 RPC 推理（DEBUG 模式） ===
+2026-07-09 19:07:29   model    : /home/atituiset/models/qwen2-0.5b-instruct-q4_0.gguf
+2026-07-09 19:07:29   rpc      : 192.168.1.7:50052
+2026-07-09 19:07:29   ngl      : 20
+2026-07-09 19:07:29   prompt   : 你好
+2026-07-09 19:07:29   n        : 5
+2026-07-09 19:07:29   log file : /tmp/llama_rpc_debug.log
+2026-07-09 19:07:29 
+2026-07-09 19:07:29 0.02.357.925 E Failed to connect to 192.168.1.7:50052
+2026-07-09 19:07:29 0.02.362.584 I llama_completion: llama backend init
+2026-07-09 19:07:29 0.02.362.617 I llama_completion: load the model and apply lora adapter, if any
+2026-07-09 19:07:29 0.02.362.641 I cmn  common_init_: fitting params to device memory ...
+2026-07-09 19:07:29 0.02.362.643 I cmn  common_init_: (for bugs during this step try to reproduce them with -fit off, or provide --verbose logs if the bug only occurs with -fit on)
+2026-07-09 19:07:29 0.02.362.667 I common_params_fit_impl: getting device memory data for initial parameters:
+2026-07-09 19:07:29 0.02.403.242 I llama_model_loader: loaded meta data with 21 key-value pairs and 290 tensors from /home/atituiset/models/qwen2-0.5b-instruct-q4_0.gguf (version GGUF V3 (latest))
+2026-07-09 19:07:29 0.02.403.254 I llama_model_loader: Dumping metadata keys/values. Note: KV overrides do not apply in this output.
+2026-07-09 19:07:29 0.02.403.285 I llama_model_loader: - kv   0:                       general.architecture str              = qwen2
+2026-07-09 19:07:29 0.02.403.285 I llama_model_loader: - kv   1:                               general.name str              = Qwen2-0.5B-Instruct
+2026-07-09 19:07:29 0.02.403.287 I llama_model_loader: - kv   2:                          qwen2.block_count u32              = 24
+2026-07-09 19:07:29 0.02.403.288 I llama_model_loader: - kv   3:                       qwen2.context_length u32              = 32768
+2026-07-09 19:07:29 0.02.403.288 I llama_model_loader: - kv   4:                     qwen2.embedding_length u32              = 896
+2026-07-09 19:07:29 0.02.403.288 I llama_model_loader: - kv   5:                  qwen2.feed_forward_length u32              = 4864
+2026-07-09 19:07:29 0.02.403.289 I llama_model_loader: - kv   6:                 qwen2.attention.head_count u32              = 14
+2026-07-09 19:07:29 0.02.403.289 I llama_model_loader: - kv   7:              qwen2.attention.head_count_kv u32              = 2
+2026-07-09 19:07:29 0.02.403.293 I llama_model_loader: - kv   8:                       qwen2.rope.freq_base f32              = 1000000.000000
+2026-07-09 19:07:29 0.02.403.293 I llama_model_loader: - kv   9:     qwen2.attention.layer_norm_rms_epsilon f32              = 0.000001
+2026-07-09 19:07:29 0.02.403.294 I llama_model_loader: - kv  10:                          general.file_type u32              = 2
+2026-07-09 19:07:29 0.02.403.294 I llama_model_loader: - kv  11:                       tokenizer.ggml.model str              = gpt2
+2026-07-09 19:07:29 0.02.403.294 I llama_model_loader: - kv  12:                         tokenizer.ggml.pre str              = qwen2
+2026-07-09 19:07:29 0.02.414.632 I llama_model_loader: - kv  13:                      tokenizer.ggml.tokens arr[str,151936]  = ["!", "\"", "#", "$", "%", "&", "'", ...
+2026-07-09 19:07:29 0.02.417.401 I llama_model_loader: - kv  14:                  tokenizer.ggml.token_type arr[i32,151936]  = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, ...
+2026-07-09 19:07:29 0.02.428.405 I llama_model_loader: - kv  15:                      tokenizer.ggml.merges arr[str,151387]  = ["Ġ Ġ", "ĠĠ ĠĠ", "i n", "Ġ t",...
+2026-07-09 19:07:29 0.02.428.407 I llama_model_loader: - kv  16:                tokenizer.ggml.eos_token_id u32              = 151645
+2026-07-09 19:07:29 0.02.428.407 I llama_model_loader: - kv  17:            tokenizer.ggml.padding_token_id u32              = 151643
+2026-07-09 19:07:29 0.02.428.407 I llama_model_loader: - kv  18:                tokenizer.ggml.bos_token_id u32              = 151643
+2026-07-09 19:07:29 0.02.428.408 I llama_model_loader: - kv  19:                    tokenizer.chat_template str              = {% for message in messages %}{% if lo...
+2026-07-09 19:07:29 0.02.428.408 I llama_model_loader: - kv  20:               general.quantization_version u32              = 2
+2026-07-09 19:07:29 0.02.428.410 I llama_model_loader: - type  f32:  121 tensors
+2026-07-09 19:07:29 0.02.428.410 I llama_model_loader: - type q4_0:  168 tensors
+2026-07-09 19:07:29 0.02.428.410 I llama_model_loader: - type q8_0:    1 tensors
+2026-07-09 19:07:29 0.02.428.413 I print_info: file format = GGUF V3 (latest)
+2026-07-09 19:07:29 0.02.428.414 I print_info: file type   = Q4_0
+2026-07-09 19:07:29 0.02.428.416 I print_info: file size   = 330.17 MiB (5.61 BPW) 
+2026-07-09 19:07:29 0.02.500.815 I llama_prepare_model_devices: using device CUDA0 (NVIDIA GeForce RTX 4050 Laptop GPU) (0000:01:00.0) - 5622 MiB free
+2026-07-09 19:07:29 0.02.543.967 D init_tokenizer: initializing tokenizer for type 2
+2026-07-09 19:07:29 0.02.563.351 I load: 0 unused tokens
+2026-07-09 19:07:29 0.02.563.991 W load: control-looking token: 128247 '</s>' was not control-type; this is probably a bug in the model. its type will be overridden
+2026-07-09 19:07:29 0.02.570.774 D load: control token: 151644 '<|im_start|>' is not marked as EOG
+2026-07-09 19:07:29 0.02.574.652 I load: printing all EOG tokens:
+2026-07-09 19:07:29 0.02.574.653 I load:   - 128247 ('</s>')
+2026-07-09 19:07:29 0.02.574.653 I load:   - 151643 ('<|endoftext|>')
+2026-07-09 19:07:29 0.02.574.653 I load:   - 151645 ('<|im_end|>')
+2026-07-09 19:07:29 0.02.574.810 I load: special tokens cache size = 294
+2026-07-09 19:07:29 0.02.605.565 I load: token to piece cache size = 0.9338 MB
+2026-07-09 19:07:29 0.02.605.579 I print_info: arch                  = qwen2
+2026-07-09 19:07:29 0.02.605.579 I print_info: vocab_only            = 0
+2026-07-09 19:07:29 0.02.605.579 I print_info: no_alloc              = 1
+2026-07-09 19:07:29 0.02.605.580 I print_info: n_ctx_train           = 32768
+2026-07-09 19:07:29 0.02.605.581 I print_info: n_embd_inp            = 896
+2026-07-09 19:07:29 0.02.605.581 I print_info: n_embd                = 896
+2026-07-09 19:07:29 0.02.605.582 I print_info: n_embd_out            = 896
+2026-07-09 19:07:29 0.02.605.582 I print_info: n_layer               = 24
+2026-07-09 19:07:29 0.02.605.582 I print_info: n_layer_all           = 24
+2026-07-09 19:07:29 0.02.605.629 I print_info: n_head                = 14
+2026-07-09 19:07:29 0.02.605.631 I print_info: n_head_kv             = 2
+2026-07-09 19:07:29 0.02.605.631 I print_info: n_rot                 = 64
+2026-07-09 19:07:29 0.02.605.632 I print_info: n_swa                 = 0
+2026-07-09 19:07:29 0.02.605.633 I print_info: is_swa_any            = 0
+2026-07-09 19:07:29 0.02.605.633 I print_info: n_embd_head_k         = 64
+2026-07-09 19:07:29 0.02.605.633 I print_info: n_embd_head_v         = 64
+2026-07-09 19:07:29 0.02.605.635 I print_info: n_gqa                 = 7
+2026-07-09 19:07:29 0.02.605.639 I print_info: n_embd_k_gqa          = 128
+2026-07-09 19:07:29 0.02.605.641 I print_info: n_embd_v_gqa          = 128
+2026-07-09 19:07:29 0.02.605.642 I print_info: f_norm_eps            = 0.0e+00
+2026-07-09 19:07:29 0.02.605.643 I print_info: f_norm_rms_eps        = 1.0e-06
+2026-07-09 19:07:29 0.02.605.643 I print_info: f_clamp_kqv           = 0.0e+00
+2026-07-09 19:07:29 0.02.605.643 I print_info: f_max_alibi_bias      = 0.0e+00
+2026-07-09 19:07:29 0.02.605.643 I print_info: f_logit_scale         = 0.0e+00
+2026-07-09 19:07:29 0.02.605.644 I print_info: f_attn_scale          = 0.0e+00
+2026-07-09 19:07:29 0.02.605.644 I print_info: f_attn_value_scale    = 0.0000
+2026-07-09 19:07:29 0.02.605.645 I print_info: n_ff                  = 4864
+2026-07-09 19:07:29 0.02.605.646 I print_info: n_expert              = 0
+2026-07-09 19:07:29 0.02.605.646 I print_info: n_expert_used         = 0
+2026-07-09 19:07:29 0.02.605.646 I print_info: n_expert_groups       = 0
+2026-07-09 19:07:29 0.02.605.646 I print_info: n_group_used          = 0
+2026-07-09 19:07:29 0.02.605.646 I print_info: causal attn           = 1
+2026-07-09 19:07:29 0.02.605.647 I print_info: pooling type          = -1
+2026-07-09 19:07:29 0.02.605.647 I print_info: rope type             = 2
+2026-07-09 19:07:29 0.02.605.647 I print_info: rope scaling          = linear
+2026-07-09 19:07:29 0.02.605.648 I print_info: freq_base_train       = 1000000.0
+2026-07-09 19:07:29 0.02.605.649 I print_info: freq_scale_train      = 1
+2026-07-09 19:07:29 0.02.605.649 I print_info: n_ctx_orig_yarn       = 32768
+2026-07-09 19:07:29 0.02.605.649 I print_info: rope_yarn_log_mul     = 0.0000
+2026-07-09 19:07:29 0.02.605.650 I print_info: rope_finetuned        = unknown
+2026-07-09 19:07:29 0.02.605.651 I print_info: model type            = 1B
+2026-07-09 19:07:29 0.02.605.651 I print_info: model params          = 494.03 M
+2026-07-09 19:07:29 0.02.605.651 I print_info: general.name          = Qwen2-0.5B-Instruct
+2026-07-09 19:07:29 0.02.605.655 I print_info: vocab type            = BPE
+2026-07-09 19:07:29 0.02.605.656 I print_info: n_vocab               = 151936
+2026-07-09 19:07:29 0.02.605.656 I print_info: n_merges              = 151387
+2026-07-09 19:07:29 0.02.605.656 I print_info: BOS token             = 151643 '<|endoftext|>'
+2026-07-09 19:07:29 0.02.605.656 I print_info: EOS token             = 151645 '<|im_end|>'
+2026-07-09 19:07:29 0.02.605.656 I print_info: EOT token             = 151645 '<|im_end|>'
+2026-07-09 19:07:29 0.02.605.657 I print_info: PAD token             = 151643 '<|endoftext|>'
+2026-07-09 19:07:29 0.02.605.657 I print_info: LF token              = 198 'Ċ'
+2026-07-09 19:07:29 0.02.605.657 I print_info: EOG token             = 128247 '</s>'
+2026-07-09 19:07:29 0.02.605.657 I print_info: EOG token             = 151643 '<|endoftext|>'
+2026-07-09 19:07:29 0.02.605.658 I print_info: EOG token             = 151645 '<|im_end|>'
+2026-07-09 19:07:29 0.02.605.658 I print_info: max token length      = 256
+2026-07-09 19:07:29 0.02.605.660 I load_tensors: loading model tensors, this can take a while... (mmap = false, direct_io = false)
+2026-07-09 19:07:29 0.02.609.267 D load_tensors: layer   0 assigned to device CPU, is_swa = 0
+2026-07-09 19:07:29 0.02.609.267 D load_tensors: layer   1 assigned to device CPU, is_swa = 0
+2026-07-09 19:07:29 0.02.609.268 D load_tensors: layer   2 assigned to device CPU, is_swa = 0
+2026-07-09 19:07:29 0.02.609.268 D load_tensors: layer   3 assigned to device CPU, is_swa = 0
+2026-07-09 19:07:29 0.02.609.268 D load_tensors: layer   4 assigned to device CPU, is_swa = 0
+2026-07-09 19:07:29 0.02.609.268 D load_tensors: layer   5 assigned to device CUDA0, is_swa = 0
+2026-07-09 19:07:29 0.02.609.268 D load_tensors: layer   6 assigned to device CUDA0, is_swa = 0
+2026-07-09 19:07:29 0.02.609.268 D load_tensors: layer   7 assigned to device CUDA0, is_swa = 0
+2026-07-09 19:07:29 0.02.609.268 D load_tensors: layer   8 assigned to device CUDA0, is_swa = 0
+2026-07-09 19:07:29 0.02.609.269 D load_tensors: layer   9 assigned to device CUDA0, is_swa = 0
+2026-07-09 19:07:29 0.02.609.269 D load_tensors: layer  10 assigned to device CUDA0, is_swa = 0
+2026-07-09 19:07:29 0.02.609.269 D load_tensors: layer  11 assigned to device CUDA0, is_swa = 0
+2026-07-09 19:07:29 0.02.609.269 D load_tensors: layer  12 assigned to device CUDA0, is_swa = 0
+2026-07-09 19:07:29 0.02.609.269 D load_tensors: layer  13 assigned to device CUDA0, is_swa = 0
+2026-07-09 19:07:29 0.02.609.269 D load_tensors: layer  14 assigned to device CUDA0, is_swa = 0
+2026-07-09 19:07:29 0.02.609.269 D load_tensors: layer  15 assigned to device CUDA0, is_swa = 0
+2026-07-09 19:07:29 0.02.609.269 D load_tensors: layer  16 assigned to device CUDA0, is_swa = 0
+2026-07-09 19:07:29 0.02.609.270 D load_tensors: layer  17 assigned to device CUDA0, is_swa = 0
+2026-07-09 19:07:29 0.02.609.270 D load_tensors: layer  18 assigned to device CUDA0, is_swa = 0
+2026-07-09 19:07:29 0.02.609.270 D load_tensors: layer  19 assigned to device CUDA0, is_swa = 0
+2026-07-09 19:07:29 0.02.609.270 D load_tensors: layer  20 assigned to device CUDA0, is_swa = 0
+2026-07-09 19:07:29 0.02.609.270 D load_tensors: layer  21 assigned to device CUDA0, is_swa = 0
+2026-07-09 19:07:29 0.02.609.270 D load_tensors: layer  22 assigned to device CUDA0, is_swa = 0
+2026-07-09 19:07:29 0.02.609.270 D load_tensors: layer  23 assigned to device CUDA0, is_swa = 0
+2026-07-09 19:07:29 0.02.609.270 D load_tensors: layer  24 assigned to device CUDA0, is_swa = 0
+2026-07-09 19:07:29 0.02.609.353 D create_tensor: loading tensor token_embd.weight
+2026-07-09 19:07:29 0.02.609.365 D create_tensor: loading tensor output_norm.weight
+2026-07-09 19:07:29 0.02.609.373 D create_tensor: loading tensor token_embd.weight
+2026-07-09 19:07:29 0.02.609.377 D create_tensor: loading tensor blk.0.attn_norm.weight
+2026-07-09 19:07:29 0.02.609.382 D create_tensor: loading tensor blk.0.attn_q.weight
+2026-07-09 19:07:29 0.02.609.385 D create_tensor: loading tensor blk.0.attn_k.weight
+2026-07-09 19:07:29 0.02.609.388 D create_tensor: loading tensor blk.0.attn_v.weight
+2026-07-09 19:07:29 0.02.609.392 D create_tensor: loading tensor blk.0.attn_q.bias
+2026-07-09 19:07:29 0.02.609.395 D create_tensor: loading tensor blk.0.attn_k.bias
+2026-07-09 19:07:29 0.02.609.397 D create_tensor: loading tensor blk.0.attn_v.bias
+2026-07-09 19:07:29 0.02.609.400 D create_tensor: loading tensor blk.0.attn_output.weight
+2026-07-09 19:07:29 0.02.609.404 D create_tensor: loading tensor blk.0.ffn_norm.weight
+2026-07-09 19:07:29 0.02.609.408 D create_tensor: loading tensor blk.0.ffn_gate.weight
+2026-07-09 19:07:29 0.02.609.411 D create_tensor: loading tensor blk.0.ffn_down.weight
+2026-07-09 19:07:29 0.02.609.413 D create_tensor: loading tensor blk.0.ffn_up.weight
+2026-07-09 19:07:29 0.02.609.416 D create_tensor: loading tensor blk.1.attn_norm.weight
+2026-07-09 19:07:29 0.02.609.421 D create_tensor: loading tensor blk.1.attn_q.weight
+2026-07-09 19:07:29 0.02.609.424 D create_tensor: loading tensor blk.1.attn_k.weight
+2026-07-09 19:07:29 0.02.609.426 D create_tensor: loading tensor blk.1.attn_v.weight
+2026-07-09 19:07:29 0.02.609.429 D create_tensor: loading tensor blk.1.attn_q.bias
+2026-07-09 19:07:29 0.02.609.431 D create_tensor: loading tensor blk.1.attn_k.bias
+2026-07-09 19:07:29 0.02.609.434 D create_tensor: loading tensor blk.1.attn_v.bias
+2026-07-09 19:07:29 0.02.609.436 D create_tensor: loading tensor blk.1.attn_output.weight
+2026-07-09 19:07:29 0.02.609.440 D create_tensor: loading tensor blk.1.ffn_norm.weight
+2026-07-09 19:07:29 0.02.609.443 D create_tensor: loading tensor blk.1.ffn_gate.weight
+2026-07-09 19:07:29 0.02.609.445 D create_tensor: loading tensor blk.1.ffn_down.weight
+2026-07-09 19:07:29 0.02.609.448 D create_tensor: loading tensor blk.1.ffn_up.weight
+2026-07-09 19:07:29 0.02.609.451 D create_tensor: loading tensor blk.2.attn_norm.weight
+2026-07-09 19:07:29 0.02.609.454 D create_tensor: loading tensor blk.2.attn_q.weight
+2026-07-09 19:07:29 0.02.609.457 D create_tensor: loading tensor blk.2.attn_k.weight
+2026-07-09 19:07:29 0.02.609.459 D create_tensor: loading tensor blk.2.attn_v.weight
+2026-07-09 19:07:29 0.02.609.462 D create_tensor: loading tensor blk.2.attn_q.bias
+2026-07-09 19:07:29 0.02.609.464 D create_tensor: loading tensor blk.2.attn_k.bias
+2026-07-09 19:07:29 0.02.609.467 D create_tensor: loading tensor blk.2.attn_v.bias
+2026-07-09 19:07:29 0.02.609.471 D create_tensor: loading tensor blk.2.attn_output.weight
+2026-07-09 19:07:29 0.02.609.473 D create_tensor: loading tensor blk.2.ffn_norm.weight
+2026-07-09 19:07:29 0.02.609.476 D create_tensor: loading tensor blk.2.ffn_gate.weight
+2026-07-09 19:07:29 0.02.609.478 D create_tensor: loading tensor blk.2.ffn_down.weight
+2026-07-09 19:07:29 0.02.609.481 D create_tensor: loading tensor blk.2.ffn_up.weight
+2026-07-09 19:07:29 0.02.609.484 D create_tensor: loading tensor blk.3.attn_norm.weight
+2026-07-09 19:07:29 0.02.609.488 D create_tensor: loading tensor blk.3.attn_q.weight
+2026-07-09 19:07:29 0.02.609.491 D create_tensor: loading tensor blk.3.attn_k.weight
+2026-07-09 19:07:29 0.02.609.493 D create_tensor: loading tensor blk.3.attn_v.weight
+2026-07-09 19:07:29 0.02.609.496 D create_tensor: loading tensor blk.3.attn_q.bias
+2026-07-09 19:07:29 0.02.609.499 D create_tensor: loading tensor blk.3.attn_k.bias
+2026-07-09 19:07:29 0.02.609.502 D create_tensor: loading tensor blk.3.attn_v.bias
+2026-07-09 19:07:29 0.02.609.505 D create_tensor: loading tensor blk.3.attn_output.weight
+2026-07-09 19:07:29 0.02.609.507 D create_tensor: loading tensor blk.3.ffn_norm.weight
+2026-07-09 19:07:29 0.02.609.510 D create_tensor: loading tensor blk.3.ffn_gate.weight
+2026-07-09 19:07:29 0.02.609.513 D create_tensor: loading tensor blk.3.ffn_down.weight
+2026-07-09 19:07:29 0.02.609.515 D create_tensor: loading tensor blk.3.ffn_up.weight
+2026-07-09 19:07:29 0.02.609.518 D create_tensor: loading tensor blk.4.attn_norm.weight
+2026-07-09 19:07:29 0.02.609.522 D create_tensor: loading tensor blk.4.attn_q.weight
+2026-07-09 19:07:29 0.02.609.525 D create_tensor: loading tensor blk.4.attn_k.weight
+2026-07-09 19:07:29 0.02.609.527 D create_tensor: loading tensor blk.4.attn_v.weight
+2026-07-09 19:07:29 0.02.609.530 D create_tensor: loading tensor blk.4.attn_q.bias
+2026-07-09 19:07:29 0.02.609.533 D create_tensor: loading tensor blk.4.attn_k.bias
+2026-07-09 19:07:29 0.02.609.537 D create_tensor: loading tensor blk.4.attn_v.bias
+2026-07-09 19:07:29 0.02.609.539 D create_tensor: loading tensor blk.4.attn_output.weight
+2026-07-09 19:07:29 0.02.609.542 D create_tensor: loading tensor blk.4.ffn_norm.weight
+2026-07-09 19:07:29 0.02.609.545 D create_tensor: loading tensor blk.4.ffn_gate.weight
+2026-07-09 19:07:29 0.02.609.547 D create_tensor: loading tensor blk.4.ffn_down.weight
+2026-07-09 19:07:29 0.02.609.550 D create_tensor: loading tensor blk.4.ffn_up.weight
+2026-07-09 19:07:29 0.02.609.553 D create_tensor: loading tensor blk.5.attn_norm.weight
+2026-07-09 19:07:29 0.02.609.556 D create_tensor: loading tensor blk.5.attn_q.weight
+2026-07-09 19:07:29 0.02.609.559 D create_tensor: loading tensor blk.5.attn_k.weight
+2026-07-09 19:07:29 0.02.609.562 D create_tensor: loading tensor blk.5.attn_v.weight
+2026-07-09 19:07:29 0.02.609.564 D create_tensor: loading tensor blk.5.attn_q.bias
+2026-07-09 19:07:29 0.02.609.567 D create_tensor: loading tensor blk.5.attn_k.bias
+2026-07-09 19:07:29 0.02.609.569 D create_tensor: loading tensor blk.5.attn_v.bias
+2026-07-09 19:07:29 0.02.609.572 D create_tensor: loading tensor blk.5.attn_output.weight
+2026-07-09 19:07:29 0.02.609.574 D create_tensor: loading tensor blk.5.ffn_norm.weight
+2026-07-09 19:07:29 0.02.609.577 D create_tensor: loading tensor blk.5.ffn_gate.weight
+2026-07-09 19:07:29 0.02.609.579 D create_tensor: loading tensor blk.5.ffn_down.weight
+2026-07-09 19:07:29 0.02.609.582 D create_tensor: loading tensor blk.5.ffn_up.weight
+2026-07-09 19:07:29 0.02.609.585 D create_tensor: loading tensor blk.6.attn_norm.weight
+2026-07-09 19:07:29 0.02.609.589 D create_tensor: loading tensor blk.6.attn_q.weight
+2026-07-09 19:07:29 0.02.609.593 D create_tensor: loading tensor blk.6.attn_k.weight
+2026-07-09 19:07:29 0.02.609.596 D create_tensor: loading tensor blk.6.attn_v.weight
+2026-07-09 19:07:29 0.02.609.599 D create_tensor: loading tensor blk.6.attn_q.bias
+2026-07-09 19:07:29 0.02.609.601 D create_tensor: loading tensor blk.6.attn_k.bias
+2026-07-09 19:07:29 0.02.609.604 D create_tensor: loading tensor blk.6.attn_v.bias
+2026-07-09 19:07:29 0.02.609.606 D create_tensor: loading tensor blk.6.attn_output.weight
+2026-07-09 19:07:29 0.02.609.609 D create_tensor: loading tensor blk.6.ffn_norm.weight
+2026-07-09 19:07:29 0.02.609.612 D create_tensor: loading tensor blk.6.ffn_gate.weight
+2026-07-09 19:07:29 0.02.609.614 D create_tensor: loading tensor blk.6.ffn_down.weight
+2026-07-09 19:07:29 0.02.609.617 D create_tensor: loading tensor blk.6.ffn_up.weight
+2026-07-09 19:07:29 0.02.609.619 D create_tensor: loading tensor blk.7.attn_norm.weight
+2026-07-09 19:07:29 0.02.609.626 D create_tensor: loading tensor blk.7.attn_q.weight
+2026-07-09 19:07:29 0.02.609.629 D create_tensor: loading tensor blk.7.attn_k.weight
+2026-07-09 19:07:29 0.02.609.631 D create_tensor: loading tensor blk.7.attn_v.weight
+2026-07-09 19:07:29 0.02.609.634 D create_tensor: loading tensor blk.7.attn_q.bias
+2026-07-09 19:07:29 0.02.609.637 D create_tensor: loading tensor blk.7.attn_k.bias
+2026-07-09 19:07:29 0.02.609.639 D create_tensor: loading tensor blk.7.attn_v.bias
+2026-07-09 19:07:29 0.02.609.642 D create_tensor: loading tensor blk.7.attn_output.weight
+2026-07-09 19:07:29 0.02.609.644 D create_tensor: loading tensor blk.7.ffn_norm.weight
+2026-07-09 19:07:29 0.02.609.647 D create_tensor: loading tensor blk.7.ffn_gate.weight
+2026-07-09 19:07:29 0.02.609.650 D create_tensor: loading tensor blk.7.ffn_down.weight
+2026-07-09 19:07:29 0.02.609.652 D create_tensor: loading tensor blk.7.ffn_up.weight
+2026-07-09 19:07:29 0.02.609.657 D create_tensor: loading tensor blk.8.attn_norm.weight
+2026-07-09 19:07:29 0.02.609.661 D create_tensor: loading tensor blk.8.attn_q.weight
+2026-07-09 19:07:29 0.02.609.663 D create_tensor: loading tensor blk.8.attn_k.weight
+2026-07-09 19:07:29 0.02.609.666 D create_tensor: loading tensor blk.8.attn_v.weight
+2026-07-09 19:07:29 0.02.609.669 D create_tensor: loading tensor blk.8.attn_q.bias
+2026-07-09 19:07:29 0.02.609.672 D create_tensor: loading tensor blk.8.attn_k.bias
+2026-07-09 19:07:29 0.02.609.675 D create_tensor: loading tensor blk.8.attn_v.bias
+2026-07-09 19:07:29 0.02.609.677 D create_tensor: loading tensor blk.8.attn_output.weight
+2026-07-09 19:07:29 0.02.609.680 D create_tensor: loading tensor blk.8.ffn_norm.weight
+2026-07-09 19:07:29 0.02.609.683 D create_tensor: loading tensor blk.8.ffn_gate.weight
+2026-07-09 19:07:29 0.02.609.686 D create_tensor: loading tensor blk.8.ffn_down.weight
+2026-07-09 19:07:29 0.02.609.690 D create_tensor: loading tensor blk.8.ffn_up.weight
+2026-07-09 19:07:29 0.02.609.693 D create_tensor: loading tensor blk.9.attn_norm.weight
+2026-07-09 19:07:29 0.02.609.697 D create_tensor: loading tensor blk.9.attn_q.weight
+2026-07-09 19:07:29 0.02.609.700 D create_tensor: loading tensor blk.9.attn_k.weight
+2026-07-09 19:07:29 0.02.609.703 D create_tensor: loading tensor blk.9.attn_v.weight
+2026-07-09 19:07:29 0.02.609.707 D create_tensor: loading tensor blk.9.attn_q.bias
+2026-07-09 19:07:29 0.02.609.710 D create_tensor: loading tensor blk.9.attn_k.bias
+2026-07-09 19:07:29 0.02.609.713 D create_tensor: loading tensor blk.9.attn_v.bias
+2026-07-09 19:07:29 0.02.609.716 D create_tensor: loading tensor blk.9.attn_output.weight
+2026-07-09 19:07:29 0.02.609.719 D create_tensor: loading tensor blk.9.ffn_norm.weight
+2026-07-09 19:07:29 0.02.609.722 D create_tensor: loading tensor blk.9.ffn_gate.weight
+2026-07-09 19:07:29 0.02.609.725 D create_tensor: loading tensor blk.9.ffn_down.weight
+2026-07-09 19:07:29 0.02.609.730 D create_tensor: loading tensor blk.9.ffn_up.weight
+2026-07-09 19:07:29 0.02.609.733 D create_tensor: loading tensor blk.10.attn_norm.weight
+2026-07-09 19:07:29 0.02.609.737 D create_tensor: loading tensor blk.10.attn_q.weight
+2026-07-09 19:07:29 0.02.609.740 D create_tensor: loading tensor blk.10.attn_k.weight
+2026-07-09 19:07:29 0.02.609.743 D create_tensor: loading tensor blk.10.attn_v.weight
+2026-07-09 19:07:29 0.02.609.746 D create_tensor: loading tensor blk.10.attn_q.bias
+2026-07-09 19:07:29 0.02.609.749 D create_tensor: loading tensor blk.10.attn_k.bias
+2026-07-09 19:07:29 0.02.609.752 D create_tensor: loading tensor blk.10.attn_v.bias
+2026-07-09 19:07:29 0.02.609.755 D create_tensor: loading tensor blk.10.attn_output.weight
+2026-07-09 19:07:29 0.02.609.758 D create_tensor: loading tensor blk.10.ffn_norm.weight
+2026-07-09 19:07:29 0.02.609.761 D create_tensor: loading tensor blk.10.ffn_gate.weight
+2026-07-09 19:07:29 0.02.609.765 D create_tensor: loading tensor blk.10.ffn_down.weight
+2026-07-09 19:07:29 0.02.609.767 D create_tensor: loading tensor blk.10.ffn_up.weight
+2026-07-09 19:07:29 0.02.609.770 D create_tensor: loading tensor blk.11.attn_norm.weight
+2026-07-09 19:07:29 0.02.609.774 D create_tensor: loading tensor blk.11.attn_q.weight
+2026-07-09 19:07:29 0.02.609.776 D create_tensor: loading tensor blk.11.attn_k.weight
+2026-07-09 19:07:29 0.02.609.779 D create_tensor: loading tensor blk.11.attn_v.weight
+2026-07-09 19:07:29 0.02.609.781 D create_tensor: loading tensor blk.11.attn_q.bias
+2026-07-09 19:07:29 0.02.609.784 D create_tensor: loading tensor blk.11.attn_k.bias
+2026-07-09 19:07:29 0.02.609.786 D create_tensor: loading tensor blk.11.attn_v.bias
+2026-07-09 19:07:29 0.02.609.788 D create_tensor: loading tensor blk.11.attn_output.weight
+2026-07-09 19:07:29 0.02.609.791 D create_tensor: loading tensor blk.11.ffn_norm.weight
+2026-07-09 19:07:29 0.02.609.794 D create_tensor: loading tensor blk.11.ffn_gate.weight
+2026-07-09 19:07:29 0.02.609.796 D create_tensor: loading tensor blk.11.ffn_down.weight
+2026-07-09 19:07:29 0.02.609.799 D create_tensor: loading tensor blk.11.ffn_up.weight
+2026-07-09 19:07:29 0.02.609.802 D create_tensor: loading tensor blk.12.attn_norm.weight
+2026-07-09 19:07:29 0.02.609.805 D create_tensor: loading tensor blk.12.attn_q.weight
+2026-07-09 19:07:29 0.02.609.808 D create_tensor: loading tensor blk.12.attn_k.weight
+2026-07-09 19:07:29 0.02.609.810 D create_tensor: loading tensor blk.12.attn_v.weight
+2026-07-09 19:07:29 0.02.609.812 D create_tensor: loading tensor blk.12.attn_q.bias
+2026-07-09 19:07:29 0.02.609.815 D create_tensor: loading tensor blk.12.attn_k.bias
+2026-07-09 19:07:29 0.02.609.817 D create_tensor: loading tensor blk.12.attn_v.bias
+2026-07-09 19:07:29 0.02.609.819 D create_tensor: loading tensor blk.12.attn_output.weight
+2026-07-09 19:07:29 0.02.609.823 D create_tensor: loading tensor blk.12.ffn_norm.weight
+2026-07-09 19:07:29 0.02.609.828 D create_tensor: loading tensor blk.12.ffn_gate.weight
+2026-07-09 19:07:29 0.02.609.830 D create_tensor: loading tensor blk.12.ffn_down.weight
+2026-07-09 19:07:29 0.02.609.832 D create_tensor: loading tensor blk.12.ffn_up.weight
+2026-07-09 19:07:29 0.02.609.835 D create_tensor: loading tensor blk.13.attn_norm.weight
+2026-07-09 19:07:29 0.02.609.838 D create_tensor: loading tensor blk.13.attn_q.weight
+2026-07-09 19:07:29 0.02.609.840 D create_tensor: loading tensor blk.13.attn_k.weight
+2026-07-09 19:07:29 0.02.609.843 D create_tensor: loading tensor blk.13.attn_v.weight
+2026-07-09 19:07:29 0.02.609.845 D create_tensor: loading tensor blk.13.attn_q.bias
+2026-07-09 19:07:29 0.02.609.847 D create_tensor: loading tensor blk.13.attn_k.bias
+2026-07-09 19:07:29 0.02.609.850 D create_tensor: loading tensor blk.13.attn_v.bias
+2026-07-09 19:07:29 0.02.609.853 D create_tensor: loading tensor blk.13.attn_output.weight
+2026-07-09 19:07:29 0.02.609.856 D create_tensor: loading tensor blk.13.ffn_norm.weight
+2026-07-09 19:07:29 0.02.609.858 D create_tensor: loading tensor blk.13.ffn_gate.weight
+2026-07-09 19:07:29 0.02.609.860 D create_tensor: loading tensor blk.13.ffn_down.weight
+2026-07-09 19:07:29 0.02.609.863 D create_tensor: loading tensor blk.13.ffn_up.weight
+2026-07-09 19:07:29 0.02.609.865 D create_tensor: loading tensor blk.14.attn_norm.weight
+2026-07-09 19:07:29 0.02.609.869 D create_tensor: loading tensor blk.14.attn_q.weight
+2026-07-09 19:07:29 0.02.609.871 D create_tensor: loading tensor blk.14.attn_k.weight
+2026-07-09 19:07:29 0.02.609.874 D create_tensor: loading tensor blk.14.attn_v.weight
+2026-07-09 19:07:29 0.02.609.876 D create_tensor: loading tensor blk.14.attn_q.bias
+2026-07-09 19:07:29 0.02.609.878 D create_tensor: loading tensor blk.14.attn_k.bias
+2026-07-09 19:07:29 0.02.609.882 D create_tensor: loading tensor blk.14.attn_v.bias
+2026-07-09 19:07:29 0.02.609.884 D create_tensor: loading tensor blk.14.attn_output.weight
+2026-07-09 19:07:29 0.02.609.887 D create_tensor: loading tensor blk.14.ffn_norm.weight
+2026-07-09 19:07:29 0.02.609.889 D create_tensor: loading tensor blk.14.ffn_gate.weight
+2026-07-09 19:07:29 0.02.609.892 D create_tensor: loading tensor blk.14.ffn_down.weight
+2026-07-09 19:07:29 0.02.609.894 D create_tensor: loading tensor blk.14.ffn_up.weight
+2026-07-09 19:07:29 0.02.609.897 D create_tensor: loading tensor blk.15.attn_norm.weight
+2026-07-09 19:07:29 0.02.609.900 D create_tensor: loading tensor blk.15.attn_q.weight
+2026-07-09 19:07:29 0.02.609.902 D create_tensor: loading tensor blk.15.attn_k.weight
+2026-07-09 19:07:29 0.02.609.905 D create_tensor: loading tensor blk.15.attn_v.weight
+2026-07-09 19:07:29 0.02.609.907 D create_tensor: loading tensor blk.15.attn_q.bias
+2026-07-09 19:07:29 0.02.609.910 D create_tensor: loading tensor blk.15.attn_k.bias
+2026-07-09 19:07:29 0.02.609.913 D create_tensor: loading tensor blk.15.attn_v.bias
+2026-07-09 19:07:29 0.02.609.915 D create_tensor: loading tensor blk.15.attn_output.weight
+2026-07-09 19:07:29 0.02.609.917 D create_tensor: loading tensor blk.15.ffn_norm.weight
+2026-07-09 19:07:29 0.02.609.920 D create_tensor: loading tensor blk.15.ffn_gate.weight
+2026-07-09 19:07:29 0.02.609.922 D create_tensor: loading tensor blk.15.ffn_down.weight
+2026-07-09 19:07:29 0.02.609.924 D create_tensor: loading tensor blk.15.ffn_up.weight
+2026-07-09 19:07:29 0.02.609.927 D create_tensor: loading tensor blk.16.attn_norm.weight
+2026-07-09 19:07:29 0.02.609.930 D create_tensor: loading tensor blk.16.attn_q.weight
+2026-07-09 19:07:29 0.02.609.932 D create_tensor: loading tensor blk.16.attn_k.weight
+2026-07-09 19:07:29 0.02.609.935 D create_tensor: loading tensor blk.16.attn_v.weight
+2026-07-09 19:07:29 0.02.609.939 D create_tensor: loading tensor blk.16.attn_q.bias
+2026-07-09 19:07:29 0.02.609.941 D create_tensor: loading tensor blk.16.attn_k.bias
+2026-07-09 19:07:29 0.02.609.943 D create_tensor: loading tensor blk.16.attn_v.bias
+2026-07-09 19:07:29 0.02.609.946 D create_tensor: loading tensor blk.16.attn_output.weight
+2026-07-09 19:07:29 0.02.609.948 D create_tensor: loading tensor blk.16.ffn_norm.weight
+2026-07-09 19:07:29 0.02.609.951 D create_tensor: loading tensor blk.16.ffn_gate.weight
+2026-07-09 19:07:29 0.02.609.953 D create_tensor: loading tensor blk.16.ffn_down.weight
+2026-07-09 19:07:29 0.02.609.955 D create_tensor: loading tensor blk.16.ffn_up.weight
+2026-07-09 19:07:29 0.02.609.958 D create_tensor: loading tensor blk.17.attn_norm.weight
+2026-07-09 19:07:29 0.02.609.961 D create_tensor: loading tensor blk.17.attn_q.weight
+2026-07-09 19:07:29 0.02.609.964 D create_tensor: loading tensor blk.17.attn_k.weight
+2026-07-09 19:07:29 0.02.609.966 D create_tensor: loading tensor blk.17.attn_v.weight
+2026-07-09 19:07:29 0.02.609.970 D create_tensor: loading tensor blk.17.attn_q.bias
+2026-07-09 19:07:29 0.02.609.972 D create_tensor: loading tensor blk.17.attn_k.bias
+2026-07-09 19:07:29 0.02.609.975 D create_tensor: loading tensor blk.17.attn_v.bias
+2026-07-09 19:07:29 0.02.609.977 D create_tensor: loading tensor blk.17.attn_output.weight
+2026-07-09 19:07:29 0.02.609.979 D create_tensor: loading tensor blk.17.ffn_norm.weight
+2026-07-09 19:07:29 0.02.609.983 D create_tensor: loading tensor blk.17.ffn_gate.weight
+2026-07-09 19:07:29 0.02.609.985 D create_tensor: loading tensor blk.17.ffn_down.weight
+2026-07-09 19:07:29 0.02.609.988 D create_tensor: loading tensor blk.17.ffn_up.weight
+2026-07-09 19:07:29 0.02.609.990 D create_tensor: loading tensor blk.18.attn_norm.weight
+2026-07-09 19:07:29 0.02.609.993 D create_tensor: loading tensor blk.18.attn_q.weight
+2026-07-09 19:07:29 0.02.609.996 D create_tensor: loading tensor blk.18.attn_k.weight
+2026-07-09 19:07:29 0.02.609.999 D create_tensor: loading tensor blk.18.attn_v.weight
+2026-07-09 19:07:29 0.02.610.002 D create_tensor: loading tensor blk.18.attn_q.bias
+2026-07-09 19:07:29 0.02.610.004 D create_tensor: loading tensor blk.18.attn_k.bias
+2026-07-09 19:07:29 0.02.610.007 D create_tensor: loading tensor blk.18.attn_v.bias
+2026-07-09 19:07:29 0.02.610.009 D create_tensor: loading tensor blk.18.attn_output.weight
+2026-07-09 19:07:29 0.02.610.011 D create_tensor: loading tensor blk.18.ffn_norm.weight
+2026-07-09 19:07:29 0.02.610.014 D create_tensor: loading tensor blk.18.ffn_gate.weight
+2026-07-09 19:07:29 0.02.610.016 D create_tensor: loading tensor blk.18.ffn_down.weight
+2026-07-09 19:07:29 0.02.610.018 D create_tensor: loading tensor blk.18.ffn_up.weight
+2026-07-09 19:07:29 0.02.610.021 D create_tensor: loading tensor blk.19.attn_norm.weight
+2026-07-09 19:07:29 0.02.610.024 D create_tensor: loading tensor blk.19.attn_q.weight
+2026-07-09 19:07:29 0.02.610.028 D create_tensor: loading tensor blk.19.attn_k.weight
+2026-07-09 19:07:29 0.02.610.030 D create_tensor: loading tensor blk.19.attn_v.weight
+2026-07-09 19:07:29 0.02.610.032 D create_tensor: loading tensor blk.19.attn_q.bias
+2026-07-09 19:07:29 0.02.610.035 D create_tensor: loading tensor blk.19.attn_k.bias
+2026-07-09 19:07:29 0.02.610.037 D create_tensor: loading tensor blk.19.attn_v.bias
+2026-07-09 19:07:29 0.02.610.040 D create_tensor: loading tensor blk.19.attn_output.weight
+2026-07-09 19:07:29 0.02.610.042 D create_tensor: loading tensor blk.19.ffn_norm.weight
+2026-07-09 19:07:29 0.02.610.045 D create_tensor: loading tensor blk.19.ffn_gate.weight
+2026-07-09 19:07:29 0.02.610.048 D create_tensor: loading tensor blk.19.ffn_down.weight
+2026-07-09 19:07:29 0.02.610.050 D create_tensor: loading tensor blk.19.ffn_up.weight
+2026-07-09 19:07:29 0.02.610.053 D create_tensor: loading tensor blk.20.attn_norm.weight
+2026-07-09 19:07:29 0.02.610.058 D create_tensor: loading tensor blk.20.attn_q.weight
+2026-07-09 19:07:29 0.02.610.061 D create_tensor: loading tensor blk.20.attn_k.weight
+2026-07-09 19:07:29 0.02.610.064 D create_tensor: loading tensor blk.20.attn_v.weight
+2026-07-09 19:07:29 0.02.610.067 D create_tensor: loading tensor blk.20.attn_q.bias
+2026-07-09 19:07:29 0.02.610.069 D create_tensor: loading tensor blk.20.attn_k.bias
+2026-07-09 19:07:29 0.02.610.072 D create_tensor: loading tensor blk.20.attn_v.bias
+2026-07-09 19:07:29 0.02.610.075 D create_tensor: loading tensor blk.20.attn_output.weight
+2026-07-09 19:07:29 0.02.610.078 D create_tensor: loading tensor blk.20.ffn_norm.weight
+2026-07-09 19:07:29 0.02.610.080 D create_tensor: loading tensor blk.20.ffn_gate.weight
+2026-07-09 19:07:29 0.02.610.083 D create_tensor: loading tensor blk.20.ffn_down.weight
+2026-07-09 19:07:29 0.02.610.086 D create_tensor: loading tensor blk.20.ffn_up.weight
+2026-07-09 19:07:29 0.02.610.090 D create_tensor: loading tensor blk.21.attn_norm.weight
+2026-07-09 19:07:29 0.02.610.093 D create_tensor: loading tensor blk.21.attn_q.weight
+2026-07-09 19:07:29 0.02.610.096 D create_tensor: loading tensor blk.21.attn_k.weight
+2026-07-09 19:07:29 0.02.610.099 D create_tensor: loading tensor blk.21.attn_v.weight
+2026-07-09 19:07:29 0.02.610.101 D create_tensor: loading tensor blk.21.attn_q.bias
+2026-07-09 19:07:29 0.02.610.104 D create_tensor: loading tensor blk.21.attn_k.bias
+2026-07-09 19:07:29 0.02.610.107 D create_tensor: loading tensor blk.21.attn_v.bias
+2026-07-09 19:07:29 0.02.610.109 D create_tensor: loading tensor blk.21.attn_output.weight
+2026-07-09 19:07:29 0.02.610.112 D create_tensor: loading tensor blk.21.ffn_norm.weight
+2026-07-09 19:07:29 0.02.610.115 D create_tensor: loading tensor blk.21.ffn_gate.weight
+2026-07-09 19:07:29 0.02.610.118 D create_tensor: loading tensor blk.21.ffn_down.weight
+2026-07-09 19:07:29 0.02.610.122 D create_tensor: loading tensor blk.21.ffn_up.weight
+2026-07-09 19:07:29 0.02.610.124 D create_tensor: loading tensor blk.22.attn_norm.weight
+2026-07-09 19:07:29 0.02.610.128 D create_tensor: loading tensor blk.22.attn_q.weight
+2026-07-09 19:07:29 0.02.610.131 D create_tensor: loading tensor blk.22.attn_k.weight
+2026-07-09 19:07:29 0.02.610.134 D create_tensor: loading tensor blk.22.attn_v.weight
+2026-07-09 19:07:29 0.02.610.137 D create_tensor: loading tensor blk.22.attn_q.bias
+2026-07-09 19:07:29 0.02.610.139 D create_tensor: loading tensor blk.22.attn_k.bias
+2026-07-09 19:07:29 0.02.610.142 D create_tensor: loading tensor blk.22.attn_v.bias
+2026-07-09 19:07:29 0.02.610.145 D create_tensor: loading tensor blk.22.attn_output.weight
+2026-07-09 19:07:29 0.02.610.148 D create_tensor: loading tensor blk.22.ffn_norm.weight
+2026-07-09 19:07:29 0.02.610.151 D create_tensor: loading tensor blk.22.ffn_gate.weight
+2026-07-09 19:07:29 0.02.610.155 D create_tensor: loading tensor blk.22.ffn_down.weight
+2026-07-09 19:07:29 0.02.610.158 D create_tensor: loading tensor blk.22.ffn_up.weight
+2026-07-09 19:07:29 0.02.610.161 D create_tensor: loading tensor blk.23.attn_norm.weight
+2026-07-09 19:07:29 0.02.610.165 D create_tensor: loading tensor blk.23.attn_q.weight
+2026-07-09 19:07:29 0.02.610.168 D create_tensor: loading tensor blk.23.attn_k.weight
+2026-07-09 19:07:29 0.02.610.171 D create_tensor: loading tensor blk.23.attn_v.weight
+2026-07-09 19:07:29 0.02.610.174 D create_tensor: loading tensor blk.23.attn_q.bias
+2026-07-09 19:07:29 0.02.610.177 D create_tensor: loading tensor blk.23.attn_k.bias
+2026-07-09 19:07:29 0.02.610.180 D create_tensor: loading tensor blk.23.attn_v.bias
+2026-07-09 19:07:29 0.02.610.183 D create_tensor: loading tensor blk.23.attn_output.weight
+2026-07-09 19:07:29 0.02.610.186 D create_tensor: loading tensor blk.23.ffn_norm.weight
+2026-07-09 19:07:29 0.02.610.191 D create_tensor: loading tensor blk.23.ffn_gate.weight
+2026-07-09 19:07:29 0.02.610.194 D create_tensor: loading tensor blk.23.ffn_down.weight
+2026-07-09 19:07:29 0.02.610.197 D create_tensor: loading tensor blk.23.ffn_up.weight
+2026-07-09 19:07:29 0.02.614.178 I load_tensors: offloading output layer to GPU
+2026-07-09 19:07:29 0.02.614.179 I load_tensors: offloading 19 repeating layers to GPU
+2026-07-09 19:07:29 0.02.614.179 I load_tensors: offloaded 20/25 layers to GPU
+2026-07-09 19:07:29 0.02.614.183 I load_tensors:        CUDA0 model buffer size =     0.00 MiB
+2026-07-09 19:07:29 0.02.614.184 I load_tensors:    CUDA_Host model buffer size =     0.00 MiB
+2026-07-09 19:07:29 0.02.616.019 I llama_context: constructing llama_context
+2026-07-09 19:07:29 0.02.616.021 I llama_context: n_seq_max     = 1
+2026-07-09 19:07:29 0.02.616.022 I llama_context: n_ctx         = 32768
+2026-07-09 19:07:29 0.02.616.022 I llama_context: n_ctx_seq     = 32768
+2026-07-09 19:07:29 0.02.616.022 I llama_context: n_batch       = 2048
+2026-07-09 19:07:29 0.02.616.022 I llama_context: n_ubatch      = 512
+2026-07-09 19:07:29 0.02.616.022 I llama_context: causal_attn   = 1
+2026-07-09 19:07:29 0.02.616.023 I llama_context: flash_attn    = auto
+2026-07-09 19:07:29 0.02.616.023 I llama_context: kv_unified    = false
+2026-07-09 19:07:29 0.02.616.024 I llama_context: freq_base     = 1000000.0
+2026-07-09 19:07:29 0.02.616.025 I llama_context: freq_scale    = 1
+2026-07-09 19:07:29 0.02.616.025 I llama_context: n_rs_seq      = 0
+2026-07-09 19:07:29 0.02.616.025 I llama_context: n_outputs_max = 2048
+2026-07-09 19:07:29 0.02.617.543 D set_abort_callback: call
+2026-07-09 19:07:29 0.02.618.137 I llama_context:  CUDA_Host  output buffer size =     0.58 MiB
+2026-07-09 19:07:29 0.02.618.301 D llama_kv_cache: layer   0: dev = CPU
+2026-07-09 19:07:29 0.02.618.312 D llama_kv_cache: layer   1: dev = CPU
+2026-07-09 19:07:29 0.02.618.314 D llama_kv_cache: layer   2: dev = CPU
+2026-07-09 19:07:29 0.02.618.314 D llama_kv_cache: layer   3: dev = CPU
+2026-07-09 19:07:29 0.02.618.315 D llama_kv_cache: layer   4: dev = CPU
+2026-07-09 19:07:29 0.02.618.317 D llama_kv_cache: layer   5: dev = CUDA0
+2026-07-09 19:07:29 0.02.618.318 D llama_kv_cache: layer   6: dev = CUDA0
+2026-07-09 19:07:29 0.02.618.319 D llama_kv_cache: layer   7: dev = CUDA0
+2026-07-09 19:07:29 0.02.618.319 D llama_kv_cache: layer   8: dev = CUDA0
+2026-07-09 19:07:29 0.02.618.320 D llama_kv_cache: layer   9: dev = CUDA0
+2026-07-09 19:07:29 0.02.618.321 D llama_kv_cache: layer  10: dev = CUDA0
+2026-07-09 19:07:29 0.02.618.321 D llama_kv_cache: layer  11: dev = CUDA0
+2026-07-09 19:07:29 0.02.618.322 D llama_kv_cache: layer  12: dev = CUDA0
+2026-07-09 19:07:29 0.02.618.323 D llama_kv_cache: layer  13: dev = CUDA0
+2026-07-09 19:07:29 0.02.618.324 D llama_kv_cache: layer  14: dev = CUDA0
+2026-07-09 19:07:29 0.02.618.325 D llama_kv_cache: layer  15: dev = CUDA0
+2026-07-09 19:07:29 0.02.618.325 D llama_kv_cache: layer  16: dev = CUDA0
+2026-07-09 19:07:29 0.02.618.326 D llama_kv_cache: layer  17: dev = CUDA0
+2026-07-09 19:07:29 0.02.618.327 D llama_kv_cache: layer  18: dev = CUDA0
+2026-07-09 19:07:29 0.02.618.327 D llama_kv_cache: layer  19: dev = CUDA0
+2026-07-09 19:07:29 0.02.618.328 D llama_kv_cache: layer  20: dev = CUDA0
+2026-07-09 19:07:29 0.02.618.328 D llama_kv_cache: layer  21: dev = CUDA0
+2026-07-09 19:07:29 0.02.618.329 D llama_kv_cache: layer  22: dev = CUDA0
+2026-07-09 19:07:29 0.02.618.329 D llama_kv_cache: layer  23: dev = CUDA0
+2026-07-09 19:07:29 0.02.618.331 I llama_kv_cache:        CPU KV buffer size =     0.00 MiB
+2026-07-09 19:07:29 0.02.618.332 I llama_kv_cache:      CUDA0 KV buffer size =     0.00 MiB
+2026-07-09 19:07:29 0.02.618.335 I llama_kv_cache: size =  384.00 MiB ( 32768 cells,  24 layers,  1/1 seqs), K (f16):  192.00 MiB, V (f16):  192.00 MiB
+2026-07-09 19:07:29 0.02.618.336 I llama_kv_cache: attn_rot_k = 0, n_embd_head_k_all = 64
+2026-07-09 19:07:29 0.02.618.336 I llama_kv_cache: attn_rot_v = 0, n_embd_head_k_all = 64
+2026-07-09 19:07:29 0.02.618.337 D llama_context: enumerating backends
+2026-07-09 19:07:29 0.02.619.015 D llama_context: backend_ptrs.size() = 2
+2026-07-09 19:07:29 0.02.619.016 I sched_reserve: reserving ...
+2026-07-09 19:07:29 0.02.619.019 D sched_reserve: max_nodes = 2328
+2026-07-09 19:07:29 0.02.619.288 D sched_reserve: reserving full memory module
+2026-07-09 19:07:29 0.02.619.293 D sched_reserve: worst-case: n_tokens = 512, n_seqs = 1, n_outputs = 1
+2026-07-09 19:07:29 0.02.619.294 D graph_reserve: reserving a graph for ubatch with n_tokens =    1, n_seqs =  1, n_outputs =    1
+2026-07-09 19:07:29 0.02.619.549 D 
+2026-07-09 19:07:29 ## SPLIT #0: CPU # 0 inputs0.02.619.550 D 
+2026-07-09 19:07:29 0.02.619.551 D 
+2026-07-09 19:07:29 ## SPLIT #1: CUDA0 # 7 inputs0.02.619.551 D : 0.02.619.552 D [ffn_out-4 (   3K)] 0.02.619.552 D [ffn_inp-4 (   3K)] 0.02.619.552 D [leaf_6 (   0K)] 0.02.619.553 D [leaf_11 (   0K)] 0.02.619.553 D [leaf_13 (   0K)] 0.02.619.553 D [attn_inp_kq_mask (  64K)] 0.02.619.553 D [leaf_342 (   0K)] 0.02.619.553 D 
+2026-07-09 19:07:29 0.02.619.578 I sched_reserve: Flash Attention was auto, set to enabled
+2026-07-09 19:07:29 0.02.619.579 I sched_reserve: resolving fused Gated Delta Net support:
+2026-07-09 19:07:29 0.02.619.579 D graph_reserve: reserving a graph for ubatch with n_tokens =    1, n_seqs =  1, n_outputs =    1
+2026-07-09 19:07:29 0.02.619.736 D 
+2026-07-09 19:07:29 ## SPLIT #0: CPU # 0 inputs0.02.619.737 D 
+2026-07-09 19:07:29 0.02.619.738 D 
+2026-07-09 19:07:29 ## SPLIT #1: CUDA0 # 7 inputs0.02.619.738 D : 0.02.619.738 D [ffn_out-4 (   3K)] 0.02.619.738 D [ffn_inp-4 (   3K)] 0.02.619.738 D [leaf_6 (   0K)] 0.02.619.738 D [leaf_11 (   0K)] 0.02.619.739 D [leaf_13 (   0K)] 0.02.619.739 D [attn_inp_kq_mask (  64K)] 0.02.619.739 D [leaf_342 (   0K)] 0.02.619.739 D 
+2026-07-09 19:07:29 0.02.619.747 I sched_reserve: fused Gated Delta Net (autoregressive) enabled
+2026-07-09 19:07:29 0.02.619.748 D graph_reserve: reserving a graph for ubatch with n_tokens =   16, n_seqs =  1, n_outputs =   16
+2026-07-09 19:07:29 0.02.619.892 D 
+2026-07-09 19:07:29 ## SPLIT #0: CPU # 0 inputs0.02.619.893 D 
+2026-07-09 19:07:29 0.02.619.896 D 
+2026-07-09 19:07:29 ## SPLIT #1: CUDA0 # 7 inputs0.02.619.896 D : 0.02.619.897 D [ffn_out-4 (  56K)] 0.02.619.897 D [ffn_inp-4 (  56K)] 0.02.619.897 D [leaf_6 (   0K)] 0.02.619.897 D [leaf_11 (   0K)] 0.02.619.897 D [leaf_13 (   0K)] 0.02.619.897 D [attn_inp_kq_mask (   1M)] 0.02.619.898 D [leaf_342 (   0K)] 0.02.619.898 D 
+2026-07-09 19:07:29 0.02.619.905 I sched_reserve: fused Gated Delta Net (chunked) enabled
+2026-07-09 19:07:29 0.02.619.906 D graph_reserve: reserving a graph for ubatch with n_tokens =  512, n_seqs =  1, n_outputs =  512
+2026-07-09 19:07:29 0.02.620.093 D 
+2026-07-09 19:07:29 ## SPLIT #0: CPU # 0 inputs0.02.620.094 D 
+2026-07-09 19:07:29 0.02.620.094 D 
+2026-07-09 19:07:29 ## SPLIT #1: CUDA0 # 1 inputs0.02.620.094 D : 0.02.620.094 D [embd (   1M)] 0.02.620.094 D 
+2026-07-09 19:07:29 0.02.620.094 D 
+2026-07-09 19:07:29 ## SPLIT #2: CUDA0 # 1 inputs0.02.620.094 D : 0.02.620.095 D [blk.0.attn_norm.weight (   3K)] 0.02.620.095 D 
+2026-07-09 19:07:29 0.02.620.095 D 
+2026-07-09 19:07:29 ## SPLIT #3: CUDA0 # 1 inputs0.02.620.095 D : 0.02.620.095 D [blk.0.attn_q.weight ( 441K)] 0.02.620.095 D 
+2026-07-09 19:07:29 0.02.620.095 D 
+2026-07-09 19:07:29 ## SPLIT #4: CUDA0 # 2 inputs0.02.620.095 D : 0.02.620.096 D [blk.0.attn_q.bias (   3K)] 0.02.620.096 D [leaf_6 (   2K)] 0.02.620.096 D 
+2026-07-09 19:07:29 0.02.620.096 D 
+2026-07-09 19:07:29 ## SPLIT #5: CUDA0 # 1 inputs0.02.620.096 D : 0.02.620.096 D [blk.0.attn_v.weight (  63K)] 0.02.620.096 D 
+2026-07-09 19:07:29 0.02.620.096 D 
+2026-07-09 19:07:29 ## SPLIT #6: CUDA0 # 1 inputs0.02.620.096 D : 0.02.620.097 D [blk.0.attn_v.bias (   0K)] 0.02.620.097 D 
+2026-07-09 19:07:29 0.02.620.097 D 
+2026-07-09 19:07:29 ## SPLIT #7: CUDA0 # 1 inputs0.02.620.097 D : 0.02.620.097 D [blk.0.attn_k.weight (  63K)] 0.02.620.097 D 
+2026-07-09 19:07:29 0.02.620.097 D 
+2026-07-09 19:07:29 ## SPLIT #8: CUDA0 # 1 inputs0.02.620.097 D : 0.02.620.097 D [blk.0.attn_k.bias (   0K)] 0.02.620.097 D 
+2026-07-09 19:07:29 0.02.620.098 D 
+2026-07-09 19:07:29 ## SPLIT #9: CPU # 2 inputs0.02.620.098 D : 0.02.620.098 D [Kcur-0 (view) ( 256K)] 0.02.620.098 D [Vcur-0 (view) ( 256K)] 0.02.620.098 D 
+2026-07-09 19:07:29 0.02.620.098 D 
+2026-07-09 19:07:29 ## SPLIT #10: CUDA0 # 3 inputs0.02.620.098 D : 0.02.620.099 D [cache_k_l0 (view) (permuted) (   8M)] 0.02.620.099 D [cache_v_l0 (view) (permuted) (   8M)] 0.02.620.099 D [attn_inp_kq_mask (  32M)] 0.02.620.099 D 
+2026-07-09 19:07:29 0.02.620.099 D 
+2026-07-09 19:07:29 ## SPLIT #11: CUDA0 # 1 inputs0.02.620.099 D : 0.02.620.099 D [blk.0.attn_output.weight ( 441K)] 0.02.620.099 D 
+2026-07-09 19:07:29 0.02.620.100 D 
+2026-07-09 19:07:29 ## SPLIT #12: CUDA0 # 1 inputs0.02.620.100 D : 0.02.620.100 D [blk.0.ffn_norm.weight (   3K)] 0.02.620.100 D 
+2026-07-09 19:07:29 0.02.620.100 D 
+2026-07-09 19:07:29 ## SPLIT #13: CUDA0 # 1 inputs0.02.620.100 D : 0.02.620.100 D [blk.0.ffn_gate.weight (   2M)] 0.02.620.100 D 
+2026-07-09 19:07:29 0.02.620.100 D 
+2026-07-09 19:07:29 ## SPLIT #14: CUDA0 # 1 inputs0.02.620.100 D : 0.02.620.101 D [blk.0.ffn_up.weight (   2M)] 0.02.620.101 D 
+2026-07-09 19:07:29 0.02.620.101 D 
+2026-07-09 19:07:29 ## SPLIT #15: CUDA0 # 1 inputs0.02.620.101 D : 0.02.620.101 D [blk.0.ffn_down.weight (   2M)] 0.02.620.101 D 
+2026-07-09 19:07:29 0.02.620.101 D 
+2026-07-09 19:07:29 ## SPLIT #16: CUDA0 # 1 inputs0.02.620.101 D : 0.02.620.101 D [blk.1.attn_norm.weight (   3K)] 0.02.620.101 D 
+2026-07-09 19:07:29 0.02.620.102 D 
+2026-07-09 19:07:29 ## SPLIT #17: CUDA0 # 1 inputs0.02.620.102 D : 0.02.620.102 D [blk.1.attn_q.weight ( 441K)] 0.02.620.102 D 
+2026-07-09 19:07:29 0.02.620.102 D 
+2026-07-09 19:07:29 ## SPLIT #18: CUDA0 # 1 inputs0.02.620.102 D : 0.02.620.102 D [blk.1.attn_q.bias (   3K)] 0.02.620.102 D 
+2026-07-09 19:07:29 0.02.620.102 D 
+2026-07-09 19:07:29 ## SPLIT #19: CUDA0 # 1 inputs0.02.620.103 D : 0.02.620.103 D [blk.1.attn_v.weight (  63K)] 0.02.620.103 D 
+2026-07-09 19:07:29 0.02.620.103 D 
+2026-07-09 19:07:29 ## SPLIT #20: CUDA0 # 1 inputs0.02.620.103 D : 0.02.620.103 D [blk.1.attn_v.bias (   0K)] 0.02.620.103 D 
+2026-07-09 19:07:29 0.02.620.103 D 
+2026-07-09 19:07:29 ## SPLIT #21: CUDA0 # 1 inputs0.02.620.103 D : 0.02.620.103 D [blk.1.attn_k.weight (  63K)] 0.02.620.104 D 
+2026-07-09 19:07:29 0.02.620.104 D 
+2026-07-09 19:07:29 ## SPLIT #22: CUDA0 # 1 inputs0.02.620.104 D : 0.02.620.104 D [blk.1.attn_k.bias (   0K)] 0.02.620.104 D 
+2026-07-09 19:07:29 0.02.620.104 D 
+2026-07-09 19:07:29 ## SPLIT #23: CPU # 2 inputs0.02.620.104 D : 0.02.620.104 D [Kcur-1 (view) ( 256K)] 0.02.620.104 D [Vcur-1 (view) ( 256K)] 0.02.620.105 D 
+2026-07-09 19:07:29 0.02.620.105 D 
+2026-07-09 19:07:29 ## SPLIT #24: CUDA0 # 2 inputs0.02.620.105 D : 0.02.620.105 D [cache_k_l1 (view) (permuted) (   8M)] 0.02.620.105 D [cache_v_l1 (view) (permuted) (   8M)] 0.02.620.105 D 
+2026-07-09 19:07:29 0.02.620.105 D 
+2026-07-09 19:07:29 ## SPLIT #25: CUDA0 # 1 inputs0.02.620.105 D : 0.02.620.106 D [blk.1.attn_output.weight ( 441K)] 0.02.620.106 D 
+2026-07-09 19:07:29 0.02.620.106 D 
+2026-07-09 19:07:29 ## SPLIT #26: CUDA0 # 1 inputs0.02.620.106 D : 0.02.620.106 D [blk.1.ffn_norm.weight (   3K)] 0.02.620.106 D 
+2026-07-09 19:07:29 0.02.620.106 D 
+2026-07-09 19:07:29 ## SPLIT #27: CUDA0 # 1 inputs0.02.620.106 D : 0.02.620.106 D [blk.1.ffn_gate.weight (   2M)] 0.02.620.106 D 
+2026-07-09 19:07:29 0.02.620.107 D 
+2026-07-09 19:07:29 ## SPLIT #28: CUDA0 # 1 inputs0.02.620.107 D : 0.02.620.107 D [blk.1.ffn_up.weight (   2M)] 0.02.620.107 D 
+2026-07-09 19:07:29 0.02.620.107 D 
+2026-07-09 19:07:29 ## SPLIT #29: CUDA0 # 1 inputs0.02.620.107 D : 0.02.620.107 D [blk.1.ffn_down.weight (   2M)] 0.02.620.107 D 
+2026-07-09 19:07:29 0.02.620.107 D 
+2026-07-09 19:07:29 ## SPLIT #30: CUDA0 # 1 inputs0.02.620.107 D : 0.02.620.108 D [blk.2.attn_norm.weight (   3K)] 0.02.620.108 D 
+2026-07-09 19:07:29 0.02.620.108 D 
+2026-07-09 19:07:29 ## SPLIT #31: CUDA0 # 1 inputs0.02.620.108 D : 0.02.620.108 D [blk.2.attn_q.weight ( 441K)] 0.02.620.108 D 
+2026-07-09 19:07:29 0.02.620.108 D 
+2026-07-09 19:07:29 ## SPLIT #32: CUDA0 # 1 inputs0.02.620.108 D : 0.02.620.108 D [blk.2.attn_q.bias (   3K)] 0.02.620.108 D 
+2026-07-09 19:07:29 0.02.620.109 D 
+2026-07-09 19:07:29 ## SPLIT #33: CUDA0 # 1 inputs0.02.620.109 D : 0.02.620.109 D [blk.2.attn_v.weight (  63K)] 0.02.620.109 D 
+2026-07-09 19:07:29 0.02.620.109 D 
+2026-07-09 19:07:29 ## SPLIT #34: CUDA0 # 1 inputs0.02.620.109 D : 0.02.620.109 D [blk.2.attn_v.bias (   0K)] 0.02.620.109 D 
+2026-07-09 19:07:29 0.02.620.109 D 
+2026-07-09 19:07:29 ## SPLIT #35: CUDA0 # 1 inputs0.02.620.110 D : 0.02.620.110 D [blk.2.attn_k.weight (  63K)] 0.02.620.110 D 
+2026-07-09 19:07:29 0.02.620.110 D 
+2026-07-09 19:07:29 ## SPLIT #36: CUDA0 # 1 inputs0.02.620.110 D : 0.02.620.110 D [blk.2.attn_k.bias (   0K)] 0.02.620.110 D 
+2026-07-09 19:07:29 0.02.620.110 D 
+2026-07-09 19:07:29 ## SPLIT #37: CPU # 2 inputs0.02.620.110 D : 0.02.620.110 D [Kcur-2 (view) ( 256K)] 0.02.620.111 D [Vcur-2 (view) ( 256K)] 0.02.620.111 D 
+2026-07-09 19:07:29 0.02.620.111 D 
+2026-07-09 19:07:29 ## SPLIT #38: CUDA0 # 2 inputs0.02.620.111 D : 0.02.620.111 D [cache_k_l2 (view) (permuted) (   8M)] 0.02.620.111 D [cache_v_l2 (view) (permuted) (   8M)] 0.02.620.111 D 
+2026-07-09 19:07:29 0.02.620.111 D 
+2026-07-09 19:07:29 ## SPLIT #39: CUDA0 # 1 inputs0.02.620.111 D : 0.02.620.112 D [blk.2.attn_output.weight ( 441K)] 0.02.620.112 D 
+2026-07-09 19:07:29 0.02.620.112 D 
+2026-07-09 19:07:29 ## SPLIT #40: CUDA0 # 1 inputs0.02.620.112 D : 0.02.620.112 D [blk.2.ffn_norm.weight (   3K)] 0.02.620.112 D 
+2026-07-09 19:07:29 0.02.620.112 D 
+2026-07-09 19:07:29 ## SPLIT #41: CUDA0 # 1 inputs0.02.620.112 D : 0.02.620.112 D [blk.2.ffn_gate.weight (   2M)] 0.02.620.112 D 
+2026-07-09 19:07:29 0.02.620.113 D 
+2026-07-09 19:07:29 ## SPLIT #42: CUDA0 # 1 inputs0.02.620.113 D : 0.02.620.113 D [blk.2.ffn_up.weight (   2M)] 0.02.620.113 D 
+2026-07-09 19:07:29 0.02.620.113 D 
+2026-07-09 19:07:29 ## SPLIT #43: CUDA0 # 1 inputs0.02.620.113 D : 0.02.620.113 D [blk.2.ffn_down.weight (   2M)] 0.02.620.113 D 
+2026-07-09 19:07:29 0.02.620.113 D 
+2026-07-09 19:07:29 ## SPLIT #44: CUDA0 # 1 inputs0.02.620.114 D : 0.02.620.114 D [blk.3.attn_norm.weight (   3K)] 0.02.620.114 D 
+2026-07-09 19:07:29 0.02.620.114 D 
+2026-07-09 19:07:29 ## SPLIT #45: CUDA0 # 1 inputs0.02.620.114 D : 0.02.620.114 D [blk.3.attn_q.weight ( 441K)] 0.02.620.114 D 
+2026-07-09 19:07:29 0.02.620.114 D 
+2026-07-09 19:07:29 ## SPLIT #46: CUDA0 # 1 inputs0.02.620.114 D : 0.02.620.114 D [blk.3.attn_q.bias (   3K)] 0.02.620.115 D 
+2026-07-09 19:07:29 0.02.620.115 D 
+2026-07-09 19:07:29 ## SPLIT #47: CUDA0 # 1 inputs0.02.620.115 D : 0.02.620.115 D [blk.3.attn_v.weight (  63K)] 0.02.620.115 D 
+2026-07-09 19:07:29 0.02.620.115 D 
+2026-07-09 19:07:29 ## SPLIT #48: CUDA0 # 1 inputs0.02.620.115 D : 0.02.620.115 D [blk.3.attn_v.bias (   0K)] 0.02.620.115 D 
+2026-07-09 19:07:29 0.02.620.115 D 
+2026-07-09 19:07:29 ## SPLIT #49: CUDA0 # 1 inputs0.02.620.116 D : 0.02.620.116 D [blk.3.attn_k.weight (  63K)] 0.02.620.116 D 
+2026-07-09 19:07:29 0.02.620.116 D 
+2026-07-09 19:07:29 ## SPLIT #50: CUDA0 # 1 inputs0.02.620.116 D : 0.02.620.116 D [blk.3.attn_k.bias (   0K)] 0.02.620.116 D 
+2026-07-09 19:07:29 0.02.620.116 D 
+2026-07-09 19:07:29 ## SPLIT #51: CPU # 2 inputs0.02.620.116 D : 0.02.620.117 D [Kcur-3 (view) ( 256K)] 0.02.620.117 D [Vcur-3 (view) ( 256K)] 0.02.620.117 D 
+2026-07-09 19:07:29 0.02.620.117 D 
+2026-07-09 19:07:29 ## SPLIT #52: CUDA0 # 2 inputs0.02.620.117 D : 0.02.620.117 D [cache_k_l3 (view) (permuted) (   8M)] 0.02.620.117 D [cache_v_l3 (view) (permuted) (   8M)] 0.02.620.117 D 
+2026-07-09 19:07:29 0.02.620.117 D 
+2026-07-09 19:07:29 ## SPLIT #53: CUDA0 # 1 inputs0.02.620.117 D : 0.02.620.118 D [blk.3.attn_output.weight ( 441K)] 0.02.620.118 D 
+2026-07-09 19:07:29 0.02.620.118 D 
+2026-07-09 19:07:29 ## SPLIT #54: CUDA0 # 1 inputs0.02.620.118 D : 0.02.620.118 D [blk.3.ffn_norm.weight (   3K)] 0.02.620.118 D 
+2026-07-09 19:07:29 0.02.620.118 D 
+2026-07-09 19:07:29 ## SPLIT #55: CUDA0 # 1 inputs0.02.620.118 D : 0.02.620.118 D [blk.3.ffn_gate.weight (   2M)] 0.02.620.119 D 
+2026-07-09 19:07:29 0.02.620.119 D 
+2026-07-09 19:07:29 ## SPLIT #56: CUDA0 # 1 inputs0.02.620.119 D : 0.02.620.119 D [blk.3.ffn_up.weight (   2M)] 0.02.620.119 D 
+2026-07-09 19:07:29 0.02.620.119 D 
+2026-07-09 19:07:29 ## SPLIT #57: CUDA0 # 1 inputs0.02.620.119 D : 0.02.620.119 D [blk.3.ffn_down.weight (   2M)] 0.02.620.119 D 
+2026-07-09 19:07:29 0.02.620.120 D 
+2026-07-09 19:07:29 ## SPLIT #58: CUDA0 # 1 inputs0.02.620.120 D : 0.02.620.120 D [blk.4.attn_norm.weight (   3K)] 0.02.620.120 D 
+2026-07-09 19:07:29 0.02.620.120 D 
+2026-07-09 19:07:29 ## SPLIT #59: CUDA0 # 1 inputs0.02.620.120 D : 0.02.620.120 D [blk.4.attn_q.weight ( 441K)] 0.02.620.120 D 
+2026-07-09 19:07:29 0.02.620.120 D 
+2026-07-09 19:07:29 ## SPLIT #60: CUDA0 # 1 inputs0.02.620.120 D : 0.02.620.121 D [blk.4.attn_q.bias (   3K)] 0.02.620.121 D 
+2026-07-09 19:07:29 0.02.620.121 D 
+2026-07-09 19:07:29 ## SPLIT #61: CUDA0 # 1 inputs0.02.620.121 D : 0.02.620.121 D [blk.4.attn_v.weight (  63K)] 0.02.620.121 D 
+2026-07-09 19:07:29 0.02.620.121 D 
+2026-07-09 19:07:29 ## SPLIT #62: CUDA0 # 1 inputs0.02.620.121 D : 0.02.620.121 D [blk.4.attn_v.bias (   0K)] 0.02.620.121 D 
+2026-07-09 19:07:29 0.02.620.122 D 
+2026-07-09 19:07:29 ## SPLIT #63: CUDA0 # 1 inputs0.02.620.122 D : 0.02.620.122 D [blk.4.attn_k.weight (  63K)] 0.02.620.122 D 
+2026-07-09 19:07:29 0.02.620.122 D 
+2026-07-09 19:07:29 ## SPLIT #64: CUDA0 # 1 inputs0.02.620.122 D : 0.02.620.122 D [blk.4.attn_k.bias (   0K)] 0.02.620.122 D 
+2026-07-09 19:07:29 0.02.620.122 D 
+2026-07-09 19:07:29 ## SPLIT #65: CPU # 2 inputs0.02.620.122 D : 0.02.620.123 D [Kcur-4 (view) ( 256K)] 0.02.620.123 D [Vcur-4 (view) ( 256K)] 0.02.620.123 D 
+2026-07-09 19:07:29 0.02.620.123 D 
+2026-07-09 19:07:29 ## SPLIT #66: CUDA0 # 2 inputs0.02.620.123 D : 0.02.620.123 D [cache_k_l4 (view) (permuted) (   8M)] 0.02.620.123 D [cache_v_l4 (view) (permuted) (   8M)] 0.02.620.123 D 
+2026-07-09 19:07:29 0.02.620.123 D 
+2026-07-09 19:07:29 ## SPLIT #67: CUDA0 # 1 inputs0.02.620.124 D : 0.02.620.124 D [blk.4.attn_output.weight ( 441K)] 0.02.620.124 D 
+2026-07-09 19:07:29 0.02.620.124 D 
+2026-07-09 19:07:29 ## SPLIT #68: CUDA0 # 1 inputs0.02.620.124 D : 0.02.620.124 D [blk.4.ffn_norm.weight (   3K)] 0.02.620.124 D 
+2026-07-09 19:07:29 0.02.620.124 D 
+2026-07-09 19:07:29 ## SPLIT #69: CUDA0 # 1 inputs0.02.620.124 D : 0.02.620.124 D [blk.4.ffn_gate.weight (   2M)] 0.02.620.125 D 
+2026-07-09 19:07:29 0.02.620.125 D 
+2026-07-09 19:07:29 ## SPLIT #70: CUDA0 # 1 inputs0.02.620.125 D : 0.02.620.125 D [blk.4.ffn_up.weight (   2M)] 0.02.620.125 D 
+2026-07-09 19:07:29 0.02.620.125 D 
+2026-07-09 19:07:29 ## SPLIT #71: CUDA0 # 4 inputs0.02.620.125 D : 0.02.620.125 D [blk.4.ffn_down.weight (   2M)] 0.02.620.125 D [leaf_11 (   4K)] 0.02.620.126 D [leaf_13 (   4K)] 0.02.620.126 D [leaf_342 (   2K)] 0.02.620.126 D 
+2026-07-09 19:07:29 0.02.620.314 D graph_reserve: reserving a graph for ubatch with n_tokens =    1, n_seqs =  1, n_outputs =    1
+2026-07-09 19:07:29 0.02.620.473 D 
+2026-07-09 19:07:29 ## SPLIT #0: CPU # 0 inputs0.02.620.473 D 
+2026-07-09 19:07:29 0.02.620.473 D 
+2026-07-09 19:07:29 ## SPLIT #1: CUDA0 # 7 inputs0.02.620.473 D : 0.02.620.473 D [ffn_out-4 (   3K)] 0.02.620.474 D [ffn_inp-4 (   3K)] 0.02.620.474 D [leaf_6 (   0K)] 0.02.620.474 D [leaf_11 (   0K)] 0.02.620.474 D [leaf_13 (   0K)] 0.02.620.474 D [attn_inp_kq_mask (  64K)] 0.02.620.474 D [leaf_342 (   0K)] 0.02.620.474 D 
+2026-07-09 19:07:29 0.02.620.482 D graph_reserve: reserving a graph for ubatch with n_tokens =  512, n_seqs =  1, n_outputs =  512
+2026-07-09 19:07:29 0.02.620.628 D 
+2026-07-09 19:07:29 ## SPLIT #0: CPU # 0 inputs0.02.620.628 D 
+2026-07-09 19:07:29 0.02.620.628 D 
+2026-07-09 19:07:29 ## SPLIT #1: CUDA0 # 1 inputs0.02.620.628 D : 0.02.620.628 D [embd (   1M)] 0.02.620.628 D 
+2026-07-09 19:07:29 0.02.620.628 D 
+2026-07-09 19:07:29 ## SPLIT #2: CUDA0 # 1 inputs0.02.620.629 D : 0.02.620.629 D [blk.0.attn_norm.weight (   3K)] 0.02.620.629 D 
+2026-07-09 19:07:29 0.02.620.629 D 
+2026-07-09 19:07:29 ## SPLIT #3: CUDA0 # 1 inputs0.02.620.629 D : 0.02.620.629 D [blk.0.attn_q.weight ( 441K)] 0.02.620.629 D 
+2026-07-09 19:07:29 0.02.620.629 D 
+2026-07-09 19:07:29 ## SPLIT #4: CUDA0 # 2 inputs0.02.620.630 D : 0.02.620.630 D [blk.0.attn_q.bias (   3K)] 0.02.620.630 D [leaf_6 (   2K)] 0.02.620.630 D 
+2026-07-09 19:07:29 0.02.620.630 D 
+2026-07-09 19:07:29 ## SPLIT #5: CUDA0 # 1 inputs0.02.620.630 D : 0.02.620.630 D [blk.0.attn_v.weight (  63K)] 0.02.620.630 D 
+2026-07-09 19:07:29 0.02.620.631 D 
+2026-07-09 19:07:29 ## SPLIT #6: CUDA0 # 1 inputs0.02.620.631 D : 0.02.620.631 D [blk.0.attn_v.bias (   0K)] 0.02.620.631 D 
+2026-07-09 19:07:29 0.02.620.631 D 
+2026-07-09 19:07:29 ## SPLIT #7: CUDA0 # 1 inputs0.02.620.631 D : 0.02.620.631 D [blk.0.attn_k.weight (  63K)] 0.02.620.631 D 
+2026-07-09 19:07:29 0.02.620.631 D 
+2026-07-09 19:07:29 ## SPLIT #8: CUDA0 # 1 inputs0.02.620.632 D : 0.02.620.632 D [blk.0.attn_k.bias (   0K)] 0.02.620.632 D 
+2026-07-09 19:07:29 0.02.620.632 D 
+2026-07-09 19:07:29 ## SPLIT #9: CPU # 2 inputs0.02.620.632 D : 0.02.620.632 D [Kcur-0 (view) ( 256K)] 0.02.620.632 D [Vcur-0 (view) ( 256K)] 0.02.620.632 D 
+2026-07-09 19:07:29 0.02.620.633 D 
+2026-07-09 19:07:29 ## SPLIT #10: CUDA0 # 3 inputs0.02.620.633 D : 0.02.620.633 D [cache_k_l0 (view) (permuted) (   8M)] 0.02.620.633 D [cache_v_l0 (view) (permuted) (   8M)] 0.02.620.633 D [attn_inp_kq_mask (  32M)] 0.02.620.633 D 
+2026-07-09 19:07:29 0.02.620.633 D 
+2026-07-09 19:07:29 ## SPLIT #11: CUDA0 # 1 inputs0.02.620.633 D : 0.02.620.634 D [blk.0.attn_output.weight ( 441K)] 0.02.620.634 D 
+2026-07-09 19:07:29 0.02.620.634 D 
+2026-07-09 19:07:29 ## SPLIT #12: CUDA0 # 1 inputs0.02.620.634 D : 0.02.620.634 D [blk.0.ffn_norm.weight (   3K)] 0.02.620.634 D 
+2026-07-09 19:07:29 0.02.620.634 D 
+2026-07-09 19:07:29 ## SPLIT #13: CUDA0 # 1 inputs0.02.620.634 D : 0.02.620.635 D [blk.0.ffn_gate.weight (   2M)] 0.02.620.635 D 
+2026-07-09 19:07:29 0.02.620.635 D 
+2026-07-09 19:07:29 ## SPLIT #14: CUDA0 # 1 inputs0.02.620.635 D : 0.02.620.635 D [blk.0.ffn_up.weight (   2M)] 0.02.620.635 D 
+2026-07-09 19:07:29 0.02.620.635 D 
+2026-07-09 19:07:29 ## SPLIT #15: CUDA0 # 1 inputs0.02.620.635 D : 0.02.620.635 D [blk.0.ffn_down.weight (   2M)] 0.02.620.636 D 
+2026-07-09 19:07:29 0.02.620.636 D 
+2026-07-09 19:07:29 ## SPLIT #16: CUDA0 # 1 inputs0.02.620.636 D : 0.02.620.636 D [blk.1.attn_norm.weight (   3K)] 0.02.620.636 D 
+2026-07-09 19:07:29 0.02.620.636 D 
+2026-07-09 19:07:29 ## SPLIT #17: CUDA0 # 1 inputs0.02.620.636 D : 0.02.620.636 D [blk.1.attn_q.weight ( 441K)] 0.02.620.636 D 
+2026-07-09 19:07:29 0.02.620.637 D 
+2026-07-09 19:07:29 ## SPLIT #18: CUDA0 # 1 inputs0.02.620.637 D : 0.02.620.637 D [blk.1.attn_q.bias (   3K)] 0.02.620.637 D 
+2026-07-09 19:07:29 0.02.620.637 D 
+2026-07-09 19:07:29 ## SPLIT #19: CUDA0 # 1 inputs0.02.620.637 D : 0.02.620.637 D [blk.1.attn_v.weight (  63K)] 0.02.620.637 D 
+2026-07-09 19:07:29 0.02.620.637 D 
+2026-07-09 19:07:29 ## SPLIT #20: CUDA0 # 1 inputs0.02.620.637 D : 0.02.620.638 D [blk.1.attn_v.bias (   0K)] 0.02.620.638 D 
+2026-07-09 19:07:29 0.02.620.638 D 
+2026-07-09 19:07:29 ## SPLIT #21: CUDA0 # 1 inputs0.02.620.638 D : 0.02.620.638 D [blk.1.attn_k.weight (  63K)] 0.02.620.638 D 
+2026-07-09 19:07:29 0.02.620.638 D 
+2026-07-09 19:07:29 ## SPLIT #22: CUDA0 # 1 inputs0.02.620.638 D : 0.02.620.639 D [blk.1.attn_k.bias (   0K)] 0.02.620.639 D 
+2026-07-09 19:07:29 0.02.620.639 D 
+2026-07-09 19:07:29 ## SPLIT #23: CPU # 2 inputs0.02.620.639 D : 0.02.620.639 D [Kcur-1 (view) ( 256K)] 0.02.620.639 D [Vcur-1 (view) ( 256K)] 0.02.620.639 D 
+2026-07-09 19:07:29 0.02.620.639 D 
+2026-07-09 19:07:29 ## SPLIT #24: CUDA0 # 2 inputs0.02.620.639 D : 0.02.620.640 D [cache_k_l1 (view) (permuted) (   8M)] 0.02.620.640 D [cache_v_l1 (view) (permuted) (   8M)] 0.02.620.640 D 
+2026-07-09 19:07:29 0.02.620.640 D 
+2026-07-09 19:07:29 ## SPLIT #25: CUDA0 # 1 inputs0.02.620.640 D : 0.02.620.640 D [blk.1.attn_output.weight ( 441K)] 0.02.620.640 D 
+2026-07-09 19:07:29 0.02.620.640 D 
+2026-07-09 19:07:29 ## SPLIT #26: CUDA0 # 1 inputs0.02.620.641 D : 0.02.620.641 D [blk.1.ffn_norm.weight (   3K)] 0.02.620.641 D 
+2026-07-09 19:07:29 0.02.620.641 D 
+2026-07-09 19:07:29 ## SPLIT #27: CUDA0 # 1 inputs0.02.620.641 D : 0.02.620.641 D [blk.1.ffn_gate.weight (   2M)] 0.02.620.641 D 
+2026-07-09 19:07:29 0.02.620.641 D 
+2026-07-09 19:07:29 ## SPLIT #28: CUDA0 # 1 inputs0.02.620.641 D : 0.02.620.642 D [blk.1.ffn_up.weight (   2M)] 0.02.620.642 D 
+2026-07-09 19:07:29 0.02.620.642 D 
+2026-07-09 19:07:29 ## SPLIT #29: CUDA0 # 1 inputs0.02.620.642 D : 0.02.620.642 D [blk.1.ffn_down.weight (   2M)] 0.02.620.642 D 
+2026-07-09 19:07:29 0.02.620.642 D 
+2026-07-09 19:07:29 ## SPLIT #30: CUDA0 # 1 inputs0.02.620.642 D : 0.02.620.642 D [blk.2.attn_norm.weight (   3K)] 0.02.620.643 D 
+2026-07-09 19:07:29 0.02.620.643 D 
+2026-07-09 19:07:29 ## SPLIT #31: CUDA0 # 1 inputs0.02.620.643 D : 0.02.620.643 D [blk.2.attn_q.weight ( 441K)] 0.02.620.643 D 
+2026-07-09 19:07:29 0.02.620.643 D 
+2026-07-09 19:07:29 ## SPLIT #32: CUDA0 # 1 inputs0.02.620.643 D : 0.02.620.643 D [blk.2.attn_q.bias (   3K)] 0.02.620.643 D 
+2026-07-09 19:07:29 0.02.620.644 D 
+2026-07-09 19:07:29 ## SPLIT #33: CUDA0 # 1 inputs0.02.620.644 D : 0.02.620.644 D [blk.2.attn_v.weight (  63K)] 0.02.620.644 D 
+2026-07-09 19:07:29 0.02.620.644 D 
+2026-07-09 19:07:29 ## SPLIT #34: CUDA0 # 1 inputs0.02.620.644 D : 0.02.620.644 D [blk.2.attn_v.bias (   0K)] 0.02.620.644 D 
+2026-07-09 19:07:29 0.02.620.644 D 
+2026-07-09 19:07:29 ## SPLIT #35: CUDA0 # 1 inputs0.02.620.644 D : 0.02.620.645 D [blk.2.attn_k.weight (  63K)] 0.02.620.645 D 
+2026-07-09 19:07:29 0.02.620.645 D 
+2026-07-09 19:07:29 ## SPLIT #36: CUDA0 # 1 inputs0.02.620.645 D : 0.02.620.645 D [blk.2.attn_k.bias (   0K)] 0.02.620.645 D 
+2026-07-09 19:07:29 0.02.620.645 D 
+2026-07-09 19:07:29 ## SPLIT #37: CPU # 2 inputs0.02.620.645 D : 0.02.620.646 D [Kcur-2 (view) ( 256K)] 0.02.620.646 D [Vcur-2 (view) ( 256K)] 0.02.620.646 D 
+2026-07-09 19:07:29 0.02.620.646 D 
+2026-07-09 19:07:29 ## SPLIT #38: CUDA0 # 2 inputs0.02.620.646 D : 0.02.620.646 D [cache_k_l2 (view) (permuted) (   8M)] 0.02.620.646 D [cache_v_l2 (view) (permuted) (   8M)] 0.02.620.646 D 
+2026-07-09 19:07:29 0.02.620.646 D 
+2026-07-09 19:07:29 ## SPLIT #39: CUDA0 # 1 inputs0.02.620.647 D : 0.02.620.647 D [blk.2.attn_output.weight ( 441K)] 0.02.620.647 D 
+2026-07-09 19:07:29 0.02.620.647 D 
+2026-07-09 19:07:29 ## SPLIT #40: CUDA0 # 1 inputs0.02.620.647 D : 0.02.620.647 D [blk.2.ffn_norm.weight (   3K)] 0.02.620.647 D 
+2026-07-09 19:07:29 0.02.620.647 D 
+2026-07-09 19:07:29 ## SPLIT #41: CUDA0 # 1 inputs0.02.620.647 D : 0.02.620.648 D [blk.2.ffn_gate.weight (   2M)] 0.02.620.648 D 
+2026-07-09 19:07:29 0.02.620.648 D 
+2026-07-09 19:07:29 ## SPLIT #42: CUDA0 # 1 inputs0.02.620.648 D : 0.02.620.648 D [blk.2.ffn_up.weight (   2M)] 0.02.620.648 D 
+2026-07-09 19:07:29 0.02.620.648 D 
+2026-07-09 19:07:29 ## SPLIT #43: CUDA0 # 1 inputs0.02.620.648 D : 0.02.620.648 D [blk.2.ffn_down.weight (   2M)] 0.02.620.648 D 
+2026-07-09 19:07:29 0.02.620.649 D 
+2026-07-09 19:07:29 ## SPLIT #44: CUDA0 # 1 inputs0.02.620.649 D : 0.02.620.649 D [blk.3.attn_norm.weight (   3K)] 0.02.620.649 D 
+2026-07-09 19:07:29 0.02.620.649 D 
+2026-07-09 19:07:29 ## SPLIT #45: CUDA0 # 1 inputs0.02.620.649 D : 0.02.620.649 D [blk.3.attn_q.weight ( 441K)] 0.02.620.649 D 
+2026-07-09 19:07:29 0.02.620.649 D 
+2026-07-09 19:07:29 ## SPLIT #46: CUDA0 # 1 inputs0.02.620.650 D : 0.02.620.650 D [blk.3.attn_q.bias (   3K)] 0.02.620.650 D 
+2026-07-09 19:07:29 0.02.620.650 D 
+2026-07-09 19:07:29 ## SPLIT #47: CUDA0 # 1 inputs0.02.620.650 D : 0.02.620.708 D [blk.3.attn_v.weight (  63K)] 0.02.620.708 D 
+2026-07-09 19:07:29 0.02.620.709 D 
+2026-07-09 19:07:29 ## SPLIT #48: CUDA0 # 1 inputs0.02.620.709 D : 0.02.620.709 D [blk.3.attn_v.bias (   0K)] 0.02.620.709 D 
+2026-07-09 19:07:29 0.02.620.709 D 
+2026-07-09 19:07:29 ## SPLIT #49: CUDA0 # 1 inputs0.02.620.709 D : 0.02.620.710 D [blk.3.attn_k.weight (  63K)] 0.02.620.710 D 
+2026-07-09 19:07:29 0.02.620.710 D 
+2026-07-09 19:07:29 ## SPLIT #50: CUDA0 # 1 inputs0.02.620.710 D : 0.02.620.710 D [blk.3.attn_k.bias (   0K)] 0.02.620.710 D 
+2026-07-09 19:07:29 0.02.620.710 D 
+2026-07-09 19:07:29 ## SPLIT #51: CPU # 2 inputs0.02.620.710 D : 0.02.620.711 D [Kcur-3 (view) ( 256K)] 0.02.620.711 D [Vcur-3 (view) ( 256K)] 0.02.620.711 D 
+2026-07-09 19:07:29 0.02.620.711 D 
+2026-07-09 19:07:29 ## SPLIT #52: CUDA0 # 2 inputs0.02.620.711 D : 0.02.620.711 D [cache_k_l3 (view) (permuted) (   8M)] 0.02.620.711 D [cache_v_l3 (view) (permuted) (   8M)] 0.02.620.711 D 
+2026-07-09 19:07:29 0.02.620.712 D 
+2026-07-09 19:07:29 ## SPLIT #53: CUDA0 # 1 inputs0.02.620.712 D : 0.02.620.712 D [blk.3.attn_output.weight ( 441K)] 0.02.620.712 D 
+2026-07-09 19:07:29 0.02.620.712 D 
+2026-07-09 19:07:29 ## SPLIT #54: CUDA0 # 1 inputs0.02.620.712 D : 0.02.620.712 D [blk.3.ffn_norm.weight (   3K)] 0.02.620.712 D 
+2026-07-09 19:07:29 0.02.620.712 D 
+2026-07-09 19:07:29 ## SPLIT #55: CUDA0 # 1 inputs0.02.620.713 D : 0.02.620.713 D [blk.3.ffn_gate.weight (   2M)] 0.02.620.713 D 
+2026-07-09 19:07:29 0.02.620.713 D 
+2026-07-09 19:07:29 ## SPLIT #56: CUDA0 # 1 inputs0.02.620.713 D : 0.02.620.713 D [blk.3.ffn_up.weight (   2M)] 0.02.620.713 D 
+2026-07-09 19:07:29 0.02.620.713 D 
+2026-07-09 19:07:29 ## SPLIT #57: CUDA0 # 1 inputs0.02.620.713 D : 0.02.620.714 D [blk.3.ffn_down.weight (   2M)] 0.02.620.714 D 
+2026-07-09 19:07:29 0.02.620.714 D 
+2026-07-09 19:07:29 ## SPLIT #58: CUDA0 # 1 inputs0.02.620.714 D : 0.02.620.714 D [blk.4.attn_norm.weight (   3K)] 0.02.620.714 D 
+2026-07-09 19:07:29 0.02.620.714 D 
+2026-07-09 19:07:29 ## SPLIT #59: CUDA0 # 1 inputs0.02.620.714 D : 0.02.620.714 D [blk.4.attn_q.weight ( 441K)] 0.02.620.715 D 
+2026-07-09 19:07:29 0.02.620.715 D 
+2026-07-09 19:07:29 ## SPLIT #60: CUDA0 # 1 inputs0.02.620.715 D : 0.02.620.715 D [blk.4.attn_q.bias (   3K)] 0.02.620.715 D 
+2026-07-09 19:07:29 0.02.620.715 D 
+2026-07-09 19:07:29 ## SPLIT #61: CUDA0 # 1 inputs0.02.620.715 D : 0.02.620.715 D [blk.4.attn_v.weight (  63K)] 0.02.620.715 D 
+2026-07-09 19:07:29 0.02.620.716 D 
+2026-07-09 19:07:29 ## SPLIT #62: CUDA0 # 1 inputs0.02.620.716 D : 0.02.620.716 D [blk.4.attn_v.bias (   0K)] 0.02.620.716 D 
+2026-07-09 19:07:29 0.02.620.716 D 
+2026-07-09 19:07:29 ## SPLIT #63: CUDA0 # 1 inputs0.02.620.716 D : 0.02.620.716 D [blk.4.attn_k.weight (  63K)] 0.02.620.716 D 
+2026-07-09 19:07:29 0.02.620.716 D 
+2026-07-09 19:07:29 ## SPLIT #64: CUDA0 # 1 inputs0.02.620.717 D : 0.02.620.717 D [blk.4.attn_k.bias (   0K)] 0.02.620.717 D 
+2026-07-09 19:07:29 0.02.620.717 D 
+2026-07-09 19:07:29 ## SPLIT #65: CPU # 2 inputs0.02.620.717 D : 0.02.620.717 D [Kcur-4 (view) ( 256K)] 0.02.620.717 D [Vcur-4 (view) ( 256K)] 0.02.620.717 D 
+2026-07-09 19:07:29 0.02.620.718 D 
+2026-07-09 19:07:29 ## SPLIT #66: CUDA0 # 2 inputs0.02.620.718 D : 0.02.620.718 D [cache_k_l4 (view) (permuted) (   8M)] 0.02.620.718 D [cache_v_l4 (view) (permuted) (   8M)] 0.02.620.718 D 
+2026-07-09 19:07:29 0.02.620.718 D 
+2026-07-09 19:07:29 ## SPLIT #67: CUDA0 # 1 inputs0.02.620.718 D : 0.02.620.718 D [blk.4.attn_output.weight ( 441K)] 0.02.620.718 D 
+2026-07-09 19:07:29 0.02.620.719 D 
+2026-07-09 19:07:29 ## SPLIT #68: CUDA0 # 1 inputs0.02.620.719 D : 0.02.620.719 D [blk.4.ffn_norm.weight (   3K)] 0.02.620.719 D 
+2026-07-09 19:07:29 0.02.620.719 D 
+2026-07-09 19:07:29 ## SPLIT #69: CUDA0 # 1 inputs0.02.620.719 D : 0.02.620.719 D [blk.4.ffn_gate.weight (   2M)] 0.02.620.719 D 
+2026-07-09 19:07:29 0.02.620.719 D 
+2026-07-09 19:07:29 ## SPLIT #70: CUDA0 # 1 inputs0.02.620.720 D : 0.02.620.720 D [blk.4.ffn_up.weight (   2M)] 0.02.620.720 D 
+2026-07-09 19:07:29 0.02.620.720 D 
+2026-07-09 19:07:29 ## SPLIT #71: CUDA0 # 4 inputs0.02.620.720 D : 0.02.620.720 D [blk.4.ffn_down.weight (   2M)] 0.02.620.720 D [leaf_11 (   4K)] 0.02.620.721 D [leaf_13 (   4K)] 0.02.620.721 D [leaf_342 (   2K)] 0.02.620.721 D 
+2026-07-09 19:07:29 0.02.620.738 I sched_reserve:      CUDA0 compute buffer size =   300.25 MiB
+2026-07-09 19:07:29 0.02.620.739 I sched_reserve:  CUDA_Host compute buffer size =    35.51 MiB
+2026-07-09 19:07:29 0.02.620.739 I sched_reserve: graph nodes  = 822
+2026-07-09 19:07:29 0.02.620.740 I sched_reserve: graph splits = 72 (with bs=512), 2 (with bs=1)
+2026-07-09 19:07:29 0.02.620.741 I sched_reserve: reserve took 1.72 ms, sched copies = 1
+2026-07-09 19:07:29 0.02.622.974 I common_memory_breakdown_print: | memory breakdown [MiB]          | total   free    self   model   context   compute    unaccounted |
+2026-07-09 19:07:29 0.02.622.975 I common_memory_breakdown_print: |   - CUDA0 (RTX 4050 Laptop GPU) |  5772 = 5622 + ( 894 =   290 +     304 +     300) +        -744 |
+2026-07-09 19:07:29 0.02.622.975 I common_memory_breakdown_print: |   - Host                        |                  293 =   177 +      80 +      35                |
+2026-07-09 19:07:29 0.02.640.076 I common_params_fit_impl: projected to use 894 MiB of device memory vs. 5622 MiB of free device memory
+2026-07-09 19:07:29 0.02.640.078 I common_params_fit_impl: will leave 4728 >= 1024 MiB of free device memory, no changes needed
+2026-07-09 19:07:29 0.02.640.079 I common_fit_params: successfully fit params to free device memory
+2026-07-09 19:07:29 0.02.640.081 I common_fit_params: fitting params to free memory took 0.28 seconds
+2026-07-09 19:07:29 0.02.658.936 I llama_model_loader: loaded meta data with 21 key-value pairs and 290 tensors from /home/atituiset/models/qwen2-0.5b-instruct-q4_0.gguf (version GGUF V3 (latest))
+2026-07-09 19:07:29 0.02.658.943 I llama_model_loader: Dumping metadata keys/values. Note: KV overrides do not apply in this output.
+2026-07-09 19:07:29 0.02.658.945 I llama_model_loader: - kv   0:                       general.architecture str              = qwen2
+2026-07-09 19:07:29 0.02.658.945 I llama_model_loader: - kv   1:                               general.name str              = Qwen2-0.5B-Instruct
+2026-07-09 19:07:29 0.02.658.946 I llama_model_loader: - kv   2:                          qwen2.block_count u32              = 24
+2026-07-09 19:07:29 0.02.658.946 I llama_model_loader: - kv   3:                       qwen2.context_length u32              = 32768
+2026-07-09 19:07:29 0.02.658.947 I llama_model_loader: - kv   4:                     qwen2.embedding_length u32              = 896
+2026-07-09 19:07:29 0.02.658.947 I llama_model_loader: - kv   5:                  qwen2.feed_forward_length u32              = 4864
+2026-07-09 19:07:29 0.02.658.947 I llama_model_loader: - kv   6:                 qwen2.attention.head_count u32              = 14
+2026-07-09 19:07:29 0.02.658.948 I llama_model_loader: - kv   7:              qwen2.attention.head_count_kv u32              = 2
+2026-07-09 19:07:29 0.02.658.950 I llama_model_loader: - kv   8:                       qwen2.rope.freq_base f32              = 1000000.000000
+2026-07-09 19:07:29 0.02.658.951 I llama_model_loader: - kv   9:     qwen2.attention.layer_norm_rms_epsilon f32              = 0.000001
+2026-07-09 19:07:29 0.02.658.951 I llama_model_loader: - kv  10:                          general.file_type u32              = 2
+2026-07-09 19:07:29 0.02.658.952 I llama_model_loader: - kv  11:                       tokenizer.ggml.model str              = gpt2
+2026-07-09 19:07:29 0.02.658.952 I llama_model_loader: - kv  12:                         tokenizer.ggml.pre str              = qwen2
+2026-07-09 19:07:29 0.02.669.872 I llama_model_loader: - kv  13:                      tokenizer.ggml.tokens arr[str,151936]  = ["!", "\"", "#", "$", "%", "&", "'", ...
+2026-07-09 19:07:29 0.02.672.621 I llama_model_loader: - kv  14:                  tokenizer.ggml.token_type arr[i32,151936]  = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, ...
+2026-07-09 19:07:29 0.02.683.789 I llama_model_loader: - kv  15:                      tokenizer.ggml.merges arr[str,151387]  = ["Ġ Ġ", "ĠĠ ĠĠ", "i n", "Ġ t",...
+2026-07-09 19:07:29 0.02.683.791 I llama_model_loader: - kv  16:                tokenizer.ggml.eos_token_id u32              = 151645
+2026-07-09 19:07:29 0.02.683.791 I llama_model_loader: - kv  17:            tokenizer.ggml.padding_token_id u32              = 151643
+2026-07-09 19:07:29 0.02.683.791 I llama_model_loader: - kv  18:                tokenizer.ggml.bos_token_id u32              = 151643
+2026-07-09 19:07:29 0.02.683.792 I llama_model_loader: - kv  19:                    tokenizer.chat_template str              = {% for message in messages %}{% if lo...
+2026-07-09 19:07:29 0.02.683.792 I llama_model_loader: - kv  20:               general.quantization_version u32              = 2
+2026-07-09 19:07:29 0.02.683.793 I llama_model_loader: - type  f32:  121 tensors
+2026-07-09 19:07:29 0.02.683.793 I llama_model_loader: - type q4_0:  168 tensors
+2026-07-09 19:07:29 0.02.683.793 I llama_model_loader: - type q8_0:    1 tensors
+2026-07-09 19:07:29 0.02.683.795 I print_info: file format = GGUF V3 (latest)
+2026-07-09 19:07:29 0.02.683.795 I print_info: file type   = Q4_0
+2026-07-09 19:07:29 0.02.683.797 I print_info: file size   = 330.17 MiB (5.61 BPW) 
+2026-07-09 19:07:29 0.02.687.218 I llama_prepare_model_devices: using device CUDA0 (NVIDIA GeForce RTX 4050 Laptop GPU) (0000:01:00.0) - 5622 MiB free
+2026-07-09 19:07:29 0.02.722.611 D init_tokenizer: initializing tokenizer for type 2
+2026-07-09 19:07:29 0.02.741.205 I load: 0 unused tokens
+2026-07-09 19:07:29 0.02.741.832 W load: control-looking token: 128247 '</s>' was not control-type; this is probably a bug in the model. its type will be overridden
+2026-07-09 19:07:29 0.02.748.668 D load: control token: 151644 '<|im_start|>' is not marked as EOG
+2026-07-09 19:07:29 0.02.752.601 I load: printing all EOG tokens:
+2026-07-09 19:07:29 0.02.752.602 I load:   - 128247 ('</s>')
+2026-07-09 19:07:29 0.02.752.602 I load:   - 151643 ('<|endoftext|>')
+2026-07-09 19:07:29 0.02.752.603 I load:   - 151645 ('<|im_end|>')
+2026-07-09 19:07:29 0.02.752.738 I load: special tokens cache size = 294
+2026-07-09 19:07:29 0.02.782.987 I load: token to piece cache size = 0.9338 MB
+2026-07-09 19:07:29 0.02.782.996 I print_info: arch                  = qwen2
+2026-07-09 19:07:29 0.02.782.996 I print_info: vocab_only            = 0
+2026-07-09 19:07:29 0.02.782.997 I print_info: no_alloc              = 0
+2026-07-09 19:07:29 0.02.782.997 I print_info: n_ctx_train           = 32768
+2026-07-09 19:07:29 0.02.782.997 I print_info: n_embd_inp            = 896
+2026-07-09 19:07:29 0.02.782.997 I print_info: n_embd                = 896
+2026-07-09 19:07:29 0.02.782.998 I print_info: n_embd_out            = 896
+2026-07-09 19:07:29 0.02.782.998 I print_info: n_layer               = 24
+2026-07-09 19:07:29 0.02.782.998 I print_info: n_layer_all           = 24
+2026-07-09 19:07:29 0.02.783.003 I print_info: n_head                = 14
+2026-07-09 19:07:29 0.02.783.005 I print_info: n_head_kv             = 2
+2026-07-09 19:07:29 0.02.783.005 I print_info: n_rot                 = 64
+2026-07-09 19:07:29 0.02.783.005 I print_info: n_swa                 = 0
+2026-07-09 19:07:29 0.02.783.005 I print_info: is_swa_any            = 0
+2026-07-09 19:07:29 0.02.783.006 I print_info: n_embd_head_k         = 64
+2026-07-09 19:07:29 0.02.783.006 I print_info: n_embd_head_v         = 64
+2026-07-09 19:07:29 0.02.783.007 I print_info: n_gqa                 = 7
+2026-07-09 19:07:29 0.02.783.008 I print_info: n_embd_k_gqa          = 128
+2026-07-09 19:07:29 0.02.783.009 I print_info: n_embd_v_gqa          = 128
+2026-07-09 19:07:29 0.02.783.010 I print_info: f_norm_eps            = 0.0e+00
+2026-07-09 19:07:29 0.02.783.011 I print_info: f_norm_rms_eps        = 1.0e-06
+2026-07-09 19:07:29 0.02.783.011 I print_info: f_clamp_kqv           = 0.0e+00
+2026-07-09 19:07:29 0.02.783.011 I print_info: f_max_alibi_bias      = 0.0e+00
+2026-07-09 19:07:29 0.02.783.011 I print_info: f_logit_scale         = 0.0e+00
+2026-07-09 19:07:29 0.02.783.012 I print_info: f_attn_scale          = 0.0e+00
+2026-07-09 19:07:29 0.02.783.012 I print_info: f_attn_value_scale    = 0.0000
+2026-07-09 19:07:29 0.02.783.013 I print_info: n_ff                  = 4864
+2026-07-09 19:07:29 0.02.783.013 I print_info: n_expert              = 0
+2026-07-09 19:07:29 0.02.783.013 I print_info: n_expert_used         = 0
+2026-07-09 19:07:29 0.02.783.013 I print_info: n_expert_groups       = 0
+2026-07-09 19:07:29 0.02.783.013 I print_info: n_group_used          = 0
+2026-07-09 19:07:29 0.02.783.013 I print_info: causal attn           = 1
+2026-07-09 19:07:29 0.02.783.013 I print_info: pooling type          = -1
+2026-07-09 19:07:29 0.02.783.014 I print_info: rope type             = 2
+2026-07-09 19:07:29 0.02.783.014 I print_info: rope scaling          = linear
+2026-07-09 19:07:29 0.02.783.015 I print_info: freq_base_train       = 1000000.0
+2026-07-09 19:07:29 0.02.783.016 I print_info: freq_scale_train      = 1
+2026-07-09 19:07:29 0.02.783.016 I print_info: n_ctx_orig_yarn       = 32768
+2026-07-09 19:07:29 0.02.783.016 I print_info: rope_yarn_log_mul     = 0.0000
+2026-07-09 19:07:29 0.02.783.016 I print_info: rope_finetuned        = unknown
+2026-07-09 19:07:29 0.02.783.016 I print_info: model type            = 1B
+2026-07-09 19:07:29 0.02.783.017 I print_info: model params          = 494.03 M
+2026-07-09 19:07:29 0.02.783.017 I print_info: general.name          = Qwen2-0.5B-Instruct
+2026-07-09 19:07:29 0.02.783.018 I print_info: vocab type            = BPE
+2026-07-09 19:07:29 0.02.783.019 I print_info: n_vocab               = 151936
+2026-07-09 19:07:29 0.02.783.019 I print_info: n_merges              = 151387
+2026-07-09 19:07:29 0.02.783.019 I print_info: BOS token             = 151643 '<|endoftext|>'
+2026-07-09 19:07:29 0.02.783.019 I print_info: EOS token             = 151645 '<|im_end|>'
+2026-07-09 19:07:29 0.02.783.019 I print_info: EOT token             = 151645 '<|im_end|>'
+2026-07-09 19:07:29 0.02.783.019 I print_info: PAD token             = 151643 '<|endoftext|>'
+2026-07-09 19:07:29 0.02.783.020 I print_info: LF token              = 198 'Ċ'
+2026-07-09 19:07:29 0.02.783.020 I print_info: EOG token             = 128247 '</s>'
+2026-07-09 19:07:29 0.02.783.020 I print_info: EOG token             = 151643 '<|endoftext|>'
+2026-07-09 19:07:29 0.02.783.020 I print_info: EOG token             = 151645 '<|im_end|>'
+2026-07-09 19:07:29 0.02.783.020 I print_info: max token length      = 256
+2026-07-09 19:07:29 0.02.783.021 I load_tensors: loading model tensors, this can take a while... (mmap = true, direct_io = false)
+2026-07-09 19:07:29 0.02.786.455 D load_tensors: layer   0 assigned to device CPU, is_swa = 0
+2026-07-09 19:07:29 0.02.786.456 D load_tensors: layer   1 assigned to device CPU, is_swa = 0
+2026-07-09 19:07:29 0.02.786.456 D load_tensors: layer   2 assigned to device CPU, is_swa = 0
+2026-07-09 19:07:29 0.02.786.456 D load_tensors: layer   3 assigned to device CPU, is_swa = 0
+2026-07-09 19:07:29 0.02.786.456 D load_tensors: layer   4 assigned to device CPU, is_swa = 0
+2026-07-09 19:07:29 0.02.786.457 D load_tensors: layer   5 assigned to device CUDA0, is_swa = 0
+2026-07-09 19:07:29 0.02.786.457 D load_tensors: layer   6 assigned to device CUDA0, is_swa = 0
+2026-07-09 19:07:29 0.02.786.457 D load_tensors: layer   7 assigned to device CUDA0, is_swa = 0
+2026-07-09 19:07:29 0.02.786.457 D load_tensors: layer   8 assigned to device CUDA0, is_swa = 0
+2026-07-09 19:07:29 0.02.786.457 D load_tensors: layer   9 assigned to device CUDA0, is_swa = 0
+2026-07-09 19:07:29 0.02.786.457 D load_tensors: layer  10 assigned to device CUDA0, is_swa = 0
+2026-07-09 19:07:29 0.02.786.458 D load_tensors: layer  11 assigned to device CUDA0, is_swa = 0
+2026-07-09 19:07:29 0.02.786.458 D load_tensors: layer  12 assigned to device CUDA0, is_swa = 0
+2026-07-09 19:07:29 0.02.786.458 D load_tensors: layer  13 assigned to device CUDA0, is_swa = 0
+2026-07-09 19:07:29 0.02.786.458 D load_tensors: layer  14 assigned to device CUDA0, is_swa = 0
+2026-07-09 19:07:29 0.02.786.458 D load_tensors: layer  15 assigned to device CUDA0, is_swa = 0
+2026-07-09 19:07:29 0.02.786.458 D load_tensors: layer  16 assigned to device CUDA0, is_swa = 0
+2026-07-09 19:07:29 0.02.786.458 D load_tensors: layer  17 assigned to device CUDA0, is_swa = 0
+2026-07-09 19:07:29 0.02.786.458 D load_tensors: layer  18 assigned to device CUDA0, is_swa = 0
+2026-07-09 19:07:29 0.02.786.458 D load_tensors: layer  19 assigned to device CUDA0, is_swa = 0
+2026-07-09 19:07:29 0.02.786.459 D load_tensors: layer  20 assigned to device CUDA0, is_swa = 0
+2026-07-09 19:07:29 0.02.786.459 D load_tensors: layer  21 assigned to device CUDA0, is_swa = 0
+2026-07-09 19:07:29 0.02.786.459 D load_tensors: layer  22 assigned to device CUDA0, is_swa = 0
+2026-07-09 19:07:29 0.02.786.459 D load_tensors: layer  23 assigned to device CUDA0, is_swa = 0
+2026-07-09 19:07:29 0.02.786.459 D load_tensors: layer  24 assigned to device CUDA0, is_swa = 0
+2026-07-09 19:07:29 0.02.787.221 D create_tensor: loading tensor token_embd.weight
+2026-07-09 19:07:29 0.02.787.229 D create_tensor: loading tensor output_norm.weight
+2026-07-09 19:07:29 0.02.787.235 D create_tensor: loading tensor token_embd.weight
+2026-07-09 19:07:29 0.02.787.978 D create_tensor: loading tensor blk.0.attn_norm.weight
+2026-07-09 19:07:29 0.02.788.731 D create_tensor: loading tensor blk.0.attn_q.weight
+2026-07-09 19:07:29 0.02.789.380 D create_tensor: loading tensor blk.0.attn_k.weight
+2026-07-09 19:07:29 0.02.790.136 D create_tensor: loading tensor blk.0.attn_v.weight
+2026-07-09 19:07:29 0.02.790.889 D create_tensor: loading tensor blk.0.attn_q.bias
+2026-07-09 19:07:29 0.02.791.639 D create_tensor: loading tensor blk.0.attn_k.bias
+2026-07-09 19:07:29 0.02.792.391 D create_tensor: loading tensor blk.0.attn_v.bias
+2026-07-09 19:07:29 0.02.793.039 D create_tensor: loading tensor blk.0.attn_output.weight
+2026-07-09 19:07:29 0.02.793.793 D create_tensor: loading tensor blk.0.ffn_norm.weight
+2026-07-09 19:07:29 0.02.794.540 D create_tensor: loading tensor blk.0.ffn_gate.weight
+2026-07-09 19:07:29 0.02.795.185 D create_tensor: loading tensor blk.0.ffn_down.weight
+2026-07-09 19:07:29 0.02.795.941 D create_tensor: loading tensor blk.0.ffn_up.weight
+2026-07-09 19:07:29 0.02.796.692 D create_tensor: loading tensor blk.1.attn_norm.weight
+2026-07-09 19:07:29 0.02.797.518 D create_tensor: loading tensor blk.1.attn_q.weight
+2026-07-09 19:07:29 0.02.798.198 D create_tensor: loading tensor blk.1.attn_k.weight
+2026-07-09 19:07:29 0.02.798.968 D create_tensor: loading tensor blk.1.attn_v.weight
+2026-07-09 19:07:29 0.02.799.725 D create_tensor: loading tensor blk.1.attn_q.bias
+2026-07-09 19:07:29 0.02.800.475 D create_tensor: loading tensor blk.1.attn_k.bias
+2026-07-09 19:07:29 0.02.801.233 D create_tensor: loading tensor blk.1.attn_v.bias
+2026-07-09 19:07:29 0.02.802.000 D create_tensor: loading tensor blk.1.attn_output.weight
+2026-07-09 19:07:29 0.02.802.642 D create_tensor: loading tensor blk.1.ffn_norm.weight
+2026-07-09 19:07:29 0.02.803.284 D create_tensor: loading tensor blk.1.ffn_gate.weight
+2026-07-09 19:07:29 0.02.803.936 D create_tensor: loading tensor blk.1.ffn_down.weight
+2026-07-09 19:07:29 0.02.804.577 D create_tensor: loading tensor blk.1.ffn_up.weight
+2026-07-09 19:07:29 0.02.805.215 D create_tensor: loading tensor blk.2.attn_norm.weight
+2026-07-09 19:07:29 0.02.805.964 D create_tensor: loading tensor blk.2.attn_q.weight
+2026-07-09 19:07:29 0.02.806.723 D create_tensor: loading tensor blk.2.attn_k.weight
+2026-07-09 19:07:29 0.02.807.366 D create_tensor: loading tensor blk.2.attn_v.weight
+2026-07-09 19:07:29 0.02.808.120 D create_tensor: loading tensor blk.2.attn_q.bias
+2026-07-09 19:07:29 0.02.808.877 D create_tensor: loading tensor blk.2.attn_k.bias
+2026-07-09 19:07:29 0.02.809.512 D create_tensor: loading tensor blk.2.attn_v.bias
+2026-07-09 19:07:29 0.02.810.154 D create_tensor: loading tensor blk.2.attn_output.weight
+2026-07-09 19:07:29 0.02.811.108 D create_tensor: loading tensor blk.2.ffn_norm.weight
+2026-07-09 19:07:29 0.02.811.760 D create_tensor: loading tensor blk.2.ffn_gate.weight
+2026-07-09 19:07:29 0.02.812.518 D create_tensor: loading tensor blk.2.ffn_down.weight
+2026-07-09 19:07:29 0.02.813.377 D create_tensor: loading tensor blk.2.ffn_up.weight
+2026-07-09 19:07:29 0.02.814.012 D create_tensor: loading tensor blk.3.attn_norm.weight
+2026-07-09 19:07:29 0.02.814.768 D create_tensor: loading tensor blk.3.attn_q.weight
+2026-07-09 19:07:29 0.02.815.517 D create_tensor: loading tensor blk.3.attn_k.weight
+2026-07-09 19:07:29 0.02.816.160 D create_tensor: loading tensor blk.3.attn_v.weight
+2026-07-09 19:07:29 0.02.816.914 D create_tensor: loading tensor blk.3.attn_q.bias
+2026-07-09 19:07:29 0.02.817.558 D create_tensor: loading tensor blk.3.attn_k.bias
+2026-07-09 19:07:29 0.02.818.327 D create_tensor: loading tensor blk.3.attn_v.bias
+2026-07-09 19:07:29 0.02.818.982 D create_tensor: loading tensor blk.3.attn_output.weight
+2026-07-09 19:07:29 0.02.819.732 D create_tensor: loading tensor blk.3.ffn_norm.weight
+2026-07-09 19:07:29 0.02.820.378 D create_tensor: loading tensor blk.3.ffn_gate.weight
+2026-07-09 19:07:29 0.02.821.020 D create_tensor: loading tensor blk.3.ffn_down.weight
+2026-07-09 19:07:29 0.02.821.673 D create_tensor: loading tensor blk.3.ffn_up.weight
+2026-07-09 19:07:29 0.02.822.423 D create_tensor: loading tensor blk.4.attn_norm.weight
+2026-07-09 19:07:29 0.02.823.072 D create_tensor: loading tensor blk.4.attn_q.weight
+2026-07-09 19:07:29 0.02.823.730 D create_tensor: loading tensor blk.4.attn_k.weight
+2026-07-09 19:07:29 0.02.824.378 D create_tensor: loading tensor blk.4.attn_v.weight
+2026-07-09 19:07:29 0.02.825.133 D create_tensor: loading tensor blk.4.attn_q.bias
+2026-07-09 19:07:29 0.02.825.885 D create_tensor: loading tensor blk.4.attn_k.bias
+2026-07-09 19:07:29 0.02.826.540 D create_tensor: loading tensor blk.4.attn_v.bias
+2026-07-09 19:07:29 0.02.827.185 D create_tensor: loading tensor blk.4.attn_output.weight
+2026-07-09 19:07:29 0.02.827.940 D create_tensor: loading tensor blk.4.ffn_norm.weight
+2026-07-09 19:07:29 0.02.828.583 D create_tensor: loading tensor blk.4.ffn_gate.weight
+2026-07-09 19:07:29 0.02.829.231 D create_tensor: loading tensor blk.4.ffn_down.weight
+2026-07-09 19:07:29 0.02.829.982 D create_tensor: loading tensor blk.4.ffn_up.weight
+2026-07-09 19:07:29 0.02.829.986 D create_tensor: loading tensor blk.5.attn_norm.weight
+2026-07-09 19:07:29 0.02.829.990 D create_tensor: loading tensor blk.5.attn_q.weight
+2026-07-09 19:07:29 0.02.829.993 D create_tensor: loading tensor blk.5.attn_k.weight
+2026-07-09 19:07:29 0.02.829.996 D create_tensor: loading tensor blk.5.attn_v.weight
+2026-07-09 19:07:29 0.02.829.998 D create_tensor: loading tensor blk.5.attn_q.bias
+2026-07-09 19:07:29 0.02.830.001 D create_tensor: loading tensor blk.5.attn_k.bias
+2026-07-09 19:07:29 0.02.830.004 D create_tensor: loading tensor blk.5.attn_v.bias
+2026-07-09 19:07:29 0.02.830.006 D create_tensor: loading tensor blk.5.attn_output.weight
+2026-07-09 19:07:29 0.02.830.009 D create_tensor: loading tensor blk.5.ffn_norm.weight
+2026-07-09 19:07:29 0.02.830.013 D create_tensor: loading tensor blk.5.ffn_gate.weight
+2026-07-09 19:07:29 0.02.830.016 D create_tensor: loading tensor blk.5.ffn_down.weight
+2026-07-09 19:07:29 0.02.830.018 D create_tensor: loading tensor blk.5.ffn_up.weight
+2026-07-09 19:07:29 0.02.830.021 D create_tensor: loading tensor blk.6.attn_norm.weight
+2026-07-09 19:07:29 0.02.830.025 D create_tensor: loading tensor blk.6.attn_q.weight
+2026-07-09 19:07:29 0.02.830.028 D create_tensor: loading tensor blk.6.attn_k.weight
+2026-07-09 19:07:29 0.02.830.030 D create_tensor: loading tensor blk.6.attn_v.weight
+2026-07-09 19:07:29 0.02.830.033 D create_tensor: loading tensor blk.6.attn_q.bias
+2026-07-09 19:07:29 0.02.830.036 D create_tensor: loading tensor blk.6.attn_k.bias
+2026-07-09 19:07:29 0.02.830.038 D create_tensor: loading tensor blk.6.attn_v.bias
+2026-07-09 19:07:29 0.02.830.041 D create_tensor: loading tensor blk.6.attn_output.weight
+2026-07-09 19:07:29 0.02.830.045 D create_tensor: loading tensor blk.6.ffn_norm.weight
+2026-07-09 19:07:29 0.02.830.047 D create_tensor: loading tensor blk.6.ffn_gate.weight
+2026-07-09 19:07:29 0.02.830.050 D create_tensor: loading tensor blk.6.ffn_down.weight
+2026-07-09 19:07:29 0.02.830.052 D create_tensor: loading tensor blk.6.ffn_up.weight
+2026-07-09 19:07:29 0.02.830.055 D create_tensor: loading tensor blk.7.attn_norm.weight
+2026-07-09 19:07:29 0.02.830.059 D create_tensor: loading tensor blk.7.attn_q.weight
+2026-07-09 19:07:29 0.02.830.062 D create_tensor: loading tensor blk.7.attn_k.weight
+2026-07-09 19:07:29 0.02.830.064 D create_tensor: loading tensor blk.7.attn_v.weight
+2026-07-09 19:07:29 0.02.830.067 D create_tensor: loading tensor blk.7.attn_q.bias
+2026-07-09 19:07:29 0.02.830.069 D create_tensor: loading tensor blk.7.attn_k.bias
+2026-07-09 19:07:29 0.02.830.072 D create_tensor: loading tensor blk.7.attn_v.bias
+2026-07-09 19:07:29 0.02.830.076 D create_tensor: loading tensor blk.7.attn_output.weight
+2026-07-09 19:07:29 0.02.830.078 D create_tensor: loading tensor blk.7.ffn_norm.weight
+2026-07-09 19:07:29 0.02.830.081 D create_tensor: loading tensor blk.7.ffn_gate.weight
+2026-07-09 19:07:29 0.02.830.083 D create_tensor: loading tensor blk.7.ffn_down.weight
+2026-07-09 19:07:29 0.02.830.087 D create_tensor: loading tensor blk.7.ffn_up.weight
+2026-07-09 19:07:29 0.02.830.091 D create_tensor: loading tensor blk.8.attn_norm.weight
+2026-07-09 19:07:29 0.02.830.101 D create_tensor: loading tensor blk.8.attn_q.weight
+2026-07-09 19:07:29 0.02.830.104 D create_tensor: loading tensor blk.8.attn_k.weight
+2026-07-09 19:07:29 0.02.830.107 D create_tensor: loading tensor blk.8.attn_v.weight
+2026-07-09 19:07:29 0.02.830.110 D create_tensor: loading tensor blk.8.attn_q.bias
+2026-07-09 19:07:29 0.02.830.113 D create_tensor: loading tensor blk.8.attn_k.bias
+2026-07-09 19:07:29 0.02.830.117 D create_tensor: loading tensor blk.8.attn_v.bias
+2026-07-09 19:07:29 0.02.830.120 D create_tensor: loading tensor blk.8.attn_output.weight
+2026-07-09 19:07:29 0.02.830.123 D create_tensor: loading tensor blk.8.ffn_norm.weight
+2026-07-09 19:07:29 0.02.830.126 D create_tensor: loading tensor blk.8.ffn_gate.weight
+2026-07-09 19:07:29 0.02.830.129 D create_tensor: loading tensor blk.8.ffn_down.weight
+2026-07-09 19:07:29 0.02.830.132 D create_tensor: loading tensor blk.8.ffn_up.weight
+2026-07-09 19:07:29 0.02.830.135 D create_tensor: loading tensor blk.9.attn_norm.weight
+2026-07-09 19:07:29 0.02.830.140 D create_tensor: loading tensor blk.9.attn_q.weight
+2026-07-09 19:07:29 0.02.830.143 D create_tensor: loading tensor blk.9.attn_k.weight
+2026-07-09 19:07:29 0.02.830.146 D create_tensor: loading tensor blk.9.attn_v.weight
+2026-07-09 19:07:29 0.02.830.149 D create_tensor: loading tensor blk.9.attn_q.bias
+2026-07-09 19:07:29 0.02.830.154 D create_tensor: loading tensor blk.9.attn_k.bias
+2026-07-09 19:07:29 0.02.830.157 D create_tensor: loading tensor blk.9.attn_v.bias
+2026-07-09 19:07:29 0.02.830.160 D create_tensor: loading tensor blk.9.attn_output.weight
+2026-07-09 19:07:29 0.02.830.163 D create_tensor: loading tensor blk.9.ffn_norm.weight
+2026-07-09 19:07:29 0.02.830.166 D create_tensor: loading tensor blk.9.ffn_gate.weight
+2026-07-09 19:07:29 0.02.830.170 D create_tensor: loading tensor blk.9.ffn_down.weight
+2026-07-09 19:07:29 0.02.830.173 D create_tensor: loading tensor blk.9.ffn_up.weight
+2026-07-09 19:07:29 0.02.830.177 D create_tensor: loading tensor blk.10.attn_norm.weight
+2026-07-09 19:07:29 0.02.830.181 D create_tensor: loading tensor blk.10.attn_q.weight
+2026-07-09 19:07:29 0.02.830.184 D create_tensor: loading tensor blk.10.attn_k.weight
+2026-07-09 19:07:29 0.02.830.187 D create_tensor: loading tensor blk.10.attn_v.weight
+2026-07-09 19:07:29 0.02.830.190 D create_tensor: loading tensor blk.10.attn_q.bias
+2026-07-09 19:07:29 0.02.830.195 D create_tensor: loading tensor blk.10.attn_k.bias
+2026-07-09 19:07:29 0.02.830.198 D create_tensor: loading tensor blk.10.attn_v.bias
+2026-07-09 19:07:29 0.02.830.200 D create_tensor: loading tensor blk.10.attn_output.weight
+2026-07-09 19:07:29 0.02.830.204 D create_tensor: loading tensor blk.10.ffn_norm.weight
+2026-07-09 19:07:29 0.02.830.207 D create_tensor: loading tensor blk.10.ffn_gate.weight
+2026-07-09 19:07:29 0.02.830.210 D create_tensor: loading tensor blk.10.ffn_down.weight
+2026-07-09 19:07:29 0.02.830.213 D create_tensor: loading tensor blk.10.ffn_up.weight
+2026-07-09 19:07:29 0.02.830.216 D create_tensor: loading tensor blk.11.attn_norm.weight
+2026-07-09 19:07:29 0.02.830.219 D create_tensor: loading tensor blk.11.attn_q.weight
+2026-07-09 19:07:29 0.02.830.222 D create_tensor: loading tensor blk.11.attn_k.weight
+2026-07-09 19:07:29 0.02.830.225 D create_tensor: loading tensor blk.11.attn_v.weight
+2026-07-09 19:07:29 0.02.830.229 D create_tensor: loading tensor blk.11.attn_q.bias
+2026-07-09 19:07:29 0.02.830.234 D create_tensor: loading tensor blk.11.attn_k.bias
+2026-07-09 19:07:29 0.02.830.236 D create_tensor: loading tensor blk.11.attn_v.bias
+2026-07-09 19:07:29 0.02.830.239 D create_tensor: loading tensor blk.11.attn_output.weight
+2026-07-09 19:07:29 0.02.830.242 D create_tensor: loading tensor blk.11.ffn_norm.weight
+2026-07-09 19:07:29 0.02.830.245 D create_tensor: loading tensor blk.11.ffn_gate.weight
+2026-07-09 19:07:29 0.02.830.248 D create_tensor: loading tensor blk.11.ffn_down.weight
+2026-07-09 19:07:29 0.02.830.251 D create_tensor: loading tensor blk.11.ffn_up.weight
+2026-07-09 19:07:29 0.02.830.254 D create_tensor: loading tensor blk.12.attn_norm.weight
+2026-07-09 19:07:29 0.02.830.257 D create_tensor: loading tensor blk.12.attn_q.weight
+2026-07-09 19:07:29 0.02.830.261 D create_tensor: loading tensor blk.12.attn_k.weight
+2026-07-09 19:07:29 0.02.830.265 D create_tensor: loading tensor blk.12.attn_v.weight
+2026-07-09 19:07:29 0.02.830.268 D create_tensor: loading tensor blk.12.attn_q.bias
+2026-07-09 19:07:29 0.02.830.270 D create_tensor: loading tensor blk.12.attn_k.bias
+2026-07-09 19:07:29 0.02.830.273 D create_tensor: loading tensor blk.12.attn_v.bias
+2026-07-09 19:07:29 0.02.830.276 D create_tensor: loading tensor blk.12.attn_output.weight
+2026-07-09 19:07:29 0.02.830.278 D create_tensor: loading tensor blk.12.ffn_norm.weight
+2026-07-09 19:07:29 0.02.830.282 D create_tensor: loading tensor blk.12.ffn_gate.weight
+2026-07-09 19:07:29 0.02.830.285 D create_tensor: loading tensor blk.12.ffn_down.weight
+2026-07-09 19:07:29 0.02.830.288 D create_tensor: loading tensor blk.12.ffn_up.weight
+2026-07-09 19:07:29 0.02.830.290 D create_tensor: loading tensor blk.13.attn_norm.weight
+2026-07-09 19:07:29 0.02.830.294 D create_tensor: loading tensor blk.13.attn_q.weight
+2026-07-09 19:07:29 0.02.830.300 D create_tensor: loading tensor blk.13.attn_k.weight
+2026-07-09 19:07:29 0.02.830.303 D create_tensor: loading tensor blk.13.attn_v.weight
+2026-07-09 19:07:29 0.02.830.306 D create_tensor: loading tensor blk.13.attn_q.bias
+2026-07-09 19:07:29 0.02.830.313 D create_tensor: loading tensor blk.13.attn_k.bias
+2026-07-09 19:07:29 0.02.830.315 D create_tensor: loading tensor blk.13.attn_v.bias
+2026-07-09 19:07:29 0.02.830.319 D create_tensor: loading tensor blk.13.attn_output.weight
+2026-07-09 19:07:29 0.02.830.321 D create_tensor: loading tensor blk.13.ffn_norm.weight
+2026-07-09 19:07:29 0.02.830.324 D create_tensor: loading tensor blk.13.ffn_gate.weight
+2026-07-09 19:07:29 0.02.830.326 D create_tensor: loading tensor blk.13.ffn_down.weight
+2026-07-09 19:07:29 0.02.830.329 D create_tensor: loading tensor blk.13.ffn_up.weight
+2026-07-09 19:07:29 0.02.830.332 D create_tensor: loading tensor blk.14.attn_norm.weight
+2026-07-09 19:07:29 0.02.830.337 D create_tensor: loading tensor blk.14.attn_q.weight
+2026-07-09 19:07:29 0.02.830.340 D create_tensor: loading tensor blk.14.attn_k.weight
+2026-07-09 19:07:29 0.02.830.343 D create_tensor: loading tensor blk.14.attn_v.weight
+2026-07-09 19:07:29 0.02.830.346 D create_tensor: loading tensor blk.14.attn_q.bias
+2026-07-09 19:07:29 0.02.830.349 D create_tensor: loading tensor blk.14.attn_k.bias
+2026-07-09 19:07:29 0.02.830.352 D create_tensor: loading tensor blk.14.attn_v.bias
+2026-07-09 19:07:29 0.02.830.354 D create_tensor: loading tensor blk.14.attn_output.weight
+2026-07-09 19:07:29 0.02.830.357 D create_tensor: loading tensor blk.14.ffn_norm.weight
+2026-07-09 19:07:29 0.02.830.360 D create_tensor: loading tensor blk.14.ffn_gate.weight
+2026-07-09 19:07:29 0.02.830.363 D create_tensor: loading tensor blk.14.ffn_down.weight
+2026-07-09 19:07:29 0.02.830.365 D create_tensor: loading tensor blk.14.ffn_up.weight
+2026-07-09 19:07:29 0.02.830.370 D create_tensor: loading tensor blk.15.attn_norm.weight
+2026-07-09 19:07:29 0.02.830.374 D create_tensor: loading tensor blk.15.attn_q.weight
+2026-07-09 19:07:29 0.02.830.377 D create_tensor: loading tensor blk.15.attn_k.weight
+2026-07-09 19:07:29 0.02.830.380 D create_tensor: loading tensor blk.15.attn_v.weight
+2026-07-09 19:07:29 0.02.830.382 D create_tensor: loading tensor blk.15.attn_q.bias
+2026-07-09 19:07:29 0.02.830.385 D create_tensor: loading tensor blk.15.attn_k.bias
+2026-07-09 19:07:29 0.02.830.388 D create_tensor: loading tensor blk.15.attn_v.bias
+2026-07-09 19:07:29 0.02.830.390 D create_tensor: loading tensor blk.15.attn_output.weight
+2026-07-09 19:07:29 0.02.830.394 D create_tensor: loading tensor blk.15.ffn_norm.weight
+2026-07-09 19:07:29 0.02.830.396 D create_tensor: loading tensor blk.15.ffn_gate.weight
+2026-07-09 19:07:29 0.02.830.399 D create_tensor: loading tensor blk.15.ffn_down.weight
+2026-07-09 19:07:29 0.02.830.403 D create_tensor: loading tensor blk.15.ffn_up.weight
+2026-07-09 19:07:29 0.02.830.407 D create_tensor: loading tensor blk.16.attn_norm.weight
+2026-07-09 19:07:29 0.02.830.410 D create_tensor: loading tensor blk.16.attn_q.weight
+2026-07-09 19:07:29 0.02.830.413 D create_tensor: loading tensor blk.16.attn_k.weight
+2026-07-09 19:07:29 0.02.830.415 D create_tensor: loading tensor blk.16.attn_v.weight
+2026-07-09 19:07:29 0.02.830.418 D create_tensor: loading tensor blk.16.attn_q.bias
+2026-07-09 19:07:29 0.02.830.420 D create_tensor: loading tensor blk.16.attn_k.bias
+2026-07-09 19:07:29 0.02.830.423 D create_tensor: loading tensor blk.16.attn_v.bias
+2026-07-09 19:07:29 0.02.830.425 D create_tensor: loading tensor blk.16.attn_output.weight
+2026-07-09 19:07:29 0.02.830.428 D create_tensor: loading tensor blk.16.ffn_norm.weight
+2026-07-09 19:07:29 0.02.830.431 D create_tensor: loading tensor blk.16.ffn_gate.weight
+2026-07-09 19:07:29 0.02.830.434 D create_tensor: loading tensor blk.16.ffn_down.weight
+2026-07-09 19:07:29 0.02.830.438 D create_tensor: loading tensor blk.16.ffn_up.weight
+2026-07-09 19:07:29 0.02.830.441 D create_tensor: loading tensor blk.17.attn_norm.weight
+2026-07-09 19:07:29 0.02.830.445 D create_tensor: loading tensor blk.17.attn_q.weight
+2026-07-09 19:07:29 0.02.830.448 D create_tensor: loading tensor blk.17.attn_k.weight
+2026-07-09 19:07:29 0.02.830.451 D create_tensor: loading tensor blk.17.attn_v.weight
+2026-07-09 19:07:29 0.02.830.454 D create_tensor: loading tensor blk.17.attn_q.bias
+2026-07-09 19:07:29 0.02.830.456 D create_tensor: loading tensor blk.17.attn_k.bias
+2026-07-09 19:07:29 0.02.830.459 D create_tensor: loading tensor blk.17.attn_v.bias
+2026-07-09 19:07:29 0.02.830.462 D create_tensor: loading tensor blk.17.attn_output.weight
+2026-07-09 19:07:29 0.02.830.464 D create_tensor: loading tensor blk.17.ffn_norm.weight
+2026-07-09 19:07:29 0.02.830.467 D create_tensor: loading tensor blk.17.ffn_gate.weight
+2026-07-09 19:07:29 0.02.830.473 D create_tensor: loading tensor blk.17.ffn_down.weight
+2026-07-09 19:07:29 0.02.830.476 D create_tensor: loading tensor blk.17.ffn_up.weight
+2026-07-09 19:07:29 0.02.830.479 D create_tensor: loading tensor blk.18.attn_norm.weight
+2026-07-09 19:07:29 0.02.830.483 D create_tensor: loading tensor blk.18.attn_q.weight
+2026-07-09 19:07:29 0.02.830.486 D create_tensor: loading tensor blk.18.attn_k.weight
+2026-07-09 19:07:29 0.02.830.489 D create_tensor: loading tensor blk.18.attn_v.weight
+2026-07-09 19:07:29 0.02.830.492 D create_tensor: loading tensor blk.18.attn_q.bias
+2026-07-09 19:07:29 0.02.830.494 D create_tensor: loading tensor blk.18.attn_k.bias
+2026-07-09 19:07:29 0.02.830.497 D create_tensor: loading tensor blk.18.attn_v.bias
+2026-07-09 19:07:29 0.02.830.500 D create_tensor: loading tensor blk.18.attn_output.weight
+2026-07-09 19:07:29 0.02.830.503 D create_tensor: loading tensor blk.18.ffn_norm.weight
+2026-07-09 19:07:29 0.02.830.507 D create_tensor: loading tensor blk.18.ffn_gate.weight
+2026-07-09 19:07:29 0.02.830.510 D create_tensor: loading tensor blk.18.ffn_down.weight
+2026-07-09 19:07:29 0.02.830.512 D create_tensor: loading tensor blk.18.ffn_up.weight
+2026-07-09 19:07:29 0.02.830.515 D create_tensor: loading tensor blk.19.attn_norm.weight
+2026-07-09 19:07:29 0.02.830.519 D create_tensor: loading tensor blk.19.attn_q.weight
+2026-07-09 19:07:29 0.02.830.522 D create_tensor: loading tensor blk.19.attn_k.weight
+2026-07-09 19:07:29 0.02.830.525 D create_tensor: loading tensor blk.19.attn_v.weight
+2026-07-09 19:07:29 0.02.830.528 D create_tensor: loading tensor blk.19.attn_q.bias
+2026-07-09 19:07:29 0.02.830.530 D create_tensor: loading tensor blk.19.attn_k.bias
+2026-07-09 19:07:29 0.02.830.533 D create_tensor: loading tensor blk.19.attn_v.bias
+2026-07-09 19:07:29 0.02.830.536 D create_tensor: loading tensor blk.19.attn_output.weight
+2026-07-09 19:07:29 0.02.830.541 D create_tensor: loading tensor blk.19.ffn_norm.weight
+2026-07-09 19:07:29 0.02.830.544 D create_tensor: loading tensor blk.19.ffn_gate.weight
+2026-07-09 19:07:29 0.02.830.546 D create_tensor: loading tensor blk.19.ffn_down.weight
+2026-07-09 19:07:29 0.02.830.550 D create_tensor: loading tensor blk.19.ffn_up.weight
+2026-07-09 19:07:29 0.02.830.553 D create_tensor: loading tensor blk.20.attn_norm.weight
+2026-07-09 19:07:29 0.02.830.557 D create_tensor: loading tensor blk.20.attn_q.weight
+2026-07-09 19:07:29 0.02.830.561 D create_tensor: loading tensor blk.20.attn_k.weight
+2026-07-09 19:07:29 0.02.830.564 D create_tensor: loading tensor blk.20.attn_v.weight
+2026-07-09 19:07:29 0.02.830.567 D create_tensor: loading tensor blk.20.attn_q.bias
+2026-07-09 19:07:29 0.02.830.570 D create_tensor: loading tensor blk.20.attn_k.bias
+2026-07-09 19:07:29 0.02.830.572 D create_tensor: loading tensor blk.20.attn_v.bias
+2026-07-09 19:07:29 0.02.830.577 D create_tensor: loading tensor blk.20.attn_output.weight
+2026-07-09 19:07:29 0.02.830.580 D create_tensor: loading tensor blk.20.ffn_norm.weight
+2026-07-09 19:07:29 0.02.830.583 D create_tensor: loading tensor blk.20.ffn_gate.weight
+2026-07-09 19:07:29 0.02.830.586 D create_tensor: loading tensor blk.20.ffn_down.weight
+2026-07-09 19:07:29 0.02.830.589 D create_tensor: loading tensor blk.20.ffn_up.weight
+2026-07-09 19:07:29 0.02.830.592 D create_tensor: loading tensor blk.21.attn_norm.weight
+2026-07-09 19:07:29 0.02.830.596 D create_tensor: loading tensor blk.21.attn_q.weight
+2026-07-09 19:07:29 0.02.830.599 D create_tensor: loading tensor blk.21.attn_k.weight
+2026-07-09 19:07:29 0.02.830.602 D create_tensor: loading tensor blk.21.attn_v.weight
+2026-07-09 19:07:29 0.02.830.605 D create_tensor: loading tensor blk.21.attn_q.bias
+2026-07-09 19:07:29 0.02.830.608 D create_tensor: loading tensor blk.21.attn_k.bias
+2026-07-09 19:07:29 0.02.830.612 D create_tensor: loading tensor blk.21.attn_v.bias
+2026-07-09 19:07:29 0.02.830.616 D create_tensor: loading tensor blk.21.attn_output.weight
+2026-07-09 19:07:29 0.02.830.618 D create_tensor: loading tensor blk.21.ffn_norm.weight
+2026-07-09 19:07:29 0.02.830.622 D create_tensor: loading tensor blk.21.ffn_gate.weight
+2026-07-09 19:07:29 0.02.830.625 D create_tensor: loading tensor blk.21.ffn_down.weight
+2026-07-09 19:07:29 0.02.830.628 D create_tensor: loading tensor blk.21.ffn_up.weight
+2026-07-09 19:07:29 0.02.830.632 D create_tensor: loading tensor blk.22.attn_norm.weight
+2026-07-09 19:07:29 0.02.830.637 D create_tensor: loading tensor blk.22.attn_q.weight
+2026-07-09 19:07:29 0.02.830.640 D create_tensor: loading tensor blk.22.attn_k.weight
+2026-07-09 19:07:29 0.02.830.643 D create_tensor: loading tensor blk.22.attn_v.weight
+2026-07-09 19:07:29 0.02.830.646 D create_tensor: loading tensor blk.22.attn_q.bias
+2026-07-09 19:07:29 0.02.830.651 D create_tensor: loading tensor blk.22.attn_k.bias
+2026-07-09 19:07:29 0.02.830.654 D create_tensor: loading tensor blk.22.attn_v.bias
+2026-07-09 19:07:29 0.02.830.658 D create_tensor: loading tensor blk.22.attn_output.weight
+2026-07-09 19:07:29 0.02.830.661 D create_tensor: loading tensor blk.22.ffn_norm.weight
+2026-07-09 19:07:29 0.02.830.663 D create_tensor: loading tensor blk.22.ffn_gate.weight
+2026-07-09 19:07:29 0.02.830.667 D create_tensor: loading tensor blk.22.ffn_down.weight
+2026-07-09 19:07:29 0.02.830.670 D create_tensor: loading tensor blk.22.ffn_up.weight
+2026-07-09 19:07:29 0.02.830.673 D create_tensor: loading tensor blk.23.attn_norm.weight
+2026-07-09 19:07:29 0.02.830.678 D create_tensor: loading tensor blk.23.attn_q.weight
+2026-07-09 19:07:29 0.02.830.681 D create_tensor: loading tensor blk.23.attn_k.weight
+2026-07-09 19:07:29 0.02.830.685 D create_tensor: loading tensor blk.23.attn_v.weight
+2026-07-09 19:07:29 0.02.830.690 D create_tensor: loading tensor blk.23.attn_q.bias
+2026-07-09 19:07:29 0.02.830.694 D create_tensor: loading tensor blk.23.attn_k.bias
+2026-07-09 19:07:29 0.02.830.697 D create_tensor: loading tensor blk.23.attn_v.bias
+2026-07-09 19:07:29 0.02.830.701 D create_tensor: loading tensor blk.23.attn_output.weight
+2026-07-09 19:07:29 0.02.830.704 D create_tensor: loading tensor blk.23.ffn_norm.weight
+2026-07-09 19:07:29 0.02.830.708 D create_tensor: loading tensor blk.23.ffn_gate.weight
+2026-07-09 19:07:29 0.02.830.712 D create_tensor: loading tensor blk.23.ffn_down.weight
+2026-07-09 19:07:29 0.02.830.715 D create_tensor: loading tensor blk.23.ffn_up.weight
+2026-07-09 19:07:29 0.02.831.046 D done_getting_tensors: tensor 'token_embd.weight' (q8_0) (and 60 others) cannot be used with preferred buffer type CUDA_Host, using CPU instead
+2026-07-09 19:07:29 0.02.838.890 I load_tensors: offloading output layer to GPU
+2026-07-09 19:07:29 0.02.838.891 I load_tensors: offloading 19 repeating layers to GPU
+2026-07-09 19:07:29 0.02.838.891 I load_tensors: offloaded 20/25 layers to GPU
+2026-07-09 19:07:29 0.02.838.894 I load_tensors:   CPU_Mapped model buffer size =   290.12 MiB
+2026-07-09 19:07:29 0.02.838.894 I load_tensors:        CUDA0 model buffer size =   290.14 MiB
+2026-07-09 19:07:29 ............................................
+2026-07-09 19:07:29 0.02.884.783 I cmn  common_init_: added </s> logit bias = -inf
+2026-07-09 19:07:29 0.02.884.842 I cmn  common_init_: added <|endoftext|> logit bias = -inf
+2026-07-09 19:07:29 0.02.884.843 I cmn  common_init_: added <|im_end|> logit bias = -inf
+2026-07-09 19:07:29 0.02.884.906 I llama_context: constructing llama_context
+2026-07-09 19:07:29 0.02.884.908 I llama_context: n_seq_max     = 1
+2026-07-09 19:07:29 0.02.884.908 I llama_context: n_ctx         = 32768
+2026-07-09 19:07:29 0.02.884.909 I llama_context: n_ctx_seq     = 32768
+2026-07-09 19:07:29 0.02.884.909 I llama_context: n_batch       = 2048
+2026-07-09 19:07:29 0.02.884.909 I llama_context: n_ubatch      = 512
+2026-07-09 19:07:29 0.02.884.909 I llama_context: causal_attn   = 1
+2026-07-09 19:07:29 0.02.884.909 I llama_context: flash_attn    = auto
+2026-07-09 19:07:29 0.02.884.910 I llama_context: kv_unified    = false
+2026-07-09 19:07:29 0.02.884.911 I llama_context: freq_base     = 1000000.0
+2026-07-09 19:07:29 0.02.884.911 I llama_context: freq_scale    = 1
+2026-07-09 19:07:29 0.02.884.912 I llama_context: n_rs_seq      = 0
+2026-07-09 19:07:29 0.02.884.912 I llama_context: n_outputs_max = 2048
+2026-07-09 19:07:29 0.02.886.322 D set_abort_callback: call
+2026-07-09 19:07:29 0.02.886.914 I llama_context:  CUDA_Host  output buffer size =     0.58 MiB
+2026-07-09 19:07:29 0.02.887.083 D llama_kv_cache: layer   0: dev = CPU
+2026-07-09 19:07:29 0.02.887.088 D llama_kv_cache: layer   1: dev = CPU
+2026-07-09 19:07:29 0.02.887.089 D llama_kv_cache: layer   2: dev = CPU
+2026-07-09 19:07:29 0.02.887.090 D llama_kv_cache: layer   3: dev = CPU
+2026-07-09 19:07:29 0.02.887.090 D llama_kv_cache: layer   4: dev = CPU
+2026-07-09 19:07:29 0.02.887.091 D llama_kv_cache: layer   5: dev = CUDA0
+2026-07-09 19:07:29 0.02.887.092 D llama_kv_cache: layer   6: dev = CUDA0
+2026-07-09 19:07:29 0.02.887.093 D llama_kv_cache: layer   7: dev = CUDA0
+2026-07-09 19:07:29 0.02.887.093 D llama_kv_cache: layer   8: dev = CUDA0
+2026-07-09 19:07:29 0.02.887.094 D llama_kv_cache: layer   9: dev = CUDA0
+2026-07-09 19:07:29 0.02.887.095 D llama_kv_cache: layer  10: dev = CUDA0
+2026-07-09 19:07:29 0.02.887.095 D llama_kv_cache: layer  11: dev = CUDA0
+2026-07-09 19:07:29 0.02.887.096 D llama_kv_cache: layer  12: dev = CUDA0
+2026-07-09 19:07:29 0.02.887.096 D llama_kv_cache: layer  13: dev = CUDA0
+2026-07-09 19:07:29 0.02.887.097 D llama_kv_cache: layer  14: dev = CUDA0
+2026-07-09 19:07:29 0.02.887.098 D llama_kv_cache: layer  15: dev = CUDA0
+2026-07-09 19:07:29 0.02.887.098 D llama_kv_cache: layer  16: dev = CUDA0
+2026-07-09 19:07:29 0.02.887.099 D llama_kv_cache: layer  17: dev = CUDA0
+2026-07-09 19:07:29 0.02.887.099 D llama_kv_cache: layer  18: dev = CUDA0
+2026-07-09 19:07:29 0.02.887.100 D llama_kv_cache: layer  19: dev = CUDA0
+2026-07-09 19:07:29 0.02.887.100 D llama_kv_cache: layer  20: dev = CUDA0
+2026-07-09 19:07:29 0.02.887.101 D llama_kv_cache: layer  21: dev = CUDA0
+2026-07-09 19:07:29 0.02.887.101 D llama_kv_cache: layer  22: dev = CUDA0
+2026-07-09 19:07:29 0.02.887.102 D llama_kv_cache: layer  23: dev = CUDA0
+2026-07-09 19:07:29 0.02.887.127 I llama_kv_cache:        CPU KV buffer size =    80.00 MiB
+2026-07-09 19:07:29 0.02.908.767 I llama_kv_cache:      CUDA0 KV buffer size =   304.00 MiB
+2026-07-09 19:07:29 0.02.910.506 I llama_kv_cache: size =  384.00 MiB ( 32768 cells,  24 layers,  1/1 seqs), K (f16):  192.00 MiB, V (f16):  192.00 MiB
+2026-07-09 19:07:29 0.02.910.507 I llama_kv_cache: attn_rot_k = 0, n_embd_head_k_all = 64
+2026-07-09 19:07:29 0.02.910.508 I llama_kv_cache: attn_rot_v = 0, n_embd_head_k_all = 64
+2026-07-09 19:07:29 0.02.910.508 D llama_context: enumerating backends
+2026-07-09 19:07:29 0.02.911.328 D llama_context: backend_ptrs.size() = 2
+2026-07-09 19:07:29 0.02.911.329 I sched_reserve: reserving ...
+2026-07-09 19:07:29 0.02.911.330 D sched_reserve: max_nodes = 2328
+2026-07-09 19:07:29 0.02.911.608 D sched_reserve: reserving full memory module
+2026-07-09 19:07:29 0.02.911.610 D sched_reserve: worst-case: n_tokens = 512, n_seqs = 1, n_outputs = 1
+2026-07-09 19:07:29 0.02.911.611 D graph_reserve: reserving a graph for ubatch with n_tokens =    1, n_seqs =  1, n_outputs =    1
+2026-07-09 19:07:29 0.02.911.804 D 
+2026-07-09 19:07:29 ## SPLIT #0: CPU # 0 inputs0.02.911.804 D 
+2026-07-09 19:07:29 0.02.911.805 D 
+2026-07-09 19:07:29 ## SPLIT #1: CUDA0 # 7 inputs0.02.911.805 D : 0.02.911.806 D [ffn_out-4 (   3K)] 0.02.911.806 D [ffn_inp-4 (   3K)] 0.02.911.806 D [leaf_6 (   0K)] 0.02.911.806 D [leaf_11 (   0K)] 0.02.911.807 D [leaf_13 (   0K)] 0.02.911.807 D [attn_inp_kq_mask (  64K)] 0.02.911.807 D [leaf_342 (   0K)] 0.02.911.807 D 
+2026-07-09 19:07:29 0.02.911.820 I sched_reserve: Flash Attention was auto, set to enabled
+2026-07-09 19:07:29 0.02.911.820 I sched_reserve: resolving fused Gated Delta Net support:
+2026-07-09 19:07:29 0.02.911.821 D graph_reserve: reserving a graph for ubatch with n_tokens =    1, n_seqs =  1, n_outputs =    1
+2026-07-09 19:07:29 0.02.911.982 D 
+2026-07-09 19:07:29 ## SPLIT #0: CPU # 0 inputs0.02.911.983 D 
+2026-07-09 19:07:29 0.02.911.983 D 
+2026-07-09 19:07:29 ## SPLIT #1: CUDA0 # 7 inputs0.02.911.983 D : 0.02.911.984 D [ffn_out-4 (   3K)] 0.02.911.984 D [ffn_inp-4 (   3K)] 0.02.911.984 D [leaf_6 (   0K)] 0.02.911.984 D [leaf_11 (   0K)] 0.02.911.984 D [leaf_13 (   0K)] 0.02.911.984 D [attn_inp_kq_mask (  64K)] 0.02.911.984 D [leaf_342 (   0K)] 0.02.911.985 D 
+2026-07-09 19:07:29 0.02.911.992 I sched_reserve: fused Gated Delta Net (autoregressive) enabled
+2026-07-09 19:07:29 0.02.911.993 D graph_reserve: reserving a graph for ubatch with n_tokens =   16, n_seqs =  1, n_outputs =   16
+2026-07-09 19:07:29 0.02.912.136 D 
+2026-07-09 19:07:29 ## SPLIT #0: CPU # 0 inputs0.02.912.137 D 
+2026-07-09 19:07:29 0.02.912.137 D 
+2026-07-09 19:07:29 ## SPLIT #1: CUDA0 # 7 inputs0.02.912.139 D : 0.02.912.140 D [ffn_out-4 (  56K)] 0.02.912.140 D [ffn_inp-4 (  56K)] 0.02.912.141 D [leaf_6 (   0K)] 0.02.912.141 D [leaf_11 (   0K)] 0.02.912.141 D [leaf_13 (   0K)] 0.02.912.141 D [attn_inp_kq_mask (   1M)] 0.02.912.142 D [leaf_342 (   0K)] 0.02.912.142 D 
+2026-07-09 19:07:29 0.02.912.149 I sched_reserve: fused Gated Delta Net (chunked) enabled
+2026-07-09 19:07:29 0.02.912.150 D graph_reserve: reserving a graph for ubatch with n_tokens =  512, n_seqs =  1, n_outputs =  512
+2026-07-09 19:07:29 0.02.912.322 D 
+2026-07-09 19:07:29 ## SPLIT #0: CPU # 0 inputs0.02.912.323 D 
+2026-07-09 19:07:29 0.02.912.323 D 
+2026-07-09 19:07:29 ## SPLIT #1: CUDA0 # 1 inputs0.02.912.323 D : 0.02.912.323 D [embd (   1M)] 0.02.912.323 D 
+2026-07-09 19:07:29 0.02.912.323 D 
+2026-07-09 19:07:29 ## SPLIT #2: CUDA0 # 1 inputs0.02.912.323 D : 0.02.912.324 D [blk.0.attn_norm.weight (   3K)] 0.02.912.324 D 
+2026-07-09 19:07:29 0.02.912.324 D 
+2026-07-09 19:07:29 ## SPLIT #3: CUDA0 # 1 inputs0.02.912.324 D : 0.02.912.324 D [blk.0.attn_q.weight ( 441K)] 0.02.912.324 D 
+2026-07-09 19:07:29 0.02.912.324 D 
+2026-07-09 19:07:29 ## SPLIT #4: CUDA0 # 2 inputs0.02.912.324 D : 0.02.912.325 D [blk.0.attn_q.bias (   3K)] 0.02.912.325 D [leaf_6 (   2K)] 0.02.912.325 D 
+2026-07-09 19:07:29 0.02.912.325 D 
+2026-07-09 19:07:29 ## SPLIT #5: CUDA0 # 1 inputs0.02.912.325 D : 0.02.912.325 D [blk.0.attn_v.weight (  63K)] 0.02.912.325 D 
+2026-07-09 19:07:29 0.02.912.325 D 
+2026-07-09 19:07:29 ## SPLIT #6: CUDA0 # 1 inputs0.02.912.325 D : 0.02.912.326 D [blk.0.attn_v.bias (   0K)] 0.02.912.326 D 
+2026-07-09 19:07:29 0.02.912.326 D 
+2026-07-09 19:07:29 ## SPLIT #7: CUDA0 # 1 inputs0.02.912.326 D : 0.02.912.326 D [blk.0.attn_k.weight (  63K)] 0.02.912.326 D 
+2026-07-09 19:07:29 0.02.912.326 D 
+2026-07-09 19:07:29 ## SPLIT #8: CUDA0 # 1 inputs0.02.912.326 D : 0.02.912.326 D [blk.0.attn_k.bias (   0K)] 0.02.912.327 D 
+2026-07-09 19:07:29 0.02.912.327 D 
+2026-07-09 19:07:29 ## SPLIT #9: CPU # 2 inputs0.02.912.327 D : 0.02.912.327 D [Kcur-0 (view) ( 256K)] 0.02.912.327 D [Vcur-0 (view) ( 256K)] 0.02.912.327 D 
+2026-07-09 19:07:29 0.02.912.327 D 
+2026-07-09 19:07:29 ## SPLIT #10: CUDA0 # 3 inputs0.02.912.327 D : 0.02.912.328 D [cache_k_l0 (view) (permuted) (   8M)] 0.02.912.328 D [cache_v_l0 (view) (permuted) (   8M)] 0.02.912.328 D [attn_inp_kq_mask (  32M)] 0.02.912.328 D 
+2026-07-09 19:07:29 0.02.912.328 D 
+2026-07-09 19:07:29 ## SPLIT #11: CUDA0 # 1 inputs0.02.912.328 D : 0.02.912.328 D [blk.0.attn_output.weight ( 441K)] 0.02.912.328 D 
+2026-07-09 19:07:29 0.02.912.329 D 
+2026-07-09 19:07:29 ## SPLIT #12: CUDA0 # 1 inputs0.02.912.329 D : 0.02.912.329 D [blk.0.ffn_norm.weight (   3K)] 0.02.912.329 D 
+2026-07-09 19:07:29 0.02.912.329 D 
+2026-07-09 19:07:29 ## SPLIT #13: CUDA0 # 1 inputs0.02.912.329 D : 0.02.912.329 D [blk.0.ffn_gate.weight (   2M)] 0.02.912.329 D 
+2026-07-09 19:07:29 0.02.912.329 D 
+2026-07-09 19:07:29 ## SPLIT #14: CUDA0 # 1 inputs0.02.912.329 D : 0.02.912.330 D [blk.0.ffn_up.weight (   2M)] 0.02.912.330 D 
+2026-07-09 19:07:29 0.02.912.330 D 
+2026-07-09 19:07:29 ## SPLIT #15: CUDA0 # 1 inputs0.02.912.330 D : 0.02.912.330 D [blk.0.ffn_down.weight (   2M)] 0.02.912.330 D 
+2026-07-09 19:07:29 0.02.912.330 D 
+2026-07-09 19:07:29 ## SPLIT #16: CUDA0 # 1 inputs0.02.912.330 D : 0.02.912.330 D [blk.1.attn_norm.weight (   3K)] 0.02.912.330 D 
+2026-07-09 19:07:29 0.02.912.331 D 
+2026-07-09 19:07:29 ## SPLIT #17: CUDA0 # 1 inputs0.02.912.331 D : 0.02.912.331 D [blk.1.attn_q.weight ( 441K)] 0.02.912.331 D 
+2026-07-09 19:07:29 0.02.912.331 D 
+2026-07-09 19:07:29 ## SPLIT #18: CUDA0 # 1 inputs0.02.912.331 D : 0.02.912.331 D [blk.1.attn_q.bias (   3K)] 0.02.912.331 D 
+2026-07-09 19:07:29 0.02.912.331 D 
+2026-07-09 19:07:29 ## SPLIT #19: CUDA0 # 1 inputs0.02.912.331 D : 0.02.912.332 D [blk.1.attn_v.weight (  63K)] 0.02.912.332 D 
+2026-07-09 19:07:29 0.02.912.332 D 
+2026-07-09 19:07:29 ## SPLIT #20: CUDA0 # 1 inputs0.02.912.332 D : 0.02.912.332 D [blk.1.attn_v.bias (   0K)] 0.02.912.332 D 
+2026-07-09 19:07:29 0.02.912.332 D 
+2026-07-09 19:07:29 ## SPLIT #21: CUDA0 # 1 inputs0.02.912.332 D : 0.02.912.332 D [blk.1.attn_k.weight (  63K)] 0.02.912.332 D 
+2026-07-09 19:07:29 0.02.912.333 D 
+2026-07-09 19:07:29 ## SPLIT #22: CUDA0 # 1 inputs0.02.912.333 D : 0.02.912.333 D [blk.1.attn_k.bias (   0K)] 0.02.912.333 D 
+2026-07-09 19:07:29 0.02.912.333 D 
+2026-07-09 19:07:29 ## SPLIT #23: CPU # 2 inputs0.02.912.333 D : 0.02.912.333 D [Kcur-1 (view) ( 256K)] 0.02.912.333 D [Vcur-1 (view) ( 256K)] 0.02.912.333 D 
+2026-07-09 19:07:29 0.02.912.334 D 
+2026-07-09 19:07:29 ## SPLIT #24: CUDA0 # 2 inputs0.02.912.334 D : 0.02.912.334 D [cache_k_l1 (view) (permuted) (   8M)] 0.02.912.334 D [cache_v_l1 (view) (permuted) (   8M)] 0.02.912.334 D 
+2026-07-09 19:07:29 0.02.912.334 D 
+2026-07-09 19:07:29 ## SPLIT #25: CUDA0 # 1 inputs0.02.912.334 D : 0.02.912.334 D [blk.1.attn_output.weight ( 441K)] 0.02.912.334 D 
+2026-07-09 19:07:29 0.02.912.335 D 
+2026-07-09 19:07:29 ## SPLIT #26: CUDA0 # 1 inputs0.02.912.335 D : 0.02.912.335 D [blk.1.ffn_norm.weight (   3K)] 0.02.912.335 D 
+2026-07-09 19:07:29 0.02.912.335 D 
+2026-07-09 19:07:29 ## SPLIT #27: CUDA0 # 1 inputs0.02.912.335 D : 0.02.912.335 D [blk.1.ffn_gate.weight (   2M)] 0.02.912.335 D 
+2026-07-09 19:07:29 0.02.912.335 D 
+2026-07-09 19:07:29 ## SPLIT #28: CUDA0 # 1 inputs0.02.912.335 D : 0.02.912.336 D [blk.1.ffn_up.weight (   2M)] 0.02.912.336 D 
+2026-07-09 19:07:29 0.02.912.336 D 
+2026-07-09 19:07:29 ## SPLIT #29: CUDA0 # 1 inputs0.02.912.336 D : 0.02.912.336 D [blk.1.ffn_down.weight (   2M)] 0.02.912.336 D 
+2026-07-09 19:07:29 0.02.912.336 D 
+2026-07-09 19:07:29 ## SPLIT #30: CUDA0 # 1 inputs0.02.912.336 D : 0.02.912.336 D [blk.2.attn_norm.weight (   3K)] 0.02.912.337 D 
+2026-07-09 19:07:29 0.02.912.337 D 
+2026-07-09 19:07:29 ## SPLIT #31: CUDA0 # 1 inputs0.02.912.337 D : 0.02.912.337 D [blk.2.attn_q.weight ( 441K)] 0.02.912.337 D 
+2026-07-09 19:07:29 0.02.912.337 D 
+2026-07-09 19:07:29 ## SPLIT #32: CUDA0 # 1 inputs0.02.912.337 D : 0.02.912.337 D [blk.2.attn_q.bias (   3K)] 0.02.912.337 D 
+2026-07-09 19:07:29 0.02.912.337 D 
+2026-07-09 19:07:29 ## SPLIT #33: CUDA0 # 1 inputs0.02.912.338 D : 0.02.912.338 D [blk.2.attn_v.weight (  63K)] 0.02.912.338 D 
+2026-07-09 19:07:29 0.02.912.338 D 
+2026-07-09 19:07:29 ## SPLIT #34: CUDA0 # 1 inputs0.02.912.338 D : 0.02.912.338 D [blk.2.attn_v.bias (   0K)] 0.02.912.338 D 
+2026-07-09 19:07:29 0.02.912.338 D 
+2026-07-09 19:07:29 ## SPLIT #35: CUDA0 # 1 inputs0.02.912.338 D : 0.02.912.338 D [blk.2.attn_k.weight (  63K)] 0.02.912.339 D 
+2026-07-09 19:07:29 0.02.912.339 D 
+2026-07-09 19:07:29 ## SPLIT #36: CUDA0 # 1 inputs0.02.912.339 D : 0.02.912.339 D [blk.2.attn_k.bias (   0K)] 0.02.912.339 D 
+2026-07-09 19:07:29 0.02.912.339 D 
+2026-07-09 19:07:29 ## SPLIT #37: CPU # 2 inputs0.02.912.339 D : 0.02.912.339 D [Kcur-2 (view) ( 256K)] 0.02.912.339 D [Vcur-2 (view) ( 256K)] 0.02.912.340 D 
+2026-07-09 19:07:29 0.02.912.340 D 
+2026-07-09 19:07:29 ## SPLIT #38: CUDA0 # 2 inputs0.02.912.340 D : 0.02.912.340 D [cache_k_l2 (view) (permuted) (   8M)] 0.02.912.340 D [cache_v_l2 (view) (permuted) (   8M)] 0.02.912.340 D 
+2026-07-09 19:07:29 0.02.912.340 D 
+2026-07-09 19:07:29 ## SPLIT #39: CUDA0 # 1 inputs0.02.912.340 D : 0.02.912.340 D [blk.2.attn_output.weight ( 441K)] 0.02.912.340 D 
+2026-07-09 19:07:29 0.02.912.341 D 
+2026-07-09 19:07:29 ## SPLIT #40: CUDA0 # 1 inputs0.02.912.341 D : 0.02.912.341 D [blk.2.ffn_norm.weight (   3K)] 0.02.912.341 D 
+2026-07-09 19:07:29 0.02.912.341 D 
+2026-07-09 19:07:29 ## SPLIT #41: CUDA0 # 1 inputs0.02.912.341 D : 0.02.912.341 D [blk.2.ffn_gate.weight (   2M)] 0.02.912.341 D 
+2026-07-09 19:07:29 0.02.912.341 D 
+2026-07-09 19:07:29 ## SPLIT #42: CUDA0 # 1 inputs0.02.912.341 D : 0.02.912.342 D [blk.2.ffn_up.weight (   2M)] 0.02.912.342 D 
+2026-07-09 19:07:29 0.02.912.342 D 
+2026-07-09 19:07:29 ## SPLIT #43: CUDA0 # 1 inputs0.02.912.342 D : 0.02.912.342 D [blk.2.ffn_down.weight (   2M)] 0.02.912.342 D 
+2026-07-09 19:07:29 0.02.912.342 D 
+2026-07-09 19:07:29 ## SPLIT #44: CUDA0 # 1 inputs0.02.912.342 D : 0.02.912.342 D [blk.3.attn_norm.weight (   3K)] 0.02.912.342 D 
+2026-07-09 19:07:29 0.02.912.343 D 
+2026-07-09 19:07:29 ## SPLIT #45: CUDA0 # 1 inputs0.02.912.343 D : 0.02.912.343 D [blk.3.attn_q.weight ( 441K)] 0.02.912.343 D 
+2026-07-09 19:07:29 0.02.912.343 D 
+2026-07-09 19:07:29 ## SPLIT #46: CUDA0 # 1 inputs0.02.912.343 D : 0.02.912.343 D [blk.3.attn_q.bias (   3K)] 0.02.912.343 D 
+2026-07-09 19:07:29 0.02.912.343 D 
+2026-07-09 19:07:29 ## SPLIT #47: CUDA0 # 1 inputs0.02.912.344 D : 0.02.912.344 D [blk.3.attn_v.weight (  63K)] 0.02.912.344 D 
+2026-07-09 19:07:29 0.02.912.344 D 
+2026-07-09 19:07:29 ## SPLIT #48: CUDA0 # 1 inputs0.02.912.344 D : 0.02.912.344 D [blk.3.attn_v.bias (   0K)] 0.02.912.344 D 
+2026-07-09 19:07:29 0.02.912.344 D 
+2026-07-09 19:07:29 ## SPLIT #49: CUDA0 # 1 inputs0.02.912.344 D : 0.02.912.344 D [blk.3.attn_k.weight (  63K)] 0.02.912.344 D 
+2026-07-09 19:07:29 0.02.912.345 D 
+2026-07-09 19:07:29 ## SPLIT #50: CUDA0 # 1 inputs0.02.912.345 D : 0.02.912.345 D [blk.3.attn_k.bias (   0K)] 0.02.912.345 D 
+2026-07-09 19:07:29 0.02.912.345 D 
+2026-07-09 19:07:29 ## SPLIT #51: CPU # 2 inputs0.02.912.345 D : 0.02.912.345 D [Kcur-3 (view) ( 256K)] 0.02.912.345 D [Vcur-3 (view) ( 256K)] 0.02.912.345 D 
+2026-07-09 19:07:29 0.02.912.346 D 
+2026-07-09 19:07:29 ## SPLIT #52: CUDA0 # 2 inputs0.02.912.346 D : 0.02.912.346 D [cache_k_l3 (view) (permuted) (   8M)] 0.02.912.346 D [cache_v_l3 (view) (permuted) (   8M)] 0.02.912.346 D 
+2026-07-09 19:07:29 0.02.912.346 D 
+2026-07-09 19:07:29 ## SPLIT #53: CUDA0 # 1 inputs0.02.912.346 D : 0.02.912.346 D [blk.3.attn_output.weight ( 441K)] 0.02.912.346 D 
+2026-07-09 19:07:29 0.02.912.347 D 
+2026-07-09 19:07:29 ## SPLIT #54: CUDA0 # 1 inputs0.02.912.347 D : 0.02.912.347 D [blk.3.ffn_norm.weight (   3K)] 0.02.912.347 D 
+2026-07-09 19:07:29 0.02.912.347 D 
+2026-07-09 19:07:29 ## SPLIT #55: CUDA0 # 1 inputs0.02.912.347 D : 0.02.912.347 D [blk.3.ffn_gate.weight (   2M)] 0.02.912.347 D 
+2026-07-09 19:07:29 0.02.912.347 D 
+2026-07-09 19:07:29 ## SPLIT #56: CUDA0 # 1 inputs0.02.912.347 D : 0.02.912.348 D [blk.3.ffn_up.weight (   2M)] 0.02.912.348 D 
+2026-07-09 19:07:29 0.02.912.348 D 
+2026-07-09 19:07:29 ## SPLIT #57: CUDA0 # 1 inputs0.02.912.348 D : 0.02.912.348 D [blk.3.ffn_down.weight (   2M)] 0.02.912.348 D 
+2026-07-09 19:07:29 0.02.912.348 D 
+2026-07-09 19:07:29 ## SPLIT #58: CUDA0 # 1 inputs0.02.912.348 D : 0.02.912.348 D [blk.4.attn_norm.weight (   3K)] 0.02.912.348 D 
+2026-07-09 19:07:29 0.02.912.349 D 
+2026-07-09 19:07:29 ## SPLIT #59: CUDA0 # 1 inputs0.02.912.349 D : 0.02.912.349 D [blk.4.attn_q.weight ( 441K)] 0.02.912.349 D 
+2026-07-09 19:07:29 0.02.912.349 D 
+2026-07-09 19:07:29 ## SPLIT #60: CUDA0 # 1 inputs0.02.912.349 D : 0.02.912.349 D [blk.4.attn_q.bias (   3K)] 0.02.912.349 D 
+2026-07-09 19:07:29 0.02.912.349 D 
+2026-07-09 19:07:29 ## SPLIT #61: CUDA0 # 1 inputs0.02.912.349 D : 0.02.912.350 D [blk.4.attn_v.weight (  63K)] 0.02.912.350 D 
+2026-07-09 19:07:29 0.02.912.350 D 
+2026-07-09 19:07:29 ## SPLIT #62: CUDA0 # 1 inputs0.02.912.350 D : 0.02.912.350 D [blk.4.attn_v.bias (   0K)] 0.02.912.350 D 
+2026-07-09 19:07:29 0.02.912.350 D 
+2026-07-09 19:07:29 ## SPLIT #63: CUDA0 # 1 inputs0.02.912.350 D : 0.02.912.350 D [blk.4.attn_k.weight (  63K)] 0.02.912.350 D 
+2026-07-09 19:07:29 0.02.912.351 D 
+2026-07-09 19:07:29 ## SPLIT #64: CUDA0 # 1 inputs0.02.912.351 D : 0.02.912.351 D [blk.4.attn_k.bias (   0K)] 0.02.912.351 D 
+2026-07-09 19:07:29 0.02.912.351 D 
+2026-07-09 19:07:29 ## SPLIT #65: CPU # 2 inputs0.02.912.351 D : 0.02.912.351 D [Kcur-4 (view) ( 256K)] 0.02.912.351 D [Vcur-4 (view) ( 256K)] 0.02.912.351 D 
+2026-07-09 19:07:29 0.02.912.352 D 
+2026-07-09 19:07:29 ## SPLIT #66: CUDA0 # 2 inputs0.02.912.352 D : 0.02.912.352 D [cache_k_l4 (view) (permuted) (   8M)] 0.02.912.352 D [cache_v_l4 (view) (permuted) (   8M)] 0.02.912.352 D 
+2026-07-09 19:07:29 0.02.912.352 D 
+2026-07-09 19:07:29 ## SPLIT #67: CUDA0 # 1 inputs0.02.912.352 D : 0.02.912.352 D [blk.4.attn_output.weight ( 441K)] 0.02.912.352 D 
+2026-07-09 19:07:29 0.02.912.353 D 
+2026-07-09 19:07:29 ## SPLIT #68: CUDA0 # 1 inputs0.02.912.353 D : 0.02.912.353 D [blk.4.ffn_norm.weight (   3K)] 0.02.912.353 D 
+2026-07-09 19:07:29 0.02.912.353 D 
+2026-07-09 19:07:29 ## SPLIT #69: CUDA0 # 1 inputs0.02.912.353 D : 0.02.912.353 D [blk.4.ffn_gate.weight (   2M)] 0.02.912.353 D 
+2026-07-09 19:07:29 0.02.912.353 D 
+2026-07-09 19:07:29 ## SPLIT #70: CUDA0 # 1 inputs0.02.912.353 D : 0.02.912.354 D [blk.4.ffn_up.weight (   2M)] 0.02.912.354 D 
+2026-07-09 19:07:29 0.02.912.354 D 
+2026-07-09 19:07:29 ## SPLIT #71: CUDA0 # 4 inputs0.02.912.354 D : 0.02.912.354 D [blk.4.ffn_down.weight (   2M)] 0.02.912.354 D [leaf_11 (   4K)] 0.02.912.354 D [leaf_13 (   4K)] 0.02.912.354 D [leaf_342 (   2K)] 0.02.912.354 D 
+2026-07-09 19:07:29 0.02.920.109 D graph_reserve: reserving a graph for ubatch with n_tokens =    1, n_seqs =  1, n_outputs =    1
+2026-07-09 19:07:29 0.02.920.285 D 
+2026-07-09 19:07:29 ## SPLIT #0: CPU # 0 inputs0.02.920.285 D 
+2026-07-09 19:07:29 0.02.920.286 D 
+2026-07-09 19:07:29 ## SPLIT #1: CUDA0 # 7 inputs0.02.920.286 D : 0.02.920.286 D [ffn_out-4 (   3K)] 0.02.920.287 D [ffn_inp-4 (   3K)] 0.02.920.287 D [leaf_6 (   0K)] 0.02.920.287 D [leaf_11 (   0K)] 0.02.920.287 D [leaf_13 (   0K)] 0.02.920.287 D [attn_inp_kq_mask (  64K)] 0.02.920.287 D [leaf_342 (   0K)] 0.02.920.287 D 
+2026-07-09 19:07:29 0.02.920.396 D graph_reserve: reserving a graph for ubatch with n_tokens =  512, n_seqs =  1, n_outputs =  512
+2026-07-09 19:07:29 0.02.920.559 D 
+2026-07-09 19:07:29 ## SPLIT #0: CPU # 0 inputs0.02.920.560 D 
+2026-07-09 19:07:29 0.02.920.560 D 
+2026-07-09 19:07:29 ## SPLIT #1: CUDA0 # 1 inputs0.02.920.560 D : 0.02.920.560 D [embd (   1M)] 0.02.920.560 D 
+2026-07-09 19:07:29 0.02.920.561 D 
+2026-07-09 19:07:29 ## SPLIT #2: CUDA0 # 1 inputs0.02.920.561 D : 0.02.920.561 D [blk.0.attn_norm.weight (   3K)] 0.02.920.561 D 
+2026-07-09 19:07:29 0.02.920.561 D 
+2026-07-09 19:07:29 ## SPLIT #3: CUDA0 # 1 inputs0.02.920.561 D : 0.02.920.562 D [blk.0.attn_q.weight ( 441K)] 0.02.920.562 D 
+2026-07-09 19:07:29 0.02.920.562 D 
+2026-07-09 19:07:29 ## SPLIT #4: CUDA0 # 2 inputs0.02.920.562 D : 0.02.920.562 D [blk.0.attn_q.bias (   3K)] 0.02.920.562 D [leaf_6 (   2K)] 0.02.920.562 D 
+2026-07-09 19:07:29 0.02.920.563 D 
+2026-07-09 19:07:29 ## SPLIT #5: CUDA0 # 1 inputs0.02.920.563 D : 0.02.920.563 D [blk.0.attn_v.weight (  63K)] 0.02.920.563 D 
+2026-07-09 19:07:29 0.02.920.563 D 
+2026-07-09 19:07:29 ## SPLIT #6: CUDA0 # 1 inputs0.02.920.563 D : 0.02.920.563 D [blk.0.attn_v.bias (   0K)] 0.02.920.563 D 
+2026-07-09 19:07:29 0.02.920.563 D 
+2026-07-09 19:07:29 ## SPLIT #7: CUDA0 # 1 inputs0.02.920.563 D : 0.02.920.564 D [blk.0.attn_k.weight (  63K)] 0.02.920.564 D 
+2026-07-09 19:07:29 0.02.920.564 D 
+2026-07-09 19:07:29 ## SPLIT #8: CUDA0 # 1 inputs0.02.920.564 D : 0.02.920.564 D [blk.0.attn_k.bias (   0K)] 0.02.920.564 D 
+2026-07-09 19:07:29 0.02.920.564 D 
+2026-07-09 19:07:29 ## SPLIT #9: CPU # 2 inputs0.02.920.564 D : 0.02.920.565 D [Kcur-0 (view) ( 256K)] 0.02.920.565 D [Vcur-0 (view) ( 256K)] 0.02.920.565 D 
+2026-07-09 19:07:29 0.02.920.565 D 
+2026-07-09 19:07:29 ## SPLIT #10: CUDA0 # 3 inputs0.02.920.565 D : 0.02.920.565 D [cache_k_l0 (view) (permuted) (   8M)] 0.02.920.566 D [cache_v_l0 (view) (permuted) (   8M)] 0.02.920.566 D [attn_inp_kq_mask (  32M)] 0.02.920.566 D 
+2026-07-09 19:07:29 0.02.920.566 D 
+2026-07-09 19:07:29 ## SPLIT #11: CUDA0 # 1 inputs0.02.920.566 D : 0.02.920.566 D [blk.0.attn_output.weight ( 441K)] 0.02.920.566 D 
+2026-07-09 19:07:29 0.02.920.567 D 
+2026-07-09 19:07:29 ## SPLIT #12: CUDA0 # 1 inputs0.02.920.567 D : 0.02.920.567 D [blk.0.ffn_norm.weight (   3K)] 0.02.920.567 D 
+2026-07-09 19:07:29 0.02.920.567 D 
+2026-07-09 19:07:29 ## SPLIT #13: CUDA0 # 1 inputs0.02.920.567 D : 0.02.920.569 D [blk.0.ffn_gate.weight (   2M)] 0.02.920.570 D 
+2026-07-09 19:07:29 0.02.920.570 D 
+2026-07-09 19:07:29 ## SPLIT #14: CUDA0 # 1 inputs0.02.920.571 D : 0.02.920.571 D [blk.0.ffn_up.weight (   2M)] 0.02.920.571 D 
+2026-07-09 19:07:29 0.02.920.571 D 
+2026-07-09 19:07:29 ## SPLIT #15: CUDA0 # 1 inputs0.02.920.571 D : 0.02.920.572 D [blk.0.ffn_down.weight (   2M)] 0.02.920.572 D 
+2026-07-09 19:07:29 0.02.920.572 D 
+2026-07-09 19:07:29 ## SPLIT #16: CUDA0 # 1 inputs0.02.920.572 D : 0.02.920.572 D [blk.1.attn_norm.weight (   3K)] 0.02.920.572 D 
+2026-07-09 19:07:29 0.02.920.572 D 
+2026-07-09 19:07:29 ## SPLIT #17: CUDA0 # 1 inputs0.02.920.572 D : 0.02.920.572 D [blk.1.attn_q.weight ( 441K)] 0.02.920.572 D 
+2026-07-09 19:07:29 0.02.920.573 D 
+2026-07-09 19:07:29 ## SPLIT #18: CUDA0 # 1 inputs0.02.920.573 D : 0.02.920.573 D [blk.1.attn_q.bias (   3K)] 0.02.920.573 D 
+2026-07-09 19:07:29 0.02.920.573 D 
+2026-07-09 19:07:29 ## SPLIT #19: CUDA0 # 1 inputs0.02.920.573 D : 0.02.920.573 D [blk.1.attn_v.weight (  63K)] 0.02.920.573 D 
+2026-07-09 19:07:29 0.02.920.573 D 
+2026-07-09 19:07:29 ## SPLIT #20: CUDA0 # 1 inputs0.02.920.573 D : 0.02.920.574 D [blk.1.attn_v.bias (   0K)] 0.02.920.574 D 
+2026-07-09 19:07:29 0.02.920.574 D 
+2026-07-09 19:07:29 ## SPLIT #21: CUDA0 # 1 inputs0.02.920.574 D : 0.02.920.574 D [blk.1.attn_k.weight (  63K)] 0.02.920.574 D 
+2026-07-09 19:07:29 0.02.920.574 D 
+2026-07-09 19:07:29 ## SPLIT #22: CUDA0 # 1 inputs0.02.920.574 D : 0.02.920.574 D [blk.1.attn_k.bias (   0K)] 0.02.920.574 D 
+2026-07-09 19:07:29 0.02.920.575 D 
+2026-07-09 19:07:29 ## SPLIT #23: CPU # 2 inputs0.02.920.575 D : 0.02.920.575 D [Kcur-1 (view) ( 256K)] 0.02.920.575 D [Vcur-1 (view) ( 256K)] 0.02.920.575 D 
+2026-07-09 19:07:29 0.02.920.575 D 
+2026-07-09 19:07:29 ## SPLIT #24: CUDA0 # 2 inputs0.02.920.575 D : 0.02.920.575 D [cache_k_l1 (view) (permuted) (   8M)] 0.02.920.576 D [cache_v_l1 (view) (permuted) (   8M)] 0.02.920.576 D 
+2026-07-09 19:07:29 0.02.920.576 D 
+2026-07-09 19:07:29 ## SPLIT #25: CUDA0 # 1 inputs0.02.920.576 D : 0.02.920.576 D [blk.1.attn_output.weight ( 441K)] 0.02.920.576 D 
+2026-07-09 19:07:29 0.02.920.576 D 
+2026-07-09 19:07:29 ## SPLIT #26: CUDA0 # 1 inputs0.02.920.576 D : 0.02.920.576 D [blk.1.ffn_norm.weight (   3K)] 0.02.920.576 D 
+2026-07-09 19:07:29 0.02.920.577 D 
+2026-07-09 19:07:29 ## SPLIT #27: CUDA0 # 1 inputs0.02.920.577 D : 0.02.920.577 D [blk.1.ffn_gate.weight (   2M)] 0.02.920.577 D 
+2026-07-09 19:07:29 0.02.920.577 D 
+2026-07-09 19:07:29 ## SPLIT #28: CUDA0 # 1 inputs0.02.920.577 D : 0.02.920.577 D [blk.1.ffn_up.weight (   2M)] 0.02.920.577 D 
+2026-07-09 19:07:29 0.02.920.577 D 
+2026-07-09 19:07:29 ## SPLIT #29: CUDA0 # 1 inputs0.02.920.578 D : 0.02.920.578 D [blk.1.ffn_down.weight (   2M)] 0.02.920.578 D 
+2026-07-09 19:07:29 0.02.920.578 D 
+2026-07-09 19:07:29 ## SPLIT #30: CUDA0 # 1 inputs0.02.920.578 D : 0.02.920.578 D [blk.2.attn_norm.weight (   3K)] 0.02.920.578 D 
+2026-07-09 19:07:29 0.02.920.578 D 
+2026-07-09 19:07:29 ## SPLIT #31: CUDA0 # 1 inputs0.02.920.578 D : 0.02.920.579 D [blk.2.attn_q.weight ( 441K)] 0.02.920.579 D 
+2026-07-09 19:07:29 0.02.920.579 D 
+2026-07-09 19:07:29 ## SPLIT #32: CUDA0 # 1 inputs0.02.920.579 D : 0.02.920.579 D [blk.2.attn_q.bias (   3K)] 0.02.920.579 D 
+2026-07-09 19:07:29 0.02.920.579 D 
+2026-07-09 19:07:29 ## SPLIT #33: CUDA0 # 1 inputs0.02.920.579 D : 0.02.920.579 D [blk.2.attn_v.weight (  63K)] 0.02.920.579 D 
+2026-07-09 19:07:29 0.02.920.579 D 
+2026-07-09 19:07:29 ## SPLIT #34: CUDA0 # 1 inputs0.02.920.580 D : 0.02.920.580 D [blk.2.attn_v.bias (   0K)] 0.02.920.580 D 
+2026-07-09 19:07:29 0.02.920.580 D 
+2026-07-09 19:07:29 ## SPLIT #35: CUDA0 # 1 inputs0.02.920.580 D : 0.02.920.580 D [blk.2.attn_k.weight (  63K)] 0.02.920.580 D 
+2026-07-09 19:07:29 0.02.920.580 D 
+2026-07-09 19:07:29 ## SPLIT #36: CUDA0 # 1 inputs0.02.920.580 D : 0.02.920.581 D [blk.2.attn_k.bias (   0K)] 0.02.920.581 D 
+2026-07-09 19:07:29 0.02.920.581 D 
+2026-07-09 19:07:29 ## SPLIT #37: CPU # 2 inputs0.02.920.581 D : 0.02.920.581 D [Kcur-2 (view) ( 256K)] 0.02.920.581 D [Vcur-2 (view) ( 256K)] 0.02.920.581 D 
+2026-07-09 19:07:29 0.02.920.581 D 
+2026-07-09 19:07:29 ## SPLIT #38: CUDA0 # 2 inputs0.02.920.581 D : 0.02.920.581 D [cache_k_l2 (view) (permuted) (   8M)] 0.02.920.582 D [cache_v_l2 (view) (permuted) (   8M)] 0.02.920.582 D 
+2026-07-09 19:07:29 0.02.920.582 D 
+2026-07-09 19:07:29 ## SPLIT #39: CUDA0 # 1 inputs0.02.920.582 D : 0.02.920.582 D [blk.2.attn_output.weight ( 441K)] 0.02.920.582 D 
+2026-07-09 19:07:29 0.02.920.582 D 
+2026-07-09 19:07:29 ## SPLIT #40: CUDA0 # 1 inputs0.02.920.583 D : 0.02.920.583 D [blk.2.ffn_norm.weight (   3K)] 0.02.920.583 D 
+2026-07-09 19:07:29 0.02.920.583 D 
+2026-07-09 19:07:29 ## SPLIT #41: CUDA0 # 1 inputs0.02.920.583 D : 0.02.920.583 D [blk.2.ffn_gate.weight (   2M)] 0.02.920.583 D 
+2026-07-09 19:07:29 0.02.920.583 D 
+2026-07-09 19:07:29 ## SPLIT #42: CUDA0 # 1 inputs0.02.920.583 D : 0.02.920.584 D [blk.2.ffn_up.weight (   2M)] 0.02.920.584 D 
+2026-07-09 19:07:29 0.02.920.584 D 
+2026-07-09 19:07:29 ## SPLIT #43: CUDA0 # 1 inputs0.02.920.584 D : 0.02.920.584 D [blk.2.ffn_down.weight (   2M)] 0.02.920.586 D 
+2026-07-09 19:07:29 0.02.920.587 D 
+2026-07-09 19:07:29 ## SPLIT #44: CUDA0 # 1 inputs0.02.920.587 D : 0.02.920.587 D [blk.3.attn_norm.weight (   3K)] 0.02.920.587 D 
+2026-07-09 19:07:29 0.02.920.587 D 
+2026-07-09 19:07:29 ## SPLIT #45: CUDA0 # 1 inputs0.02.920.587 D : 0.02.920.588 D [blk.3.attn_q.weight ( 441K)] 0.02.920.588 D 
+2026-07-09 19:07:29 0.02.920.588 D 
+2026-07-09 19:07:29 ## SPLIT #46: CUDA0 # 1 inputs0.02.920.588 D : 0.02.920.588 D [blk.3.attn_q.bias (   3K)] 0.02.920.588 D 
+2026-07-09 19:07:29 0.02.920.588 D 
+2026-07-09 19:07:29 ## SPLIT #47: CUDA0 # 1 inputs0.02.920.588 D : 0.02.920.588 D [blk.3.attn_v.weight (  63K)] 0.02.920.588 D 
+2026-07-09 19:07:29 0.02.920.589 D 
+2026-07-09 19:07:29 ## SPLIT #48: CUDA0 # 1 inputs0.02.920.589 D : 0.02.920.589 D [blk.3.attn_v.bias (   0K)] 0.02.920.589 D 
+2026-07-09 19:07:29 0.02.920.589 D 
+2026-07-09 19:07:29 ## SPLIT #49: CUDA0 # 1 inputs0.02.920.589 D : 0.02.920.589 D [blk.3.attn_k.weight (  63K)] 0.02.920.589 D 
+2026-07-09 19:07:29 0.02.920.589 D 
+2026-07-09 19:07:29 ## SPLIT #50: CUDA0 # 1 inputs0.02.920.590 D : 0.02.920.590 D [blk.3.attn_k.bias (   0K)] 0.02.920.590 D 
+2026-07-09 19:07:29 0.02.920.590 D 
+2026-07-09 19:07:29 ## SPLIT #51: CPU # 2 inputs0.02.920.590 D : 0.02.920.590 D [Kcur-3 (view) ( 256K)] 0.02.920.590 D [Vcur-3 (view) ( 256K)] 0.02.920.590 D 
+2026-07-09 19:07:29 0.02.920.590 D 
+2026-07-09 19:07:29 ## SPLIT #52: CUDA0 # 2 inputs0.02.920.591 D : 0.02.920.591 D [cache_k_l3 (view) (permuted) (   8M)] 0.02.920.591 D [cache_v_l3 (view) (permuted) (   8M)] 0.02.920.591 D 
+2026-07-09 19:07:29 0.02.920.591 D 
+2026-07-09 19:07:29 ## SPLIT #53: CUDA0 # 1 inputs0.02.920.591 D : 0.02.920.591 D [blk.3.attn_output.weight ( 441K)] 0.02.920.591 D 
+2026-07-09 19:07:29 0.02.920.592 D 
+2026-07-09 19:07:29 ## SPLIT #54: CUDA0 # 1 inputs0.02.920.592 D : 0.02.920.592 D [blk.3.ffn_norm.weight (   3K)] 0.02.920.592 D 
+2026-07-09 19:07:29 0.02.920.592 D 
+2026-07-09 19:07:29 ## SPLIT #55: CUDA0 # 1 inputs0.02.920.592 D : 0.02.920.592 D [blk.3.ffn_gate.weight (   2M)] 0.02.920.592 D 
+2026-07-09 19:07:29 0.02.920.592 D 
+2026-07-09 19:07:29 ## SPLIT #56: CUDA0 # 1 inputs0.02.920.592 D : 0.02.920.593 D [blk.3.ffn_up.weight (   2M)] 0.02.920.593 D 
+2026-07-09 19:07:29 0.02.920.593 D 
+2026-07-09 19:07:29 ## SPLIT #57: CUDA0 # 1 inputs0.02.920.593 D : 0.02.920.593 D [blk.3.ffn_down.weight (   2M)] 0.02.920.593 D 
+2026-07-09 19:07:29 0.02.920.593 D 
+2026-07-09 19:07:29 ## SPLIT #58: CUDA0 # 1 inputs0.02.920.593 D : 0.02.920.594 D [blk.4.attn_norm.weight (   3K)] 0.02.920.594 D 
+2026-07-09 19:07:29 0.02.920.594 D 
+2026-07-09 19:07:29 ## SPLIT #59: CUDA0 # 1 inputs0.02.920.594 D : 0.02.920.594 D [blk.4.attn_q.weight ( 441K)] 0.02.920.594 D 
+2026-07-09 19:07:29 0.02.920.594 D 
+2026-07-09 19:07:29 ## SPLIT #60: CUDA0 # 1 inputs0.02.920.594 D : 0.02.920.594 D [blk.4.attn_q.bias (   3K)] 0.02.920.594 D 
+2026-07-09 19:07:29 0.02.920.597 D 
+2026-07-09 19:07:29 ## SPLIT #61: CUDA0 # 1 inputs0.02.920.597 D : 0.02.920.597 D [blk.4.attn_v.weight (  63K)] 0.02.920.597 D 
+2026-07-09 19:07:29 0.02.920.597 D 
+2026-07-09 19:07:29 ## SPLIT #62: CUDA0 # 1 inputs0.02.920.597 D : 0.02.920.597 D [blk.4.attn_v.bias (   0K)] 0.02.920.597 D 
+2026-07-09 19:07:29 0.02.920.598 D 
+2026-07-09 19:07:29 ## SPLIT #63: CUDA0 # 1 inputs0.02.920.598 D : 0.02.920.598 D [blk.4.attn_k.weight (  63K)] 0.02.920.598 D 
+2026-07-09 19:07:29 0.02.920.598 D 
+2026-07-09 19:07:29 ## SPLIT #64: CUDA0 # 1 inputs0.02.920.598 D : 0.02.920.598 D [blk.4.attn_k.bias (   0K)] 0.02.920.598 D 
+2026-07-09 19:07:29 0.02.920.598 D 
+2026-07-09 19:07:29 ## SPLIT #65: CPU # 2 inputs0.02.920.599 D : 0.02.920.599 D [Kcur-4 (view) ( 256K)] 0.02.920.599 D [Vcur-4 (view) ( 256K)] 0.02.920.599 D 
+2026-07-09 19:07:29 0.02.920.599 D 
+2026-07-09 19:07:29 ## SPLIT #66: CUDA0 # 2 inputs0.02.920.599 D : 0.02.920.599 D [cache_k_l4 (view) (permuted) (   8M)] 0.02.920.599 D [cache_v_l4 (view) (permuted) (   8M)] 0.02.920.600 D 
+2026-07-09 19:07:29 0.02.920.600 D 
+2026-07-09 19:07:29 ## SPLIT #67: CUDA0 # 1 inputs0.02.920.600 D : 0.02.920.600 D [blk.4.attn_output.weight ( 441K)] 0.02.920.600 D 
+2026-07-09 19:07:29 0.02.920.600 D 
+2026-07-09 19:07:29 ## SPLIT #68: CUDA0 # 1 inputs0.02.920.600 D : 0.02.920.600 D [blk.4.ffn_norm.weight (   3K)] 0.02.920.600 D 
+2026-07-09 19:07:29 0.02.920.601 D 
+2026-07-09 19:07:29 ## SPLIT #69: CUDA0 # 1 inputs0.02.920.601 D : 0.02.920.601 D [blk.4.ffn_gate.weight (   2M)] 0.02.920.601 D 
+2026-07-09 19:07:29 0.02.920.601 D 
+2026-07-09 19:07:29 ## SPLIT #70: CUDA0 # 1 inputs0.02.920.601 D : 0.02.920.601 D [blk.4.ffn_up.weight (   2M)] 0.02.920.601 D 
+2026-07-09 19:07:29 0.02.920.601 D 
+2026-07-09 19:07:29 ## SPLIT #71: CUDA0 # 4 inputs0.02.920.602 D : 0.02.920.602 D [blk.4.ffn_down.weight (   2M)] 0.02.920.602 D [leaf_11 (   4K)] 0.02.920.602 D [leaf_13 (   4K)] 0.02.920.602 D [leaf_342 (   2K)] 0.02.920.602 D 
+2026-07-09 19:07:29 0.02.920.735 I sched_reserve:      CUDA0 compute buffer size =   300.25 MiB
+2026-07-09 19:07:29 0.02.920.736 I sched_reserve:  CUDA_Host compute buffer size =    35.51 MiB
+2026-07-09 19:07:29 0.02.920.736 I sched_reserve: graph nodes  = 822
+2026-07-09 19:07:29 0.02.920.736 I sched_reserve: graph splits = 72 (with bs=512), 2 (with bs=1)
+2026-07-09 19:07:29 0.02.920.737 I sched_reserve: reserve took 9.41 ms, sched copies = 1
+2026-07-09 19:07:29 0.02.920.793 D set_adapters_lora: adapters = (nil)
+2026-07-09 19:07:29 0.02.920.794 D adapters_lora_are_same: adapters = (nil)
+2026-07-09 19:07:29 0.02.920.795 I cmn  common_init_: warming up the model with an empty run - please wait ... (--no-warmup to disable)
+2026-07-09 19:07:29 0.02.920.987 D 
+2026-07-09 19:07:29 ## SPLIT #0: CPU # 0 inputs0.02.920.987 D 
+2026-07-09 19:07:29 0.02.920.988 D 
+2026-07-09 19:07:29 ## SPLIT #1: CUDA0 # 7 inputs0.02.920.988 D : 0.02.920.988 D [ffn_out-4 (   7K)] 0.02.920.988 D [ffn_inp-4 (   7K)] 0.02.920.988 D [leaf_6 (   0K)] 0.02.920.988 D [leaf_11 (   0K)] 0.02.920.989 D [leaf_13 (   0K)] 0.02.920.989 D [attn_inp_kq_mask (   1K)] 0.02.920.989 D [leaf_342 (   0K)] 0.02.920.989 D 
+2026-07-09 19:07:29 0.02.944.730 I llama_completion: llama threadpool init, n_threads = 6
+2026-07-09 19:07:29 0.02.945.644 D attach_threadpool: call
+2026-07-09 19:07:29 0.02.945.648 I llama_completion: chat template is available, enabling conversation mode (disable it with -no-cnv)
+2026-07-09 19:07:29 0.02.945.648 W *** User-specified prompt will pre-start conversation, did you mean to set --system-prompt (-sys) instead?
+2026-07-09 19:07:29 0.02.945.780 I llama_completion: chat template example:
+2026-07-09 19:07:29 <|im_start|>system
+2026-07-09 19:07:29 You are a helpful assistant<|im_end|>
+2026-07-09 19:07:29 <|im_start|>user
+2026-07-09 19:07:29 Hello<|im_end|>
+2026-07-09 19:07:29 <|im_start|>assistant
+2026-07-09 19:07:29 Hi there<|im_end|>
+2026-07-09 19:07:29 <|im_start|>user
+2026-07-09 19:07:29 How are you?<|im_end|>
+2026-07-09 19:07:29 <|im_start|>assistant
+2026-07-09 19:07:29 
+2026-07-09 19:07:29 0.02.945.781 I 
+2026-07-09 19:07:29 0.02.945.828 I system_info: n_threads = 6 (n_threads_batch = 6) / 20 | CUDA : ARCHS = 890 | USE_GRAPHS = 1 | PEER_MAX_BATCH_SIZE = 128 | CPU : SSE3 = 1 | SSSE3 = 1 | AVX = 1 | AVX_VNNI = 1 | AVX2 = 1 | F16C = 1 | FMA = 1 | BMI2 = 1 | LLAMAFILE = 1 | OPENMP = 1 | REPACK = 1 | 
+2026-07-09 19:07:29 0.02.945.828 I 
+2026-07-09 19:07:29 0.02.945.830 D n_ctx: 32768, add_bos: 0
+2026-07-09 19:07:29 0.02.945.849 D formatted: '<|im_start|>user
+2026-07-09 19:07:29 你好<|im_end|>
+2026-07-09 19:07:29 <|im_start|>assistant
+2026-07-09 19:07:29 '
+2026-07-09 19:07:29 0.02.945.854 D tokenize the prompt
+2026-07-09 19:07:29 0.02.945.905 D prompt: "<|im_start|>user
+2026-07-09 19:07:29 你好<|im_end|>
+2026-07-09 19:07:29 <|im_start|>assistant
+2026-07-09 19:07:29 "
+2026-07-09 19:07:29 0.02.945.910 D tokens: [ '<|im_start|>':151644, 'user':872, '
+2026-07-09 19:07:29 ':198, '你好':108386, '<|im_end|>':151645, '
+2026-07-09 19:07:29 ':198, '<|im_start|>':151644, 'assistant':77091, '
+2026-07-09 19:07:29 ':198 ]
+2026-07-09 19:07:29 0.02.945.912 I llama_completion: interactive mode on.
+2026-07-09 19:07:29 0.02.945.913 I sampler seed: 2104847795
+2026-07-09 19:07:29 0.02.945.919 I sampler params: 
+2026-07-09 19:07:29 	repeat_last_n = 64, repeat_penalty = 1.000, frequency_penalty = 0.000, presence_penalty = 0.000
+2026-07-09 19:07:29 	dry_multiplier = 0.000, dry_base = 1.750, dry_allowed_length = 2, dry_penalty_last_n = -1
+2026-07-09 19:07:29 	top_k = 40, top_p = 0.950, min_p = 0.050, xtc_probability = 0.000, xtc_threshold = 0.100, typical_p = 1.000, top_n_sigma = -1.000, temp = 0.800
+2026-07-09 19:07:29 	mirostat = 0, mirostat_lr = 0.100, mirostat_ent = 5.000, adaptive_target = -1.000, adaptive_decay = 0.900
+2026-07-09 19:07:29 0.02.945.924 I sampler chain: logits -> ?penalties -> ?dry -> ?top-n-sigma -> top-k -> ?typical -> top-p -> min-p -> ?xtc -> temp-ext -> dist 
+2026-07-09 19:07:29 0.02.945.924 I generate: n_ctx = 32768, n_batch = 2048, n_predict = 5, n_keep = 0
+2026-07-09 19:07:29 0.02.945.924 I 
+2026-07-09 19:07:29 0.02.945.924 I == Running in interactive mode. ==
+2026-07-09 19:07:29 0.02.945.924 I  - Press Ctrl+C to interject at any time.
+2026-07-09 19:07:29 0.02.945.925 I  - Press Return to return control to the AI.
+2026-07-09 19:07:29  - To return control without starting a new line, end your input with '/'.
+2026-07-09 19:07:29  - If you want to submit another line, end your input with '\'.
+2026-07-09 19:07:29 0.02.945.925 I  - Not using system message. To change it, set a different value via -sys PROMPT
+2026-07-09 19:07:29 0.02.945.925 I 
+2026-07-09 19:07:29 0.02.945.928 D embd_inp.size(): 9, n_consumed: 0
+2026-07-09 19:07:29 user
+2026-07-09 19:07:29 你好
+2026-07-09 19:07:29 assistant
+2026-07-09 19:07:29 0.02.946.186 D 
+2026-07-09 19:07:29 ## SPLIT #0: CPU # 0 inputs0.02.946.186 D 
+2026-07-09 19:07:29 0.02.946.187 D 
+2026-07-09 19:07:29 ## SPLIT #1: CUDA0 # 7 inputs0.02.946.187 D : 0.02.946.188 D [ffn_out-4 (  31K)] 0.02.946.188 D [ffn_inp-4 (  31K)] 0.02.946.188 D [leaf_6 (   0K)] 0.02.946.188 D [leaf_11 (   0K)] 0.02.946.188 D [leaf_13 (   0K)] 0.02.946.189 D [attn_inp_kq_mask (   4K)] 0.02.946.189 D [leaf_342 (   0K)] 0.02.946.189 D 
+2026-07-09 19:07:29 0.02.960.126 D n_past = 9
+2026-07-09 19:07:29 0.02.963.324 D n_remain: 4
+2026-07-09 19:07:29 你好0.02.963.545 D 
+2026-07-09 19:07:29 ## SPLIT #0: CPU # 0 inputs0.02.963.546 D 
+2026-07-09 19:07:29 0.02.963.547 D 
+2026-07-09 19:07:29 ## SPLIT #1: CUDA0 # 7 inputs0.02.963.547 D : 0.02.963.548 D [ffn_out-4 (   3K)] 0.02.963.548 D [ffn_inp-4 (   3K)] 0.02.963.548 D [leaf_6 (   0K)] 0.02.963.548 D [leaf_11 (   0K)] 0.02.963.549 D [leaf_13 (   0K)] 0.02.963.549 D [attn_inp_kq_mask (   0K)] 0.02.963.549 D [leaf_342 (   0K)] 0.02.963.549 D 
+2026-07-09 19:07:29 0.02.967.068 D n_past = 10
+2026-07-09 19:07:29 0.02.969.301 D n_remain: 3
+2026-07-09 19:07:29 ！0.02.971.241 D CUDA Graph id 325 reused
+2026-07-09 19:07:29 0.02.971.242 D ggml_backend_cuda_graph_compute: CUDA graph warmup complete
+2026-07-09 19:07:29 0.02.972.854 D n_past = 11
+2026-07-09 19:07:29 0.02.975.343 D n_remain: 2
+2026-07-09 19:07:29 有什么0.02.977.115 D CUDA Graph id 325 reused
+2026-07-09 19:07:29 0.02.977.132 D n_past = 12
+2026-07-09 19:07:29 0.02.979.615 D n_remain: 1
+2026-07-09 19:07:29 我能0.02.981.280 D CUDA Graph id 325 reused
+2026-07-09 19:07:29 0.02.981.294 D n_past = 13
+2026-07-09 19:07:29 0.02.983.760 D n_remain: 0
+2026-07-09 19:07:29 帮助0.02.985.621 D CUDA Graph id 325 reused
+2026-07-09 19:07:29 0.02.985.634 D n_past = 14
+2026-07-09 19:07:29 0.02.985.636 D embd_inp.size(): 9, n_consumed: 9
+2026-07-09 19:07:29 0.02.985.636 D waiting for user input
+2026-07-09 19:07:29 
+2026-07-09 19:07:29 > EOF by user
+2026-07-09 19:07:29 
+2026-07-09 19:07:29 
+2026-07-09 19:07:29 0.02.985.693 I common_perf_print:    sampling time =       1.42 ms
+2026-07-09 19:07:29 0.02.985.694 I common_perf_print:    samplers time =       0.38 ms /    14 tokens
+2026-07-09 19:07:29 0.02.985.698 I common_perf_print:        load time =     256.77 ms
+2026-07-09 19:07:29 0.02.985.698 I common_perf_print: prompt eval time =      16.77 ms /     9 tokens (    1.86 ms per token,   536.83 tokens per second)
+2026-07-09 19:07:29 0.02.985.700 I common_perf_print:        eval time =      19.57 ms /     4 runs   (    4.89 ms per token,   204.35 tokens per second)
+2026-07-09 19:07:29 0.02.985.700 I common_perf_print:       total time =      40.97 ms /    13 tokens
+2026-07-09 19:07:29 0.02.985.700 I common_perf_print: unaccounted time =       3.21 ms /   7.8 %      (total - sampling - prompt eval - eval) / (total)
+2026-07-09 19:07:29 0.02.985.700 I common_perf_print:    graphs reused =          4
+2026-07-09 19:07:29 0.02.986.732 I common_memory_breakdown_print: | memory breakdown [MiB]          | total   free    self   model   context   compute    unaccounted |
+2026-07-09 19:07:29 0.02.986.734 I common_memory_breakdown_print: |   - CUDA0 (RTX 4050 Laptop GPU) |  5772 = 4710 + ( 894 =   290 +     304 +     300) +         167 |
+2026-07-09 19:07:29 0.02.986.734 I common_memory_breakdown_print: |   - Host                        |                  405 =   290 +      80 +      35                |
+2026-07-09 19:07:29 0.02.986.758 D ~llama_context:      CUDA0 compute buffer size is 300.2500 MiB, matches expectation of 300.2500 MiB
+2026-07-09 19:07:29 0.02.986.759 D ~llama_context:  CUDA_Host compute buffer size is  35.5137 MiB, matches expectation of  35.5137 MiB

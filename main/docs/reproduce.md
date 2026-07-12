@@ -552,3 +552,138 @@ killall -9 ggml-rpc-server
 - `run_phone_rpc.sh` — 手机端启动 RPC Server
 - `run_phone_baseline.sh` — 手机端本地 CPU 推理
 - `run_pc_rpc.sh` — PC 端以 RPC 模式推理
+
+---
+
+## 16. 三机拓扑：GPU PC + 当前机器 + Mate 40 Pro
+
+### 16.1 拓扑说明
+
+| 节点 | 角色 | 后端 | 地址 |
+|---|---|---|---|
+| GPU PC | Host | CUDA | `192.168.1.10` |
+| 当前机器 | RPC Worker | CPU | `172.26.88.148:50053` |
+| Mate 40 Pro | RPC Worker | CPU | `192.168.1.7:50052` |
+
+由于 WSL2 默认 NAT 入站受限、Android Termux 通常拒绝入站连接，三机场景必须使用 **SSH 隧道模式**。
+
+### 16.2 GPU PC 编译 CUDA + RPC Host
+
+```bash
+# GPU PC 端执行
+cd ~/projects/gpu-cpu-phone-test/llama.cpp
+mkdir -p build-cuda-rpc
+cd build-cuda-rpc
+cmake .. -DGGML_CUDA=ON -DGGML_RPC=ON
+make -j
+```
+
+预期输出：
+
+```text
+-- Using CUDA backend
+-- Using RPC backend
+...
+[100%] Built target llama-completion
+```
+
+### 16.3 当前机器编译 RPC Server
+
+```bash
+# 当前机器执行
+cd ~/Projects/gpu-cpu-phone-test/llama.cpp
+mkdir -p build-rpc
+cd build-rpc
+cmake .. -DGGML_RPC=ON
+make -j ggml-rpc-server
+```
+
+### 16.4 统一 commit
+
+三端必须使用同一 llama.cpp commit，当前锁定为：
+
+```bash
+cd ~/Projects/gpu-cpu-phone-test/llama.cpp
+git checkout 152d337fadb93c2a099653c4072d5512c92c5bfd
+# 在 GPU PC 和手机重复同样操作并重新编译
+```
+
+### 16.5 隧道模式启动（当前机器执行）
+
+```bash
+# 当前机器执行
+cd ~/Projects/gpu-cpu-phone-test
+TUNNEL_MODE=1 ./setup_tunnels.sh
+```
+
+预期输出：
+
+```text
+=== Hetero-LLaMA SSH 隧道启动 ===
+  GPU PC : atituiset@192.168.1.10
+  phone  : 127.0.0.1:50052
+  mode   : all
+
+[1/3] 启动当前机器 RPC Server（绑定 127.0.0.1:50053）
+      OK
+[2/3] 建立到手机的 SSH 本地转发（127.0.0.1:150052 -> 127.0.0.1:50052）
+      OK   # 若手机离线则显示 WARN
+[3/3] 建立到 GPU PC 的 SSH 反向隧道
+Connection to 127.0.0.1 50053 port [tcp/*] succeeded!
+      OK
+```
+
+### 16.6 GPU PC 端启动三机推理
+
+```bash
+# GPU PC 端执行
+cd ~/projects/gpu-cpu-phone-test
+TUNNEL_MODE=1 ./run_gpu_host.sh 20 "你好" 5
+```
+
+预期输出（手机离线时 127.0.0.1:50052 会失败，其余 Worker 仍可运行）：
+
+```text
+=== GPU PC 端三机 RPC 推理 ===
+  model    : /home/atituiset/models/qwen2-0.5b-instruct-q4_0.gguf
+  rpc      : 127.0.0.1:50053,127.0.0.1:50052
+  ngl      : 20
+  prompt   : 你好
+  n        : 5
+
+Failed to connect to 127.0.0.1:50052
+...
+> 你好
+assistant
+你好！有什么可以帮助你的
+```
+
+### 16.7 双机 Phase 2（GPU PC + 手机）
+
+若只想验证 GPU PC 与手机：
+
+```bash
+# 当前机器执行：仅暴露手机 Worker
+./setup_tunnels.sh phone
+
+# GPU PC 执行
+TUNNEL_MODE=1 ./run_gpu_host_2node.sh 20 "你好" 5
+```
+
+### 16.8 常见问题
+
+#### GPU PC 无法直连当前机器 RPC Server
+
+现象：`Remote RPC server crashed or returned malformed response`。
+
+原因：WSL2 默认 NAT 下，从 LAN 到 WSL2 VM 的数据路径异常（TCP 握手成功，但后续数据被丢弃）。
+
+解决：使用隧道模式。
+
+#### 手机 SSH 不可达
+
+现象：`WARN: 手机 SSH 不可达，跳过手机隧道`。
+
+原因：手机 WiFi 休眠、IP 变化或被路由器隔离。
+
+解决：重新点亮手机屏幕、重新连接 WiFi，或确认路由器 DHCP 分配的 IP。

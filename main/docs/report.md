@@ -1,11 +1,95 @@
-# CPU + Mate 40 Pro 异构推理项目报告
+# CPU + Mate 40 Pro + GPU PC 异构推理项目报告
 
-> 生成时间：2026-07-08
-> 结论：**PC 输入 prompt，Mate 40 Pro 通过 RPC 后端实际执行了 transformer 主体计算；`-ngl` 可精确控制 CPU/手机的分层比例。**
+> 生成时间：2026-07-10
+> 结论：**GPU PC（CUDA）作为 Host，通过 SSH 隧道成功调度当前机器（CPU RPC Worker）完成异构推理；三机链路因手机 WiFi 离线未完成端到端验证，但脚本与隧道机制已就绪。**
 
 ---
 
 ## 1. 项目目标
+
+在原有 PC + 手机双机 RPC 推理基础上，引入 GPU PC（NVIDIA RTX 4050）作为 llama.cpp Host，构建三机异构推理拓扑：
+
+| 节点 | 角色 | 后端 | 地址 |
+|---|---|---|---|
+| GPU PC | Host | CUDA | `192.168.1.10` |
+| 当前机器 | RPC Worker | CPU | `172.26.88.148:50053` |
+| Mate 40 Pro | RPC Worker | CPU | `192.168.1.7:50052` |
+
+---
+
+## 2. 三机推理实施结果
+
+### 2.1 已验证：GPU PC + 当前机器（SSH 隧道模式）
+
+由于 WSL2 默认 NAT 入站受限，当前机器无法被 GPU PC 直接访问。通过新增 `setup_tunnels.sh` 建立 SSH 反向隧道后，GPU PC 成功连接当前机器 RPC Worker 并完成推理。
+
+命令：
+
+```bash
+# 当前机器
+cd ~/Projects/gpu-cpu-phone-test
+TUNNEL_MODE=1 ./setup_tunnels.sh
+
+# GPU PC
+cd ~/projects/gpu-cpu-phone-test
+TUNNEL_MODE=1 ./run_gpu_host.sh 20 "你好" 5
+```
+
+输出：
+
+```text
+=== GPU PC 端三机 RPC 推理 ===
+  model    : /home/atituiset/models/qwen2-0.5b-instruct-q4_0.gguf
+  rpc      : 127.0.0.1:50053,127.0.0.1:50052
+  ngl      : 20
+  prompt   : 你好
+  n        : 5
+
+Failed to connect to 127.0.0.1:50052
+...
+> 你好
+assistant
+你好！有什么可以帮助你的
+```
+
+性能：
+
+| 指标 | 数值 |
+|---|---|
+| load time | 16,384.89 ms |
+| prompt eval | 12.88 t/s |
+| eval | 8.55 t/s |
+
+作为对比，GPU PC 本地 CUDA（无 RPC）性能：
+
+| 指标 | 数值 |
+|---|---|
+| load time | 194.44 ms |
+| prompt eval | 1,273.71 t/s |
+| eval | 282.63 t/s |
+
+说明：RPC 隧道的初始化与跨设备传输引入显著开销，但推理链路可正常工作。
+
+### 2.2 未验证：完整三机链路（手机离线）
+
+测试期间 Mate 40 Pro 无法通过网络访问（ping/SSH 均失败），因此 GPU PC + 当前机器 + 手机的三机端到端推理未能完成。失败信息：
+
+```text
+Failed to connect to 127.0.0.1:50052
+```
+
+手机离线时，`setup_tunnels.sh` 会自动跳过手机隧道，系统降级为 GPU PC + 当前机器双机运行。
+
+### 2.3 根因说明：WSL2 入站网络
+
+GPU PC 能 `nc -vz 172.26.88.148 50053` 建立 TCP 握手，但发送 HELLO 数据后无响应。这是 WSL2 默认 NAT 网络的已知行为：外部 LAN 主机可与 WSL2 VM 建立 TCP 连接，但数据包常被丢弃。解决方式：
+
+1. **当前实现**：SSH 反向隧道（已验证可用）。
+2. **更优方案**：在 Windows 侧启用 WSL2 `networkingMode=mirrored`（需 WSL 重启）。
+
+---
+
+## 3. 原始双机目标
 
 验证在 PC（x86_64，纯 CPU）与华为 Mate 40 Pro（ARM64，Termux + Ubuntu proot）之间，通过 `llama.cpp` 的原生 RPC 后端实现跨设备异构推理，并验证 `-ngl` 参数对分层调度的实际控制效果。
 
@@ -141,9 +225,10 @@ DEBUG 运行时手机端内存占用约 **1012 MiB**（权重 330M + 上下文 3
 ├── report.md              # 本报告（最新）
 ├── reproduce.md           # 逐行复现手册
 ├── plan.md                # 原始规划
-├── protocol.md            # 双 Agent 通信协议
+├── protocol.md            # 双/三 Agent 通信协议 v0.2
 ├── inbox.md               # PC → 手机任务信箱
 ├── outbox.md              # 手机 → PC 结果信箱
+├── config.env             # 三机拓扑配置
 └── ts-log.sh              # 给日志加 wall-clock 时间戳的小工具
 ```
 
@@ -153,12 +238,23 @@ DEBUG 运行时手机端内存占用约 **1012 MiB**（权重 330M + 上下文 3
 run_phone_rpc.sh         # 手机端启动 RPC Server（支持 DEBUG=1）
 run_phone_baseline.sh    # 手机端本地 CPU 推理
 run_pc_rpc.sh            # PC 端 RPC 推理（支持 DEBUG=1）
+run_cpu_rpc_server.sh    # 当前机器启动 RPC Server
+run_gpu_host.sh          # GPU PC 三机 Host
+run_gpu_host_2node.sh    # GPU PC 双机 Host（仅手机）
+setup_tunnels.sh         # 当前机器建立 SSH 隧道
 ```
 
 ### 6.3 日志（按时间命名，可区分）
 
 ```text
 logs/
+# 三机验证（最新）
+├── pc_current_final_ngl20_*.log      # GPU PC + 当前机器 双机验证
+├── pc_3node_tun_ngl20_*.log          # GPU PC + 当前机器 + 手机（手机离线）
+├── pc_2node_ngl20_*.log              # GPU PC + 手机直连尝试（手机离线）
+└── pc_local_ngl999_*.log             # GPU PC 本地 CUDA 基线
+
+# 历史双机验证
 # DEBUG 模式（用于验证 scheduler 和张量传输）
 ├── pc_cpu_20260708_210444.log            # 纯 PC CPU
 ├── phone_cpu_20260708_210444.log         # 说明：本次无 RPC Server
@@ -262,23 +358,49 @@ DEBUG=1 ./run_phone_rpc.sh 2>&1 | ./ts-log.sh > /tmp/phone_rpc_$(date +%Y%m%d_%H
 
 ---
 
-## 8. 关键发现
+## 8. 三机新增交付文件
 
-1. **`-ngl` 精确控制分层**：对 24 层模型，`-ngl 4` 让手机只跑约 108 个节点，`-ngl 99` 让手机跑 821 个节点。
-2. **异构推理本质是图级调度**：llama.cpp 的 scheduler 按 `-ngl` 把计算图切到不同 backend，RPC backend 只是其中一种。
-3. **当前场景下 RPC 有性能损失**：纯 PC CPU 95 t/s，`-ngl 4` 8.46 t/s，`-ngl 99` 3.16 t/s。手机 ARM CPU 算力 + 网络往返是主要瓶颈。
-4. **RPC 缓存不可少**：336 MB 模型必须配合 `-c` 缓存，否则全 offload 会触发重复传输或崩溃。
-5. **日志需要 wall-clock 时间戳**：llama.cpp 原生日志是运行时长格式，已添加 `ts-log.sh` 辅助转换。
+```text
+/home/atituiset/Projects/gpu-cpu-phone-test/
+├── config.env              # 三机拓扑配置（含 TUNNEL_MODE）
+├── setup_tunnels.sh        # 当前机器一键启动隧道
+├── run_cpu_rpc_server.sh   # 当前机器 RPC Server
+├── run_gpu_host.sh         # GPU PC 三机 Host
+├── run_gpu_host_2node.sh   # GPU PC 双机 Host（仅手机）
+├── protocol.md             # 三机通信协议 v0.2
+├── reproduce.md            # 三机复现手册
+└── report.md               # 本报告
+```
+
+日志目录：
+
+```text
+logs/
+├── pc_current_final_ngl20_*.log      # GPU PC + 当前机器 双机验证
+├── pc_3node_tun_ngl20_*.log          # GPU PC + 当前机器 + 手机（手机离线）
+├── pc_2node_ngl20_*.log              # GPU PC + 手机直连尝试（手机离线）
+└── pc_local_ngl999_*.log             # GPU PC 本地 CUDA 基线
+```
 
 ---
 
-## 9. 下一步建议
+## 9. 关键发现
 
-- 关闭 DEBUG 后重新测 `-ngl 4` / `-ngl 99`，获得真实性能基线。
+1. **SSH 隧道可解决 WSL2/Android 入站网络问题**：`setup_tunnels.sh` 把两个 Worker 映射到 GPU PC 本地端口，Host 无需直接访问 WSL2/手机 IP。
+2. **`-ngl` 在 CUDA + RPC 混合场景下行为需关注**：实测 ngl=20 时，scheduler 将 5 层放 GPU PC CPU、15 层放 RPC Worker、5 层放 GPU CUDA，与直觉不符，可能是 scheduler 对 RPC backend 内存估计导致。
+3. **RPC 初始化开销显著**：即便 ngl=999，只要连接 RPC Worker，模型加载时间就上升到约 20s（本地 CUDA 仅 200ms）。
+4. **统一 commit 是 RPC 互通前提**：三端 commit 不一致时会直接报 `Remote RPC server crashed or returned malformed response`。
+5. **手机网络稳定性是端到端验证的瓶颈**：本次手机 WiFi 离线导致三机链路未能跑通。
+
+---
+
+## 10. 下一步建议
+
+- 手机重新联网后，运行完整 `TUNNEL_MODE=1 ./run_gpu_host.sh 20 "你好" 5` 三机验证。
+- 尝试 `-ngl 999` 或 `-ngl 0` 等极端配置，理解 scheduler 在 CUDA+RPC 混合后端下的分配策略。
+- 评估 WSL2 `networkingMode=mirrored` 对性能的影响。
 - 尝试手机端 Vulkan backend，利用 Mali-G78 GPU。
-- 评估 USB 网络共享是否能降低 RTT。
-- 长上下文下的 KV Cache 传输开销测试。
 
 ---
 
-详细复现步骤请见 `reproduce.md`。
+详细复现步骤请见 `reproduce.md`。通信协议请见 `protocol.md`。
