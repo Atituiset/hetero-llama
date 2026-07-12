@@ -97,6 +97,18 @@ cmake --build build-vulkan --target llama-completion -j$(nproc)
 - 若遇到 `fatal error: 'spawn.h' file not found`，按 `docs/vulkan-setup.md` 补充最小 `spawn.h`。
 - 若 proot Ubuntu 中编译报 `Function not implemented` 写 SPIR-V，也改到 Termux 原生 shell。
 
+## 日志说明
+
+`logs/` 下每个日志都由对应 baseline 脚本自动生成，文件名带时间戳：
+
+| 日志文件 | 产生命令 | 运行位置 | 关键结果 |
+|---|---|---|---|
+| `wsl_vulkan_baseline_20260711_231159.log` | `./run_wsl_vulkan_baseline.sh 99 "你好" 5` | WSL | Vulkan 无可用 GPU，fallback 到 `llvmpipe` CPU；eval 89.6 t/s |
+| `phone_vulkan_baseline_20260711_232957.log` | `./run_phone_vulkan_baseline.sh 99 "你好" 5`（Termux 原生 shell） | Mate 40 Pro | `ggml_vulkan: Error: Vulkan 1.2 required.`，fallback 到 CPU；eval 5.85 t/s |
+| `wsl_opencl_baseline_20260712_083610.log` | `./run_wsl_opencl_baseline.sh 99 "你好" 5` | WSL | OpenCL 识别 `Intel(R) Graphics [0x7d55]`，25/25 层 offload；eval 56.3 t/s |
+
+> WSL Vulkan 和手机 Vulkan 日志都证明当前环境无法使用 Vulkan GPU；OpenCL 日志是目前 WSL 上唯一成功 GPU offload 的记录。
+
 ## 文档
 
 | 文档 | 内容 |
