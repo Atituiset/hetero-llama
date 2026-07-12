@@ -113,10 +113,13 @@ cmake --build build-vulkan --target llama-completion -j$(nproc)
 
 | 文档 | 内容 |
 |---|---|
+| `docs/vulkan-deep-dive.md` | **Vulkan 阶段问题深入分析（现象/根因/规避/下一步）** |
 | `docs/vulkan-baseline-report.md` | Vulkan baseline 完整报告 |
 | `docs/opencl-baseline-report.md` | OpenCL baseline 完整报告 |
 | `docs/vulkan-setup.md` | Vulkan 环境准备与常见问题 |
 | `docs/opencl-setup.md` | OpenCL 环境准备与常见问题 |
+
+> 想搞清楚“为什么 Vulkan 走不通、OpenCL 能走通”，直接读 `docs/vulkan-deep-dive.md`。
 
 ## 注意
 
