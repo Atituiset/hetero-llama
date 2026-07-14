@@ -13,7 +13,7 @@
 | **vulkan** | [`vulkan/`](./vulkan/README.md) | ✅ 可运行 | WSL + Mate 40 Pro 本地 Vulkan/OpenCL baseline |
 | **mnn** | [`mnn/`](./mnn/README.md) | ✅ 已验证 | 用 MNN 在 Mate 40 Pro 上跑 LLM；OpenCL/Vulkan 能调用 GPU 但比 CPU 慢 |
 | **ncnn-llm** | [`ncnn-llm/`](./ncnn-llm/README.md) | ✅ 已验证 | ncnn_llm 已构建成功；Qwen3-0.6B CPU 40.7 s，Vulkan 卡住无输出 |
-| **3-machine** | [`3-machine/`](./3-machine/README.md) | ✅ 可用 | GPU PC + WSL + 手机三机 llama.cpp RPC 异构推理 |
+| **3-machine** | [`3-machine/`](./3-machine/README.md) | ✅ 可用 | GPU PC + WSL + 手机三机 llama.cpp RPC 异构推理；含通宵基准与 watchdog |
 | **common** | [`common/`](./common/) | ✅ 已启用 | 跨模式共享脚本（`ts-log.sh`、`check-phone-status.sh`、配置模板） |
 
 进入对应目录查看各自的 README 获取详细用法。
@@ -80,6 +80,7 @@ hetero-llama/
 │   ├── README.md             # 3-machine 模式说明
 │   ├── config.env
 │   ├── scripts/
+│   │   └── overnight_watchdog.sh  # 通宵基准 watchdog
 │   ├── docs/
 │   └── logs/
 └── common/
