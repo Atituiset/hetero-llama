@@ -1,0 +1,19 @@
+=== MNN 0.5B-Instruct OpenCL (normal precision) on Mate 40 Pro ===
+Date: 2026-07-12
+Command:
+  cd /data/data/com.termux/files/usr/var/lib/proot-distro/installed-rootfs/ubuntu/root/Projects/gpu-cpu-phone-test/MNN/build-opencl-llm
+  LD_LIBRARY_PATH=./OFF ./llm_demo \
+    /data/data/com.termux/files/usr/var/lib/proot-distro/installed-rootfs/ubuntu/root/models/qwen2-0.5b-instruct-mnn/config.opencl.normal.json \
+    /data/data/com.termux/files/home/mnn_prompt.txt
+
+--- Output ---
+config path is /data/data/com.termux/files/usr/var/lib/proot-distro/installed-rootfs/ubuntu/root/models/qwen2-0.5b-instruct-mnn/config.opencl.normal.json
+prompt file is /data/data/com.termux/files/home/mnn_prompt.txt
+Hello! How can I help you today?
+
+--- Timing ---
+real	0m23.075s
+user	0m14.549s
+sys	0m3.392s
+
+Note: The response is correct, but OpenCL is much slower than CPU (~1.7 s).

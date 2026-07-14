@@ -1,5 +1,8 @@
-# llama.cpp 源码（只记录 commit，不推送源码）
+# 外部框架源码（只记录 commit，不推送源码）
 llama.cpp/
+MNN/
+ncnn/
+ncnn_llm/
 
 # 构建产物
 build-*/

@@ -1,0 +1,12 @@
+=== MNN 1.5B-Instruct CPU on Mate 40 Pro ===
+Date: 2026-07-12
+Command:
+  cd /data/data/com.termux/files/usr/var/lib/proot-distro/installed-rootfs/ubuntu/root/Projects/gpu-cpu-phone-test/MNN/build-opencl-llm
+  LD_LIBRARY_PATH=./OFF ./llm_demo \
+    /data/data/com.termux/files/usr/var/lib/proot-distro/installed-rootfs/ubuntu/root/models/qwen2-1.5b-instruct-mnn/config.cpu.json \
+    /data/data/com.termux/files/home/mnn_prompt_1.5b.txt
+
+--- Timing ---
+real	0m4.686s
+user	0m5.262s
+sys	0m5.836s

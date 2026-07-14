@@ -1,0 +1,20 @@
+  tool_call_id: 151657
+  tool_call_end_id: 151658
+  think_id: 151667
+  think_end_id: 151668
+[ncnn_llm_gpt] Vulkan disabled, using CPU only
+Loading model from ./assets/qwen3_0.6b
+  decoder param: ./assets/qwen3_0.6b/qwen3_decoder.ncnn.fp16.param
+  decoder bin: ./assets/qwen3_0.6b/qwen3_decoder.ncnn.fp16.bin
+  embed param: ./assets/qwen3_0.6b/qwen3_embed_token.ncnn.fp16.param
+  embed bin: ./assets/qwen3_0.6b/qwen3_embed_token.ncnn.fp16.bin
+  proj_out param: ./assets/qwen3_0.6b/qwen3_proj_out.ncnn.fp16.param
+  proj_out bin: ./assets/qwen3_0.6b/qwen3_embed_token.ncnn.fp16.bin
+llm_ncnn_run (cli). Type 'exit' or 'quit' to end the conversation.
+Using template: ChatML
+User: Assistant: <think>
+Okay, the user just said "hello". Let me check what tools I have. The available functions are random and add. But neither of these functions can respond to a simple greeting. The user might be testing if I can handle basic responses or there's some other context I'm missing. Since the tools provided don't include any natural language processing capabilities, I should probably acknowledge their message directly without using any functions. So my response would be a friendly reply to hello.
+</think>
+
+Hello! How can I assist you today? 😊
+User: 

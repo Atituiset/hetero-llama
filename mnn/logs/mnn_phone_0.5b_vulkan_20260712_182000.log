@@ -1,0 +1,19 @@
+=== MNN 0.5B-Instruct Vulkan on Mate 40 Pro ===
+Date: 2026-07-12
+Command:
+  cd /data/data/com.termux/files/usr/var/lib/proot-distro/installed-rootfs/ubuntu/root/Projects/gpu-cpu-phone-test/MNN/build-vulkan-llm
+  LD_LIBRARY_PATH=./OFF ./llm_demo \
+    /data/data/com.termux/files/usr/var/lib/proot-distro/installed-rootfs/ubuntu/root/models/qwen2-0.5b-instruct-mnn/config.vulkan.json \
+    /data/data/com.termux/files/home/mnn_prompt.txt
+
+--- Timing ---
+real	6m36.985s
+user	3m34.567s
+sys	0m59.048s
+
+--- Second run (to check shader cache) ---
+real	6m48.488s
+user	3m38.951s
+sys	1m4.653s
+
+Note: Vulkan is extremely slow and shows no cache improvement on the second run.

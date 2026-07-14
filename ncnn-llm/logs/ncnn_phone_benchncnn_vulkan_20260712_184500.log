@@ -1,0 +1,47 @@
+=== ncnn benchncnn Vulkan on Mate 40 Pro ===
+Date: 2026-07-12
+Command:
+  cd /data/data/com.termux/files/usr/var/lib/proot-distro/installed-rootfs/ubuntu/root/Projects/gpu-cpu-phone-test/ncnn/build/benchmark
+  ./benchncnn 4 1 0 0 0
+
+--- Output ---
+loop_count = 4
+num_threads = 1
+powersave = 0
+gpu_device = 0
+cooling_down = 0
+          squeezenet  min =   28.60  max =   30.54  avg =   29.69
+     squeezenet_int8  min =   50.36  max =   51.73  avg =   51.32
+           mobilenet  min =   34.34  max =   36.26  avg =   35.47
+      mobilenet_int8  min =   21.62  max =   22.23  avg =   21.98
+        mobilenet_v2  min =   32.29  max =   43.87  avg =   37.75
+        mobilenet_v3  min =   36.01  max =   41.00  avg =   38.19
+          shufflenet  min =   24.29  max =   25.28  avg =   24.73
+       shufflenet_v2  min =   26.80  max =   28.27  avg =   27.54
+             mnasnet  min =   31.40  max =   32.45  avg =   32.00
+     proxylessnasnet  min =   40.15  max =   41.58  avg =   40.82
+     efficientnet_b0  min =   54.71  max =   57.26  avg =   55.61
+   efficientnetv2_b0  min =  100.56  max =  105.93  avg =  102.82
+        regnety_400m  min =   37.72  max =   44.36  avg =   40.42
+           blazeface  min =   12.78  max =   13.50  avg =   13.11
+           googlenet  min =   71.45  max =   82.40  avg =   77.26
+      googlenet_int8  min =  102.44  max =  132.56  avg =   117.29
+            resnet18  min =   45.39  max =   68.10  avg =   55.17
+       resnet18_int8  min =  112.72  max =   115.69  avg =   113.76
+             alexnet  min =   24.25  max =   26.98  avg =   25.80
+               vgg16  min =   75.37  max =   80.17  avg =   77.11
+          vgg16_int8  min =  753.29  max =   765.57  avg =   757.02
+            resnet50  min =   95.56  max =   103.48  avg =   99.70
+       resnet50_int8  min =   158.55  max =   163.35  avg =   160.81
+      squeezenet_ssd  min =  100.12  max =   103.10  avg =   101.88
+ squeezenet_ssd_int8  min =  150.33  max =   164.21  avg =   158.00
+       mobilenet_ssd  min =   74.99  max =   78.90  avg =   77.09
+  mobilenet_ssd_int8  min =   60.49  max =   65.35  avg =   62.55
+      mobilenet_yolo  min =   83.53  max =   96.82  avg =   89.06
+  mobilenetv2_yolov3  min =   80.95  max =   96.08  avg =   86.78
+         yolov4-tiny  min =  118.07  max =   127.86  avg =   122.29
+           nanodet_m  min =   66.81  max =   69.72  avg =   68.08
+    yolo-fastest-1.1  min =   39.57  max =   42.18  avg =   41.20
+      yolo-fastestv2  min =   34.26  max =   37.00  avg =   35.84
+  vision_transformer  min = 10747.29  max = 10831.29  avg = 10786.36
+          FastestDet  min =   32.66  max =   36.00  avg =   34.34

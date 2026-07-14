@@ -11,10 +11,29 @@
 |------|------|------|------------|
 | **main（基础 RPC）** | [`main/`](./main/README.md) | ✅ 可用 | PC + 手机 CPU 通过 llama.cpp RPC 协同推理 |
 | **vulkan** | [`vulkan/`](./vulkan/README.md) | ✅ 可运行 | WSL + Mate 40 Pro 本地 Vulkan/OpenCL baseline |
+| **mnn** | [`mnn/`](./mnn/README.md) | ✅ 已验证 | 用 MNN 在 Mate 40 Pro 上跑 LLM；OpenCL/Vulkan 能调用 GPU 但比 CPU 慢 |
+| **ncnn-llm** | [`ncnn-llm/`](./ncnn-llm/README.md) | ✅ 已验证 | ncnn_llm 已构建成功；Qwen3-0.6B CPU 40.7 s，Vulkan 卡住无输出 |
 | **3-machine** | [`3-machine/`](./3-machine/README.md) | ⏸️ 预留 | 完整实现见 `feat/3-machine-inference` 分支 |
 | **common** | [`common/`](./common/) | ⏸️ 预留 | 跨模式共享脚本（如模型下载、环境检查） |
 
 进入对应目录查看各自的 README 获取详细用法。
+
+---
+
+## 总体结论
+
+所有手机 GPU 加速尝试的汇总见 [`docs/gpu-acceleration-summary.md`](./docs/gpu-acceleration-summary.md)。
+
+当前在 Mate 40 Pro（Mali-G78）上：
+- **llama.cpp Vulkan**：驱动版本不够（需要 Vulkan 1.2）。
+- **llama.cpp OpenCL**：Mali 不在白名单。
+- **MNN OpenCL/Vulkan**：能调用 GPU，但比 CPU 慢；3B 模型下 OpenCL 直接 OOM 崩溃。
+- **ncnn LLM**：CPU 可跑通（Qwen3-0.6B 40.7 s）；Vulkan 首次推理卡住，基本不可用。
+- **ncnn Vulkan**：CNN 有选择性加速，Transformer/LLM 极慢。
+
+手机上目前唯一可用的 LLM 路径是 **手机 CPU（MNN ARM82 / ncnn_llm CPU）**；PC/WSL 上唯一可用的 GPU 路径是 **llama.cpp OpenCL（Intel）**。
+
+> 注意：MNN / ncnn 实验均为**手机单机推理**。WSL 仅负责模型导出/编译 x86 工具，并未与手机 GPU 做分层协同；原 `feat/3-machine-inference` 分支的 llama.cpp RPC 分层方案对 MNN/ncnn 不适用。
 
 ---
 
@@ -42,6 +61,16 @@ hetero-llama/
 ├── vulkan/
 │   ├── README.md             # Vulkan / OpenCL 模式说明
 │   ├── config.env
+│   ├── scripts/
+│   ├── docs/
+│   └── logs/
+├── mnn/
+│   ├── README.md             # MNN 手机端 LLM 实验说明
+│   ├── scripts/
+│   ├── docs/
+│   └── logs/
+├── ncnn-llm/
+│   ├── README.md             # ncnn Vulkan / ncnn_llm 实验说明
 │   ├── scripts/
 │   ├── docs/
 │   └── logs/
