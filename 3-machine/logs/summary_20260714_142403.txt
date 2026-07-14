@@ -1,0 +1,23 @@
+通宵基准测试汇总
+生成时间: Tue Jul 14 02:24:03 PM EDT 2026
+模型: /home/atituiset/models/qwen3-1.7b-instruct-ollama.gguf
+
+=== GPU PC 本地 CUDA ===
+/home/atituiset/projects/gpu-cpu-phone-test/logs/gpu_local_ngl0.log:0.03.187.654 I common_perf_print: prompt eval time =       0.00 ms /     1 tokens (    0.00 ms per token,      inf tokens per second)
+/home/atituiset/projects/gpu-cpu-phone-test/logs/gpu_local_ngl0.log:0.03.187.655 I common_perf_print:        eval time =     803.82 ms /    32 runs   (   25.12 ms per token,    39.81 tokens per second)
+/home/atituiset/projects/gpu-cpu-phone-test/logs/gpu_local_ngl12.log:0.02.203.868 I common_perf_print: prompt eval time =       0.00 ms /     1 tokens (    0.00 ms per token,      inf tokens per second)
+/home/atituiset/projects/gpu-cpu-phone-test/logs/gpu_local_ngl12.log:0.02.203.869 I common_perf_print:        eval time =     486.16 ms /    32 runs   (   15.19 ms per token,    65.82 tokens per second)
+/home/atituiset/projects/gpu-cpu-phone-test/logs/gpu_local_ngl24.log:0.01.483.780 I common_perf_print: prompt eval time =       0.00 ms /     1 tokens (    0.00 ms per token,      inf tokens per second)
+/home/atituiset/projects/gpu-cpu-phone-test/logs/gpu_local_ngl24.log:0.01.483.781 I common_perf_print:        eval time =     325.50 ms /    32 runs   (   10.17 ms per token,    98.31 tokens per second)
+/home/atituiset/projects/gpu-cpu-phone-test/logs/gpu_local_ngl99.log:0.01.146.902 I common_perf_print: prompt eval time =       0.00 ms /     1 tokens (    0.00 ms per token,      inf tokens per second)
+/home/atituiset/projects/gpu-cpu-phone-test/logs/gpu_local_ngl99.log:0.01.146.903 I common_perf_print:        eval time =     240.89 ms /    32 runs   (    7.53 ms per token,   132.84 tokens per second)
+
+=== GPU PC + WSL RPC ===
+/home/atituiset/projects/gpu-cpu-phone-test/logs/gpu_rpc_ngl0.log:0.03.318.099 I common_perf_print: prompt eval time =       0.00 ms /     1 tokens (    0.00 ms per token,      inf tokens per second)
+/home/atituiset/projects/gpu-cpu-phone-test/logs/gpu_rpc_ngl0.log:0.03.318.100 I common_perf_print:        eval time =     725.20 ms /    32 runs   (   22.66 ms per token,    44.13 tokens per second)
+/home/atituiset/projects/gpu-cpu-phone-test/logs/gpu_rpc_ngl12.log:0.17.501.863 I common_perf_print: prompt eval time =       0.00 ms /     1 tokens (    0.00 ms per token,      inf tokens per second)
+/home/atituiset/projects/gpu-cpu-phone-test/logs/gpu_rpc_ngl12.log:0.17.501.866 I common_perf_print:        eval time =    1701.87 ms /    32 runs   (   53.18 ms per token,    18.80 tokens per second)
+/home/atituiset/projects/gpu-cpu-phone-test/logs/gpu_rpc_ngl24.log:0.29.921.077 I common_perf_print: prompt eval time =       0.00 ms /     1 tokens (    0.00 ms per token,      inf tokens per second)
+/home/atituiset/projects/gpu-cpu-phone-test/logs/gpu_rpc_ngl24.log:0.29.921.080 I common_perf_print:        eval time =    1943.73 ms /    32 runs   (   60.74 ms per token,    16.46 tokens per second)
+/home/atituiset/projects/gpu-cpu-phone-test/logs/gpu_rpc_ngl99.log:0.33.945.409 I common_perf_print: prompt eval time =       0.00 ms /     1 tokens (    0.00 ms per token,      inf tokens per second)
+/home/atituiset/projects/gpu-cpu-phone-test/logs/gpu_rpc_ngl99.log:0.33.945.412 I common_perf_print:        eval time =    1481.19 ms /    32 runs   (   46.29 ms per token,    21.60 tokens per second)

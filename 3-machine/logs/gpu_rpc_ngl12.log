@@ -1,0 +1,26 @@
+0.00.068.710 I llama_completion: llama backend init
+0.00.068.724 I llama_completion: load the model and apply lora adapter, if any
+0.03.666.070 W load: control-looking token: 128247 '</s>' was not control-type; this is probably a bug in the model. its type will be overridden
+0.15.772.892 I llama_completion: llama threadpool init, n_threads = 6
+0.15.773.949 I 
+0.15.774.015 I system_info: n_threads = 6 (n_threads_batch = 6) / 20 | CUDA : ARCHS = 890 | USE_GRAPHS = 1 | PEER_MAX_BATCH_SIZE = 128 | CPU : SSE3 = 1 | SSSE3 = 1 | AVX = 1 | AVX_VNNI = 1 | AVX2 = 1 | F16C = 1 | FMA = 1 | BMI2 = 1 | LLAMAFILE = 1 | OPENMP = 1 | REPACK = 1 | 
+0.15.774.015 I 
+0.15.774.045 I sampler seed: 1326064211
+0.15.774.051 I sampler params: 
+	repeat_last_n = 64, repeat_penalty = 1.000, frequency_penalty = 0.000, presence_penalty = 0.000
+	dry_multiplier = 0.000, dry_base = 1.750, dry_allowed_length = 2, dry_penalty_last_n = -1
+	top_k = 40, top_p = 0.950, min_p = 0.050, xtc_probability = 0.000, xtc_threshold = 0.100, typical_p = 1.000, top_n_sigma = -1.000, temp = 0.800
+	mirostat = 0, mirostat_lr = 0.100, mirostat_ent = 5.000, adaptive_target = -1.000, adaptive_decay = 0.900
+0.15.774.055 I sampler chain: logits -> ?penalties -> ?dry -> ?top-n-sigma -> top-k -> ?typical -> top-p -> min-p -> ?xtc -> temp-ext -> dist 
+0.15.774.055 I generate: n_ctx = 40960, n_batch = 2048, n_predict = 32, n_keep = 0
+0.15.774.055 I 
+你好STRACT. I have a question about the difference between the two types of heat. I know that there is a difference between internal and external heat. But I'm
+
+0.17.501.850 I common_perf_print:    sampling time =      24.30 ms
+0.17.501.852 I common_perf_print:    samplers time =       8.48 ms /    33 tokens
+0.17.501.861 I common_perf_print:        load time =   12146.94 ms
+0.17.501.863 I common_perf_print: prompt eval time =       0.00 ms /     1 tokens (    0.00 ms per token,      inf tokens per second)
+0.17.501.866 I common_perf_print:        eval time =    1701.87 ms /    32 runs   (   53.18 ms per token,    18.80 tokens per second)
+0.17.501.867 I common_perf_print:       total time =    1728.97 ms /    33 tokens
+0.17.501.869 I common_perf_print: unaccounted time =       2.80 ms /   0.2 %      (total - sampling - prompt eval - eval) / (total)
+0.17.501.870 I common_perf_print:    graphs reused =         31

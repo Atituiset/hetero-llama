@@ -56,3 +56,92 @@ git checkout main
 | `pc_local_ngl999_20260709_194021.log` | 直接运行 `llama-completion` | GPU PC 本地 CUDA 基线，`ngl=999` | load 194 ms，eval 282.63 t/s |
 
 > 所有日志都通过 `ts-log.sh` 加了 wall-clock 时间戳。详细分析和复现步骤见 `feat/3-machine-inference` 分支。
+
+---
+
+## 最新验证：Qwen3-1.7B GPU + WSL RPC（2026-07-15）
+
+本次在 `feat/3-machine-inference` 分支完成通宵基准后，将结果产物同步回 `main` 的 `3-machine/` 目录。
+
+### 环境
+
+| 节点 | 角色 | 后端 | 地址/说明 |
+|---|---|---|---|
+| GPU PC | Host | CUDA 12.0 / RTX 4050 6GB | `192.168.1.10` |
+| 当前 WSL | RPC Worker | CPU | `127.0.0.1:50053`（SSH 反向隧道） |
+| 手机 | 未参与 | — | 本次只验证 GPU PC + WSL 双机 |
+
+### 模型
+
+- **来源**：Ollama `qwen3:1.7b`
+- **实际量化**：Q4_K_M
+- **约 2.0B 参数**
+- 已链接到 GPU PC `~/models/qwen3-1.7b-instruct-ollama.gguf`
+
+### 性能结果
+
+命令：`llama-completion -m <model> -p "你好" -n 32 -no-cnv -ngl N [--rpc 127.0.0.1:50053]`
+
+#### GPU PC 本地 CUDA
+
+| ngl | load time | generation | 日志 |
+|---|---|---|---|
+| 0（纯 CPU） | 1920 ms | 39.81 t/s | [`logs/gpu_local_ngl0.log`](logs/gpu_local_ngl0.log) |
+| 12 | 1350 ms | 65.82 t/s | [`logs/gpu_local_ngl12.log`](logs/gpu_local_ngl12.log) |
+| 24 | 633 ms | 98.31 t/s | [`logs/gpu_local_ngl24.log`](logs/gpu_local_ngl24.log) |
+| 99（全部 GPU） | 365 ms | **132.84 t/s** | [`logs/gpu_local_ngl99.log`](logs/gpu_local_ngl99.log) |
+
+#### GPU PC + WSL RPC
+
+| ngl | load time | generation | 日志 |
+|---|---|---|---|
+| 0（全部 RPC） | 1930 ms | **44.13 t/s** | [`logs/gpu_rpc_ngl0.log`](logs/gpu_rpc_ngl0.log) |
+| 12 | 12147 ms | 18.80 t/s | [`logs/gpu_rpc_ngl12.log`](logs/gpu_rpc_ngl12.log) |
+| 24 | 21987 ms | 16.46 t/s | [`logs/gpu_rpc_ngl24.log`](logs/gpu_rpc_ngl24.log) |
+| 99 | 25360 ms | 21.60 t/s | [`logs/gpu_rpc_ngl99.log`](logs/gpu_rpc_ngl99.log) |
+
+> prompt 只有 `"你好"` 1 个 token，因此 prompt eval 时间为 0，速度显示为 `inf`。
+
+### GPU 功耗与显存占用
+
+采样方式：`nvidia-smi --query-gpu=power.draw,memory.used,utilization.gpu,temperature.gpu --format=csv -l 1`
+
+| 配置 | 平均功耗 | 平均显存 | 平均利用率 | 平均温度 | CSV |
+|---|---|---|---|---|---|
+| gpu_local_ngl0 | 11.7 W | 206 MiB | 0.0 % | 41.2 °C | [`logs/gpu_local_ngl0_gpu.csv`](logs/gpu_local_ngl0_gpu.csv) |
+| gpu_local_ngl12 | 16.3 W | 1154 MiB | 3.7 % | 42.7 °C | [`logs/gpu_local_ngl12_gpu.csv`](logs/gpu_local_ngl12_gpu.csv) |
+| gpu_local_ngl24 | 17.8 W | 530 MiB | 0.0 % | 43.0 °C | [`logs/gpu_local_ngl24_gpu.csv`](logs/gpu_local_ngl24_gpu.csv) |
+| gpu_local_ngl99 | 25.7 W | 2377 MiB | 0.0 % | 44.0 °C | [`logs/gpu_local_ngl99_gpu.csv`](logs/gpu_local_ngl99_gpu.csv) |
+| gpu_rpc_ngl0 | 22.8 W | 206 MiB | 0.0 % | 45.0 °C | [`logs/gpu_rpc_ngl0_gpu.csv`](logs/gpu_rpc_ngl0_gpu.csv) |
+| gpu_rpc_ngl12 | 16.1 W | 453 MiB | 0.3 % | 45.1 °C | [`logs/gpu_rpc_ngl12_gpu.csv`](logs/gpu_rpc_ngl12_gpu.csv) |
+| gpu_rpc_ngl24 | 16.1 W | 603 MiB | 0.3 % | 45.9 °C | [`logs/gpu_rpc_ngl24_gpu.csv`](logs/gpu_rpc_ngl24_gpu.csv) |
+| gpu_rpc_ngl99 | 15.1 W | 620 MiB | 0.9 % | 46.4 °C | [`logs/gpu_rpc_ngl99_gpu.csv`](logs/gpu_rpc_ngl99_gpu.csv) |
+
+### 关键发现
+
+1. **RTX 4050 6GB 可以轻松跑 Qwen3-1.7B Q4_K_M**：本地 `-ngl 99` 达到 **132.84 t/s**，显存占用约 2.4 GB。
+2. **`-ngl` 在纯 CUDA 场景下单调加速**：ngl 0 → 12 → 24 → 99，速度从 39.81 提升到 132.84 t/s。
+3. **RPC 混合场景的 `-ngl` 行为非单调**：
+   - `ngl=0` 时速度最快（44.13 t/s），scheduler 把全部层放到 WSL CPU。
+   - `ngl=12/24` 时加载时间暴增到 12–22 s，速度下降到 16–18 t/s，WSL 网络 RTT（~90 ms）成为瓶颈。
+   - `ngl=99` 时速度回升到 21.60 t/s，scheduler 把计算拉回本地 GPU。
+4. **RPC 初始化开销显著**：连接 WSL Worker 后，1.7B 模型加载时间从本地 365 ms 上升到 12–25 s。
+5. **WSL 反向隧道稳定**：通宵运行中 RPC Server 与反向隧道保持存活，链路可复现。
+
+### 新增产物
+
+| 文件 | 说明 |
+|---|---|
+| [`config.env`](config.env) | 三机拓扑配置（本次双机使用其中 GPU PC + 当前机器部分） |
+| [`scripts/overnight_gpu_benchmark.sh`](scripts/overnight_gpu_benchmark.sh) | 通宵自动基准脚本：拉模型、跑本地/RPC 多组 `-ngl`、记录 nvidia-smi、生成汇总 |
+| [`logs/summary_20260714_142403.txt`](logs/summary_20260714_142403.txt) | 自动生成的文本汇总 |
+| `logs/gpu_*_ngl{0,12,24,99}.log` | 推理日志 |
+| `logs/gpu_*_ngl*_gpu.csv` | 功耗/显存/利用率/温度采样 |
+
+---
+
+## 合入状态
+
+- `feat/3-machine-inference` 分支的最新验证结果（Qwen3-1.7B GPU + WSL RPC）已先同步到 `main` 的 `3-machine/`。
+- 早期的 `scripts/run_cpu_rpc_server.sh`、`run_gpu_host.sh`、`run_gpu_host_2node.sh`、`setup_tunnels.sh` 仍保留。
+- 手机 RPC 相关的 `run_phone_rpc.sh` 尚未迁移，完整三机验证仍见 `feat/3-machine-inference` 分支。
