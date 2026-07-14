@@ -3,8 +3,9 @@
 # 必须在 Termux 原生 shell 中运行。
 set -e
 
-NCNN_DIR="/data/data/com.termux/files/usr/var/lib/proot-distro/installed-rootfs/ubuntu/root/Projects/gpu-cpu-phone-test/ncnn"
-BUILD_DIR="${NCNN_DIR}/build"
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+# shellcheck source=../config.env
+source "${SCRIPT_DIR}/../config.env"
 
 cd "${NCNN_DIR}"
 

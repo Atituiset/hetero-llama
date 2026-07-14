@@ -12,8 +12,8 @@
 set -e
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-# shellcheck source=config.env
-source "${SCRIPT_DIR}/config.env"
+# shellcheck source=../config.env
+source "${SCRIPT_DIR}/../config.env"
 
 NGL="${1:-${DEFAULT_NGL}}"
 PROMPT="${2:-${DEFAULT_PROMPT}}"

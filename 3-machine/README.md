@@ -61,7 +61,7 @@ git checkout main
 
 ## 最新验证：Qwen3-1.7B GPU + WSL RPC（2026-07-15）
 
-本次在 `feat/3-machine-inference` 分支完成通宵基准后，将结果产物同步回 `main` 的 `3-machine/` 目录。
+本次通宵基准在 `feat/3-machine-inference` 分支验证完成后，已整理到 `main` 的 `3-machine/` 目录。
 
 ### 环境
 
@@ -86,19 +86,19 @@ git checkout main
 
 | ngl | load time | generation | 日志 |
 |---|---|---|---|
-| 0（纯 CPU） | 1920 ms | 39.81 t/s | [`logs/gpu_local_ngl0.log`](logs/gpu_local_ngl0.log) |
-| 12 | 1350 ms | 65.82 t/s | [`logs/gpu_local_ngl12.log`](logs/gpu_local_ngl12.log) |
-| 24 | 633 ms | 98.31 t/s | [`logs/gpu_local_ngl24.log`](logs/gpu_local_ngl24.log) |
-| 99（全部 GPU） | 365 ms | **132.84 t/s** | [`logs/gpu_local_ngl99.log`](logs/gpu_local_ngl99.log) |
+| 0（纯 CPU） | 1920 ms | 39.81 t/s | [`logs/3machine_gpu_local_cuda_ngl0_20260714_142222.log`](logs/3machine_gpu_local_cuda_ngl0_20260714_142222.log) |
+| 12 | 1350 ms | 65.82 t/s | [`logs/3machine_gpu_local_cuda_ngl12_20260714_142222.log`](logs/3machine_gpu_local_cuda_ngl12_20260714_142222.log) |
+| 24 | 633 ms | 98.31 t/s | [`logs/3machine_gpu_local_cuda_ngl24_20260714_142222.log`](logs/3machine_gpu_local_cuda_ngl24_20260714_142222.log) |
+| 99（全部 GPU） | 365 ms | **132.84 t/s** | [`logs/3machine_gpu_local_cuda_ngl99_20260714_142222.log`](logs/3machine_gpu_local_cuda_ngl99_20260714_142222.log) |
 
 #### GPU PC + WSL RPC
 
 | ngl | load time | generation | 日志 |
 |---|---|---|---|
-| 0（全部 RPC） | 1930 ms | **44.13 t/s** | [`logs/gpu_rpc_ngl0.log`](logs/gpu_rpc_ngl0.log) |
-| 12 | 12147 ms | 18.80 t/s | [`logs/gpu_rpc_ngl12.log`](logs/gpu_rpc_ngl12.log) |
-| 24 | 21987 ms | 16.46 t/s | [`logs/gpu_rpc_ngl24.log`](logs/gpu_rpc_ngl24.log) |
-| 99 | 25360 ms | 21.60 t/s | [`logs/gpu_rpc_ngl99.log`](logs/gpu_rpc_ngl99.log) |
+| 0（全部 RPC） | 1930 ms | **44.13 t/s** | [`logs/3machine_gpu_wsl_rpc_ngl0_20260714_142222.log`](logs/3machine_gpu_wsl_rpc_ngl0_20260714_142222.log) |
+| 12 | 12147 ms | 18.80 t/s | [`logs/3machine_gpu_wsl_rpc_ngl12_20260714_142222.log`](logs/3machine_gpu_wsl_rpc_ngl12_20260714_142222.log) |
+| 24 | 21987 ms | 16.46 t/s | [`logs/3machine_gpu_wsl_rpc_ngl24_20260714_142222.log`](logs/3machine_gpu_wsl_rpc_ngl24_20260714_142222.log) |
+| 99 | 25360 ms | 21.60 t/s | [`logs/3machine_gpu_wsl_rpc_ngl99_20260714_142222.log`](logs/3machine_gpu_wsl_rpc_ngl99_20260714_142222.log) |
 
 > prompt 只有 `"你好"` 1 个 token，因此 prompt eval 时间为 0，速度显示为 `inf`。
 
@@ -108,14 +108,14 @@ git checkout main
 
 | 配置 | 平均功耗 | 平均显存 | 平均利用率 | 平均温度 | CSV |
 |---|---|---|---|---|---|
-| gpu_local_ngl0 | 11.7 W | 206 MiB | 0.0 % | 41.2 °C | [`logs/gpu_local_ngl0_gpu.csv`](logs/gpu_local_ngl0_gpu.csv) |
-| gpu_local_ngl12 | 16.3 W | 1154 MiB | 3.7 % | 42.7 °C | [`logs/gpu_local_ngl12_gpu.csv`](logs/gpu_local_ngl12_gpu.csv) |
-| gpu_local_ngl24 | 17.8 W | 530 MiB | 0.0 % | 43.0 °C | [`logs/gpu_local_ngl24_gpu.csv`](logs/gpu_local_ngl24_gpu.csv) |
-| gpu_local_ngl99 | 25.7 W | 2377 MiB | 0.0 % | 44.0 °C | [`logs/gpu_local_ngl99_gpu.csv`](logs/gpu_local_ngl99_gpu.csv) |
-| gpu_rpc_ngl0 | 22.8 W | 206 MiB | 0.0 % | 45.0 °C | [`logs/gpu_rpc_ngl0_gpu.csv`](logs/gpu_rpc_ngl0_gpu.csv) |
-| gpu_rpc_ngl12 | 16.1 W | 453 MiB | 0.3 % | 45.1 °C | [`logs/gpu_rpc_ngl12_gpu.csv`](logs/gpu_rpc_ngl12_gpu.csv) |
-| gpu_rpc_ngl24 | 16.1 W | 603 MiB | 0.3 % | 45.9 °C | [`logs/gpu_rpc_ngl24_gpu.csv`](logs/gpu_rpc_ngl24_gpu.csv) |
-| gpu_rpc_ngl99 | 15.1 W | 620 MiB | 0.9 % | 46.4 °C | [`logs/gpu_rpc_ngl99_gpu.csv`](logs/gpu_rpc_ngl99_gpu.csv) |
+| 3machine_gpu_local_cuda_ngl0_20260714_142222 | 11.7 W | 206 MiB | 0.0 % | 41.2 °C | [`logs/3machine_gpu_local_cuda_ngl0_20260714_142222_gpu.csv`](logs/3machine_gpu_local_cuda_ngl0_20260714_142222_gpu.csv) |
+| 3machine_gpu_local_cuda_ngl12_20260714_142222 | 16.3 W | 1154 MiB | 3.7 % | 42.7 °C | [`logs/3machine_gpu_local_cuda_ngl12_20260714_142222_gpu.csv`](logs/3machine_gpu_local_cuda_ngl12_20260714_142222_gpu.csv) |
+| 3machine_gpu_local_cuda_ngl24_20260714_142222 | 17.8 W | 530 MiB | 0.0 % | 43.0 °C | [`logs/3machine_gpu_local_cuda_ngl24_20260714_142222_gpu.csv`](logs/3machine_gpu_local_cuda_ngl24_20260714_142222_gpu.csv) |
+| 3machine_gpu_local_cuda_ngl99_20260714_142222 | 25.7 W | 2377 MiB | 0.0 % | 44.0 °C | [`logs/3machine_gpu_local_cuda_ngl99_20260714_142222_gpu.csv`](logs/3machine_gpu_local_cuda_ngl99_20260714_142222_gpu.csv) |
+| 3machine_gpu_wsl_rpc_ngl0_20260714_142222 | 22.8 W | 206 MiB | 0.0 % | 45.0 °C | [`logs/3machine_gpu_wsl_rpc_ngl0_20260714_142222_gpu.csv`](logs/3machine_gpu_wsl_rpc_ngl0_20260714_142222_gpu.csv) |
+| 3machine_gpu_wsl_rpc_ngl12_20260714_142222 | 16.1 W | 453 MiB | 0.3 % | 45.1 °C | [`logs/3machine_gpu_wsl_rpc_ngl12_20260714_142222_gpu.csv`](logs/3machine_gpu_wsl_rpc_ngl12_20260714_142222_gpu.csv) |
+| 3machine_gpu_wsl_rpc_ngl24_20260714_142222 | 16.1 W | 603 MiB | 0.3 % | 45.9 °C | [`logs/3machine_gpu_wsl_rpc_ngl24_20260714_142222_gpu.csv`](logs/3machine_gpu_wsl_rpc_ngl24_20260714_142222_gpu.csv) |
+| 3machine_gpu_wsl_rpc_ngl99_20260714_142222 | 15.1 W | 620 MiB | 0.9 % | 46.4 °C | [`logs/3machine_gpu_wsl_rpc_ngl99_20260714_142222_gpu.csv`](logs/3machine_gpu_wsl_rpc_ngl99_20260714_142222_gpu.csv) |
 
 ### 关键发现
 
@@ -134,14 +134,13 @@ git checkout main
 |---|---|
 | [`config.env`](config.env) | 三机拓扑配置（本次双机使用其中 GPU PC + 当前机器部分） |
 | [`scripts/overnight_gpu_benchmark.sh`](scripts/overnight_gpu_benchmark.sh) | 通宵自动基准脚本：拉模型、跑本地/RPC 多组 `-ngl`、记录 nvidia-smi、生成汇总 |
-| [`logs/summary_20260714_142403.txt`](logs/summary_20260714_142403.txt) | 自动生成的文本汇总 |
-| `logs/gpu_*_ngl{0,12,24,99}.log` | 推理日志 |
-| `logs/gpu_*_ngl*_gpu.csv` | 功耗/显存/利用率/温度采样 |
+| [`logs/3machine_summary_20260714_142403.txt`](logs/3machine_summary_20260714_142403.txt) | 自动生成的文本汇总 |
+| `logs/3machine_gpu_*_ngl{0,12,24,99}_20260714_142222.log` | 推理日志 |
+| `logs/3machine_gpu_*_ngl*_20260714_142222_gpu.csv` | 功耗/显存/利用率/温度采样 |
 
 ---
 
 ## 合入状态
 
-- `feat/3-machine-inference` 分支的最新验证结果（Qwen3-1.7B GPU + WSL RPC）已先同步到 `main` 的 `3-machine/`。
-- 早期的 `scripts/run_cpu_rpc_server.sh`、`run_gpu_host.sh`、`run_gpu_host_2node.sh`、`setup_tunnels.sh` 仍保留。
-- 手机 RPC 相关的 `run_phone_rpc.sh` 尚未迁移，完整三机验证仍见 `feat/3-machine-inference` 分支。
+- `feat/3-machine-inference` 分支的验证结果、脚本与文档已合并到 `main` 的 `3-machine/`。
+- `3-machine/scripts/` 现已包含手机端 `run_phone_rpc.sh`、`run_phone_baseline.sh` 与 PC 端 `run_pc_rpc.sh`，完整三机链路可在 main 上直接复现。

@@ -55,7 +55,7 @@
 6. 需要 DEBUG 调度细节时：
 
    ```bash
-   DEBUG=1 ./scripts/run_pc_rpc.sh 99 "你好" 5 2>&1 | ./scripts/ts-log.sh > logs/pc_ngl99_$(date +%Y%m%d_%H%M%S).log
+   DEBUG=1 ./scripts/run_pc_rpc.sh 99 "你好" 5 2>&1 | ../common/scripts/ts-log.sh > logs/pc_ngl99_$(date +%Y%m%d_%H%M%S).log
    DEBUG=1 ./scripts/run_phone_rpc.sh
    ```
 
@@ -66,8 +66,8 @@
 | `run_phone_rpc.sh` | 启动手机 RPC Server（带 `-c` 缓存） | 手机 |
 | `run_pc_rpc.sh` | PC Host，通过 `--rpc` 调用手机 Worker | PC |
 | `run_phone_baseline.sh` | 手机本地 CPU 推理基线 | 手机 |
-| `check-phone-status.sh` | 检查手机 Agent/inbox/outbox/进程状态 | PC |
-| `ts-log.sh` | 给日志加 `YYYY-MM-DD HH:MM:SS` 时间戳 | 任意 |
+| `../common/scripts/check-phone-status.sh` | 检查手机 Agent/inbox/outbox/进程状态 | PC |
+| `../common/scripts/ts-log.sh` | 给日志加 `YYYY-MM-DD HH:MM:SS` 时间戳 | 任意 |
 
 ## 关键结论
 
@@ -94,17 +94,17 @@
 
 | 日志文件 | 产生命令 | 运行位置 | 关键结果 |
 |---|---|---|---|
-| `pc_cpu_20260708_210444.log` | `llama-completion -m <model> -p "你好" -n 5` + `ts-log.sh` | PC | DEBUG 本地 CPU 基线：prompt 386.17 t/s，gen 95.11 t/s |
+| `pc_cpu_20260708_210444.log` | `llama-completion -m <model> -p "你好" -n 5` + `../common/scripts/ts-log.sh` | PC | DEBUG 本地 CPU 基线：prompt 386.17 t/s，gen 95.11 t/s |
 | `pc_cpu_nodebug_20260708_213312.log` | 同上，关闭 DEBUG | PC | 真实本地 CPU：prompt 380.78 t/s，gen 99.75 t/s |
-| `pc_ngl4_20260708_210444.log` | `DEBUG=1 ./run_pc_rpc.sh 4 "你好" 5` + `ts-log.sh` | PC | 4 层 offload 到手机：prompt 34.34 t/s，gen 8.46 t/s |
-| `pc_ngl4_nodebug_20260708_212253.log` | `./run_pc_rpc.sh 4 "你好" 5` + `ts-log.sh` | PC | 同上非 DEBUG：prompt 37.64 t/s，gen 7.59 t/s |
-| `pc_ngl99_20260708_210444.log` | `DEBUG=1 ./run_pc_rpc.sh 99 "你好" 5` + `ts-log.sh` | PC | 全部层 offload 到手机：prompt 8.96 t/s，gen 3.16 t/s |
-| `pc_ngl99_nodebug_20260708_212345.log` | `./run_pc_rpc.sh 99 "你好" 5` + `ts-log.sh` | PC | 同上非 DEBUG：prompt 9.73 t/s，gen 3.36 t/s |
-| `phone_cpu_20260708_210444.log` | `./run_phone_baseline.sh` + `ts-log.sh` | 手机 | 本地 CPU 基线：约 7.1 t/s |
+| `pc_ngl4_20260708_210444.log` | `DEBUG=1 ./run_pc_rpc.sh 4 "你好" 5` + `../common/scripts/ts-log.sh` | PC | 4 层 offload 到手机：prompt 34.34 t/s，gen 8.46 t/s |
+| `pc_ngl4_nodebug_20260708_212253.log` | `./run_pc_rpc.sh 4 "你好" 5` + `../common/scripts/ts-log.sh` | PC | 同上非 DEBUG：prompt 37.64 t/s，gen 7.59 t/s |
+| `pc_ngl99_20260708_210444.log` | `DEBUG=1 ./run_pc_rpc.sh 99 "你好" 5` + `../common/scripts/ts-log.sh` | PC | 全部层 offload 到手机：prompt 8.96 t/s，gen 3.16 t/s |
+| `pc_ngl99_nodebug_20260708_212345.log` | `./run_pc_rpc.sh 99 "你好" 5` + `../common/scripts/ts-log.sh` | PC | 同上非 DEBUG：prompt 9.73 t/s，gen 3.36 t/s |
+| `phone_cpu_20260708_210444.log` | `./run_phone_baseline.sh` + `../common/scripts/ts-log.sh` | 手机 | 本地 CPU 基线：约 7.1 t/s |
 | `phone_cpu_nodebug_20260708_213312.log` | 同上 | 手机 | 同上 |
-| `phone_ngl4_20260708_210444.log` | `DEBUG=1 ./run_phone_rpc.sh` + `ts-log.sh` | 手机 | RPC Server 侧，对应 `pc_ngl4`：graph 108 节点 |
+| `phone_ngl4_20260708_210444.log` | `DEBUG=1 ./run_phone_rpc.sh` + `../common/scripts/ts-log.sh` | 手机 | RPC Server 侧，对应 `pc_ngl4`：graph 108 节点 |
 | `phone_ngl4_nodebug_20260708_212253.log` | 同上 | 手机 | 同上 |
-| `phone_ngl99_20260708_210444.log` | `DEBUG=1 ./run_phone_rpc.sh` + `ts-log.sh` | 手机 | RPC Server 侧，对应 `pc_ngl99`：graph 821 节点 |
+| `phone_ngl99_20260708_210444.log` | `DEBUG=1 ./run_phone_rpc.sh` + `../common/scripts/ts-log.sh` | 手机 | RPC Server 侧，对应 `pc_ngl99`：graph 821 节点 |
 | `phone_ngl99_nodebug_20260708_212345.log` | 同上 | 手机 | 同上 |
 
 > `*_nodebug_*.log` 是关闭 `DEBUG=1` 后的真实性能数据；`DEBUG=1` 日志用于验证 scheduler split 和手机端 graph 节点数。

@@ -403,4 +403,89 @@ logs/
 
 ---
 
+## 11. 追加：Qwen3-1.7B GPU + WSL RPC 通宵基准（2026-07-15）
+
+> 目标：在 GPU PC（RTX 4050 6GB）上验证更大模型的 CUDA 基线，并测试 GPU PC + 当前 WSL 机器（CPU RPC Worker）的双机异构推理。
+> 模型：`qwen3:1.7b`（Ollama 拉取，实际量化 Q4_K_M，约 2.0B 参数）。
+> 命令：`llama-completion -m qwen3-1.7b-instruct-ollama.gguf -p "你好" -n 32 -no-cnv -ngl N [--rpc 127.0.0.1:50053]`
+
+### 11.1 环境
+
+| 节点 | 角色 | 后端 | 地址 |
+|---|---|---|---|
+| GPU PC | Host | CUDA 12.0 | `192.168.1.10` |
+| 当前 WSL | RPC Worker | CPU | `127.0.0.1:50053`（SSH 反向隧道） |
+
+### 11.2 GPU PC 本地 CUDA 性能
+
+| ngl | load time | prompt eval | generation | 观察 |
+|---|---|---|---|---|
+| 0（纯 CPU） | 1920 ms | 1 token / inf t/s | 32 runs / 39.81 t/s | 全部在 CPU，GPU 几乎空闲 |
+| 12 | 1350 ms | 1 token / inf t/s | 32 runs / 65.82 t/s | 12 层 GPU |
+| 24 | 633 ms | 1 token / inf t/s | 32 runs / 98.31 t/s | 24 层 GPU |
+| 99（全部 GPU） | 365 ms | 1 token / inf t/s | 32 runs / **132.84 t/s** | 全部层 offload 到 RTX 4050 |
+
+> prompt 只有 `"你好"` 1 个 token，所以 prompt eval 时间为 0，速度显示为 `inf`。
+
+### 11.3 GPU PC + WSL RPC 双机性能
+
+| ngl | load time | prompt eval | generation | 观察 |
+|---|---|---|---|---|
+| 0（全部 RPC） | 1930 ms | 1 token / inf t/s | 32 runs / **44.13 t/s** | 全部层在 WSL CPU， surprisingly 比本地 CPU 快 |
+| 12 | 12147 ms | 1 token / inf t/s | 32 runs / 18.80 t/s | GPU + RPC 混合，RPC 初始化开销大 |
+| 24 | 21987 ms | 1 token / inf t/s | 32 runs / 16.46 t/s | 更多层 offload 到 RPC，但网络 RTT 成为瓶颈 |
+| 99 | 25360 ms | 1 token / inf t/s | 32 runs / 21.60 t/s | scheduler 把大量计算放回 GPU PC，RPC 只跑少量 |
+
+### 11.4 GPU 功耗与显存占用
+
+采样方式：`nvidia-smi --query-gpu=power.draw,memory.used,utilization.gpu,temperature.gpu --format=csv -l 1`
+
+| 配置 | 平均功耗 | 平均显存占用 | 平均利用率 | 平均温度 | 采样数 |
+|---|---|---|---|---|---|
+| gpu_local_ngl0 | 11.7 W | 206 MiB | 0.0 % | 41.2 °C | 4 |
+| gpu_local_ngl12 | 16.3 W | 1154 MiB | 3.7 % | 42.7 °C | 3 |
+| gpu_local_ngl24 | 17.8 W | 530 MiB | 0.0 % | 43.0 °C | 2 |
+| gpu_local_ngl99 | 25.7 W | 2377 MiB | 0.0 % | 44.0 °C | 2 |
+| gpu_rpc_ngl0 | 22.8 W | 206 MiB | 0.0 % | 45.0 °C | 4 |
+| gpu_rpc_ngl12 | 16.1 W | 453 MiB | 0.3 % | 45.1 °C | 18 |
+| gpu_rpc_ngl24 | 16.1 W | 603 MiB | 0.3 % | 45.9 °C | 31 |
+| gpu_rpc_ngl99 | 15.1 W | 620 MiB | 0.9 % | 46.4 °C | 35 |
+
+> 显存占用采样较稀疏，存在数值波动；可看出 `-ngl 99` 时显存占用最高（约 2.4 GB），而 RPC 混合配置显存占用较低。
+
+### 11.5 关键发现
+
+1. **RTX 4050 6GB 可以轻松跑 Qwen3-1.7B Q4_K_M**：本地 `-ngl 99` 达到 **132.84 t/s**，显存占用约 2.4 GB。
+2. **`-ngl` 在纯 CUDA 场景下呈单调加速**：ngl 0 → 12 → 24 → 99，generation 速度从 39.81 提升到 132.84 t/s，符合预期。
+3. **RPC 混合场景的 `-ngl` 行为非单调**：
+   - `ngl=0` 时速度反而最快（44.13 t/s），说明 scheduler 把全部层放到了 WSL CPU。
+   - `ngl=12/24` 时加载时间暴增到 12–22 s，且速度下降到 16–18 t/s，说明跨 WSL 网络（RTT ~90 ms）的传输开销显著。
+   - `ngl=99` 时速度回升到 21.60 t/s，scheduler 倾向于把计算留在本地 GPU。
+4. **RPC 初始化开销与模型大小相关**：对于 1.7B Q4_K_M，首次连接 RPC Worker 的加载时间为 12–25 s；后续同 Worker 复用可缩短（本次脚本每次启动新进程，未复用）。
+5. **WSL 反向隧道稳定**：整晚运行中 `rpc_server` 与 `reverse_tunnel` 会话保持存活，双机链路可复现。
+
+### 11.6 新增脚本
+
+```text
+scripts/overnight_gpu_benchmark.sh   # GPU PC 通宵自动基准脚本
+```
+
+该脚本：
+- 自动探测 Ollama 模型目录（系统服务 `/usr/share/ollama/.ollama/models` 或用户目录）。
+- 拉取模型并链接为 GGUF。
+- 运行本地 CUDA + WSL RPC 多组 `-ngl` 基线。
+- 同步记录 `nvidia-smi` 功耗/显存/利用率/温度。
+- 自动生成汇总文件。
+
+---
+
+## 12. 更新后的下一步建议
+
+- 用同一套脚本测试 **Qwen2.5-3B / 7B**，验证 RTX 4050 6GB 的显存上限和速度衰减。
+- 测试 **手机 RPC Worker** 加入后的三机链路（当前手机未参与）。
+- 如果目标是 **Qwen3.6-35B-A3B-FP8**，需要升级到 24GB+ 显存的 GPU 或云端实例；当前脚本可直接复用。
+- 优化 RPC 加载时间：考虑让 RPC Worker 预加载权重，或复用 `llama-server` 长连接。
+
+---
+
 详细复现步骤请见 `reproduce.md`。通信协议请见 `protocol.md`。
