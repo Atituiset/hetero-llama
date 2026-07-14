@@ -134,9 +134,27 @@ git checkout main
 |---|---|
 | [`config.env`](config.env) | 三机拓扑配置（本次双机使用其中 GPU PC + 当前机器部分） |
 | [`scripts/overnight_gpu_benchmark.sh`](scripts/overnight_gpu_benchmark.sh) | 通宵自动基准脚本：拉模型、跑本地/RPC 多组 `-ngl`、记录 nvidia-smi、生成汇总 |
+| [`scripts/overnight_watchdog.sh`](scripts/overnight_watchdog.sh) | 通宵 watchdog：自动检测/恢复本地 RPC Server、反向隧道和 GPU PC 上的基准 tmux 会话 |
 | [`logs/3machine_summary_20260714_142403.txt`](logs/3machine_summary_20260714_142403.txt) | 自动生成的文本汇总 |
 | `logs/3machine_gpu_*_ngl{0,12,24,99}_20260714_142222.log` | 推理日志 |
 | `logs/3machine_gpu_*_ngl*_20260714_142222_gpu.csv` | 功耗/显存/利用率/温度采样 |
+
+### 通宵 watchdog 用法
+
+```bash
+# 单次健康检查（手动）
+cd 3-machine
+./scripts/overnight_watchdog.sh
+
+# 后台循环守护（推荐配合 nohup / systemd timer）
+nohup ./scripts/overnight_watchdog.sh --loop > logs/overnight_watchdog.log 2>&1 &
+```
+
+它会自动：
+1. 检查本机 tmux 会话 `rpc_server` 和 `reverse_tunnel`，掉线则重启。
+2. 通过 SSH 检查 GPU PC 上的 `gpu_bench` 会话，掉线则重启 `scripts/overnight_gpu_benchmark.sh`。
+3. 把状态追加到 `~/.claude/hetero_overnight_status.md`。
+4. 检测到 `summary_*.txt` 后自动退出 `--loop` 模式。
 
 ---
 
