@@ -27,7 +27,7 @@ TIMESTAMP="$(date +%Y%m%d_%H%M%S)"
 # -----------------------------
 
 log() {
-    echo "[$(date '+%Y-%m-%d %H:%M:%S')] $*"
+    echo "[$(date '+%Y-%m-%d %H:%M:%S')] $*" >&2
 }
 
 # 解析 MODEL_别名 变量
@@ -66,14 +66,14 @@ link_ollama_model() {
     elif [ -d "${HOME}/.ollama/models" ]; then
         OLLAMA_DIR="${HOME}/.ollama/models"
     else
-        log "ERROR: 无法找到 Ollama models 目录" &>2
+        log "ERROR: 无法找到 Ollama models 目录"
         exit 1
     fi
     log "Ollama 模型目录: ${OLLAMA_DIR}"
 
     local manifest_path="${OLLAMA_DIR}/manifests/registry.ollama.ai/library/${ollama_name%:*}/${ollama_name#*:}"
     if [ ! -f "${manifest_path}" ]; then
-        log "ERROR: Ollama manifest 不存在: ${manifest_path}" &>2
+        log "ERROR: Ollama manifest 不存在: ${manifest_path}"
         exit 1
     fi
 
@@ -90,7 +90,7 @@ PY
 )
 
     if [ -z "${model_blob}" ]; then
-        log "ERROR: 无法从 manifest 找到 model blob" &>2
+        log "ERROR: 无法从 manifest 找到 model blob"
         exit 1
     fi
 
