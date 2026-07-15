@@ -214,7 +214,7 @@ SUMMARY="${LOG_DIR}/summary_${TIMESTAMP}.txt"
         echo "=== ${alias} (${ollama_name}) ==="
         for topo in $(get_topologies_for_model "${alias}"); do
             echo "--- ${topo} ---"
-            grep -H "eval time" "${LOG_DIR}/${alias}_${topo}_ngl*_${TIMESTAMP}.log" 2>/dev/null || true
+            grep -H "eval time" ${LOG_DIR}/${alias}_${topo}_ngl*_"${TIMESTAMP}".log 2>/dev/null || true
         done
         echo ""
     done
