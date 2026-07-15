@@ -1,4 +1,6 @@
-# 3-Machine 异构推理报告
+# 3-Machine 异构推理报告（模板）
+
+> **本报告为模板：完整三机（GPU PC + WSL + 手机）数据待通宵基准完成后填充。**
 
 > 生成时间：2026-07-15  
 > 模型：Qwen3-1.7B-Instruct-Q4_K_M、Qwen2-0.5B-Instruct-Q4_0  
