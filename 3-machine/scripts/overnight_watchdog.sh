@@ -125,7 +125,7 @@ start_phone_rpc() {
         -p 8022 \
         -o BatchMode=yes \
         "u0_a111@${PHONE_REAL_HOST}" \
-        "proot-distro login ubuntu -- bash -c 'cd /root/Projects/gpu-cpu-phone-test && TUNNEL_MODE=1 nohup ./3-machine/scripts/run_phone_rpc.sh 127.0.0.1 ${PHONE_PORT} > /tmp/phone_rpc.log 2>&1 & disown; sleep 2; pgrep -f \"ggml-rpc-server -H 127.0.0.1 -p ${PHONE_PORT}\"'" 2>/dev/null || true
+        "proot-distro login ubuntu -- bash -c 'cd /root/Projects/gpu-cpu-phone-test && TUNNEL_MODE=1 nohup ./3-machine/scripts/run_phone_rpc.sh ${PHONE_REAL_HOST} ${PHONE_PORT} > /tmp/phone_rpc.log 2>&1 & disown; sleep 2; pgrep -f \"ggml-rpc-server -H ${PHONE_REAL_HOST} -p ${PHONE_PORT}\"'" 2>/dev/null || true
 }
 
 start_gpu_bench() {

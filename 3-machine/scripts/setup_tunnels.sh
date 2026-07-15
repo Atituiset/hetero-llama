@@ -68,12 +68,12 @@ start_phone_tunnel() {
 
     PHONE_TUNNEL_ACTIVE=1
 
-    # 在手机上启动 RPC Server（绑定 127.0.0.1）
+    # 在手机上启动 RPC Server（绑定 ${PHONE_REAL_HOST}，使 Termux SSH 本地转发可达）
     echo "      在手机上启动 RPC Server..."
     ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null \
         -o PasswordAuthentication=no -p 8022 \
         u0_a111@${PHONE_REAL_HOST} \
-        "proot-distro login ubuntu -- bash -c 'cd /root/Projects/gpu-cpu-phone-test && TUNNEL_MODE=1 nohup ./3-machine/scripts/run_phone_rpc.sh 127.0.0.1 ${PHONE_PORT} > /tmp/phone_rpc.log 2>&1 & disown; sleep 2; pgrep -f \"ggml-rpc-server -H 127.0.0.1 -p ${PHONE_PORT}\"'" 2>/dev/null || true
+        "proot-distro login ubuntu -- bash -c 'cd /root/Projects/gpu-cpu-phone-test && TUNNEL_MODE=1 nohup ./3-machine/scripts/run_phone_rpc.sh ${PHONE_REAL_HOST} ${PHONE_PORT} > /tmp/phone_rpc.log 2>&1 & disown; sleep 2; pgrep -f \"ggml-rpc-server -H ${PHONE_REAL_HOST} -p ${PHONE_PORT}\"'" 2>/dev/null || true
 
     # 建立本地转发
     local -a ssh_args=(
@@ -83,7 +83,7 @@ start_phone_tunnel() {
         -p 8022
         -o ServerAliveInterval=30
         -o ServerAliveCountMax=3
-        -L "127.0.0.1:${PHONE_LOCAL_PORT}:127.0.0.1:${PHONE_PORT}"
+        -L "127.0.0.1:${PHONE_LOCAL_PORT}:${PHONE_REAL_HOST}:${PHONE_PORT}"
         -N
         "u0_a111@${PHONE_REAL_HOST}"
     )

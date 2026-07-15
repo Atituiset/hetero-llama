@@ -11,7 +11,7 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 # shellcheck source=../config.env
 source "${SCRIPT_DIR}/../config.env"
 
-HOST="${1:-${PHONE_HOST}}"
+HOST="${1:-${PHONE_REAL_HOST:-${PHONE_HOST}}}"
 PORT="${2:-${PHONE_PORT}}"
 CACHE_DIR="${HOME}/.cache/llama.cpp/rpc"
 SERVER="${PHONE_BUILD_DIR}/bin/ggml-rpc-server"
