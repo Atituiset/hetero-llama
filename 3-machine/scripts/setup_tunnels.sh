@@ -6,6 +6,7 @@
 # 前置条件：
 #   - GPU PC 已配置免密 SSH 登录（当前机器 -> atituiset@192.168.1.10）
 #   - 手机已配置免密 SSH 登录（当前机器 -> u0_a111@192.168.1.7 -p 8022）
+#   - 手机 proot 内已启动 RPC Server 和 Unix socket 代理（run_phone_rpc.sh + run_phone_proxy.sh）
 
 set -e
 
@@ -19,11 +20,12 @@ mkdir -p "${LOG_DIR}"
 
 TUNNEL_PID_FILE="${LOG_DIR}/tunnel_pids"
 PHONE_LOCAL_PORT="50052"
+PHONE_SOCKET_PATH="/data/data/com.termux/files/home/.phone_rpc_${PHONE_PORT}.sock"
 PHONE_TUNNEL_ACTIVE=0
 
 echo "=== Hetero-LLaMA SSH 隧道启动 ==="
 echo "  GPU PC : ${GPU_PC_USER}@${GPU_PC_IP}"
-echo "  phone  : ${PHONE_HOST}:${PHONE_PORT}"
+echo "  phone  : ${PHONE_REAL_HOST}:${PHONE_PORT}"
 echo "  mode   : ${MODE}"
 echo ""
 
@@ -58,7 +60,7 @@ start_current_rpc() {
 }
 
 start_phone_tunnel() {
-    echo "[2/3] 建立到手机的 SSH 本地转发（127.0.0.1:${PHONE_LOCAL_PORT} -> ${PHONE_REAL_HOST}:${PHONE_PORT}）"
+    echo "[2/3] 建立到手机的 SSH 本地转发（127.0.0.1:${PHONE_LOCAL_PORT} -> ${PHONE_SOCKET_PATH}）"
     if ! ssh -o ConnectTimeout=5 -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null \
          -o PasswordAuthentication=no -p 8022 -o BatchMode=yes \
          u0_a111@${PHONE_REAL_HOST} true 2>/dev/null; then
@@ -68,14 +70,21 @@ start_phone_tunnel() {
 
     PHONE_TUNNEL_ACTIVE=1
 
-    # 在手机上启动 RPC Server（绑定 ${PHONE_REAL_HOST}，使 Termux SSH 本地转发可达）
+    # 在手机上启动 RPC Server（绑定 proot 内的 127.0.0.1）
     echo "      在手机上启动 RPC Server..."
     ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null \
         -o PasswordAuthentication=no -p 8022 \
         u0_a111@${PHONE_REAL_HOST} \
-        "proot-distro login ubuntu -- bash -c 'cd /root/Projects/gpu-cpu-phone-test && TUNNEL_MODE=1 nohup ./3-machine/scripts/run_phone_rpc.sh ${PHONE_REAL_HOST} ${PHONE_PORT} > /tmp/phone_rpc.log 2>&1 & disown; sleep 2; pgrep -f \"ggml-rpc-server -H ${PHONE_REAL_HOST} -p ${PHONE_PORT}\"'" 2>/dev/null || true
+        "proot-distro login ubuntu -- bash -c 'cd /root/Projects/gpu-cpu-phone-test && TUNNEL_MODE=1 nohup ./3-machine/scripts/run_phone_rpc.sh 127.0.0.1 ${PHONE_PORT} > /tmp/phone_rpc.log 2>&1 & disown; sleep 2'" 2>/dev/null || true
 
-    # 建立本地转发
+    # 启动 Unix socket 代理（桥接 proot 127.0.0.1:PHONE_PORT 到 Termux 可见 socket）
+    echo "      在手机上启动 Unix socket 代理..."
+    ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null \
+        -o PasswordAuthentication=no -p 8022 \
+        u0_a111@${PHONE_REAL_HOST} \
+        "proot-distro login ubuntu -- bash -c 'cd /root/Projects/gpu-cpu-phone-test && nohup ./3-machine/scripts/run_phone_proxy.sh ${PHONE_PORT} > /tmp/phone_proxy.log 2>&1 & disown; sleep 2; ls -l ${PHONE_SOCKET_PATH}'" 2>/dev/null || true
+
+    # 建立本地转发到 Unix socket
     local -a ssh_args=(
         -o StrictHostKeyChecking=no
         -o UserKnownHostsFile=/dev/null
@@ -83,7 +92,8 @@ start_phone_tunnel() {
         -p 8022
         -o ServerAliveInterval=30
         -o ServerAliveCountMax=3
-        -L "127.0.0.1:${PHONE_LOCAL_PORT}:${PHONE_REAL_HOST}:${PHONE_PORT}"
+        -o ExitOnForwardFailure=yes
+        -L "127.0.0.1:${PHONE_LOCAL_PORT}:${PHONE_SOCKET_PATH}"
         -N
         "u0_a111@${PHONE_REAL_HOST}"
     )

@@ -26,6 +26,8 @@ LOCAL_PROJECT_DIR="$(cd "${SCRIPT_DIR}/.." && pwd)"
 LOG_DIR="${LOCAL_PROJECT_DIR}/logs"
 mkdir -p "${LOG_DIR}"
 
+PHONE_SOCKET_PATH="/data/data/com.termux/files/home/.phone_rpc_${PHONE_PORT}.sock"
+
 # 从矩阵中聚合需要监控的拓扑
 NEED_WSL=0
 NEED_PHONE=0
@@ -71,6 +73,10 @@ start_rpc_server() {
 start_reverse_tunnel() {
     echo "[watchdog] 启动反向隧道会话：reverse_tunnel"
     tmux kill-session -t reverse_tunnel 2>/dev/null || true
+    local reverse_args=(-R "127.0.0.1:${CURRENT_PORT}:127.0.0.1:${CURRENT_PORT}")
+    if [ "${NEED_PHONE}" == "1" ]; then
+        reverse_args+=(-R "127.0.0.1:${PHONE_PORT}:127.0.0.1:${PHONE_PORT}")
+    fi
     tmux new-session -d -s reverse_tunnel -c "${LOCAL_PROJECT_DIR}" \
         "bash -c 'ssh \
             -o StrictHostKeyChecking=no \
@@ -80,7 +86,7 @@ start_reverse_tunnel() {
             -o ServerAliveInterval=30 \
             -o ServerAliveCountMax=3 \
             -o ExitOnForwardFailure=yes \
-            -R 127.0.0.1:${CURRENT_PORT}:127.0.0.1:${CURRENT_PORT} \
+            ${reverse_args[*]} \
             -N ${GPU_PC}'"
     sleep 2
 }
@@ -95,12 +101,23 @@ phone_ssh_reachable() {
 }
 
 has_phone_tunnel() {
-    ss -ltn 2>/dev/null | grep -q "127.0.0.1:50052"
+    ss -ltn 2>/dev/null | grep -q "127.0.0.1:${PHONE_PORT}"
+}
+
+start_phone_rpc() {
+    echo "[watchdog] 在手机上启动 RPC Server 与 Unix socket 代理"
+    ssh -o StrictHostKeyChecking=no \
+        -o UserKnownHostsFile=/dev/null \
+        -o PasswordAuthentication=no \
+        -p 8022 \
+        -o BatchMode=yes \
+        "u0_a111@${PHONE_REAL_HOST}" \
+        "proot-distro login ubuntu -- bash -c 'cd /root/Projects/gpu-cpu-phone-test && TUNNEL_MODE=1 nohup ./3-machine/scripts/run_phone_rpc.sh 127.0.0.1 ${PHONE_PORT} > /tmp/phone_rpc.log 2>&1 & disown; sleep 2; nohup ./3-machine/scripts/run_phone_proxy.sh ${PHONE_PORT} > /tmp/phone_proxy.log 2>&1 & disown; sleep 2; pgrep -af \"ggml-rpc-server|socat\"'" 2>/dev/null || true
 }
 
 start_phone_tunnel() {
     echo "[watchdog] 启动手机隧道：phone_tunnel"
-    pkill -f "ssh.*-L 127.0.0.1:50052" 2>/dev/null || true
+    pkill -f "ssh.*-L 127.0.0.1:${PHONE_PORT}" 2>/dev/null || true
     sleep 1
     tmux kill-session -t phone_tunnel 2>/dev/null || true
     tmux new-session -d -s phone_tunnel \
@@ -112,20 +129,9 @@ start_phone_tunnel() {
             -o ServerAliveInterval=30 \
             -o ServerAliveCountMax=3 \
             -o ExitOnForwardFailure=yes \
-            -L 127.0.0.1:50052:127.0.0.1:${PHONE_PORT} \
+            -L 127.0.0.1:${PHONE_PORT}:${PHONE_SOCKET_PATH} \
             -N u0_a111@${PHONE_REAL_HOST}'"
     sleep 3
-}
-
-start_phone_rpc() {
-    echo "[watchdog] 在手机上启动 RPC Server"
-    ssh -o StrictHostKeyChecking=no \
-        -o UserKnownHostsFile=/dev/null \
-        -o PasswordAuthentication=no \
-        -p 8022 \
-        -o BatchMode=yes \
-        "u0_a111@${PHONE_REAL_HOST}" \
-        "proot-distro login ubuntu -- bash -c 'cd /root/Projects/gpu-cpu-phone-test && TUNNEL_MODE=1 nohup ./3-machine/scripts/run_phone_rpc.sh ${PHONE_REAL_HOST} ${PHONE_PORT} > /tmp/phone_rpc.log 2>&1 & disown; sleep 2; pgrep -f \"ggml-rpc-server -H ${PHONE_REAL_HOST} -p ${PHONE_PORT}\"'" 2>/dev/null || true
 }
 
 start_gpu_bench() {
@@ -180,14 +186,14 @@ health_check() {
     if [ "${NEED_PHONE}" == "1" ]; then
         if phone_ssh_reachable; then
             status_parts+=("phone_ssh:ok")
+            start_phone_rpc
+            status_parts+=("phone_rpc:started")
             if has_phone_tunnel; then
                 status_parts+=("phone_tunnel:ok")
             else
                 status_parts+=("phone_tunnel:restarted")
                 start_phone_tunnel
             fi
-            start_phone_rpc
-            status_parts+=("phone_rpc:started")
         else
             status_parts+=("phone_ssh:unreachable")
         fi

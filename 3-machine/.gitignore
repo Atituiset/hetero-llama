@@ -1,0 +1,7 @@
+# 运行时日志与 GPU 采样数据
+logs/
+*.log
+*.csv
+
+# 状态文件
+*.status.md

@@ -50,8 +50,21 @@ Host 直接通过 `CURRENT_IP:50053` 和 `PHONE_HOST:50052` 连接 Worker：
 
 ```text
 GPU PC Host ──SSH 反向隧道──┬── 127.0.0.1:50053 ── 当前机器 RPC Worker
-                            └── 127.0.0.1:50052 ── 当前机器 ──SSH 本地转发── 手机 RPC Worker
+                            └── 127.0.0.1:50052 ── 当前机器 ──SSH 本地转发──
+                                                                          │
+                                    ┌─ Unix socket ─┐                     │
+                                    │  /data/data/.../.phone_rpc_50052.sock │
+                                    └──────┬────────┘                     │
+                                           │                              │
+                                    socat（proot 内）                     │
+                                           │                              │
+                                    手机 RPC Worker（proot 127.0.0.1:50052）
 ```
+
+说明：
+- Android/Termux 无法连接自身的 LAN IP（`192.168.1.7`），因此手机 RPC Server 绑定在 proot 内的 `127.0.0.1:50052`。
+- 在 proot 内运行 `socat`，把 proot 的 `127.0.0.1:50052` 桥接到 Termux 可见的 Unix socket。
+- 当前机器通过 SSH 本地转发连接该 Unix socket，再通过反向隧道暴露给 GPU PC。
 
 启用方式：
 

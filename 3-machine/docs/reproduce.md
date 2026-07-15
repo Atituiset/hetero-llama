@@ -51,7 +51,17 @@ make -j2 ggml-rpc-server
 - 当前机器 → GPU PC：`ssh atituiset@192.168.1.10` 无需密码。
 - 当前机器 → 手机：`ssh -p 8022 u0_a111@192.168.1.7` 无需密码。
 
-### 1.3 Ollama
+### 1.3 手机 proot 依赖
+
+手机端需要在 proot-distro Ubuntu 内安装 `socat`：
+
+```bash
+ssh -p 8022 u0_a111@192.168.1.7
+proot-distro login ubuntu
+apt-get update && apt-get install -y socat
+```
+
+### 1.4 Ollama
 
 GPU PC 上已安装 Ollama，并能拉取 `qwen3:1.7b` 与 `qwen2:0.5b`。
 
@@ -71,12 +81,12 @@ cd /home/atituiset/Projects/gpu-cpu-phone-test/3-machine
 ```text
 === Hetero-LLaMA SSH 隧道启动 ===
   GPU PC : atituiset@192.168.1.10
-  phone  : 127.0.0.1:50052
+  phone  : 192.168.1.7:50052
   mode   : all
 
 [1/3] 启动当前机器 RPC Server（绑定 127.0.0.1:50053）
       OK
-[2/3] 建立到手机的 SSH 本地转发（127.0.0.1:50052 -> 192.168.1.7:50052）
+[2/3] 建立到手机的 SSH 本地转发（127.0.0.1:50052 -> /data/data/com.termux/files/home/.phone_rpc_50052.sock）
       OK
 [3/3] 建立到 GPU PC 的 SSH 反向隧道
       OK

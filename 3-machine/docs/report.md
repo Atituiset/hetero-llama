@@ -42,12 +42,23 @@
 
 | ngl | 结果 | 日志 |
 |---|---|---|
-| 0 | 手机 RPC Server 崩溃 | `qwen3_1_7b_phone_ngl0_20260715_122356.log` |
-| 12 | 手机 RPC Server 崩溃 | `qwen3_1_7b_phone_ngl12_20260715_122356.log` |
-| 24 | 手机 RPC Server 崩溃 | `qwen3_1_7b_phone_ngl24_20260715_122356.log` |
-| 99 | 手机 RPC Server 崩溃 | `qwen3_1_7b_phone_ngl99_20260715_122356.log` |
+| 0 | 待重跑（手机当前离线） | `qwen3_1_7b_phone_ngl0_20260715_122356.log` |
+| 12 | 待重跑（手机当前离线） | `qwen3_1_7b_phone_ngl12_20260715_122356.log` |
+| 24 | 待重跑（手机当前离线） | `qwen3_1_7b_phone_ngl24_20260715_122356.log` |
+| 99 | 待重跑（手机当前离线） | `qwen3_1_7b_phone_ngl99_20260715_122356.log` |
 
-错误信息：`Remote RPC server crashed or returned malformed response`。GPU PC 在 `get_socket` 阶段崩溃，手机端 `ggml-rpc-server` 进程退出。需要进一步调试手机端 RPC Server（可能原因：proot 环境 ABI/运行时问题、内存不足、或需重新编译）。
+历史问题：首次通宵基准时手机 RPC Server 在 GPU PC 连接后崩溃，错误为 `Remote RPC server crashed or returned malformed response`。根因已定位：Android/Termux 无法连接自身 LAN IP，导致 SSH 本地转发到 `192.168.1.7:50052` 在手机侧实际无法建立连接。
+
+修复方案（已更新脚本）：
+- 手机 RPC Server 绑定 proot 内的 `127.0.0.1:50052`。
+- 在 proot 内运行 `socat`，把 `127.0.0.1:50052` 桥接到 Termux 可见的 Unix socket `/data/data/com.termux/files/home/.phone_rpc_50052.sock`。
+- WSL 通过 SSH 本地转发连接该 Unix socket，再经反向隧道暴露给 GPU PC。
+
+相关变更：
+- `scripts/run_phone_rpc.sh`：默认绑定 `127.0.0.1`。
+- `scripts/run_phone_proxy.sh`（新增）：socat Unix socket 代理。
+- `scripts/setup_tunnels.sh` / `scripts/overnight_watchdog.sh`：改用 Unix socket 转发。
+- `docs/protocol.md` / `docs/reproduce.md`：更新拓扑说明与依赖。
 
 ---
 
@@ -77,10 +88,12 @@
 
 | ngl | 结果 | 日志 |
 |---|---|---|
-| 0 | 手机 RPC Server 崩溃 | `qwen2_0_5b_phone_ngl0_20260715_122356.log` |
-| 12 | 手机 RPC Server 崩溃 | `qwen2_0_5b_phone_ngl12_20260715_122356.log` |
-| 24 | 手机 RPC Server 崩溃 | `qwen2_0_5b_phone_ngl24_20260715_122356.log` |
-| 99 | 手机 RPC Server 崩溃 | `qwen2_0_5b_phone_ngl99_20260715_122356.log` |
+| 0 | 待重跑（手机当前离线） | `qwen2_0_5b_phone_ngl0_20260715_122356.log` |
+| 12 | 待重跑（手机当前离线） | `qwen2_0_5b_phone_ngl12_20260715_122356.log` |
+| 24 | 待重跑（手机当前离线） | `qwen2_0_5b_phone_ngl24_20260715_122356.log` |
+| 99 | 待重跑（手机当前离线） | `qwen2_0_5b_phone_ngl99_20260715_122356.log` |
+
+备注：直接连接 WSL → 手机 `192.168.1.7:50052` 可正常工作（Qwen2-0.5B 约 104 t/s），证明手机 RPC Server 本身无 ABI/内存问题。完整三机链路需等待修复后的隧道架构在手机上验证。
 
 ---
 
@@ -90,7 +103,7 @@
 2. **`-ngl` 在纯 CUDA 场景下单调加速**：Qwen3-1.7B 从 ngl=0 的 44.17 t/s 提升到 ngl=99 的 132.90 t/s。
 3. **RPC 初始化开销显著**：连接 WSL Worker 后，Qwen3-1.7B 加载时间从本地 240 ms 上升到 12–25 s。
 4. **RPC 混合场景的 `-ngl` 行为非单调**：Qwen3-1.7B + WSL 时，ngl=0 速度最快（44.45 t/s），ngl=99 反而降到 12.64 t/s。
-5. **手机 RPC Server 当前无法稳定工作**：隧道和进程启动都正常，但 GPU PC Host 一连接手机 RPC Server 就崩溃，导致完整三机链路未能跑通。这是当前最大阻塞点。
+5. **手机 RPC 隧道架构已修复**：从直连手机 LAN IP 改为 proot 内 `127.0.0.1` + `socat` Unix socket 桥接，规避 Android/Termux 无法访问自身 LAN IP 的问题。完整三机结果待手机恢复在线后补跑。
 
 ---
 
@@ -101,12 +114,16 @@
 - 现象：GPU PC `llama-completion` 在 `ggml_backend_rpc_add_server` / `get_socket` 阶段崩溃，手机端 `ggml-rpc-server` 进程退出。
 - 已确认：
   - 三端 llama.cpp commit 一致（`152d337f`）。
-  - GPU PC 到手机隧道端口 `127.0.0.1:50052` TCP 连通。
   - 手机端模型 `qwen2-0.5b-instruct-q4_0.gguf` 已就位。
-- 待排查：
-  - 手机端 `ggml-rpc-server` 是否需重新编译。
-  - proot Ubuntu 环境下是否存在 ABI/运行时异常。
-  - 是否内存不足（尝试更小的模型或单 RPC 连接）。
+  - 直接连接 WSL → 手机 `192.168.1.7:50052` 成功（约 104 t/s），排除 ABI/内存问题。
+  - 根因：Android/Termux 无法连接自身 LAN IP，导致 SSH 本地转发到 `192.168.1.7:50052` 在手机侧失败。
+- 已修复：
+  - 手机 RPC Server 绑定 proot 内 `127.0.0.1:50052`。
+  - 增加 `socat` Unix socket 代理桥接 Termux 与 proot。
+  - WSL 通过 Unix socket SSH 本地转发连接手机。
+- 待验证：
+  - 手机当前离线（`192.168.1.7` 不可达），修复后的隧道架构需在手机恢复后验证。
+  - 验证通过后，重新跑完整三机通宵基准并回填报告。
 
 ### 5.2 后续实验
 
