@@ -3,6 +3,7 @@ llama.cpp/
 MNN/
 ncnn/
 ncnn_llm/
+mistral.rs/
 
 # 构建产物
 build-*/

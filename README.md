@@ -14,6 +14,7 @@
 | **mnn** | [`mnn/`](./mnn/README.md) | ✅ 已验证 | 用 MNN 在 Mate 40 Pro 上跑 LLM；OpenCL/Vulkan 能调用 GPU 但比 CPU 慢 |
 | **ncnn-llm** | [`ncnn-llm/`](./ncnn-llm/README.md) | ✅ 已验证 | ncnn_llm 已构建成功；Qwen3-0.6B CPU 40.7 s，Vulkan 卡住无输出 |
 | **3-machine** | [`3-machine/`](./3-machine/README.md) | ✅ 可用 | GPU PC + WSL + 手机三机 llama.cpp RPC 异构推理；含通宵基准与 watchdog |
+| **mistralrs-bridge** | [`mistralrs-bridge/`](./mistralrs-bridge/README.md) | ⚠️ 实验 | mistral.rs TCP 桥接分层推理；Qwen2-0.5B 验证通过，Qwen3.6-35B-A3B 未完成 |
 | **common** | [`common/`](./common/) | ✅ 已启用 | 跨模式共享脚本（`ts-log.sh`、`check-phone-status.sh`、配置模板） |
 
 进入对应目录查看各自的 README 获取详细用法。
@@ -82,6 +83,20 @@ hetero-llama/
 │   ├── scripts/
 │   │   └── overnight_watchdog.sh  # 通宵基准 watchdog
 │   ├── docs/
+│   └── logs/
+├── mistralrs-bridge/
+│   ├── README.md              # 模式说明
+│   ├── config.env
+│   ├── scripts/
+│   │   ├── run_remote_worker.sh   # 启动 TCP remote worker
+│   │   ├── run_bridge_host.sh     # 启动桥接 Host
+│   │   └── build_gpu_binary.sh    # GPU PC CUDA 编译
+│   ├── topologies/
+│   │   ├── gpu_wsl_bridge.yml          # GPU + WSL 双机拓扑
+│   │   └── gpu_wsl_phone_bridge.yml    # GPU + WSL + 手机三机拓扑
+│   ├── docs/
+│   │   ├── report.md                  # 源码更改报告
+│   │   └── overnight-session.md       # 通宵 session 报告
 │   └── logs/
 └── common/
     ├── config.env.template
