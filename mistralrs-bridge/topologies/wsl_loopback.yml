@@ -1,0 +1,4 @@
+# WSL 本机 loopback 测试拓扑（纯 CPU，无 GPU）
+# Remote worker 处理全部 24 层
+0-23:
+  device: remote:tcp://127.0.0.1:5051
