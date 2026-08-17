@@ -25,10 +25,14 @@ rsync -avz \
     "${MISTRALRS_DIR}/" \
     "${GPU_PC_USER}@${GPU_PC_IP}:${GPU_PC_MISTRALRS_DIR}/"
 
-echo "Building (this may take 10-30 minutes)..."
-ssh "${GPU_PC_USER}@${GPU_PC_IP}" bash -c "
+# flash-attn 的 nvcc 会在 15GB RAM 上并行起多个 3GB+ 的 cicc 进程导致 OOM，
+# 默认只编 cuda feature；确需 flash-attn 时显式传入（如: ./build_gpu_binary.sh 1 'cuda flash-attn'）
+FEATURES="${2:-cuda}"
+
+echo "Building features: ${FEATURES} (this may take 10-60 minutes)..."
+ssh "${GPU_PC_USER}@${GPU_PC_IP}" 'bash -s' <<EOF
     export PATH=\$HOME/.cargo/bin:\$PATH
     cd ${GPU_PC_MISTRALRS_DIR}
-    CARGO_BUILD_JOBS=${JOBS} cargo build --release -p mistralrs-cli --features 'cuda flash-attn cudnn' 2>&1
-"
+    CARGO_BUILD_JOBS=${JOBS} cargo build --release -p mistralrs-cli --features '${FEATURES}' 2>&1
+EOF
 echo "Build complete."

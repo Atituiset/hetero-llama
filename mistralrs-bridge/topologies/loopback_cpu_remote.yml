@@ -1,0 +1,6 @@
+# WSL 本机 loopback 桥接冒烟测试拓扑（Qwen2-0.5B, 24 层）
+# 前半层走本机 CPU，后半层走本机 TCP remote worker —— 验证桥接协议端到端
+0-11:
+  device: cpu
+12-23:
+  device: remote:tcp://127.0.0.1:5051

@@ -15,7 +15,6 @@ source "${MODE_DIR}/config.env"
 MODEL="${1:-${DEFAULT_MODEL}}"
 PROMPT="${2:-${DEFAULT_PROMPT}}"
 CUDA_LAYERS="${3:-15}"
-MAX_TOKENS="${4:-32}"
 
 MODEL_DIR=$(dirname "$MODEL")
 MODEL_FILE=$(basename "$MODEL")
@@ -44,7 +43,6 @@ echo "============================="
         -f "${MODEL_FILE}" \
         --device-layers "0:${CUDA_LAYERS}" \
         --max-seq-len 2048 \
-        -n "${MAX_TOKENS}" \
         -i "${PROMPT}" \
         2>&1
 

@@ -33,6 +33,7 @@ echo "================================"
 exec "${MISTRALRS_BIN}" run \
     --format gguf \
     --topology "$TOPOLOGY" \
-    --model-id "$MODEL_PATH" \
+    -m "$(dirname "$MODEL_PATH")" \
+    -f "$MODEL_FILE" \
     --max-seq-len 4096 \
     -i "$PROMPT"

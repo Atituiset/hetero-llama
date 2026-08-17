@@ -2,10 +2,10 @@
 
 使用 [mistral.rs](https://github.com/Atituiset/mistral.rs)（EricLBuehler/mistral.rs 的 fork，含 16 个自定义 bridge commits）的 TCP 桥接功能，实现 GPU / CPU 跨机异构推理。
 
-- 状态：⚠️ Qwen2-0.5B 跨机桥接验证通过；Qwen3.6-35B-A3B 端到端未完成（GPU PC OOM 崩溃中断）
-- 框架：mistral.rs v0.9.0-dev + 16 bridge commits
-- 模型：`Qwen2-0.5B-Instruct-Q4_0`、`Qwen3.6-35B-A3B-Q3_K_M`（目标）
-- 设备：GPU PC（RTX 4050 6GB）+ WSL（CPU 15GB）+ Mate 40 Pro（CPU 8GB，未实际参与）
+- 状态：✅ **27B 和 35B-A3B 跨机桥接均已端到端跑通且输出正确**（2026-08-18）；27B decode 2.42 T/s，35B 正确但极慢（~1 token/min，待优化）
+- 框架：mistral.rs v0.9.0-dev + bridge commits + qwen35/qwen35moe 支持（未提交工作区改动）
+- 模型：`Qwen2-0.5B-Instruct-Q4_0`（已验证）、`Qwen3.6-27B-Q3_K_M`（✅ 正确）、`Qwen3.6-35B-A3B-Q3_K_M`（✅ 正确/慢）、`Qwen3.5-0.8B-Q4_K_M`（数值调试基准）
+- 设备：GPU PC（RTX 4050 6GB + 15GB RAM）+ WSL（CPU 15GB，worker ≤16 层，超限会把 WSL 搞崩）
 
 ## 目录
 
@@ -73,13 +73,10 @@ cd /home/atituiset/Projects/gpu-cpu-phone-test/mistralrs-bridge
 | 测试项 | 状态 | 性能 |
 |--------|------|------|
 | Qwen2-0.5B 跨机桥接 | ✅ 通过 | 197 T/s prompt, 46 T/s decode |
-| TCP 协议 + RemoteConnectionPool | ✅ 通过 | — |
-| Qwen3.6-35B-A3B GGUF 解析 | ✅ 通过 | 41 层, 248320 vocab |
-| SSM 层 forward pass | ⚠️ 编译通过, 未数值验证 | — |
-| Qwen3.6-35B-A3B 端到端推理 | 🚧 PENDING | — |
-| 跨机桥接 + Qwen3.6-35B-A3B | 🚧 PENDING | — |
-| GPU CUDA 二进制 | 🚧 PENDING | OOM 崩溃后未重建 |
-| 手机参与桥接 | ❌ 未测试 | — |
+| Qwen3.5-0.8B 纯 CPU / loopback / 三段拓扑 | ✅ 输出全正确 | 纯 CPU 20 T/s |
+| **Qwen3.6-27B 三段桥接**（12 cuda + 37 cpu + 15 remote） | ✅ **输出正确** | prompt 5.2 T/s, decode 2.42 T/s |
+| **Qwen3.6-35B-A3B 三段桥接**（8 cuda + 17 cpu + 15 remote） | ✅ **输出正确** | ~1 token/min，MoE CPU + SSM 串行待优化 |
+| qwen35 数值逐层对照 llama.cpp | ✅ 24 层 <1% 偏差 | — |
 
 ## 源码
 

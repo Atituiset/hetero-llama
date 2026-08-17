@@ -1,0 +1,12 @@
+# GPU PC + WSL 双机桥接拓扑 — Qwen3.6-35B-A3B (40 主干层 + 1 MTP, Q3_K_M 16GB)
+# MTP 层（blk.40）不参与推理；层均 ~390MB：
+#   GPU PC CUDA (6GB VRAM): 0-7 共 8 层 ≈ 3.1GB + lm_head ~0.4GB
+#   GPU PC CPU (13GB avail): 8-24 共 17 层 ≈ 6.6GB + embedding (BF16 ~1GB)
+#   WSL remote worker: 25-39 共 15 层 ≈ 5.9GB（WSL 实测 >8GB 有整机崩溃风险）
+# 注意：remote 地址经 ssh -R 隧道转发到 WSL（先跑 scripts/start_wsl_tunnel.sh）
+0-7:
+  device: cuda[0]
+8-24:
+  device: cpu
+25-39:
+  device: remote:tcp://127.0.0.1:5051

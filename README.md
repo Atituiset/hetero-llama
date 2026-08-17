@@ -14,7 +14,7 @@
 | **mnn** | [`mnn/`](./mnn/README.md) | ✅ 已验证 | 用 MNN 在 Mate 40 Pro 上跑 LLM；OpenCL/Vulkan 能调用 GPU 但比 CPU 慢 |
 | **ncnn-llm** | [`ncnn-llm/`](./ncnn-llm/README.md) | ✅ 已验证 | ncnn_llm 已构建成功；Qwen3-0.6B CPU 40.7 s，Vulkan 卡住无输出 |
 | **3-machine** | [`3-machine/`](./3-machine/README.md) | ✅ 可用 | GPU PC + WSL + 手机三机 llama.cpp RPC 异构推理；含通宵基准与 watchdog |
-| **mistralrs-bridge** | [`mistralrs-bridge/`](./mistralrs-bridge/README.md) | ⚠️ 实验 | mistral.rs TCP 桥接分层推理；Qwen2-0.5B 验证通过，Qwen3.6-35B-A3B 未完成 |
+| **mistralrs-bridge** | [`mistralrs-bridge/`](./mistralrs-bridge/README.md) | ✅ 双模型跑通 | mistral.rs TCP 桥接；27B 正确 2.42 T/s，35B-A3B 正确但慢（~1 tok/min 待优化） |
 | **common** | [`common/`](./common/) | ✅ 已启用 | 跨模式共享脚本（`ts-log.sh`、`check-phone-status.sh`、配置模板） |
 
 进入对应目录查看各自的 README 获取详细用法。

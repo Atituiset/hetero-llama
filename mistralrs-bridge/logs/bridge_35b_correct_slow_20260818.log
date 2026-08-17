@@ -1,0 +1,226 @@
+[2m2026-08-17T17:32:48.941532Z[0m [32m INFO[0m [2mmistralrs_core::utils::tokens[0m[2m:[0m Could not load token at "/home/atituiset/.cache/huggingface/token", using no HF token.
+[2m2026-08-17T17:32:48.941766Z[0m [32m INFO[0m [2mmistralrs_core::utils::tokens[0m[2m:[0m Could not load token at "/home/atituiset/.cache/huggingface/token", using no HF token.
+[2m2026-08-17T17:32:49.271615Z[0m [32m INFO[0m [2mmistralrs_core::device_map[0m[2m:[0m Loading model with remote layer mapping based on topology:
+[2m2026-08-17T17:32:49.271624Z[0m [32m INFO[0m [2mmistralrs_core::device_map[0m[2m:[0m Layer 0: cuda[0] (local)
+[2m2026-08-17T17:32:49.271628Z[0m [32m INFO[0m [2mmistralrs_core::device_map[0m[2m:[0m Layer 1: cuda[0] (local)
+[2m2026-08-17T17:32:49.271629Z[0m [32m INFO[0m [2mmistralrs_core::device_map[0m[2m:[0m Layer 2: cuda[0] (local)
+[2m2026-08-17T17:32:49.271629Z[0m [32m INFO[0m [2mmistralrs_core::device_map[0m[2m:[0m Layer 3: cuda[0] (local)
+[2m2026-08-17T17:32:49.271630Z[0m [32m INFO[0m [2mmistralrs_core::device_map[0m[2m:[0m Layer 4: cuda[0] (local)
+[2m2026-08-17T17:32:49.271631Z[0m [32m INFO[0m [2mmistralrs_core::device_map[0m[2m:[0m Layer 5: cuda[0] (local)
+[2m2026-08-17T17:32:49.271631Z[0m [32m INFO[0m [2mmistralrs_core::device_map[0m[2m:[0m Layer 6: cuda[0] (local)
+[2m2026-08-17T17:32:49.271632Z[0m [32m INFO[0m [2mmistralrs_core::device_map[0m[2m:[0m Layer 7: cuda[0] (local)
+[2m2026-08-17T17:32:49.271633Z[0m [32m INFO[0m [2mmistralrs_core::device_map[0m[2m:[0m Layer 8: cpu (local)
+[2m2026-08-17T17:32:49.271633Z[0m [32m INFO[0m [2mmistralrs_core::device_map[0m[2m:[0m Layer 9: cpu (local)
+[2m2026-08-17T17:32:49.271634Z[0m [32m INFO[0m [2mmistralrs_core::device_map[0m[2m:[0m Layer 10: cpu (local)
+[2m2026-08-17T17:32:49.271635Z[0m [32m INFO[0m [2mmistralrs_core::device_map[0m[2m:[0m Layer 11: cpu (local)
+[2m2026-08-17T17:32:49.271635Z[0m [32m INFO[0m [2mmistralrs_core::device_map[0m[2m:[0m Layer 12: cpu (local)
+[2m2026-08-17T17:32:49.271636Z[0m [32m INFO[0m [2mmistralrs_core::device_map[0m[2m:[0m Layer 13: cpu (local)
+[2m2026-08-17T17:32:49.271637Z[0m [32m INFO[0m [2mmistralrs_core::device_map[0m[2m:[0m Layer 14: cpu (local)
+[2m2026-08-17T17:32:49.271637Z[0m [32m INFO[0m [2mmistralrs_core::device_map[0m[2m:[0m Layer 15: cpu (local)
+[2m2026-08-17T17:32:49.271638Z[0m [32m INFO[0m [2mmistralrs_core::device_map[0m[2m:[0m Layer 16: cpu (local)
+[2m2026-08-17T17:32:49.271639Z[0m [32m INFO[0m [2mmistralrs_core::device_map[0m[2m:[0m Layer 17: cpu (local)
+[2m2026-08-17T17:32:49.271639Z[0m [32m INFO[0m [2mmistralrs_core::device_map[0m[2m:[0m Layer 18: cpu (local)
+[2m2026-08-17T17:32:49.271640Z[0m [32m INFO[0m [2mmistralrs_core::device_map[0m[2m:[0m Layer 19: cpu (local)
+[2m2026-08-17T17:32:49.271640Z[0m [32m INFO[0m [2mmistralrs_core::device_map[0m[2m:[0m Layer 20: cpu (local)
+[2m2026-08-17T17:32:49.271641Z[0m [32m INFO[0m [2mmistralrs_core::device_map[0m[2m:[0m Layer 21: cpu (local)
+[2m2026-08-17T17:32:49.271642Z[0m [32m INFO[0m [2mmistralrs_core::device_map[0m[2m:[0m Layer 22: cpu (local)
+[2m2026-08-17T17:32:49.271642Z[0m [32m INFO[0m [2mmistralrs_core::device_map[0m[2m:[0m Layer 23: cpu (local)
+[2m2026-08-17T17:32:49.271643Z[0m [32m INFO[0m [2mmistralrs_core::device_map[0m[2m:[0m Layer 24: cpu (local)
+[2m2026-08-17T17:32:49.271644Z[0m [32m INFO[0m [2mmistralrs_core::device_map[0m[2m:[0m Layer 25: remote → 127.0.0.1:5051
+[2m2026-08-17T17:32:49.271645Z[0m [32m INFO[0m [2mmistralrs_core::device_map[0m[2m:[0m Layer 26: remote → 127.0.0.1:5051
+[2m2026-08-17T17:32:49.271646Z[0m [32m INFO[0m [2mmistralrs_core::device_map[0m[2m:[0m Layer 27: remote → 127.0.0.1:5051
+[2m2026-08-17T17:32:49.271646Z[0m [32m INFO[0m [2mmistralrs_core::device_map[0m[2m:[0m Layer 28: remote → 127.0.0.1:5051
+[2m2026-08-17T17:32:49.271647Z[0m [32m INFO[0m [2mmistralrs_core::device_map[0m[2m:[0m Layer 29: remote → 127.0.0.1:5051
+[2m2026-08-17T17:32:49.271648Z[0m [32m INFO[0m [2mmistralrs_core::device_map[0m[2m:[0m Layer 30: remote → 127.0.0.1:5051
+[2m2026-08-17T17:32:49.271648Z[0m [32m INFO[0m [2mmistralrs_core::device_map[0m[2m:[0m Layer 31: remote → 127.0.0.1:5051
+[2m2026-08-17T17:32:49.271649Z[0m [32m INFO[0m [2mmistralrs_core::device_map[0m[2m:[0m Layer 32: remote → 127.0.0.1:5051
+[2m2026-08-17T17:32:49.271650Z[0m [32m INFO[0m [2mmistralrs_core::device_map[0m[2m:[0m Layer 33: remote → 127.0.0.1:5051
+[2m2026-08-17T17:32:49.271651Z[0m [32m INFO[0m [2mmistralrs_core::device_map[0m[2m:[0m Layer 34: remote → 127.0.0.1:5051
+[2m2026-08-17T17:32:49.271651Z[0m [32m INFO[0m [2mmistralrs_core::device_map[0m[2m:[0m Layer 35: remote → 127.0.0.1:5051
+[2m2026-08-17T17:32:49.271652Z[0m [32m INFO[0m [2mmistralrs_core::device_map[0m[2m:[0m Layer 36: remote → 127.0.0.1:5051
+[2m2026-08-17T17:32:49.271653Z[0m [32m INFO[0m [2mmistralrs_core::device_map[0m[2m:[0m Layer 37: remote → 127.0.0.1:5051
+[2m2026-08-17T17:32:49.271653Z[0m [32m INFO[0m [2mmistralrs_core::device_map[0m[2m:[0m Layer 38: remote → 127.0.0.1:5051
+[2m2026-08-17T17:32:49.271654Z[0m [32m INFO[0m [2mmistralrs_core::device_map[0m[2m:[0m Layer 39: remote → 127.0.0.1:5051
+[2m2026-08-17T17:32:49.271743Z[0m [32m INFO[0m [2mmistralrs_core::device_map::remote[0m[2m:[0m Initialized 1 remote connection(s)
+[2m2026-08-17T17:32:49.271747Z[0m [32m INFO[0m [2mmistralrs_core::device_map::remote[0m[2m:[0m Remote block: layers 25-39 → 127.0.0.1:5051
+[2m2026-08-17T17:32:49.271773Z[0m [33m WARN[0m [2mmistralrs_core::pipeline::gguf[0m[2m:[0m Device mapping contains a mix of GPU and CPU. There is no CPU support for PagedAttention, disabling PagedAttention.
+[2m2026-08-17T17:32:49.376449Z[0m [32m INFO[0m [2mmistralrs_core::gguf::gguf_tokenizer[0m[2m:[0m GGUF tokenizer model is `gpt2`, kind: `Bpe`, num tokens: 248320, num special tokens 276, num added tokens: 0, num merges: 247587, num scores: 0
+[2m2026-08-17T17:32:49.435965Z[0m [32m INFO[0m [2mmistralrs_quant::utils::log[0m[2m:[0m DType selected is BF16.
+[2m2026-08-17T17:32:56.291946Z[0m [32m INFO[0m [2mmistralrs_core::device_map[0m[2m:[0m Loading model with remote layer mapping based on topology:
+[2m2026-08-17T17:32:56.292174Z[0m [32m INFO[0m [2mmistralrs_core::device_map[0m[2m:[0m Layer 0: cuda[0] (local)
+[2m2026-08-17T17:32:56.292180Z[0m [32m INFO[0m [2mmistralrs_core::device_map[0m[2m:[0m Layer 1: cuda[0] (local)
+[2m2026-08-17T17:32:56.292182Z[0m [32m INFO[0m [2mmistralrs_core::device_map[0m[2m:[0m Layer 2: cuda[0] (local)
+[2m2026-08-17T17:32:56.292183Z[0m [32m INFO[0m [2mmistralrs_core::device_map[0m[2m:[0m Layer 3: cuda[0] (local)
+[2m2026-08-17T17:32:56.292183Z[0m [32m INFO[0m [2mmistralrs_core::device_map[0m[2m:[0m Layer 4: cuda[0] (local)
+[2m2026-08-17T17:32:56.292184Z[0m [32m INFO[0m [2mmistralrs_core::device_map[0m[2m:[0m Layer 5: cuda[0] (local)
+[2m2026-08-17T17:32:56.292185Z[0m [32m INFO[0m [2mmistralrs_core::device_map[0m[2m:[0m Layer 6: cuda[0] (local)
+[2m2026-08-17T17:32:56.292185Z[0m [32m INFO[0m [2mmistralrs_core::device_map[0m[2m:[0m Layer 7: cuda[0] (local)
+[2m2026-08-17T17:32:56.292186Z[0m [32m INFO[0m [2mmistralrs_core::device_map[0m[2m:[0m Layer 8: cpu (local)
+[2m2026-08-17T17:32:56.292187Z[0m [32m INFO[0m [2mmistralrs_core::device_map[0m[2m:[0m Layer 9: cpu (local)
+[2m2026-08-17T17:32:56.292188Z[0m [32m INFO[0m [2mmistralrs_core::device_map[0m[2m:[0m Layer 10: cpu (local)
+[2m2026-08-17T17:32:56.292189Z[0m [32m INFO[0m [2mmistralrs_core::device_map[0m[2m:[0m Layer 11: cpu (local)
+[2m2026-08-17T17:32:56.292189Z[0m [32m INFO[0m [2mmistralrs_core::device_map[0m[2m:[0m Layer 12: cpu (local)
+[2m2026-08-17T17:32:56.292190Z[0m [32m INFO[0m [2mmistralrs_core::device_map[0m[2m:[0m Layer 13: cpu (local)
+[2m2026-08-17T17:32:56.292190Z[0m [32m INFO[0m [2mmistralrs_core::device_map[0m[2m:[0m Layer 14: cpu (local)
+[2m2026-08-17T17:32:56.292191Z[0m [32m INFO[0m [2mmistralrs_core::device_map[0m[2m:[0m Layer 15: cpu (local)
+[2m2026-08-17T17:32:56.292192Z[0m [32m INFO[0m [2mmistralrs_core::device_map[0m[2m:[0m Layer 16: cpu (local)
+[2m2026-08-17T17:32:56.292192Z[0m [32m INFO[0m [2mmistralrs_core::device_map[0m[2m:[0m Layer 17: cpu (local)
+[2m2026-08-17T17:32:56.292193Z[0m [32m INFO[0m [2mmistralrs_core::device_map[0m[2m:[0m Layer 18: cpu (local)
+[2m2026-08-17T17:32:56.292194Z[0m [32m INFO[0m [2mmistralrs_core::device_map[0m[2m:[0m Layer 19: cpu (local)
+[2m2026-08-17T17:32:56.292194Z[0m [32m INFO[0m [2mmistralrs_core::device_map[0m[2m:[0m Layer 20: cpu (local)
+[2m2026-08-17T17:32:56.292195Z[0m [32m INFO[0m [2mmistralrs_core::device_map[0m[2m:[0m Layer 21: cpu (local)
+[2m2026-08-17T17:32:56.292196Z[0m [32m INFO[0m [2mmistralrs_core::device_map[0m[2m:[0m Layer 22: cpu (local)
+[2m2026-08-17T17:32:56.292196Z[0m [32m INFO[0m [2mmistralrs_core::device_map[0m[2m:[0m Layer 23: cpu (local)
+[2m2026-08-17T17:32:56.292197Z[0m [32m INFO[0m [2mmistralrs_core::device_map[0m[2m:[0m Layer 24: cpu (local)
+[2m2026-08-17T17:32:56.292198Z[0m [32m INFO[0m [2mmistralrs_core::device_map[0m[2m:[0m Layer 25: remote → 127.0.0.1:5051
+[2m2026-08-17T17:32:56.292199Z[0m [32m INFO[0m [2mmistralrs_core::device_map[0m[2m:[0m Layer 26: remote → 127.0.0.1:5051
+[2m2026-08-17T17:32:56.292200Z[0m [32m INFO[0m [2mmistralrs_core::device_map[0m[2m:[0m Layer 27: remote → 127.0.0.1:5051
+[2m2026-08-17T17:32:56.292201Z[0m [32m INFO[0m [2mmistralrs_core::device_map[0m[2m:[0m Layer 28: remote → 127.0.0.1:5051
+[2m2026-08-17T17:32:56.292201Z[0m [32m INFO[0m [2mmistralrs_core::device_map[0m[2m:[0m Layer 29: remote → 127.0.0.1:5051
+[2m2026-08-17T17:32:56.292202Z[0m [32m INFO[0m [2mmistralrs_core::device_map[0m[2m:[0m Layer 30: remote → 127.0.0.1:5051
+[2m2026-08-17T17:32:56.292203Z[0m [32m INFO[0m [2mmistralrs_core::device_map[0m[2m:[0m Layer 31: remote → 127.0.0.1:5051
+[2m2026-08-17T17:32:56.292203Z[0m [32m INFO[0m [2mmistralrs_core::device_map[0m[2m:[0m Layer 32: remote → 127.0.0.1:5051
+[2m2026-08-17T17:32:56.292204Z[0m [32m INFO[0m [2mmistralrs_core::device_map[0m[2m:[0m Layer 33: remote → 127.0.0.1:5051
+[2m2026-08-17T17:32:56.292205Z[0m [32m INFO[0m [2mmistralrs_core::device_map[0m[2m:[0m Layer 34: remote → 127.0.0.1:5051
+[2m2026-08-17T17:32:56.292205Z[0m [32m INFO[0m [2mmistralrs_core::device_map[0m[2m:[0m Layer 35: remote → 127.0.0.1:5051
+[2m2026-08-17T17:32:56.292206Z[0m [32m INFO[0m [2mmistralrs_core::device_map[0m[2m:[0m Layer 36: remote → 127.0.0.1:5051
+[2m2026-08-17T17:32:56.292207Z[0m [32m INFO[0m [2mmistralrs_core::device_map[0m[2m:[0m Layer 37: remote → 127.0.0.1:5051
+[2m2026-08-17T17:32:56.292207Z[0m [32m INFO[0m [2mmistralrs_core::device_map[0m[2m:[0m Layer 38: remote → 127.0.0.1:5051
+[2m2026-08-17T17:32:56.292208Z[0m [32m INFO[0m [2mmistralrs_core::device_map[0m[2m:[0m Layer 39: remote → 127.0.0.1:5051
+[2m2026-08-17T17:32:56.293177Z[0m [32m INFO[0m [2mmistralrs_core::device_map::remote[0m[2m:[0m Initialized 1 remote connection(s)
+[2m2026-08-17T17:32:56.293184Z[0m [32m INFO[0m [2mmistralrs_core::device_map::remote[0m[2m:[0m Remote block: layers 25-39 → 127.0.0.1:5051
+[2m2026-08-17T17:32:56.293735Z[0m [32m INFO[0m [2mmistralrs_server_core::mistralrs_for_server_builder[0m[2m:[0m Model loaded.
+[2m2026-08-17T17:32:56.294022Z[0m [32m INFO[0m [2mmistralrs_core[0m[2m:[0m mistral.rs version: 0.9.0
+[2m2026-08-17T17:32:56.294388Z[0m [32m INFO[0m [2mmistralrs_core[0m[2m:[0m git revision: feec4a1f8f525287cb2903da7e7b8a86fb937921
+[2m2026-08-17T17:32:56.349270Z[0m [32m INFO[0m [2mmistralrs_core[0m[2m:[0m Preloaded 748 Candle CUDA PTX functions.
+[2m2026-08-17T17:32:56.349691Z[0m [32m INFO[0m [2mmistralrs_core[0m[2m:[0m Pipeline input modalities are [📝 Text]
+[2m2026-08-17T17:32:56.349695Z[0m [32m INFO[0m [2mmistralrs_core[0m[2m:[0m Pipeline output modalities are [📝 Text]
+[2m2026-08-17T17:32:56.352709Z[0m [32m INFO[0m [2mmistralrs_core::prefix_cacher[0m[2m:[0m Prefix caching enabled (sequence-level, non-paged attention). Expect higher multi-turn throughput for both text and multimodal.
+[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=25-39 past_kv=0 payload_len=8232
+[BRIDGE] map: moving result from CPU to Cpu
+[2m2026-08-17T17:33:35.437874Z[0m [32m INFO[0m [2mmistralrs::commands::run[0m[2m:[0m Model loaded, running one-shot mode...
+[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=25-39 past_kv=0 payload_len=139304
+[BRIDGE] map: moving result from CPU to Cpu
+[90mHere[0m[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=25-39 past_kv=17 payload_len=8232
+[BRIDGE] map: moving result from CPU to Cpu
+[90m's[0m[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=25-39 past_kv=18 payload_len=8232
+[BRIDGE] map: moving result from CPU to Cpu
+[90m a[0m[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=25-39 past_kv=19 payload_len=8232
+[BRIDGE] map: moving result from CPU to Cpu
+[90m thinking[0m[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=25-39 past_kv=20 payload_len=8232
+[BRIDGE] map: moving result from CPU to Cpu
+[90m process[0m[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=25-39 past_kv=21 payload_len=8232
+[BRIDGE] map: moving result from CPU to Cpu
+[90m:[0m[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=25-39 past_kv=22 payload_len=8232
+[BRIDGE] map: moving result from CPU to Cpu
+[90m
+
+[0m[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=25-39 past_kv=23 payload_len=8232
+[BRIDGE] map: moving result from CPU to Cpu
+[90m1[0m[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=25-39 past_kv=24 payload_len=8232
+[BRIDGE] map: moving result from CPU to Cpu
+[90m.[0m[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=25-39 past_kv=25 payload_len=8232
+[BRIDGE] map: moving result from CPU to Cpu
+[90m [0m[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=25-39 past_kv=26 payload_len=8232
+[BRIDGE] map: moving result from CPU to Cpu
+[90m **[0m[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=25-39 past_kv=27 payload_len=8232
+[BRIDGE] map: moving result from CPU to Cpu
+[90mAn[0m[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=25-39 past_kv=28 payload_len=8232
+[BRIDGE] map: moving result from CPU to Cpu
+[90malyze[0m[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=25-39 past_kv=29 payload_len=8232
+[BRIDGE] map: moving result from CPU to Cpu
+[90m User[0m[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=25-39 past_kv=30 payload_len=8232
+[BRIDGE] map: moving result from CPU to Cpu
+[90m Input[0m[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=25-39 past_kv=31 payload_len=8232
+[BRIDGE] map: moving result from CPU to Cpu
+[90m:**[0m[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=25-39 past_kv=32 payload_len=8232
+[BRIDGE] map: moving result from CPU to Cpu
+[90m The[0m[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=25-39 past_kv=33 payload_len=8232
+[BRIDGE] map: moving result from CPU to Cpu
+[90m user[0m[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=25-39 past_kv=34 payload_len=8232
+[BRIDGE] map: moving result from CPU to Cpu
+[90m asks[0m[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=25-39 past_kv=35 payload_len=8232
+[BRIDGE] map: moving result from CPU to Cpu
+[90m "[0m[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=25-39 past_kv=36 payload_len=8232
+[BRIDGE] map: moving result from CPU to Cpu
+[90mWhat[0m[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=25-39 past_kv=37 payload_len=8232
+[BRIDGE] map: moving result from CPU to Cpu
+[90m is[0m[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=25-39 past_kv=38 payload_len=8232
+[BRIDGE] map: moving result from CPU to Cpu
+[90m [0m[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=25-39 past_kv=39 payload_len=8232
+[BRIDGE] map: moving result from CPU to Cpu
+[90m2[0m[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=25-39 past_kv=40 payload_len=8232
+[BRIDGE] map: moving result from CPU to Cpu
+[90m+[0m[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=25-39 past_kv=41 payload_len=8232
+[BRIDGE] map: moving result from CPU to Cpu
+[90m2[0m[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=25-39 past_kv=42 payload_len=8232
+[BRIDGE] map: moving result from CPU to Cpu
+[90m?"[0m[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=25-39 past_kv=43 payload_len=8232
+[BRIDGE] map: moving result from CPU to Cpu
+[90m
+[0m[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=25-39 past_kv=44 payload_len=8232
+[BRIDGE] map: moving result from CPU to Cpu
+[90m2[0m[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=25-39 past_kv=45 payload_len=8232
+[BRIDGE] map: moving result from CPU to Cpu
+[90m.[0m[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=25-39 past_kv=46 payload_len=8232
+[BRIDGE] map: moving result from CPU to Cpu
+[90m [0m[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=25-39 past_kv=47 payload_len=8232
+[BRIDGE] map: moving result from CPU to Cpu
+[90m **[0m[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=25-39 past_kv=48 payload_len=8232
+[BRIDGE] map: moving result from CPU to Cpu
+[90mIdent[0m[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=25-39 past_kv=49 payload_len=8232
+[BRIDGE] map: moving result from CPU to Cpu
+[90mify[0m[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=25-39 past_kv=50 payload_len=8232
+[BRIDGE] map: moving result from CPU to Cpu
+[90m Core[0m[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=25-39 past_kv=51 payload_len=8232
+[BRIDGE] map: moving result from CPU to Cpu
+[90m Question[0m[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=25-39 past_kv=52 payload_len=8232
+[BRIDGE] map: moving result from CPU to Cpu
+[90m:**[0m[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=25-39 past_kv=53 payload_len=8232
+[BRIDGE] map: moving result from CPU to Cpu
+[90m It[0m[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=25-39 past_kv=54 payload_len=8232
+[BRIDGE] map: moving result from CPU to Cpu
+[90m's[0m[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=25-39 past_kv=55 payload_len=8232
+[BRIDGE] map: moving result from CPU to Cpu
+[90m a[0m[BRIDGE

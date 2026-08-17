@@ -1,0 +1,8 @@
+# 三段拓扑冒烟测试（Qwen3.5-0.8B, 24 层）— GPU PC 上跑
+# 0-3 cuda / 4-11 cpu / 12-23 remote(经隧道到 WSL worker)
+0-3:
+  device: cuda[0]
+4-11:
+  device: cpu
+12-23:
+  device: remote:tcp://127.0.0.1:5051

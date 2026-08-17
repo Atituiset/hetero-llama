@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # CPU-only 推理安全包装 — 带内存限制和完整日志
-# 用法: ./run_cpu_safe.sh <model> <prompt> [max_tokens]
+# 用法: ./run_cpu_safe.sh <model> <prompt>
 
 set -euo pipefail
 
@@ -10,7 +10,6 @@ source "${MODE_DIR}/config.env"
 
 MODEL="${1:-${DEFAULT_MODEL}}"
 PROMPT="${2:-${DEFAULT_PROMPT}}"
-MAX_TOKENS="${3:-32}"
 
 MODEL_DIR=$(dirname "$MODEL")
 MODEL_FILE=$(basename "$MODEL")
@@ -22,7 +21,6 @@ echo "=== CPU-only Safe Run ==="
 echo "Model:      ${MODEL_FILE}"
 echo "Prompt:     ${PROMPT}"
 echo "Log:        ${LOGFILE}"
-echo "Max tokens: ${MAX_TOKENS}"
 echo "Memory:     $(free -h | awk '/Mem:/{print $7" available"}')"
 echo "========================="
 
@@ -45,7 +43,6 @@ export MISTRALRS_CPU_KV_F32=0
         -m "${MODEL_DIR}" \
         -f "${MODEL_FILE}" \
         --max-seq-len 2048 \
-        -n "${MAX_TOKENS}" \
         -i "${PROMPT}" \
         2>&1
 

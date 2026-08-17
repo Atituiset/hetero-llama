@@ -1,0 +1,5 @@
+# GPU PC 单机 CUDA+CPU 分层拓扑（Qwen2-0.5B, 24 层）— 冒烟测试用
+0-3:
+  device: cuda[0]
+4-23:
+  device: cpu

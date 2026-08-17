@@ -1,0 +1,2321 @@
+[2m2026-08-16T15:34:41.910276Z[0m [32m INFO[0m [2mmistralrs_core::utils::tokens[0m[2m:[0m Could not load token at "/home/atituiset/.cache/huggingface/token", using no HF token.
+[2m2026-08-16T15:34:41.910926Z[0m [32m INFO[0m [2mmistralrs_core::utils::tokens[0m[2m:[0m Could not load token at "/home/atituiset/.cache/huggingface/token", using no HF token.
+[2m2026-08-16T15:34:42.246604Z[0m [32m INFO[0m [2mmistralrs_core::device_map[0m[2m:[0m Loading model with remote layer mapping based on topology:
+[2m2026-08-16T15:34:42.246615Z[0m [32m INFO[0m [2mmistralrs_core::device_map[0m[2m:[0m Layer 0: cuda[0] (local)
+[2m2026-08-16T15:34:42.246617Z[0m [32m INFO[0m [2mmistralrs_core::device_map[0m[2m:[0m Layer 1: cuda[0] (local)
+[2m2026-08-16T15:34:42.246618Z[0m [32m INFO[0m [2mmistralrs_core::device_map[0m[2m:[0m Layer 2: cuda[0] (local)
+[2m2026-08-16T15:34:42.246619Z[0m [32m INFO[0m [2mmistralrs_core::device_map[0m[2m:[0m Layer 3: cuda[0] (local)
+[2m2026-08-16T15:34:42.246619Z[0m [32m INFO[0m [2mmistralrs_core::device_map[0m[2m:[0m Layer 4: cuda[0] (local)
+[2m2026-08-16T15:34:42.246620Z[0m [32m INFO[0m [2mmistralrs_core::device_map[0m[2m:[0m Layer 5: cuda[0] (local)
+[2m2026-08-16T15:34:42.246621Z[0m [32m INFO[0m [2mmistralrs_core::device_map[0m[2m:[0m Layer 6: cuda[0] (local)
+[2m2026-08-16T15:34:42.246621Z[0m [32m INFO[0m [2mmistralrs_core::device_map[0m[2m:[0m Layer 7: cuda[0] (local)
+[2m2026-08-16T15:34:42.246622Z[0m [32m INFO[0m [2mmistralrs_core::device_map[0m[2m:[0m Layer 8: cuda[0] (local)
+[2m2026-08-16T15:34:42.246623Z[0m [32m INFO[0m [2mmistralrs_core::device_map[0m[2m:[0m Layer 9: cuda[0] (local)
+[2m2026-08-16T15:34:42.246623Z[0m [32m INFO[0m [2mmistralrs_core::device_map[0m[2m:[0m Layer 10: cuda[0] (local)
+[2m2026-08-16T15:34:42.246624Z[0m [32m INFO[0m [2mmistralrs_core::device_map[0m[2m:[0m Layer 11: cuda[0] (local)
+[2m2026-08-16T15:34:42.246625Z[0m [32m INFO[0m [2mmistralrs_core::device_map[0m[2m:[0m Layer 12: cpu (local)
+[2m2026-08-16T15:34:42.246626Z[0m [32m INFO[0m [2mmistralrs_core::device_map[0m[2m:[0m Layer 13: cpu (local)
+[2m2026-08-16T15:34:42.246626Z[0m [32m INFO[0m [2mmistralrs_core::device_map[0m[2m:[0m Layer 14: cpu (local)
+[2m2026-08-16T15:34:42.246627Z[0m [32m INFO[0m [2mmistralrs_core::device_map[0m[2m:[0m Layer 15: cpu (local)
+[2m2026-08-16T15:34:42.246628Z[0m [32m INFO[0m [2mmistralrs_core::device_map[0m[2m:[0m Layer 16: cpu (local)
+[2m2026-08-16T15:34:42.246628Z[0m [32m INFO[0m [2mmistralrs_core::device_map[0m[2m:[0m Layer 17: cpu (local)
+[2m2026-08-16T15:34:42.246629Z[0m [32m INFO[0m [2mmistralrs_core::device_map[0m[2m:[0m Layer 18: cpu (local)
+[2m2026-08-16T15:34:42.246630Z[0m [32m INFO[0m [2mmistralrs_core::device_map[0m[2m:[0m Layer 19: cpu (local)
+[2m2026-08-16T15:34:42.246630Z[0m [32m INFO[0m [2mmistralrs_core::device_map[0m[2m:[0m Layer 20: cpu (local)
+[2m2026-08-16T15:34:42.246631Z[0m [32m INFO[0m [2mmistralrs_core::device_map[0m[2m:[0m Layer 21: cpu (local)
+[2m2026-08-16T15:34:42.246632Z[0m [32m INFO[0m [2mmistralrs_core::device_map[0m[2m:[0m Layer 22: cpu (local)
+[2m2026-08-16T15:34:42.246632Z[0m [32m INFO[0m [2mmistralrs_core::device_map[0m[2m:[0m Layer 23: cpu (local)
+[2m2026-08-16T15:34:42.246633Z[0m [32m INFO[0m [2mmistralrs_core::device_map[0m[2m:[0m Layer 24: cpu (local)
+[2m2026-08-16T15:34:42.246634Z[0m [32m INFO[0m [2mmistralrs_core::device_map[0m[2m:[0m Layer 25: cpu (local)
+[2m2026-08-16T15:34:42.246634Z[0m [32m INFO[0m [2mmistralrs_core::device_map[0m[2m:[0m Layer 26: cpu (local)
+[2m2026-08-16T15:34:42.246635Z[0m [32m INFO[0m [2mmistralrs_core::device_map[0m[2m:[0m Layer 27: cpu (local)
+[2m2026-08-16T15:34:42.246636Z[0m [32m INFO[0m [2mmistralrs_core::device_map[0m[2m:[0m Layer 28: cpu (local)
+[2m2026-08-16T15:34:42.246636Z[0m [32m INFO[0m [2mmistralrs_core::device_map[0m[2m:[0m Layer 29: cpu (local)
+[2m2026-08-16T15:34:42.246637Z[0m [32m INFO[0m [2mmistralrs_core::device_map[0m[2m:[0m Layer 30: cpu (local)
+[2m2026-08-16T15:34:42.246638Z[0m [32m INFO[0m [2mmistralrs_core::device_map[0m[2m:[0m Layer 31: cpu (local)
+[2m2026-08-16T15:34:42.246638Z[0m [32m INFO[0m [2mmistralrs_core::device_map[0m[2m:[0m Layer 32: cpu (local)
+[2m2026-08-16T15:34:42.246639Z[0m [32m INFO[0m [2mmistralrs_core::device_map[0m[2m:[0m Layer 33: cpu (local)
+[2m2026-08-16T15:34:42.246640Z[0m [32m INFO[0m [2mmistralrs_core::device_map[0m[2m:[0m Layer 34: cpu (local)
+[2m2026-08-16T15:34:42.246641Z[0m [32m INFO[0m [2mmistralrs_core::device_map[0m[2m:[0m Layer 35: cpu (local)
+[2m2026-08-16T15:34:42.246641Z[0m [32m INFO[0m [2mmistralrs_core::device_map[0m[2m:[0m Layer 36: cpu (local)
+[2m2026-08-16T15:34:42.246642Z[0m [32m INFO[0m [2mmistralrs_core::device_map[0m[2m:[0m Layer 37: cpu (local)
+[2m2026-08-16T15:34:42.246643Z[0m [32m INFO[0m [2mmistralrs_core::device_map[0m[2m:[0m Layer 38: cpu (local)
+[2m2026-08-16T15:34:42.246643Z[0m [32m INFO[0m [2mmistralrs_core::device_map[0m[2m:[0m Layer 39: cpu (local)
+[2m2026-08-16T15:34:42.246644Z[0m [32m INFO[0m [2mmistralrs_core::device_map[0m[2m:[0m Layer 40: cpu (local)
+[2m2026-08-16T15:34:42.246644Z[0m [32m INFO[0m [2mmistralrs_core::device_map[0m[2m:[0m Layer 41: cpu (local)
+[2m2026-08-16T15:34:42.246645Z[0m [32m INFO[0m [2mmistralrs_core::device_map[0m[2m:[0m Layer 42: cpu (local)
+[2m2026-08-16T15:34:42.246646Z[0m [32m INFO[0m [2mmistralrs_core::device_map[0m[2m:[0m Layer 43: cpu (local)
+[2m2026-08-16T15:34:42.246646Z[0m [32m INFO[0m [2mmistralrs_core::device_map[0m[2m:[0m Layer 44: cpu (local)
+[2m2026-08-16T15:34:42.246647Z[0m [32m INFO[0m [2mmistralrs_core::device_map[0m[2m:[0m Layer 45: cpu (local)
+[2m2026-08-16T15:34:42.246648Z[0m [32m INFO[0m [2mmistralrs_core::device_map[0m[2m:[0m Layer 46: cpu (local)
+[2m2026-08-16T15:34:42.246648Z[0m [32m INFO[0m [2mmistralrs_core::device_map[0m[2m:[0m Layer 47: cpu (local)
+[2m2026-08-16T15:34:42.246649Z[0m [32m INFO[0m [2mmistralrs_core::device_map[0m[2m:[0m Layer 48: cpu (local)
+[2m2026-08-16T15:34:42.246650Z[0m [32m INFO[0m [2mmistralrs_core::device_map[0m[2m:[0m Layer 49: remote → 127.0.0.1:5051
+[2m2026-08-16T15:34:42.246651Z[0m [32m INFO[0m [2mmistralrs_core::device_map[0m[2m:[0m Layer 50: remote → 127.0.0.1:5051
+[2m2026-08-16T15:34:42.246652Z[0m [32m INFO[0m [2mmistralrs_core::device_map[0m[2m:[0m Layer 51: remote → 127.0.0.1:5051
+[2m2026-08-16T15:34:42.246652Z[0m [32m INFO[0m [2mmistralrs_core::device_map[0m[2m:[0m Layer 52: remote → 127.0.0.1:5051
+[2m2026-08-16T15:34:42.246653Z[0m [32m INFO[0m [2mmistralrs_core::device_map[0m[2m:[0m Layer 53: remote → 127.0.0.1:5051
+[2m2026-08-16T15:34:42.246654Z[0m [32m INFO[0m [2mmistralrs_core::device_map[0m[2m:[0m Layer 54: remote → 127.0.0.1:5051
+[2m2026-08-16T15:34:42.246654Z[0m [32m INFO[0m [2mmistralrs_core::device_map[0m[2m:[0m Layer 55: remote → 127.0.0.1:5051
+[2m2026-08-16T15:34:42.246655Z[0m [32m INFO[0m [2mmistralrs_core::device_map[0m[2m:[0m Layer 56: remote → 127.0.0.1:5051
+[2m2026-08-16T15:34:42.246656Z[0m [32m INFO[0m [2mmistralrs_core::device_map[0m[2m:[0m Layer 57: remote → 127.0.0.1:5051
+[2m2026-08-16T15:34:42.246656Z[0m [32m INFO[0m [2mmistralrs_core::device_map[0m[2m:[0m Layer 58: remote → 127.0.0.1:5051
+[2m2026-08-16T15:34:42.246657Z[0m [32m INFO[0m [2mmistralrs_core::device_map[0m[2m:[0m Layer 59: remote → 127.0.0.1:5051
+[2m2026-08-16T15:34:42.246658Z[0m [32m INFO[0m [2mmistralrs_core::device_map[0m[2m:[0m Layer 60: remote → 127.0.0.1:5051
+[2m2026-08-16T15:34:42.246658Z[0m [32m INFO[0m [2mmistralrs_core::device_map[0m[2m:[0m Layer 61: remote → 127.0.0.1:5051
+[2m2026-08-16T15:34:42.246659Z[0m [32m INFO[0m [2mmistralrs_core::device_map[0m[2m:[0m Layer 62: remote → 127.0.0.1:5051
+[2m2026-08-16T15:34:42.246660Z[0m [32m INFO[0m [2mmistralrs_core::device_map[0m[2m:[0m Layer 63: remote → 127.0.0.1:5051
+[2m2026-08-16T15:34:42.246660Z[0m [32m INFO[0m [2mmistralrs_core::device_map[0m[2m:[0m Layer 64: remote → 127.0.0.1:5051
+[2m2026-08-16T15:34:42.246750Z[0m [32m INFO[0m [2mmistralrs_core::device_map::remote[0m[2m:[0m Initialized 1 remote connection(s)
+[2m2026-08-16T15:34:42.246755Z[0m [32m INFO[0m [2mmistralrs_core::device_map::remote[0m[2m:[0m Remote block: layers 49-64 → 127.0.0.1:5051
+[2m2026-08-16T15:34:42.246766Z[0m [33m WARN[0m [2mmistralrs_core::pipeline::gguf[0m[2m:[0m Device mapping contains a mix of GPU and CPU. There is no CPU support for PagedAttention, disabling PagedAttention.
+[2m2026-08-16T15:34:42.351526Z[0m [32m INFO[0m [2mmistralrs_core::gguf::gguf_tokenizer[0m[2m:[0m GGUF tokenizer model is `gpt2`, kind: `Bpe`, num tokens: 248320, num special tokens 276, num added tokens: 0, num merges: 247587, num scores: 0
+[2m2026-08-16T15:34:42.415599Z[0m [32m INFO[0m [2mmistralrs_quant::utils::log[0m[2m:[0m DType selected is BF16.
+[2m2026-08-16T15:34:51.252640Z[0m [32m INFO[0m [2mmistralrs_core::device_map[0m[2m:[0m Loading model with remote layer mapping based on topology:
+[2m2026-08-16T15:34:51.252656Z[0m [32m INFO[0m [2mmistralrs_core::device_map[0m[2m:[0m Layer 0: cuda[0] (local)
+[2m2026-08-16T15:34:51.252658Z[0m [32m INFO[0m [2mmistralrs_core::device_map[0m[2m:[0m Layer 1: cuda[0] (local)
+[2m2026-08-16T15:34:51.252659Z[0m [32m INFO[0m [2mmistralrs_core::device_map[0m[2m:[0m Layer 2: cuda[0] (local)
+[2m2026-08-16T15:34:51.252660Z[0m [32m INFO[0m [2mmistralrs_core::device_map[0m[2m:[0m Layer 3: cuda[0] (local)
+[2m2026-08-16T15:34:51.252661Z[0m [32m INFO[0m [2mmistralrs_core::device_map[0m[2m:[0m Layer 4: cuda[0] (local)
+[2m2026-08-16T15:34:51.252661Z[0m [32m INFO[0m [2mmistralrs_core::device_map[0m[2m:[0m Layer 5: cuda[0] (local)
+[2m2026-08-16T15:34:51.252662Z[0m [32m INFO[0m [2mmistralrs_core::device_map[0m[2m:[0m Layer 6: cuda[0] (local)
+[2m2026-08-16T15:34:51.252663Z[0m [32m INFO[0m [2mmistralrs_core::device_map[0m[2m:[0m Layer 7: cuda[0] (local)
+[2m2026-08-16T15:34:51.252663Z[0m [32m INFO[0m [2mmistralrs_core::device_map[0m[2m:[0m Layer 8: cuda[0] (local)
+[2m2026-08-16T15:34:51.252664Z[0m [32m INFO[0m [2mmistralrs_core::device_map[0m[2m:[0m Layer 9: cuda[0] (local)
+[2m2026-08-16T15:34:51.252665Z[0m [32m INFO[0m [2mmistralrs_core::device_map[0m[2m:[0m Layer 10: cuda[0] (local)
+[2m2026-08-16T15:34:51.252665Z[0m [32m INFO[0m [2mmistralrs_core::device_map[0m[2m:[0m Layer 11: cuda[0] (local)
+[2m2026-08-16T15:34:51.252666Z[0m [32m INFO[0m [2mmistralrs_core::device_map[0m[2m:[0m Layer 12: cpu (local)
+[2m2026-08-16T15:34:51.252667Z[0m [32m INFO[0m [2mmistralrs_core::device_map[0m[2m:[0m Layer 13: cpu (local)
+[2m2026-08-16T15:34:51.252668Z[0m [32m INFO[0m [2mmistralrs_core::device_map[0m[2m:[0m Layer 14: cpu (local)
+[2m2026-08-16T15:34:51.252668Z[0m [32m INFO[0m [2mmistralrs_core::device_map[0m[2m:[0m Layer 15: cpu (local)
+[2m2026-08-16T15:34:51.252669Z[0m [32m INFO[0m [2mmistralrs_core::device_map[0m[2m:[0m Layer 16: cpu (local)
+[2m2026-08-16T15:34:51.252670Z[0m [32m INFO[0m [2mmistralrs_core::device_map[0m[2m:[0m Layer 17: cpu (local)
+[2m2026-08-16T15:34:51.252670Z[0m [32m INFO[0m [2mmistralrs_core::device_map[0m[2m:[0m Layer 18: cpu (local)
+[2m2026-08-16T15:34:51.252671Z[0m [32m INFO[0m [2mmistralrs_core::device_map[0m[2m:[0m Layer 19: cpu (local)
+[2m2026-08-16T15:34:51.252672Z[0m [32m INFO[0m [2mmistralrs_core::device_map[0m[2m:[0m Layer 20: cpu (local)
+[2m2026-08-16T15:34:51.252672Z[0m [32m INFO[0m [2mmistralrs_core::device_map[0m[2m:[0m Layer 21: cpu (local)
+[2m2026-08-16T15:34:51.252673Z[0m [32m INFO[0m [2mmistralrs_core::device_map[0m[2m:[0m Layer 22: cpu (local)
+[2m2026-08-16T15:34:51.252673Z[0m [32m INFO[0m [2mmistralrs_core::device_map[0m[2m:[0m Layer 23: cpu (local)
+[2m2026-08-16T15:34:51.252674Z[0m [32m INFO[0m [2mmistralrs_core::device_map[0m[2m:[0m Layer 24: cpu (local)
+[2m2026-08-16T15:34:51.252675Z[0m [32m INFO[0m [2mmistralrs_core::device_map[0m[2m:[0m Layer 25: cpu (local)
+[2m2026-08-16T15:34:51.252675Z[0m [32m INFO[0m [2mmistralrs_core::device_map[0m[2m:[0m Layer 26: cpu (local)
+[2m2026-08-16T15:34:51.252676Z[0m [32m INFO[0m [2mmistralrs_core::device_map[0m[2m:[0m Layer 27: cpu (local)
+[2m2026-08-16T15:34:51.252677Z[0m [32m INFO[0m [2mmistralrs_core::device_map[0m[2m:[0m Layer 28: cpu (local)
+[2m2026-08-16T15:34:51.252677Z[0m [32m INFO[0m [2mmistralrs_core::device_map[0m[2m:[0m Layer 29: cpu (local)
+[2m2026-08-16T15:34:51.252678Z[0m [32m INFO[0m [2mmistralrs_core::device_map[0m[2m:[0m Layer 30: cpu (local)
+[2m2026-08-16T15:34:51.252679Z[0m [32m INFO[0m [2mmistralrs_core::device_map[0m[2m:[0m Layer 31: cpu (local)
+[2m2026-08-16T15:34:51.252679Z[0m [32m INFO[0m [2mmistralrs_core::device_map[0m[2m:[0m Layer 32: cpu (local)
+[2m2026-08-16T15:34:51.252680Z[0m [32m INFO[0m [2mmistralrs_core::device_map[0m[2m:[0m Layer 33: cpu (local)
+[2m2026-08-16T15:34:51.252681Z[0m [32m INFO[0m [2mmistralrs_core::device_map[0m[2m:[0m Layer 34: cpu (local)
+[2m2026-08-16T15:34:51.252681Z[0m [32m INFO[0m [2mmistralrs_core::device_map[0m[2m:[0m Layer 35: cpu (local)
+[2m2026-08-16T15:34:51.252682Z[0m [32m INFO[0m [2mmistralrs_core::device_map[0m[2m:[0m Layer 36: cpu (local)
+[2m2026-08-16T15:34:51.252683Z[0m [32m INFO[0m [2mmistralrs_core::device_map[0m[2m:[0m Layer 37: cpu (local)
+[2m2026-08-16T15:34:51.252683Z[0m [32m INFO[0m [2mmistralrs_core::device_map[0m[2m:[0m Layer 38: cpu (local)
+[2m2026-08-16T15:34:51.252684Z[0m [32m INFO[0m [2mmistralrs_core::device_map[0m[2m:[0m Layer 39: cpu (local)
+[2m2026-08-16T15:34:51.252685Z[0m [32m INFO[0m [2mmistralrs_core::device_map[0m[2m:[0m Layer 40: cpu (local)
+[2m2026-08-16T15:34:51.252685Z[0m [32m INFO[0m [2mmistralrs_core::device_map[0m[2m:[0m Layer 41: cpu (local)
+[2m2026-08-16T15:34:51.252686Z[0m [32m INFO[0m [2mmistralrs_core::device_map[0m[2m:[0m Layer 42: cpu (local)
+[2m2026-08-16T15:34:51.252687Z[0m [32m INFO[0m [2mmistralrs_core::device_map[0m[2m:[0m Layer 43: cpu (local)
+[2m2026-08-16T15:34:51.252687Z[0m [32m INFO[0m [2mmistralrs_core::device_map[0m[2m:[0m Layer 44: cpu (local)
+[2m2026-08-16T15:34:51.252688Z[0m [32m INFO[0m [2mmistralrs_core::device_map[0m[2m:[0m Layer 45: cpu (local)
+[2m2026-08-16T15:34:51.252688Z[0m [32m INFO[0m [2mmistralrs_core::device_map[0m[2m:[0m Layer 46: cpu (local)
+[2m2026-08-16T15:34:51.252689Z[0m [32m INFO[0m [2mmistralrs_core::device_map[0m[2m:[0m Layer 47: cpu (local)
+[2m2026-08-16T15:34:51.252690Z[0m [32m INFO[0m [2mmistralrs_core::device_map[0m[2m:[0m Layer 48: cpu (local)
+[2m2026-08-16T15:34:51.252691Z[0m [32m INFO[0m [2mmistralrs_core::device_map[0m[2m:[0m Layer 49: remote → 127.0.0.1:5051
+[2m2026-08-16T15:34:51.252692Z[0m [32m INFO[0m [2mmistralrs_core::device_map[0m[2m:[0m Layer 50: remote → 127.0.0.1:5051
+[2m2026-08-16T15:34:51.252693Z[0m [32m INFO[0m [2mmistralrs_core::device_map[0m[2m:[0m Layer 51: remote → 127.0.0.1:5051
+[2m2026-08-16T15:34:51.252693Z[0m [32m INFO[0m [2mmistralrs_core::device_map[0m[2m:[0m Layer 52: remote → 127.0.0.1:5051
+[2m2026-08-16T15:34:51.252694Z[0m [32m INFO[0m [2mmistralrs_core::device_map[0m[2m:[0m Layer 53: remote → 127.0.0.1:5051
+[2m2026-08-16T15:34:51.252695Z[0m [32m INFO[0m [2mmistralrs_core::device_map[0m[2m:[0m Layer 54: remote → 127.0.0.1:5051
+[2m2026-08-16T15:34:51.252695Z[0m [32m INFO[0m [2mmistralrs_core::device_map[0m[2m:[0m Layer 55: remote → 127.0.0.1:5051
+[2m2026-08-16T15:34:51.252696Z[0m [32m INFO[0m [2mmistralrs_core::device_map[0m[2m:[0m Layer 56: remote → 127.0.0.1:5051
+[2m2026-08-16T15:34:51.252697Z[0m [32m INFO[0m [2mmistralrs_core::device_map[0m[2m:[0m Layer 57: remote → 127.0.0.1:5051
+[2m2026-08-16T15:34:51.252697Z[0m [32m INFO[0m [2mmistralrs_core::device_map[0m[2m:[0m Layer 58: remote → 127.0.0.1:5051
+[2m2026-08-16T15:34:51.252698Z[0m [32m INFO[0m [2mmistralrs_core::device_map[0m[2m:[0m Layer 59: remote → 127.0.0.1:5051
+[2m2026-08-16T15:34:51.252699Z[0m [32m INFO[0m [2mmistralrs_core::device_map[0m[2m:[0m Layer 60: remote → 127.0.0.1:5051
+[2m2026-08-16T15:34:51.252699Z[0m [32m INFO[0m [2mmistralrs_core::device_map[0m[2m:[0m Layer 61: remote → 127.0.0.1:5051
+[2m2026-08-16T15:34:51.252700Z[0m [32m INFO[0m [2mmistralrs_core::device_map[0m[2m:[0m Layer 62: remote → 127.0.0.1:5051
+[2m2026-08-16T15:34:51.252701Z[0m [32m INFO[0m [2mmistralrs_core::device_map[0m[2m:[0m Layer 63: remote → 127.0.0.1:5051
+[2m2026-08-16T15:34:51.252702Z[0m [32m INFO[0m [2mmistralrs_core::device_map[0m[2m:[0m Layer 64: remote → 127.0.0.1:5051
+[2m2026-08-16T15:34:51.252784Z[0m [32m INFO[0m [2mmistralrs_core::device_map::remote[0m[2m:[0m Initialized 1 remote connection(s)
+[2m2026-08-16T15:34:51.252787Z[0m [32m INFO[0m [2mmistralrs_core::device_map::remote[0m[2m:[0m Remote block: layers 49-64 → 127.0.0.1:5051
+[2m2026-08-16T15:34:51.260174Z[0m [32m INFO[0m [2mmistralrs_server_core::mistralrs_for_server_builder[0m[2m:[0m Model loaded.
+[2m2026-08-16T15:34:51.260244Z[0m [32m INFO[0m [2mmistralrs_core[0m[2m:[0m mistral.rs version: 0.9.0
+[2m2026-08-16T15:34:51.260259Z[0m [32m INFO[0m [2mmistralrs_core[0m[2m:[0m git revision: feec4a1f8f525287cb2903da7e7b8a86fb937921
+[2m2026-08-16T15:34:51.319328Z[0m [32m INFO[0m [2mmistralrs_core[0m[2m:[0m Preloaded 748 Candle CUDA PTX functions.
+[2m2026-08-16T15:34:51.319409Z[0m [32m INFO[0m [2mmistralrs_core[0m[2m:[0m Pipeline input modalities are [📝 Text]
+[2m2026-08-16T15:34:51.319416Z[0m [32m INFO[0m [2mmistralrs_core[0m[2m:[0m Pipeline output modalities are [📝 Text]
+[2m2026-08-16T15:34:51.321513Z[0m [32m INFO[0m [2mmistralrs_core::prefix_cacher[0m[2m:[0m Prefix caching enabled (sequence-level, non-paged attention). Expect higher multi-turn throughput for both text and multimodal.
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=0 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[2m2026-08-16T15:34:54.506348Z[0m [32m INFO[0m [2mmistralrs::commands::run[0m[2m:[0m Model loaded, running one-shot mode...
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=0 payload_len=348200
+[BRIDGE] map: moving result from CPU to Cpu
+[90m大作[0m[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=17 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[90mestin[0m[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=18 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[90mComplex[0m[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=19 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[90m维亚[0m[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=20 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[90mrops[0m[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=21 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[90m
+
+[0m[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=22 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[90m\[0m[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=23 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[90m倍[0m[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=24 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[90mamor[0m[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=25 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[90m︎[0m[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=26 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[90mvere[0m[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=27 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[90mlesh[0m[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=28 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[90m之[0m[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=29 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[90m
+
+[0m[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=30 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[90m
+[0m[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=31 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[90mendid[0m[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=32 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[90medas[0m[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=33 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[90miek[0m[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=34 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[90m-[0m[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=35 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[90m️[0m[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=36 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[90mbell[0m[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=37 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[90maid[0m[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=38 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[90mect[0m[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=39 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[90m参考[0m[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=40 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[90m
+
+[0m[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=41 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[90m减少对[0m[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=42 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[90m-sdk[0m[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=43 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[90magn[0m[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=44 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[90mange[0m[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=45 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[90mands[0m[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=46 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[90m瑾[0m[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=47 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[90munen[0m[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=48 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[90m D[0m[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=49 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=50 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=51 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=52 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=53 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=54 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=55 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=56 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=57 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=58 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=59 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=60 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=61 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=62 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=63 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=64 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=65 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=66 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=67 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=68 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=69 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=70 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=71 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=72 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=73 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=74 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=75 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=76 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=77 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=78 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=79 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=80 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=81 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=82 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=83 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=84 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=85 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=86 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=87 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=88 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=89 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=90 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=91 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=92 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=93 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=94 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=95 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=96 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=97 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=98 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=99 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=100 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=101 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=102 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=103 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=104 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=105 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=106 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=107 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=108 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=109 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=110 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=111 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=112 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=113 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=114 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=115 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=116 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=117 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=118 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=119 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=120 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=121 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=122 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=123 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=124 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=125 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=126 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=127 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=128 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=129 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=130 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=131 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=132 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=133 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=134 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=135 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=136 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=137 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=138 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=139 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=140 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=141 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=142 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=143 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=144 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=145 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=146 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=147 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=148 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=149 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=150 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=151 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=152 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=153 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=154 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=155 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=156 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=157 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=158 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=159 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=160 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=161 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=162 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=163 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=164 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=165 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=166 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=167 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=168 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=169 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=170 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=171 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=172 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=173 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=174 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=175 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=176 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=177 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=178 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=179 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=180 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=181 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=182 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=183 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=184 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=185 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=186 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=187 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=188 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=189 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=190 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=191 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=192 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=193 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=194 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=195 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=196 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=197 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=198 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=199 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=200 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=201 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=202 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=203 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=204 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=205 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=206 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=207 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=208 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=209 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=210 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=211 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=212 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=213 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=214 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=215 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=216 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=217 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=218 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=219 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=220 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=221 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=222 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=223 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=224 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=225 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=226 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=227 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=228 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=229 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=230 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=231 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=232 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=233 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=234 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=235 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=236 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=237 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=238 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=239 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=240 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=241 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=242 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=243 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=244 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=245 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=246 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=247 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=248 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=249 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=250 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=251 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=252 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=253 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=254 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=255 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=256 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=257 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=258 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=259 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=260 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=261 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=262 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=263 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=264 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=265 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=266 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=267 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=268 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=269 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=270 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=271 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=272 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=273 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=274 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=275 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=276 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=277 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=278 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=279 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=280 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=281 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=282 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=283 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=284 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=285 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=286 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=287 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=288 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=289 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=290 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=291 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=292 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=293 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=294 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=295 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=296 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=297 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=298 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=299 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=300 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=301 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=302 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=303 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=304 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=305 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=306 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=307 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=308 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=309 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=310 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=311 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=312 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=313 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=314 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=315 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=316 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=317 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=318 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=319 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=320 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=321 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=322 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=323 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=324 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=325 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=326 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=327 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=328 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=329 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=330 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=331 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=332 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=333 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=334 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=335 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=336 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=337 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=338 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=339 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=340 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=341 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=342 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=343 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=344 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=345 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=346 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=347 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=348 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=349 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=350 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=351 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=352 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=353 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=354 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=355 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=356 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=357 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=358 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=359 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=360 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=361 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=362 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=363 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=364 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=365 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=366 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=367 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=368 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=369 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=370 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=371 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=372 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=373 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=374 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=375 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=376 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=377 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=378 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=379 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=380 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=381 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=382 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=383 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=384 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=385 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=386 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=387 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=388 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=389 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=390 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=391 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=392 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=393 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=394 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=395 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=396 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=397 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=398 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=399 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=400 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=401 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=402 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=403 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=404 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=405 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=406 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=407 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=408 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=409 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=410 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=411 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=412 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=413 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=414 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=415 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=416 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=417 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=418 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=419 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=420 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=421 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=422 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=423 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=424 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=425 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=426 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=427 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=428 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=429 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=430 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=431 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=432 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=433 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=434 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=435 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=436 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=437 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=438 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=439 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=440 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=441 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=442 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=443 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=444 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=445 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=446 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=447 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=448 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=449 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=450 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=451 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=452 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=453 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=454 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=455 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=456 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=457 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=458 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=459 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=460 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=461 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=462 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=463 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=464 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=465 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=466 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=467 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=468 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=469 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=470 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=471 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=472 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=473 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=474 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=475 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=476 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=477 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=478 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=479 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=480 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=481 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=482 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=483 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=484 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=485 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=486 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=487 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=488 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=489 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=490 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=491 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=492 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=493 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=494 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=495 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=496 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=497 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=498 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=499 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=500 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=501 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=502 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=503 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=504 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=505 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=506 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=507 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=508 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=509 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=510 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=511 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=512 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=513 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=514 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=515 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=516 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=517 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=518 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=519 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=520 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=521 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=522 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=523 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=524 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=525 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=526 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=527 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=528 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=529 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=530 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=531 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=532 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=533 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=534 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=535 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=536 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=537 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=538 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=539 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=540 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=541 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=542 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=543 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=544 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=545 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=546 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=547 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=548 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=549 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=550 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=551 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=552 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=553 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=554 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=555 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=556 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=557 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=558 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=559 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=560 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=561 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=562 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=563 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=564 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=565 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=566 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=567 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=568 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=569 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=570 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=571 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=572 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=573 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=574 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=575 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=576 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=577 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=578 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=579 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=580 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=581 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=582 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=583 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=584 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=585 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=586 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=587 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=588 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=589 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=590 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=591 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=592 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=593 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=594 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=595 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=596 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=597 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=598 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=599 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=600 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=601 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=602 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=603 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=604 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=605 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=606 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=607 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=608 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=609 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=610 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=611 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=612 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=613 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=614 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=615 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=616 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=617 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=618 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=619 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=620 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=621 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=622 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=623 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=624 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=625 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=626 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=627 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=628 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=629 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=630 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=631 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=632 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=633 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=634 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=635 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=636 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=637 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=638 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=639 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=640 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=641 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=642 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=643 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=644 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=645 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=646 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=647 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=648 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=649 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=650 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=651 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=652 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=653 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=654 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=655 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=656 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=657 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=658 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=659 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=660 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=661 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=662 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=663 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=664 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=665 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=666 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=667 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=668 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=669 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=670 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=671 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=672 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=673 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=674 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=675 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=676 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=677 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=678 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=679 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=680 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=681 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=682 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=683 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=684 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=685 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=686 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=687 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=688 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=689 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=690 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=691 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=692 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=693 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=694 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=695 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=696 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=697 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=698 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=699 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=700 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=701 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=702 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=703 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=704 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=705 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=706 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=707 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=708 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=709 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=710 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=711 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=712 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=713 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=714 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=715 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=716 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=717 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=718 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=719 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=720 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=721 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=722 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=723 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=724 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=725 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=726 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=727 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=728 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=729 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=730 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=731 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=732 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=733 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=734 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-64 past_kv=735 payload_len=20520
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=49 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=49-
