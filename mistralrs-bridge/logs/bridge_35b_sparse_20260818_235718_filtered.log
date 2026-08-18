@@ -1,0 +1,353 @@
+Warning: Permanently added '192.168.1.10' (ED25519) to the list of known hosts.
+2026-08-18T15:57:21.025552Z  INFO mistralrs_core::utils::tokens: Could not load token at "/home/atituiset/.cache/huggingface/token", using no HF token.
+2026-08-18T15:57:21.026723Z  INFO mistralrs_core::utils::tokens: Could not load token at "/home/atituiset/.cache/huggingface/token", using no HF token.
+2026-08-18T15:57:21.366899Z  INFO mistralrs_core::device_map: Loading model with remote layer mapping based on topology:
+2026-08-18T15:57:21.366911Z  INFO mistralrs_core::device_map: Layer 0: cuda[0] (local)
+2026-08-18T15:57:21.366913Z  INFO mistralrs_core::device_map: Layer 1: cuda[0] (local)
+2026-08-18T15:57:21.366914Z  INFO mistralrs_core::device_map: Layer 2: cuda[0] (local)
+2026-08-18T15:57:21.366915Z  INFO mistralrs_core::device_map: Layer 3: cuda[0] (local)
+2026-08-18T15:57:21.366916Z  INFO mistralrs_core::device_map: Layer 4: cuda[0] (local)
+2026-08-18T15:57:21.366916Z  INFO mistralrs_core::device_map: Layer 5: cuda[0] (local)
+2026-08-18T15:57:21.366917Z  INFO mistralrs_core::device_map: Layer 6: cuda[0] (local)
+2026-08-18T15:57:21.366918Z  INFO mistralrs_core::device_map: Layer 7: cuda[0] (local)
+2026-08-18T15:57:21.366919Z  INFO mistralrs_core::device_map: Layer 8: cpu (local)
+2026-08-18T15:57:21.366919Z  INFO mistralrs_core::device_map: Layer 9: cpu (local)
+2026-08-18T15:57:21.366920Z  INFO mistralrs_core::device_map: Layer 10: cpu (local)
+2026-08-18T15:57:21.366921Z  INFO mistralrs_core::device_map: Layer 11: cpu (local)
+2026-08-18T15:57:21.366921Z  INFO mistralrs_core::device_map: Layer 12: cpu (local)
+2026-08-18T15:57:21.366922Z  INFO mistralrs_core::device_map: Layer 13: cpu (local)
+2026-08-18T15:57:21.366923Z  INFO mistralrs_core::device_map: Layer 14: cpu (local)
+2026-08-18T15:57:21.366923Z  INFO mistralrs_core::device_map: Layer 15: cpu (local)
+2026-08-18T15:57:21.366924Z  INFO mistralrs_core::device_map: Layer 16: cpu (local)
+2026-08-18T15:57:21.366925Z  INFO mistralrs_core::device_map: Layer 17: cpu (local)
+2026-08-18T15:57:21.366925Z  INFO mistralrs_core::device_map: Layer 18: cpu (local)
+2026-08-18T15:57:21.366926Z  INFO mistralrs_core::device_map: Layer 19: cpu (local)
+2026-08-18T15:57:21.366926Z  INFO mistralrs_core::device_map: Layer 20: cpu (local)
+2026-08-18T15:57:21.366927Z  INFO mistralrs_core::device_map: Layer 21: cpu (local)
+2026-08-18T15:57:21.366928Z  INFO mistralrs_core::device_map: Layer 22: cpu (local)
+2026-08-18T15:57:21.366928Z  INFO mistralrs_core::device_map: Layer 23: cpu (local)
+2026-08-18T15:57:21.366929Z  INFO mistralrs_core::device_map: Layer 24: cpu (local)
+2026-08-18T15:57:21.366930Z  INFO mistralrs_core::device_map: Layer 25: remote → 127.0.0.1:5051
+2026-08-18T15:57:21.366931Z  INFO mistralrs_core::device_map: Layer 26: remote → 127.0.0.1:5051
+2026-08-18T15:57:21.366931Z  INFO mistralrs_core::device_map: Layer 27: remote → 127.0.0.1:5051
+2026-08-18T15:57:21.366932Z  INFO mistralrs_core::device_map: Layer 28: remote → 127.0.0.1:5051
+2026-08-18T15:57:21.366933Z  INFO mistralrs_core::device_map: Layer 29: remote → 127.0.0.1:5051
+2026-08-18T15:57:21.366933Z  INFO mistralrs_core::device_map: Layer 30: remote → 127.0.0.1:5051
+2026-08-18T15:57:21.366934Z  INFO mistralrs_core::device_map: Layer 31: remote → 127.0.0.1:5051
+2026-08-18T15:57:21.366935Z  INFO mistralrs_core::device_map: Layer 32: remote → 127.0.0.1:5051
+2026-08-18T15:57:21.366936Z  INFO mistralrs_core::device_map: Layer 33: remote → 127.0.0.1:5051
+2026-08-18T15:57:21.366937Z  INFO mistralrs_core::device_map: Layer 34: remote → 127.0.0.1:5051
+2026-08-18T15:57:21.366938Z  INFO mistralrs_core::device_map: Layer 35: remote → 127.0.0.1:5051
+2026-08-18T15:57:21.366938Z  INFO mistralrs_core::device_map: Layer 36: remote → 127.0.0.1:5051
+2026-08-18T15:57:21.366939Z  INFO mistralrs_core::device_map: Layer 37: remote → 127.0.0.1:5051
+2026-08-18T15:57:21.366940Z  INFO mistralrs_core::device_map: Layer 38: remote → 127.0.0.1:5051
+2026-08-18T15:57:21.366940Z  INFO mistralrs_core::device_map: Layer 39: remote → 127.0.0.1:5051
+2026-08-18T15:57:21.367284Z  INFO mistralrs_core::device_map::remote: Initialized 1 remote connection(s)
+2026-08-18T15:57:21.367293Z  INFO mistralrs_core::device_map::remote: Remote block: layers 25-39 → 127.0.0.1:5051
+2026-08-18T15:57:21.367921Z  WARN mistralrs_core::pipeline::gguf: Device mapping contains a mix of GPU and CPU. There is no CPU support for PagedAttention, disabling PagedAttention.
+2026-08-18T15:57:21.477403Z  INFO mistralrs_core::gguf::gguf_tokenizer: GGUF tokenizer model is `gpt2`, kind: `Bpe`, num tokens: 248320, num special tokens 276, num added tokens: 0, num merges: 247587, num scores: 0
+2026-08-18T15:57:21.479096Z  INFO mistralrs_core::gguf::chat_template: Discovered and using GGUF chat template: `{%- set image_count = namespace(value=0) %}\n{%- set video_count = namespace(value=0) %}\n{%- macro render_content(content, do_vision_count, is_system_content=false) %}\n    {%- if content is string %}\n        {{- content }}\n    {%- elif content is iterable and content is not mapping %}\n        {%- for item in content %}\n            {%- if 'image' in item or 'image_url' in item or item.type == 'image' %}\n                {%- if is_system_content %}\n                    {{- raise_exception('System message cannot contain images.') }}\n                {%- endif %}\n                {%- if do_vision_count %}\n                    {%- set image_count.value = image_count.value + 1 %}\n                {%- endif %}\n                {%- if add_vision_id %}\n                    {{- 'Picture ' ~ image_count.value ~ ': ' }}\n                {%- endif %}\n                {{- '<|vision_start|><|image_pad|><|vision_end|>' }}\n            {%- elif 'video' in item or item.type == 'video' %}\n                {%- if is_system_content %}\n                    {{- raise_exception('System message cannot contain videos.') }}\n                {%- endif %}\n                {%- if do_vision_count %}\n                    {%- set video_count.value = video_count.value + 1 %}\n                {%- endif %}\n                {%- if add_vision_id %}\n                    {{- 'Video ' ~ video_count.value ~ ': ' }}\n                {%- endif %}\n                {{- '<|vision_start|><|video_pad|><|vision_end|>' }}\n            {%- elif 'text' in item %}\n                {{- item.text }}\n            {%- else %}\n                {{- raise_exception('Unexpected item type in content.') }}\n            {%- endif %}\n        {%- endfor %}\n    {%- elif content is none or content is undefined %}\n        {{- '' }}\n    {%- else %}\n        {{- raise_exception('Unexpected content type.') }}\n    {%- endif %}\n{%- endmacro %}\n{%- if not messages %}\n    {{- raise_exception('No messages provided.') }}\n{%- endif %}\n{%- if tools and tools is iterable and tools is not mapping %}\n    {{- '<|im_start|>system\n' }}\n    {{- "# Tools\n\nYou have access to the following functions:\n\n<tools>" }}\n    {%- for tool in tools %}\n        {{- "\n" }}\n        {{- tool | tojson }}\n    {%- endfor %}\n    {{- "\n</tools>" }}\n    {{- '\n\nIf you choose to call a function ONLY reply in the following format with NO suffix:\n\n<tool_call>\n<function=example_function_name>\n<parameter=example_parameter_1>\nvalue_1\n</parameter>\n<parameter=example_parameter_2>\nThis is the value for the second parameter\nthat can span\nmultiple lines\n</parameter>\n</function>\n</tool_call>\n\n<IMPORTANT>\nReminder:\n- Function calls MUST follow the specified format: an inner <function=...></function> block must be nested within <tool_call></tool_call> XML tags\n- Required parameters MUST be specified\n- You may provide optional reasoning for your function call in natural language BEFORE the function call, but NOT after\n- If there is no function call available, answer the question like normal with your current knowledge and do not tell the user about function calls\n</IMPORTANT>' }}\n    {%- if messages[0].role == 'system' %}\n        {%- set content = render_content(messages[0].content, false, true)|trim %}\n        {%- if content %}\n            {{- '\n\n' + content }}\n        {%- endif %}\n    {%- endif %}\n    {{- '<|im_end|>\n' }}\n{%- else %}\n    {%- if messages[0].role == 'system' %}\n        {%- set content = render_content(messages[0].content, false, true)|trim %}\n        {{- '<|im_start|>system\n' + content + '<|im_end|>\n' }}\n    {%- endif %}\n{%- endif %}\n{%- set ns = namespace(multi_step_tool=true, last_query_index=messages|length - 1) %}\n{%- for message in messages[::-1] %}\n    {%- set index = (messages|length - 1) - loop.index0 %}\n    {%- if ns.multi_step_tool and message.role == "user" %}\n        {%- set content = render_content(message.content, false)|trim %}\n        {%- if not(content.startswith('<tool_response>') and content.endswith('</tool_response>')) %}\n            {%- set ns.multi_step_tool = false %}\n            {%- set ns.last_query_index = index %}\n        {%- endif %}\n    {%- endif %}\n{%- endfor %}\n{%- if ns.multi_step_tool %}\n    {{- raise_exception('No user query found in messages.') }}\n{%- endif %}\n{%- for message in messages %}\n    {%- set content = render_content(message.content, true)|trim %}\n    {%- if message.role == "system" %}\n        {%- if not loop.first %}\n            {{- raise_exception('System message must be at the beginning.') }}\n        {%- endif %}\n    {%- elif message.role == "user" %}\n        {{- '<|im_start|>' + message.role + '\n' + content + '<|im_end|>' + '\n' }}\n    {%- elif message.role == "assistant" %}\n        {%- set reasoning_content = '' %}\n        {%- if message.reasoning_content is string %}\n            {%- set reasoning_content = message.reasoning_content %}\n        {%- else %}\n            {%- if '</think>' in content %}\n                {%- set reasoning_content = content.split('</think>')[0].rstrip('\n').split('<think>')[-1].lstrip('\n') %}\n                {%- set content = content.split('</think>')[-1].lstrip('\n') %}\n            {%- endif %}\n        {%- endif %}\n        {%- set reasoning_content = reasoning_content|trim %}\n        {%- if (preserve_thinking is defined and preserve_thinking is true) or (loop.index0 > ns.last_query_index) %}\n            {{- '<|im_start|>' + message.role + '\n<think>\n' + reasoning_content + '\n</think>\n\n' + content }}\n        {%- else %}\n            {{- '<|im_start|>' + message.role + '\n' + content }}\n        {%- endif %}\n        {%- if message.tool_calls and message.tool_calls is iterable and message.tool_calls is not mapping %}\n            {%- for tool_call in message.tool_calls %}\n                {%- if tool_call.function is defined %}\n                    {%- set tool_call = tool_call.function %}\n                {%- endif %}\n                {%- if loop.first %}\n                    {%- if content|trim %}\n                        {{- '\n\n<tool_call>\n<function=' + tool_call.name + '>\n' }}\n                    {%- else %}\n                        {{- '<tool_call>\n<function=' + tool_call.name + '>\n' }}\n                    {%- endif %}\n                {%- else %}\n                    {{- '\n<tool_call>\n<function=' + tool_call.name + '>\n' }}\n                {%- endif %}\n                {%- if tool_call.arguments is defined %}\n                    {%- for args_name, args_value in tool_call.arguments|items %}\n                        {{- '<parameter=' + args_name + '>\n' }}\n                        {%- set args_value = args_value | string if args_value is string else args_value | tojson | safe %}\n                        {{- args_value }}\n                        {{- '\n</parameter>\n' }}\n                    {%- endfor %}\n                {%- endif %}\n                {{- '</function>\n</tool_call>' }}\n            {%- endfor %}\n        {%- endif %}\n        {{- '<|im_end|>\n' }}\n    {%- elif message.role == "tool" %}\n        {%- if loop.previtem and loop.previtem.role != "tool" %}\n            {{- '<|im_start|>user' }}\n        {%- endif %}\n        {{- '\n<tool_response>\n' }}\n        {{- content }}\n        {{- '\n</tool_response>' }}\n        {%- if not loop.last and loop.nextitem.role != "tool" %}\n            {{- '<|im_end|>\n' }}\n        {%- elif loop.last %}\n            {{- '<|im_end|>\n' }}\n        {%- endif %}\n    {%- else %}\n        {{- raise_exception('Unexpected message role.') }}\n    {%- endif %}\n{%- endfor %}\n{%- if add_generation_prompt %}\n    {{- '<|im_start|>assistant\n' }}\n    {%- if enable_thinking is defined and enable_thinking is false %}\n        {{- '<think>\n\n</think>\n\n' }}\n    {%- else %}\n        {{- '<think>\n' }}\n    {%- endif %}\n{%- endif %}`
+2026-08-18T15:57:21.551376Z  INFO mistralrs_quant::utils::log: DType selected is BF16.
+2026-08-18T15:57:28.196293Z  INFO mistralrs_core::device_map: Loading model with remote layer mapping based on topology:
+2026-08-18T15:57:28.196306Z  INFO mistralrs_core::device_map: Layer 0: cuda[0] (local)
+2026-08-18T15:57:28.196308Z  INFO mistralrs_core::device_map: Layer 1: cuda[0] (local)
+2026-08-18T15:57:28.196309Z  INFO mistralrs_core::device_map: Layer 2: cuda[0] (local)
+2026-08-18T15:57:28.196310Z  INFO mistralrs_core::device_map: Layer 3: cuda[0] (local)
+2026-08-18T15:57:28.196310Z  INFO mistralrs_core::device_map: Layer 4: cuda[0] (local)
+2026-08-18T15:57:28.196311Z  INFO mistralrs_core::device_map: Layer 5: cuda[0] (local)
+2026-08-18T15:57:28.196312Z  INFO mistralrs_core::device_map: Layer 6: cuda[0] (local)
+2026-08-18T15:57:28.196312Z  INFO mistralrs_core::device_map: Layer 7: cuda[0] (local)
+2026-08-18T15:57:28.196313Z  INFO mistralrs_core::device_map: Layer 8: cpu (local)
+2026-08-18T15:57:28.196314Z  INFO mistralrs_core::device_map: Layer 9: cpu (local)
+2026-08-18T15:57:28.196315Z  INFO mistralrs_core::device_map: Layer 10: cpu (local)
+2026-08-18T15:57:28.196315Z  INFO mistralrs_core::device_map: Layer 11: cpu (local)
+2026-08-18T15:57:28.196316Z  INFO mistralrs_core::device_map: Layer 12: cpu (local)
+2026-08-18T15:57:28.196317Z  INFO mistralrs_core::device_map: Layer 13: cpu (local)
+2026-08-18T15:57:28.196317Z  INFO mistralrs_core::device_map: Layer 14: cpu (local)
+2026-08-18T15:57:28.196318Z  INFO mistralrs_core::device_map: Layer 15: cpu (local)
+2026-08-18T15:57:28.196319Z  INFO mistralrs_core::device_map: Layer 16: cpu (local)
+2026-08-18T15:57:28.196319Z  INFO mistralrs_core::device_map: Layer 17: cpu (local)
+2026-08-18T15:57:28.196320Z  INFO mistralrs_core::device_map: Layer 18: cpu (local)
+2026-08-18T15:57:28.196320Z  INFO mistralrs_core::device_map: Layer 19: cpu (local)
+2026-08-18T15:57:28.196321Z  INFO mistralrs_core::device_map: Layer 20: cpu (local)
+2026-08-18T15:57:28.196322Z  INFO mistralrs_core::device_map: Layer 21: cpu (local)
+2026-08-18T15:57:28.196322Z  INFO mistralrs_core::device_map: Layer 22: cpu (local)
+2026-08-18T15:57:28.196323Z  INFO mistralrs_core::device_map: Layer 23: cpu (local)
+2026-08-18T15:57:28.196324Z  INFO mistralrs_core::device_map: Layer 24: cpu (local)
+2026-08-18T15:57:28.196324Z  INFO mistralrs_core::device_map: Layer 25: remote → 127.0.0.1:5051
+2026-08-18T15:57:28.196325Z  INFO mistralrs_core::device_map: Layer 26: remote → 127.0.0.1:5051
+2026-08-18T15:57:28.196326Z  INFO mistralrs_core::device_map: Layer 27: remote → 127.0.0.1:5051
+2026-08-18T15:57:28.196327Z  INFO mistralrs_core::device_map: Layer 28: remote → 127.0.0.1:5051
+2026-08-18T15:57:28.196327Z  INFO mistralrs_core::device_map: Layer 29: remote → 127.0.0.1:5051
+2026-08-18T15:57:28.196328Z  INFO mistralrs_core::device_map: Layer 30: remote → 127.0.0.1:5051
+2026-08-18T15:57:28.196329Z  INFO mistralrs_core::device_map: Layer 31: remote → 127.0.0.1:5051
+2026-08-18T15:57:28.196330Z  INFO mistralrs_core::device_map: Layer 32: remote → 127.0.0.1:5051
+2026-08-18T15:57:28.196330Z  INFO mistralrs_core::device_map: Layer 33: remote → 127.0.0.1:5051
+2026-08-18T15:57:28.196331Z  INFO mistralrs_core::device_map: Layer 34: remote → 127.0.0.1:5051
+2026-08-18T15:57:28.196332Z  INFO mistralrs_core::device_map: Layer 35: remote → 127.0.0.1:5051
+2026-08-18T15:57:28.196332Z  INFO mistralrs_core::device_map: Layer 36: remote → 127.0.0.1:5051
+2026-08-18T15:57:28.196333Z  INFO mistralrs_core::device_map: Layer 37: remote → 127.0.0.1:5051
+2026-08-18T15:57:28.196334Z  INFO mistralrs_core::device_map: Layer 38: remote → 127.0.0.1:5051
+2026-08-18T15:57:28.196334Z  INFO mistralrs_core::device_map: Layer 39: remote → 127.0.0.1:5051
+2026-08-18T15:57:28.196415Z  INFO mistralrs_core::device_map::remote: Initialized 1 remote connection(s)
+2026-08-18T15:57:28.196418Z  INFO mistralrs_core::device_map::remote: Remote block: layers 25-39 → 127.0.0.1:5051
+2026-08-18T15:57:28.198075Z  INFO mistralrs_server_core::mistralrs_for_server_builder: Model loaded.
+2026-08-18T15:57:28.198577Z  INFO mistralrs_core: mistral.rs version: 0.9.0
+2026-08-18T15:57:28.199671Z  INFO mistralrs_core: git revision: feec4a1f8f525287cb2903da7e7b8a86fb937921
+2026-08-18T15:57:28.260389Z  INFO mistralrs_core: Preloaded 748 Candle CUDA PTX functions.
+2026-08-18T15:57:28.260620Z  INFO mistralrs_core: Pipeline input modalities are [📝 Text]
+2026-08-18T15:57:28.260624Z  INFO mistralrs_core: Pipeline output modalities are [📝 Text]
+2026-08-18T15:57:28.263731Z  INFO mistralrs_core::prefix_cacher: Prefix caching enabled (sequence-level, non-paged attention). Expect higher multi-turn throughput for both text and multimodal.
+2026-08-18T15:57:28.754690Z  INFO mistralrs::commands::run: Model loaded, running one-shot mode...
+Here[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+'s[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+ a[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+ thinking[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+ process[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+:[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+1[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+.[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+ [BRIDGE] map: layer=25 remote=127.0.0.1:5051
+ **[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+An[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+alyze[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+ User[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+ Input[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+:**[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+  [BRIDGE] map: layer=25 remote=127.0.0.1:5051
+ -[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+ **[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+Topic[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+:**[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+ Autumn[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+ ([BRIDGE] map: layer=25 remote=127.0.0.1:5051
+秋天[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+)[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+  [BRIDGE] map: layer=25 remote=127.0.0.1:5051
+ -[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+ **[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+Format[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+:**[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+ Short[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+ poem[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+ ([BRIDGE] map: layer=25 remote=127.0.0.1:5051
+短[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+诗[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+)[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+  [BRIDGE] map: layer=25 remote=127.0.0.1:5051
+ -[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+ **[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+Requirement[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+:**[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+ Explain[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+ my[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+ favorite[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+ line[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+ ([BRIDGE] map: layer=25 remote=127.0.0.1:5051
+解释[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+你[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+最喜欢[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+的一句[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+)[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+  [BRIDGE] map: layer=25 remote=127.0.0.1:5051
+ -[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+ **[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+Language[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+:**[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+ Chinese[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+2[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+.[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+ [BRIDGE] map: layer=25 remote=127.0.0.1:5051
+ **[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+De[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+construct[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+ Requirements[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+:**[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+  [BRIDGE] map: layer=25 remote=127.0.0.1:5051
+ -[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+ Write[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+ a[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+ short[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+ poem[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+ about[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+ autumn[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+ in[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+ Chinese[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+.[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+  [BRIDGE] map: layer=25 remote=127.0.0.1:5051
+ -[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+ Include[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+ an[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+ explanation[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+ of[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+ my[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+ favorite[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+ line[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+ from[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+ the[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+ poem[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+.[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+  [BRIDGE] map: layer=25 remote=127.0.0.1:5051
+ -[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+ Keep[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+ it[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+ concise[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+ and[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+ poetic[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+.[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+3[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+.[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+ [BRIDGE] map: moving result from CPU to Cpu
+ **[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+Brain[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+storm[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+ing[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+ -[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+ Po[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+em[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+ Content[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+ ([BRIDGE] map: layer=25 remote=127.0.0.1:5051
+M[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+ental[BRIDGE] map: moving result from CPU to Cpu
+ Draft[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+):**[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+  [BRIDGE] map: layer=25 remote=127.0.0.1:5051
+ *[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+Theme[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+:*[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+ Autumn[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+,[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+ transition[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+,[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+ nature[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+,[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+ quiet[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+ reflection[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+.[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+  [BRIDGE] map: layer=25 remote=127.0.0.1:5051
+ *[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+Lines[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+ idea[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+:*[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+  [BRIDGE] map: layer=25 remote=127.0.0.1:5051
+ [BRIDGE] map: layer=25 remote=127.0.0.1:5051
+风[BRIDGE] map: moving result from CPU to Cpu
+过[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+林[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+梢[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+叶[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+半[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+黄[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+，[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+([BRIDGE] map: layer=25 remote=127.0.0.1:5051
+Wind[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+ passes[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+ through[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+ t[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+reet[BRIDGE] map: moving result from CPU to Cpu
+ops[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+,[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+ leaves[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+ half[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+-yellow[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+)[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+  [BRIDGE] map: layer=25 remote=127.0.0.1:5051
+ [BRIDGE] map: layer=25 remote=127.0.0.1:5051
+露[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+凝[BRIDGE] map: moving result from CPU to Cpu
+秋[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+草[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+夜[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+微[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+凉[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+。([BRIDGE] map: layer=25 remote=127.0.0.1:5051
+D[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+ew[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+ gathers[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+ on[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+ autumn[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+ grass[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+,[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+ night[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+ grows[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+ cool[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+)[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+  [BRIDGE] map: layer=25 remote=127.0.0.1:5051
+ [BRIDGE] map: layer=25 remote=127.0.0.1:5051
+雁[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+字[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+横[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+天[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+云[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+影[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+淡[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+，[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+([BRIDGE] map: layer=25 remote=127.0.0.1:5051
+Wild[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+ ge[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+ese[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+ form[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+ characters[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+ in[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+ the[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+ sky[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+,[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+ cloud[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+ shadows[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+ faint[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+)[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+  [BRIDGE] map: layer=25 remote=127.0.0.1:5051
+ [BRIDGE] map: layer=25 remote=127.0.0.1:5051
+
+... [中间省略：模型陷入'风把落叶写成信笺'无限重复，约 2 万行] ...
+
+，[BRIDGE] map: moving result from CPU to Cpu
+  [BRIDGE] map: layer=25 remote=127.0.0.1:5051
+ [BRIDGE] map: layer=25 remote=127.0.0.1:5051
+风[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+把[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+落叶[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+写成[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+信[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+笺[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+，[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+  [BRIDGE] map: layer=25 remote=127.0.0.1:5051
+ [BRIDGE] map: layer=25 remote=127.0.0.1:5051
+风[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+把[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+落叶[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+写成[BRIDGE] map: moving result from CPU to Cpu
+信[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+笺[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+，[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+  [BRIDGE] map: layer=25 remote=127.0.0.1:5051
+ [BRIDGE] map: layer=25 remote=127.0.0.1:5051
+风[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+把[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+落叶[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+写成[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+信[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+笺[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+，[BRIDGE] map: moving result from CPU to Cpu
+  [BRIDGE] map: layer=25 remote=127.0.0.1:5051
+ [BRIDGE] map: layer=25 remote=127.0.0.1:5051
+风[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+把[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+落叶[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+写成[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+信[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+笺[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+，[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+  [BRIDGE] map: layer=25 remote=127.0.0.1:5051
+ [BRIDGE] map: layer=25 remote=127.0.0.1:5051
+风[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+把[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+落叶[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+写成[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+信[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+笺[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+，[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+  [BRIDGE] map: layer=25 remote=127.0.0.1:5051
+ [BRIDGE] map: layer=25 remote=127.0.0.1:5051
+风[BRIDGE] map: layer=25 remote=127.0.0.1:5051
+把[BRIDGE] map: layer=25 remote=127.0.0.1:5051

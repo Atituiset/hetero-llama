@@ -4,9 +4,10 @@
 # 拓扑: 0-11 cuda(GPU PC) + 12-48 cpu(GPU PC) + 49-63 remote(WSL)
 # 顺序: WSL worker -> SSH 反向隧道 -> GPU PC host 推理
 #
-# 用法: ./run_qwen_27b_bridge.sh [model_tag] [prompt]
+# 用法: ./run_qwen_27b_bridge.sh [model_tag] [prompt|-i]
 #   model_tag: 3.6 (默认, Qwen3.6-27B) | 3.8 (Qwen3.8-27B)
-# 日志: logs/bridge_27b_<tag>_<timestamp>.log
+#   prompt:    一次性问答；传 -i 进入交互式聊天（伪终端，直接打字）
+# 日志: logs/bridge_27b_<tag>_<timestamp>.log（交互模式不写日志）
 
 set -euo pipefail
 
@@ -16,6 +17,10 @@ source "${MODE_DIR}/config.env"
 
 TAG="${1:-3.6}"
 PROMPT="${2:-$DEFAULT_PROMPT}"
+INTERACTIVE=0
+if [ "${PROMPT}" = "-i" ]; then
+    INTERACTIVE=1
+fi
 
 case "${TAG}" in
     3.6) MODEL_FILE="Qwen_Qwen3.6-27B-Q3_K_M.gguf"; TOPOLOGY="${MODE_DIR}/topologies/qwen36_27b_bridge.yml" ;;
@@ -65,10 +70,16 @@ done
 # 3. 拓扑传到 GPU PC（/tmp 重启会丢，每次都重新 scp）
 scp -q "${TOPOLOGY}" "${GPU_PC_USER}@${GPU_PC_IP}:${GPU_PC_TOPO}"
 
-# 4. GPU PC host 推理（前台，输出进日志）
-echo "[4/4] GPU PC host 推理..."
-ssh "${GPU_PC_USER}@${GPU_PC_IP}" \
-    "${GPU_PC_BIN} run --format gguf --topology ${GPU_PC_TOPO} -m ~/models -f ${MODEL_FILE} --max-seq-len 2048 -i '${PROMPT}'" \
-    2>&1 | tee "${LOG}"
-
-echo "=== 完成，日志: ${LOG} ==="
+# 4. GPU PC host 推理
+if [ "${INTERACTIVE}" = "1" ]; then
+    # 交互模式：ssh -t 分配伪终端，直接进聊天框，不写日志
+    echo "[4/4] GPU PC host 交互式会话（退出后 worker/隧道自动清理）..."
+    ssh -t "${GPU_PC_USER}@${GPU_PC_IP}" \
+        "${GPU_PC_BIN} run --format gguf --topology ${GPU_PC_TOPO} -m ~/models -f ${MODEL_FILE} --max-seq-len 2048"
+else
+    echo "[4/4] GPU PC host 推理..."
+    ssh "${GPU_PC_USER}@${GPU_PC_IP}" \
+        "${GPU_PC_BIN} run --format gguf --topology ${GPU_PC_TOPO} -m ~/models -f ${MODEL_FILE} --max-seq-len 2048 -i '${PROMPT}'" \
+        2>&1 | tee "${LOG}"
+    echo "=== 完成，日志: ${LOG} ==="
+fi

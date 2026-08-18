@@ -2,7 +2,7 @@
 
 使用 [mistral.rs](https://github.com/Atituiset/mistral.rs)（EricLBuehler/mistral.rs 的 fork，`feat/remote-layer-split` 分支，含 18 个自定义 commits）的 TCP 桥接功能，实现 GPU / CPU 跨机异构推理。
 
-- 状态：✅ **27B 和 35B-A3B 跨机桥接均已端到端跑通且输出正确**（2026-08-18）；27B decode 2.42 T/s，35B 正确但极慢（~1 token/min，待优化）
+- 状态：✅ **27B（3.6/3.8）和 35B-A3B 跨机桥接均端到端跑通且输出正确**；27B decode ~2.5 T/s，35B 经稀疏 MoE 修复后 decode ~3.4 T/s（长输出有重复退化待查）
 - 框架：mistral.rs v0.9.0-dev + bridge commits + qwen35/qwen35moe GGUF 支持（`f19aaaa88`，已提交并推送）
 - 模型：`Qwen2-0.5B-Instruct-Q4_0`（已验证）、`Qwen3.6-27B-Q3_K_M`（✅ 正确）、`Qwen3.6-35B-A3B-Q3_K_M`（✅ 正确/慢）、`Qwen3.5-0.8B-Q4_K_M`（数值调试基准）
 - 设备：GPU PC（RTX 4050 6GB + 15GB RAM）+ WSL（CPU 15GB，worker ≤16 层，超限会把 WSL 搞崩）
@@ -89,11 +89,12 @@ GPU PC 只有 15GB RAM，必须单任务编译且只编 `cuda` feature（flash-a
 | Qwen2-0.5B 跨机桥接 | ✅ 通过 | 197 T/s prompt, 46 T/s decode |
 | Qwen3.5-0.8B 纯 CPU / loopback / 三段拓扑 | ✅ 输出全正确 | 纯 CPU 20 T/s |
 | **Qwen3.6-27B 三段桥接**（12 cuda + 37 cpu + 15 remote） | ✅ **输出正确** | prompt 5.2 T/s, decode 2.42 T/s |
-| **Qwen3.6-35B-A3B 三段桥接**（8 cuda + 17 cpu + 15 remote） | ✅ **输出正确** | ~1 token/min，MoE CPU + SSM 串行待优化 |
+| **Qwen3.6-35B-A3B 三段桥接**（8 cuda + 17 cpu + 15 remote） | ✅ **输出正确** | decode ~3.4 T/s（稀疏 MoE 修复后，~200x）；长输出重复退化待查 |
+| **Qwen3.8-27B 三段桥接**（12 cuda + 37 cpu + 15 remote） | ✅ **输出正确** | TTFT 4.59s, prompt 5.59 T/s, decode 2.56 T/s |
 | qwen35 数值逐层对照 llama.cpp | ✅ 24 层 <1% 偏差 | — |
 
 ## 源码
 
 桥接源码在独立 git 仓库：`../mistral.rs/`，远程: `https://github.com/Atituiset/mistral.rs`（`feat/remote-layer-split` 分支，已推送）。
 
-18 个自定义 commits（`f4cb782b9` → `f19aaaa88`）：早期 16 个 bridge/SSM commits 实现内容详见 `docs/report.md`；最后 2 个（remote worker 部分加载 + qwen35 dense GGUF 支持及全部数值修复）见 `docs/session-2026-08-16.md` 第八节。
+19 个自定义 commits（`f4cb782b9` → `a9f7a8d3b`）：早期 16 个 bridge/SSM commits 实现内容详见 `docs/report.md`；第 17-18 个（remote worker 部分加载 + qwen35 dense GGUF 支持及全部数值修复）与第 19 个（x86 CPU 稀疏 MoE 前向，35B 提速 ~200x）见 `docs/session-2026-08-16.md` 第八、九节。

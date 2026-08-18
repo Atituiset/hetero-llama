@@ -14,7 +14,7 @@
 | **mnn** | [`mnn/`](./mnn/README.md) | ✅ 已验证 | 用 MNN 在 Mate 40 Pro 上跑 LLM；OpenCL/Vulkan 能调用 GPU 但比 CPU 慢 |
 | **ncnn-llm** | [`ncnn-llm/`](./ncnn-llm/README.md) | ✅ 已验证 | ncnn_llm 已构建成功；Qwen3-0.6B CPU 40.7 s，Vulkan 卡住无输出 |
 | **3-machine** | [`3-machine/`](./3-machine/README.md) | ✅ 可用 | GPU PC + WSL + 手机三机 llama.cpp RPC 异构推理；含通宵基准与 watchdog |
-| **mistralrs-bridge** | [`mistralrs-bridge/`](./mistralrs-bridge/README.md) | ✅ 双模型跑通 | mistral.rs TCP 桥接；27B 正确 2.42 T/s，35B-A3B 正确但慢（~1 tok/min 待优化） |
+| **mistralrs-bridge** | [`mistralrs-bridge/`](./mistralrs-bridge/README.md) | ✅ 三模型跑通 | mistral.rs TCP 桥接；3.6/3.8-27B decode ~2.5 T/s，35B-A3B 稀疏 MoE 修复后 ~3.4 T/s |
 | **common** | [`common/`](./common/) | ✅ 已启用 | 跨模式共享脚本（`ts-log.sh`、`check-phone-status.sh`、配置模板） |
 
 进入对应目录查看各自的 README 获取详细用法。
@@ -34,7 +34,7 @@
 
 手机上目前唯一可用的 LLM 路径是 **手机 CPU（MNN ARM82 / ncnn_llm CPU）**；PC/WSL 上唯一可用的 GPU 路径是 **llama.cpp OpenCL（Intel）**。
 
-PC 侧跨机分层推理已由 **mistralrs-bridge** 模式实现：Qwen3.6-27B / 35B-A3B（混合 SSM 架构，llama.cpp RPC 不支持）在 GPU PC + WSL 三段拓扑下输出正确，27B decode 2.42 T/s。
+PC 侧跨机分层推理已由 **mistralrs-bridge** 模式实现：Qwen3.6-27B / 3.8-27B / 35B-A3B（混合 SSM 架构，llama.cpp RPC 不支持）在 GPU PC + WSL 三段拓扑下输出正确，27B decode ~2.5 T/s，35B 经 x86 稀疏 MoE 修复后 ~3.4 T/s。
 
 > 注意：MNN / ncnn 实验均为**手机单机推理**。WSL 仅负责模型导出/编译 x86 工具，并未与手机 GPU 做分层协同；`3-machine/` 的 llama.cpp RPC 分层方案对 MNN/ncnn 不适用。
 
