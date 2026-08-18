@@ -34,6 +34,8 @@
 
 手机上目前唯一可用的 LLM 路径是 **手机 CPU（MNN ARM82 / ncnn_llm CPU）**；PC/WSL 上唯一可用的 GPU 路径是 **llama.cpp OpenCL（Intel）**。
 
+PC 侧跨机分层推理已由 **mistralrs-bridge** 模式实现：Qwen3.6-27B / 35B-A3B（混合 SSM 架构，llama.cpp RPC 不支持）在 GPU PC + WSL 三段拓扑下输出正确，27B decode 2.42 T/s。
+
 > 注意：MNN / ncnn 实验均为**手机单机推理**。WSL 仅负责模型导出/编译 x86 工具，并未与手机 GPU 做分层协同；`3-machine/` 的 llama.cpp RPC 分层方案对 MNN/ncnn 不适用。
 
 ---
@@ -42,8 +44,9 @@
 
 - **llama.cpp commit**：`152d337fadb93c2a099653c4072d5512c92c5bfd`  
   源码不提交到本仓库，各模式脚本自行指向本地构建目录。
-- **模型**：`qwen2-0.5b-instruct-q4_0.gguf`（336 MB，24 层 transformer）  
-  默认路径 `~/models/qwen2-0.5b-instruct-q4_0.gguf`，可在各模式 `config.env` 中修改。
+- **模型**：
+  - `qwen2-0.5b-instruct-q4_0.gguf`（336 MB，24 层 transformer）—— 各模式默认小模型，默认路径 `~/models/qwen2-0.5b-instruct-q4_0.gguf`，可在各模式 `config.env` 中修改
+  - mistralrs-bridge 目标模型（`~/models/`，双机各一份）：`Qwen_Qwen3.6-27B-Q3_K_M.gguf`（14.8GB）、`Qwen_Qwen3.6-35B-A3B-Q3_K_M.gguf`（16GB）、`Qwen3.5-0.8B-Q4_K_M.gguf`（数值调试用）
 - **系统工具**：`cmake`、`ninja/make`、`git`、`ssh`（部分模式需要）
 
 ---
@@ -90,13 +93,20 @@ hetero-llama/
 │   ├── scripts/
 │   │   ├── run_remote_worker.sh   # 启动 TCP remote worker
 │   │   ├── run_bridge_host.sh     # 启动桥接 Host
-│   │   └── build_gpu_binary.sh    # GPU PC CUDA 编译
+│   │   ├── start_wsl_tunnel.sh    # WSL→GPU PC SSH 反向隧道（跨机必需）
+│   │   ├── build_gpu_binary.sh    # GPU PC CUDA 编译（单任务，防 OOM）
+│   │   ├── run_cpu_safe.sh        # 纯 CPU 安全运行
+│   │   └── run_gpu_cuda_split.sh  # GPU 本地 CUDA/CPU 分层
 │   ├── topologies/
-│   │   ├── gpu_wsl_bridge.yml          # GPU + WSL 双机拓扑
-│   │   └── gpu_wsl_phone_bridge.yml    # GPU + WSL + 手机三机拓扑
+│   │   ├── qwen36_27b_bridge.yml       # 27B 三段实测拓扑（12 cuda+37 cpu+15 remote）
+│   │   ├── qwen36_35b_bridge.yml       # 35B-A3B 三段实测拓扑（8 cuda+17 cpu+15 remote）
+│   │   ├── gpu_wsl_bridge.yml          # GPU + WSL 双机拓扑（早期）
+│   │   ├── gpu_wsl_phone_bridge.yml    # GPU + WSL + 手机三机拓扑（早期）
+│   │   └── ...                         # loopback/分段冒烟测试拓扑
 │   ├── docs/
-│   │   ├── report.md                  # 源码更改报告
-│   │   └── overnight-session.md       # 通宵 session 报告
+│   │   ├── report.md                  # 早期 16 个 bridge commits 源码更改报告
+│   │   ├── overnight-session.md       # 通宵 session 报告
+│   │   └── session-2026-08-16.md      # 8/16-8/18 攻坚报告（数值修复 + 双模型跑通）
 │   └── logs/
 └── common/
     ├── config.env.template

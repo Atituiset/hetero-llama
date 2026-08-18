@@ -1,5 +1,7 @@
 # mistral.rs GPU/CPU 分层推理源码更改报告
 
+> **时效说明**：本报告覆盖早期 bridge 功能的 13 个关键 commit（截至 2026-07 通宵 session）。后续 Qwen3.5/3.6 SSM 支持、remote worker 部分加载与全部数值修复（commit 至 `f19aaaa88`，2026-08-18）见 [`session-2026-08-16.md`](./session-2026-08-16.md)。
+
 ## 概述
 
 mistral.rs 在 v0.8.23 → v0.9.0 版本迭代中，新增了 **异构设备分层推理（GPU/CPU Split Inference）** 功能。该功能允许将 Transformer 模型的解码器层（decoder layers）分布到不同的计算设备上——GPU、CPU、乃至**远端机器（通过 TCP）**——实现跨设备的协同推理。
