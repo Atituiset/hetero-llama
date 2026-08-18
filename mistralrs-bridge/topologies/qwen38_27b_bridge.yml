@@ -1,0 +1,12 @@
+# GPU PC + WSL 双机桥接拓扑 — Qwen3.8-27B (qwen35 arch, 64 主干层 + 1 MTP, Q3_K_M 14.6GB)
+# 与 Qwen3.6-27B 结构一致（block_count=65, hidden=5120, 混合 SSM），复用相同切分：
+#   GPU PC CUDA (6GB VRAM): 0-11 共 12 层 ≈ 2.7GB + lm_head ~1GB
+#   GPU PC CPU (13GB avail): 12-48 共 37 层 ≈ 8.4GB + embedding
+#   WSL remote worker: 49-63 共 15 层 ≈ 3.4GB
+#   ※ WSL 侧务必保守（>40 层曾把 WSL 搞崩）；remote 经 ssh -R 隧道转发
+0-11:
+  device: cuda[0]
+12-48:
+  device: cpu
+49-63:
+  device: remote:tcp://127.0.0.1:5051

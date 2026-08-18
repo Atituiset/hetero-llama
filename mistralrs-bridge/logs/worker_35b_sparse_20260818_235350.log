@@ -1,0 +1,163 @@
+=== mistral.rs Remote Worker ===
+Model:        /home/atituiset/models/Qwen_Qwen3.6-35B-A3B-Q3_K_M.gguf
+Listen:       127.0.0.1:5051
+Layers:       25-39
+Binary:       /home/atituiset/Projects/gpu-cpu-phone-test/mistral.rs/target/release/mistralrs
+================================
+2026-08-18T15:53:51.283825Z  WARN mistralrs_core::pipeline::gguf: Device mapping contains a mix of GPU and CPU. There is no CPU support for PagedAttention, disabling PagedAttention.
+2026-08-18T15:53:51.527447Z  INFO mistralrs_core::gguf::gguf_tokenizer: GGUF tokenizer model is `gpt2`, kind: `Bpe`, num tokens: 248320, num special tokens 276, num added tokens: 0, num merges: 247587, num scores: 0
+2026-08-18T15:53:51.529498Z  INFO mistralrs_core::gguf::chat_template: Discovered and using GGUF chat template: `{%- set image_count = namespace(value=0) %}\n{%- set video_count = namespace(value=0) %}\n{%- macro render_content(content, do_vision_count, is_system_content=false) %}\n    {%- if content is string %}\n        {{- content }}\n    {%- elif content is iterable and content is not mapping %}\n        {%- for item in content %}\n            {%- if 'image' in item or 'image_url' in item or item.type == 'image' %}\n                {%- if is_system_content %}\n                    {{- raise_exception('System message cannot contain images.') }}\n                {%- endif %}\n                {%- if do_vision_count %}\n                    {%- set image_count.value = image_count.value + 1 %}\n                {%- endif %}\n                {%- if add_vision_id %}\n                    {{- 'Picture ' ~ image_count.value ~ ': ' }}\n                {%- endif %}\n                {{- '<|vision_start|><|image_pad|><|vision_end|>' }}\n            {%- elif 'video' in item or item.type == 'video' %}\n                {%- if is_system_content %}\n                    {{- raise_exception('System message cannot contain videos.') }}\n                {%- endif %}\n                {%- if do_vision_count %}\n                    {%- set video_count.value = video_count.value + 1 %}\n                {%- endif %}\n                {%- if add_vision_id %}\n                    {{- 'Video ' ~ video_count.value ~ ': ' }}\n                {%- endif %}\n                {{- '<|vision_start|><|video_pad|><|vision_end|>' }}\n            {%- elif 'text' in item %}\n                {{- item.text }}\n            {%- else %}\n                {{- raise_exception('Unexpected item type in content.') }}\n            {%- endif %}\n        {%- endfor %}\n    {%- elif content is none or content is undefined %}\n        {{- '' }}\n    {%- else %}\n        {{- raise_exception('Unexpected content type.') }}\n    {%- endif %}\n{%- endmacro %}\n{%- if not messages %}\n    {{- raise_exception('No messages provided.') }}\n{%- endif %}\n{%- if tools and tools is iterable and tools is not mapping %}\n    {{- '<|im_start|>system\n' }}\n    {{- "# Tools\n\nYou have access to the following functions:\n\n<tools>" }}\n    {%- for tool in tools %}\n        {{- "\n" }}\n        {{- tool | tojson }}\n    {%- endfor %}\n    {{- "\n</tools>" }}\n    {{- '\n\nIf you choose to call a function ONLY reply in the following format with NO suffix:\n\n<tool_call>\n<function=example_function_name>\n<parameter=example_parameter_1>\nvalue_1\n</parameter>\n<parameter=example_parameter_2>\nThis is the value for the second parameter\nthat can span\nmultiple lines\n</parameter>\n</function>\n</tool_call>\n\n<IMPORTANT>\nReminder:\n- Function calls MUST follow the specified format: an inner <function=...></function> block must be nested within <tool_call></tool_call> XML tags\n- Required parameters MUST be specified\n- You may provide optional reasoning for your function call in natural language BEFORE the function call, but NOT after\n- If there is no function call available, answer the question like normal with your current knowledge and do not tell the user about function calls\n</IMPORTANT>' }}\n    {%- if messages[0].role == 'system' %}\n        {%- set content = render_content(messages[0].content, false, true)|trim %}\n        {%- if content %}\n            {{- '\n\n' + content }}\n        {%- endif %}\n    {%- endif %}\n    {{- '<|im_end|>\n' }}\n{%- else %}\n    {%- if messages[0].role == 'system' %}\n        {%- set content = render_content(messages[0].content, false, true)|trim %}\n        {{- '<|im_start|>system\n' + content + '<|im_end|>\n' }}\n    {%- endif %}\n{%- endif %}\n{%- set ns = namespace(multi_step_tool=true, last_query_index=messages|length - 1) %}\n{%- for message in messages[::-1] %}\n    {%- set index = (messages|length - 1) - loop.index0 %}\n    {%- if ns.multi_step_tool and message.role == "user" %}\n        {%- set content = render_content(message.content, false)|trim %}\n        {%- if not(content.startswith('<tool_response>') and content.endswith('</tool_response>')) %}\n            {%- set ns.multi_step_tool = false %}\n            {%- set ns.last_query_index = index %}\n        {%- endif %}\n    {%- endif %}\n{%- endfor %}\n{%- if ns.multi_step_tool %}\n    {{- raise_exception('No user query found in messages.') }}\n{%- endif %}\n{%- for message in messages %}\n    {%- set content = render_content(message.content, true)|trim %}\n    {%- if message.role == "system" %}\n        {%- if not loop.first %}\n            {{- raise_exception('System message must be at the beginning.') }}\n        {%- endif %}\n    {%- elif message.role == "user" %}\n        {{- '<|im_start|>' + message.role + '\n' + content + '<|im_end|>' + '\n' }}\n    {%- elif message.role == "assistant" %}\n        {%- set reasoning_content = '' %}\n        {%- if message.reasoning_content is string %}\n            {%- set reasoning_content = message.reasoning_content %}\n        {%- else %}\n            {%- if '</think>' in content %}\n                {%- set reasoning_content = content.split('</think>')[0].rstrip('\n').split('<think>')[-1].lstrip('\n') %}\n                {%- set content = content.split('</think>')[-1].lstrip('\n') %}\n            {%- endif %}\n        {%- endif %}\n        {%- set reasoning_content = reasoning_content|trim %}\n        {%- if (preserve_thinking is defined and preserve_thinking is true) or (loop.index0 > ns.last_query_index) %}\n            {{- '<|im_start|>' + message.role + '\n<think>\n' + reasoning_content + '\n</think>\n\n' + content }}\n        {%- else %}\n            {{- '<|im_start|>' + message.role + '\n' + content }}\n        {%- endif %}\n        {%- if message.tool_calls and message.tool_calls is iterable and message.tool_calls is not mapping %}\n            {%- for tool_call in message.tool_calls %}\n                {%- if tool_call.function is defined %}\n                    {%- set tool_call = tool_call.function %}\n                {%- endif %}\n                {%- if loop.first %}\n                    {%- if content|trim %}\n                        {{- '\n\n<tool_call>\n<function=' + tool_call.name + '>\n' }}\n                    {%- else %}\n                        {{- '<tool_call>\n<function=' + tool_call.name + '>\n' }}\n                    {%- endif %}\n                {%- else %}\n                    {{- '\n<tool_call>\n<function=' + tool_call.name + '>\n' }}\n                {%- endif %}\n                {%- if tool_call.arguments is defined %}\n                    {%- for args_name, args_value in tool_call.arguments|items %}\n                        {{- '<parameter=' + args_name + '>\n' }}\n                        {%- set args_value = args_value | string if args_value is string else args_value | tojson | safe %}\n                        {{- args_value }}\n                        {{- '\n</parameter>\n' }}\n                    {%- endfor %}\n                {%- endif %}\n                {{- '</function>\n</tool_call>' }}\n            {%- endfor %}\n        {%- endif %}\n        {{- '<|im_end|>\n' }}\n    {%- elif message.role == "tool" %}\n        {%- if loop.previtem and loop.previtem.role != "tool" %}\n            {{- '<|im_start|>user' }}\n        {%- endif %}\n        {{- '\n<tool_response>\n' }}\n        {{- content }}\n        {{- '\n</tool_response>' }}\n        {%- if not loop.last and loop.nextitem.role != "tool" %}\n            {{- '<|im_end|>\n' }}\n        {%- elif loop.last %}\n            {{- '<|im_end|>\n' }}\n        {%- endif %}\n    {%- else %}\n        {{- raise_exception('Unexpected message role.') }}\n    {%- endif %}\n{%- endfor %}\n{%- if add_generation_prompt %}\n    {{- '<|im_start|>assistant\n' }}\n    {%- if enable_thinking is defined and enable_thinking is false %}\n        {{- '<think>\n\n</think>\n\n' }}\n    {%- else %}\n        {{- '<think>\n' }}\n    {%- endif %}\n{%- endif %}`
+2026-08-18T15:53:51.529643Z  INFO mistralrs_quant::utils::log: DType selected is F32.
+Model loaded successfully
+Listening on 127.0.0.1:5051
+Connected from 127.0.0.1:55902
+Connection from 127.0.0.1:55902 closed
+Connected from 127.0.0.1:49168
+Connected from 127.0.0.1:49176
+Connection from 127.0.0.1:49176 closed
+Connected from 127.0.0.1:50518
+[PIPELINE] forward_from_layer: layers=49-63 past_kv=0
+[PIPELINE] forward_from_layer: done layers=49-63
+[PIPELINE] forward_from_layer: layers=49-63 past_kv=0
+[PIPELINE] forward_from_layer: done layers=49-63
+[PIPELINE] forward_from_layer: layers=49-63 past_kv=16
+[PIPELINE] forward_from_layer: done layers=49-63
+[PIPELINE] forward_from_layer: layers=49-63 past_kv=17
+[PIPELINE] forward_from_layer: done layers=49-63
+[PIPELINE] forward_from_layer: layers=49-63 past_kv=18
+[PIPELINE] forward_from_layer: done layers=49-63
+[PIPELINE] forward_from_layer: layers=49-63 past_kv=19
+[PIPELINE] forward_from_layer: done layers=49-63
+[PIPELINE] forward_from_layer: layers=49-63 past_kv=20
+[PIPELINE] forward_from_layer: done layers=49-63
+[PIPELINE] forward_from_layer: layers=49-63 past_kv=21
+[PIPELINE] forward_from_layer: done layers=49-63
+[PIPELINE] forward_from_layer: layers=49-63 past_kv=22
+[PIPELINE] forward_from_layer: done layers=49-63
+[PIPELINE] forward_from_layer: layers=49-63 past_kv=23
+[PIPELINE] forward_from_layer: done layers=49-63
+[PIPELINE] forward_from_layer: layers=49-63 past_kv=24
+[PIPELINE] forward_from_layer: done layers=49-63
+Connected from 127.0.0.1:50532
+[PIPELINE] forward_from_layer: layers=49-63 past_kv=25
+[PIPELINE] forward_from_layer: done layers=49-63
+[PIPELINE] forward_from_layer: layers=49-63 past_kv=26
+[PIPELINE] forward_from_layer: done layers=49-63
+[PIPELINE] forward_from_layer: layers=49-63 past_kv=27
+[PIPELINE] forward_from_layer: done layers=49-63
+[PIPELINE] forward_from_layer: layers=49-63 past_kv=28
+[PIPELINE] forward_from_layer: done layers=49-63
+[PIPELINE] forward_from_layer: layers=49-63 past_kv=29
+[PIPELINE] forward_from_layer: done layers=49-63
+[PIPELINE] forward_from_layer: layers=49-63 past_kv=30
+[PIPELINE] forward_from_layer: done layers=49-63
+[PIPELINE] forward_from_layer: layers=49-63 past_kv=31
+[PIPELINE] forward_from_layer: done layers=49-63
+[PIPELINE] forward_from_layer: layers=49-63 past_kv=32
+[PIPELINE] forward_from_layer: done layers=49-63
+[PIPELINE] forward_from_layer: layers=49-63 past_kv=33
+[PIPELINE] forward_from_layer: done layers=49-63
+[PIPELINE] forward_from_layer: layers=49-63 past_kv=34
+[PIPELINE] forward_from_layer: done layers=49-63
+[PIPELINE] forward_from_layer: layers=49-63 past_kv=35
+[PIPELINE] forward_from_layer: done layers=49-63
+[PIPELINE] forward_from_layer: layers=49-63 past_kv=36
+[PIPELINE] forward_from_layer: done layers=49-63
+[PIPELINE] forward_from_layer: layers=49-63 past_kv=37
+[PIPELINE] forward_from_layer: done layers=49-63
+[PIPELINE] forward_from_layer: layers=49-63 past_kv=38
+[PIPELINE] forward_from_layer: done layers=49-63
+[PIPELINE] forward_from_layer: layers=49-63 past_kv=39
+[PIPELINE] forward_from_layer: done layers=49-63
+[PIPELINE] forward_from_layer: layers=49-63 past_kv=40
+[PIPELINE] forward_from_layer: done layers=49-63
+[PIPELINE] forward_from_layer: layers=49-63 past_kv=41
+[PIPELINE] forward_from_layer: done layers=49-63
+[PIPELINE] forward_from_layer: layers=49-63 past_kv=42
+[PIPELINE] forward_from_layer: done layers=49-63
+Connection from 127.0.0.1:49168 closed
+Connection from 127.0.0.1:50518 closed
+Connection from 127.0.0.1:50532 closed
+Connected from 127.0.0.1:49094
+Connected from 127.0.0.1:60958
+[PIPELINE] forward_from_layer: layers=25-39 past_kv=0
+2026-08-18T15:57:28.475029Z  INFO mistralrs_core::kv_cache: Using f16 KV cache on CPU (set MISTRALRS_CPU_KV_F32=1 for f32).
+[PIPELINE] forward_from_layer: done layers=25-39
+[PIPELINE] forward_from_layer: layers=25-39 past_kv=0
+[PIPELINE] forward_from_layer: done layers=25-39
+[PIPELINE] forward_from_layer: layers=25-39 past_kv=25
+[PIPELINE] forward_from_layer: done layers=25-39
+[PIPELINE] forward_from_layer: layers=25-39 past_kv=26
+[PIPELINE] forward_from_layer: done layers=25-39
+[PIPELINE] forward_from_layer: layers=25-39 past_kv=27
+[PIPELINE] forward_from_layer: done layers=25-39
+[PIPELINE] forward_from_layer: layers=25-39 past_kv=28
+[PIPELINE] forward_from_layer: done layers=25-39
+[PIPELINE] forward_from_layer: layers=25-39 past_kv=29
+[PIPELINE] forward_from_layer: done layers=25-39
+[PIPELINE] forward_from_layer: layers=25-39 past_kv=30
+[PIPELINE] forward_from_layer: done layers=25-39
+[PIPELINE] forward_from_layer: layers=25-39 past_kv=31
+[PIPELINE] forward_from_layer: done layers=25-39
+[PIPELINE] forward_from_layer: layers=25-39 past_kv=32
+[PIPELINE] forward_from_layer: done layers=25-39
+[PIPELINE] forward_from_layer: layers=25-39 past_kv=33
+[PIPELINE] forward_from_layer: done layers=25-39
+[PIPELINE] forward_from_layer: layers=25-39 past_kv=34
+[PIPELINE] forward_from_layer: done layers=25-39
+[PIPELINE] forward_from_layer: layers=25-39 past_kv=35
+[PIPELINE] forward_from_layer: done layers=25-39
+[PIPELINE] forward_from_layer: layers=25-39 past_kv=36
+[PIPELINE] forward_from_layer: done layers=25-39
+[PIPELINE] forward_from_layer: layers=25-39 past_kv=37
+[PIPELINE] forward_from_layer: done layers=25-39
+[PIPELINE] forward_from_layer: layers=25-39 past_kv=38
+[PIPELINE] forward_from_layer: done layers=25-39
+[PIPELINE] forward_from_layer: layers=25-39 past_kv=39
+[PIPELINE] forward_from_layer: done layers=25-39
+[PIPELINE] forward_from_layer: layers=25-39 past_kv=40
+[PIPELINE] forward_from_layer: done layers=25-39
+[PIPELINE] forward_from_layer: layers=25-39 past_kv=41
+[PIPELINE] forward_from_layer: done layers=25-39
+[PIPELINE] forward_from_layer: layers=25-39 past_kv=42
+[PIPELINE] forward_from_layer: done layers=25-39
+[PIPELINE] forward_from_layer: layers=25-39 past_kv=43
+[PIPELINE] forward_from_layer: done layers=25-39
+[PIPELINE] forward_from_layer: layers=25-39 past_kv=44
+[PIPELINE] forward_from_layer: done layers=25-39
+[PIPELINE] forward_from_layer: layers=25-39 past_kv=45
+[PIPELINE] forward_from_layer: done layers=25-39
+[PIPELINE] forward_from_layer: layers=25-39 past_kv=46
+[PIPELINE] forward_from_layer: done layers=25-39
+[PIPELINE] forward_from_layer: layers=25-39 past_kv=47
+[PIPELINE] forward_from_layer: done layers=25-39
+[PIPELINE] forward_from_layer: layers=25-39 past_kv=48
+[PIPELINE] forward_from_layer: done layers=25-39
+[PIPELINE] forward_from_layer: layers=25-39 past_kv=49
+[PIPELINE] forward_from_layer: done layers=25-39
+[PIPELINE] forward_from_layer: layers=25-39 past_kv=50
+[PIPELINE] forward_from_layer: done layers=25-39
+[PIPELINE] forward_from_layer: layers=25-39 past_kv=51
+[PIPELINE] forward_from_layer: done layers=25-39
+[PIPELINE] forward_from_layer: layers=25-39 past_kv=52
+[PIPELINE] forward_from_layer: done layers=25-39
+[PIPELINE] forward_from_layer: layers=25-39 past_kv=53
+[PIPELINE] forward_from_layer: done layers=25-39
+[PIPELINE] forward_from_layer: layers=25-39 past_kv=54
+[PIPELINE] forward_from_layer: done layers=25-39
+[PIPELINE] forward_from_layer: layers=25-39 past_kv=55
+[PIPELINE] forward_from_layer: done layers=25-39
+[PIPELINE] forward_from_layer: layers=25-39 past_kv=56
+[PIPELINE] forward_from_layer: done layers=25-39
+[PIPELINE] forward_from_layer: layers=25-39 past_kv=57
+[PIPELINE] forward_from_layer: done layers=25-39
+[PIPELINE] forward_from_layer: layers=25-39 past_kv=58
+[PIPELINE] forward_from_layer: done layers=25-39
+[PIPELINE] forward_from_layer: layers=25-39 past_kv=59
+[PIPELINE] forward_from_layer: done layers=25-39
+[PIPELINE] forward_from_layer: layers=25-39 past_kv=60
+[PIPELINE] forward_from_layer: done layers=25-39
+[PIPELINE] forward_from_layer: layers=25-39 past_kv=61
+[PIPELINE] forward_from_layer: done layers=25-39
+[PIPELINE] forward_from_layer: layers=25-39 past_kv=62
+[PIPELINE] forward_from_layer: done layers=25-39
