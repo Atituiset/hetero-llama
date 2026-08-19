@@ -14,6 +14,14 @@
 
 ---
 
+## 项目起源
+
+本项目源于 2026-07-07 的一次[ Gemini 对话](docs/notes/异构的推理服务是在玩tensor的矩阵转换的游戏吗-比如我在tpu上计算出来的kv-cache可以给-de7f8e62.md)：讨论"异构推理本质上是不是一场 Tensor 搬运游戏"——TPU 算出的 KV cache 能不能给 GPU 用？结论是跨生态搬运 KV cache 工程上不可行，但**按层切分计算图、只传 hidden state**是可行路径。进而聊到一个极客问题：6GB 显存的 GPU 加一台旧手机能不能玩异构推理？答案是"反向优化但适合当玩具项目探索"。
+
+这个仓库就是那场对话的实践：从 llama.cpp RPC 双机/三机跑通，到发现 RPC 和上游引擎的能力边界后自研 mistral.rs TCP 桥接，最终让 27B/35B 大模型在三台家用设备上联合跑起来。
+
+---
+
 ## Quick Start
 
 ```bash
@@ -51,7 +59,7 @@ cd mistralrs-bridge
 - **ncnn LLM**：CPU 可跑通（Qwen3-0.6B 40.7 s）；Vulkan 首次推理卡住，基本不可用。
 - **ncnn Vulkan**：CNN 有选择性加速，Transformer/LLM 极慢。
 
-手机上所有 **GPU** 路径均不实用：llama.cpp Vulkan（驱动版本不够）、llama.cpp OpenCL（Mali 不在白名单）、MNN/ncnn 的 GPU 后端（能跑但比 CPU 慢 10-200 倍）。目前手机上实用的 LLM 推理路径只有 **CPU**：llama.cpp CPU、MNN ARM82、ncnn_llm CPU。PC 侧 GPU 路径为 llama.cpp CUDA / mistral.rs CUDA（RTX 4050 Laptop）。
+手机上所有 **GPU** 路径均不实用：llama.cpp Vulkan（驱动版本不够）、llama.cpp OpenCL（Mali 不在白名单）、MNN GPU 后端（能跑但比 CPU 慢 10-200 倍）、ncnn LLM Vulkan（卡住无输出）。目前手机上实用的 LLM 推理路径只有 **CPU**：llama.cpp CPU、MNN ARM82、ncnn_llm CPU。PC 侧 GPU 路径为 llama.cpp CUDA / mistral.rs CUDA（RTX 4050 Laptop）。
 
 PC 侧跨机分层推理由 **mistralrs-bridge** 模式自研实现（mistral.rs TCP 桥接）：Qwen3.6-27B / 3.8-27B / 35B-A3B（混合 SSM 架构）在 GPU PC + WSL 三段拓扑下输出正确，27B decode ~2.5 T/s，35B 经 x86 稀疏 MoE 修复后 ~3.4 T/s。三机（含手机）同 prompt 实测：**mistralrs 桥 1.29 T/s vs llama.cpp RPC 0.22 T/s**（详见 `mistralrs-bridge/docs/threeway-challenge-2026-08-19.md`）。
 
@@ -142,3 +150,15 @@ hetero-llama/
 ## 实验流程
 
 每个模式目录独立自洽：读 README → 改 `config.env` → 跑脚本（日志进 `logs/`）→ 结论写进 `docs/`。
+
+---
+
+## 下一步：AirLLM 单机部署挑战
+
+跨机桥接验证了"三台机器拼起来跑"，下一步探索另一条互补路线——**用 [AirLLM](https://github.com/lyogavin/airllm) 在单机上跑大模型**（源码已在 `airllm/`）。AirLLM 的思路是逐层流式加载：每层计算时从磁盘读入、算完即释放，号称 4GB 显存跑 70B（不量化、不蒸馏、不剪枝）。
+
+计划验证：
+
+- 在 GPU PC（6GB 显存 + 15GB 内存）上单机部署 Qwen3.8-27B，对比跨机桥接的 decode 速度和输出质量
+- 逐层流式在 NVMe 带宽下的真实瓶颈（AirLLM 官方数据多基于高速 SSD，我们的机型是消费级）
+- 评估"单机流式" vs "多机层切分"在家用硬件上的边界：什么规模以下单机够用，什么规模必须跨机
