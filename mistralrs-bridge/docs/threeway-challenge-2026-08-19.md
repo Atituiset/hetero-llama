@@ -27,7 +27,7 @@
 
 - 拓扑文件：`topologies/qwen38_27b_threeway.yml`（0-11 cuda / 12-44 cpu / 45-58 WSL / 59-63 手机）
 - host 日志：`logs/host_27b_threeway_20260819_234645.log`
-- 手机 worker：`logs/phone_worker_27b_20260819_234645.log`（手机 sshd 中途掉线，待回收）
+- 手机 worker：`logs/phone_worker_27b_20260819_234645.log`（含 1142 次 59-63 层 forward 记录，手机全程在岗）
 - WSL worker：`logs/worker_27b_threeway.log`
 - **TTFT 7.06s；Prompt 25 tokens, 3.56 T/s；Decode 570 tokens, 1.29 T/s**（对比：同模型双机 12+37+15 拓扑 decode 2.56 T/s——手机段是瓶颈但确实在干活）
 - 采样：temp=0.1, top_k=32, top_p=0.1, min_p=0.05；输出：完整诗《秋薄》+ 对"远山薄了，天也薄了"的赏析，思考链与成文连贯正确
