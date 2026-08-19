@@ -1,8 +1,8 @@
 # Hetero-LLaMA
 
-> **TL;DR**：多台内存都不够的异构设备（RTX 4050 6GB PC + WSL 15GB + 手机 8GB）通过自研 TCP 层切分联合推理大模型。Qwen3.6-27B / Qwen3.8-27B / Qwen3.6-35B-A3B（混合 SSM 架构）跨机跑通且输出正确，decode 2.5~3.4 T/s；为 mistral.rs 新增 qwen35 GGUF 支持并修复 6 处数值 bug；x86 稀疏 MoE 修复（~200x 提速）已提上游 [PR #2380](https://github.com/EricLBuehler/mistral.rs/pull/2380)。核心实现见 [`mistralrs-bridge/`](./mistralrs-bridge/README.md)，完整攻坚记录见 [`mistralrs-bridge/docs/session-2026-08-16.md`](./mistralrs-bridge/docs/session-2026-08-16.md)。
+> **TL;DR**：多台内存都不够的异构设备（RTX 4050 6GB PC + WSL 15GB + 手机 8GB）通过自研 TCP 层切分联合推理大模型。Qwen3.6-27B / Qwen3.8-27B / Qwen3.6-35B-A3B（混合 SSM 架构）跨机跑通且输出正确，decode 2.5~3.4 T/s。核心工作是对 **mistral.rs 的深度改造**（fork [`Atituiset/mistral.rs`](https://github.com/Atituiset/mistral.rs)，19 个自定义 commits）：新增 qwen35/qwen35moe GGUF 支持（混合 Gated DeltaNet SSM + Full Attention，修复 6 处数值 bug）、TCP 远程层卸载（跨机分层推理）、x86 稀疏 MoE 前向（~200x 提速，已提上游 [PR #2380](https://github.com/EricLBuehler/mistral.rs/pull/2380)）。核心实现见 [`mistralrs-bridge/`](./mistralrs-bridge/README.md)，完整攻坚记录见 [`mistralrs-bridge/docs/session-2026-08-16.md`](./mistralrs-bridge/docs/session-2026-08-16.md)。
 >
-> **TL;DR (EN)**: Joint LLM inference across heterogeneous machines, none of which can hold the model alone (6GB-VRAM PC + 15GB WSL + 8GB phone), via a custom TCP layer-split bridge built on mistral.rs. Qwen3.6/3.8-27B and Qwen3.6-35B-A3B (hybrid SSM arch) run end-to-end with correct output at 2.5-3.4 tok/s. Added qwen35 GGUF support and fixed 6 numerical bugs; the x86 sparse MoE fix (~200x speedup) is upstreamed as [PR #2380](https://github.com/EricLBuehler/mistral.rs/pull/2380).
+> **TL;DR (EN)**: Joint LLM inference across heterogeneous machines, none of which can hold the model alone (6GB-VRAM PC + 15GB WSL + 8GB phone), via a custom TCP layer-split bridge. The core work is a deep fork of **mistral.rs** ([`Atituiset/mistral.rs`](https://github.com/Atituiset/mistral.rs), 19 custom commits): qwen35/qwen35moe GGUF support (hybrid Gated DeltaNet SSM + full attention, 6 numerical bugs fixed), TCP remote layer offloading, and an x86 sparse MoE forward (~200x speedup, upstreamed as [PR #2380](https://github.com/EricLBuehler/mistral.rs/pull/2380)). Qwen3.6/3.8-27B and Qwen3.6-35B-A3B run end-to-end at 2.5-3.4 tok/s.
 
 ---
 
@@ -20,7 +20,7 @@
 | **mnn** | [`mnn/`](./mnn/README.md) | ✅ 已验证 | 用 MNN 在 Mate 40 Pro 上跑 LLM；OpenCL/Vulkan 能调用 GPU 但比 CPU 慢 |
 | **ncnn-llm** | [`ncnn-llm/`](./ncnn-llm/README.md) | ✅ 已验证 | ncnn_llm 已构建成功；Qwen3-0.6B CPU 40.7 s，Vulkan 卡住无输出 |
 | **3-machine** | [`3-machine/`](./3-machine/README.md) | ✅ 可用 | GPU PC + WSL + 手机三机 llama.cpp RPC 异构推理；含通宵基准与 watchdog |
-| **mistralrs-bridge** | [`mistralrs-bridge/`](./mistralrs-bridge/README.md) | ✅ 三模型跑通 | mistral.rs TCP 桥接；3.6/3.8-27B decode ~2.5 T/s，35B-A3B 稀疏 MoE 修复后 ~3.4 T/s |
+| **mistralrs-bridge** | [`mistralrs-bridge/`](./mistralrs-bridge/README.md) | ✅ 三模型跑通 | mistral.rs TCP 桥接（fork [`Atituiset/mistral.rs`](https://github.com/Atituiset/mistral.rs)，19 commits）；3.6/3.8-27B decode ~2.5 T/s，35B-A3B 稀疏 MoE ~3.4 T/s |
 | **common** | [`common/`](./common/) | ✅ 已启用 | 跨模式共享脚本（`ts-log.sh`、`check-phone-status.sh`、配置模板） |
 
 进入对应目录查看各自的 README 获取详细用法。
