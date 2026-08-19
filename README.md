@@ -59,7 +59,7 @@ cd mistralrs-bridge
 - **ncnn LLM**：CPU 可跑通（Qwen3-0.6B 40.7 s）；Vulkan 首次推理卡住，基本不可用。
 - **ncnn Vulkan**：CNN 有选择性加速，Transformer/LLM 极慢。
 
-手机上所有 **GPU** 路径均不实用：llama.cpp Vulkan（驱动版本不够）、llama.cpp OpenCL（Mali 不在白名单）、MNN GPU 后端（能跑但比 CPU 慢 10-200 倍）、ncnn LLM Vulkan（卡住无输出）。目前手机上实用的 LLM 推理路径只有 **CPU**：llama.cpp CPU、MNN ARM82、ncnn_llm CPU。PC 侧 GPU 路径为 llama.cpp CUDA / mistral.rs CUDA（RTX 4050 Laptop）。
+手机上所有 **GPU** 路径均不实用：llama.cpp Vulkan（驱动版本不够）、llama.cpp OpenCL（Mali 不在白名单）、MNN GPU 后端（能跑但比 CPU 慢 10-200 倍）、ncnn LLM Vulkan（卡住无输出）。手机上实用的 LLM 推理 **CPU** 路径有：llama.cpp CPU、MNN ARM82、ncnn_llm CPU、mistral.rs CPU（手机作为 27B 三机桥接 worker 跑 5 层已验证）。PC 侧 GPU 路径为 llama.cpp CUDA / mistral.rs CUDA（RTX 4050 Laptop）。
 
 PC 侧跨机分层推理由 **mistralrs-bridge** 模式自研实现（mistral.rs TCP 桥接）：Qwen3.6-27B / 3.8-27B / 35B-A3B（混合 SSM 架构）在 GPU PC + WSL 三段拓扑下输出正确，27B decode ~2.5 T/s，35B 经 x86 稀疏 MoE 修复后 ~3.4 T/s。三机（含手机）同 prompt 实测：**mistralrs 桥 1.29 T/s vs llama.cpp RPC 0.22 T/s**（详见 `mistralrs-bridge/docs/threeway-challenge-2026-08-19.md`）。
 
