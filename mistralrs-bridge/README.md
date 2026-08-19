@@ -75,12 +75,14 @@ GPU PC 只有 15GB RAM，必须单任务编译且只编 `cuda` feature（flash-a
 
 | 特性 | mistral.rs Bridge | llama.cpp RPC |
 |------|-------------------|---------------|
-| 通信协议 | 自定义 TCP 二进制 | gRPC |
-| 层粒度 | 任意连续层范围 | 从第 N 层开始卸载 |
+| 通信协议 | 自定义 TCP 二进制 | 自定义 TCP（ggml-rpc） |
+| 卸载粒度 | 任意连续层范围（块边界一次往返） | 张量/算子级（`-ngl` 按层尾卸载） |
 | 远端设备语法 | `remote:tcp://IP:PORT` (YAML) | `--rpc IP:PORT` (CLI) |
-| 手机支持 | ⚠️ 需手机编译 worker | ✅ Termux arm64 编译 |
-| Qwen3.6 SSM 支持 | ✅ 已实现 | ❌ 不支持 |
+| 手机支持 | ⚠️ 需手机编译 worker | ✅ Termux arm64 编译（3-machine 模式已验证） |
+| Qwen3.6 SSM 支持 | ✅ 已实现 | ✅ 支持（0.8B RPC 实测正确） |
 | 生产就绪 | ❌ 实验阶段 | ✅ 可用 |
+
+> 为什么仍选 mistral.rs：项目动机是自研学习（数值修复、稀疏 MoE 等改动需要读懂并修改引擎源码，Rust/candle 比 ggml 易改）；且当时 llama.cpp RPC 三机的运维链路（SSH 隧道 + 手机掉线）稳定性差。论生产可用性 llama.cpp RPC 是更省力的路径。
 
 ## 验证状态
 
