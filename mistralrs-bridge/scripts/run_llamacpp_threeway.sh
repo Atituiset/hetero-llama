@@ -30,7 +30,8 @@ for p in 50052 50053; do
 done
 
 ssh "${GPU_PC_USER}@${GPU_PC_IP}" \
-    "~/projects/gpu-cpu-phone-test/llama.cpp/build-cuda-rpc/bin/llama-completion \
+    "LD_LIBRARY_PATH=\$HOME/projects/gpu-cpu-phone-test/llama.cpp/build-cuda-rpc.stale/bin \
+     ~/projects/gpu-cpu-phone-test/llama.cpp/build-cuda-rpc.stale/bin/llama-completion \
      -m ~/models/${MODEL_FILE} \
      --rpc 127.0.0.1:50052,127.0.0.1:50053 \
      -ngl 12 \

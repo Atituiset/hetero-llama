@@ -1,0 +1,92 @@
+Warning: Permanently added '192.168.1.10' (ED25519) to the list of known hosts.
+0.02.129.070 I llama_completion: llama backend init
+0.02.129.082 I llama_completion: load the model and apply lora adapter, if any
+0.04.733.208 W model has unused tensor blk.64.attn_norm.weight (size = 20480 bytes) -- ignoring
+0.04.733.214 W model has unused tensor blk.64.post_attention_norm.weight (size = 20480 bytes) -- ignoring
+0.04.733.219 W model has unused tensor blk.64.attn_q.weight (size = 35389440 bytes) -- ignoring
+0.04.733.221 W model has unused tensor blk.64.attn_k.weight (size = 2949120 bytes) -- ignoring
+0.04.733.223 W model has unused tensor blk.64.attn_v.weight (size = 2949120 bytes) -- ignoring
+0.04.733.230 W model has unused tensor blk.64.attn_output.weight (size = 17694720 bytes) -- ignoring
+0.04.733.232 W model has unused tensor blk.64.attn_q_norm.weight (size = 1024 bytes) -- ignoring
+0.04.733.234 W model has unused tensor blk.64.attn_k_norm.weight (size = 1024 bytes) -- ignoring
+0.04.733.250 W model has unused tensor blk.64.ffn_gate.weight (size = 50135040 bytes) -- ignoring
+0.04.733.252 W model has unused tensor blk.64.ffn_down.weight (size = 50135040 bytes) -- ignoring
+0.04.733.254 W model has unused tensor blk.64.ffn_up.weight (size = 50135040 bytes) -- ignoring
+0.04.733.258 W model has unused tensor blk.64.nextn.eh_proj.weight (size = 29491200 bytes) -- ignoring
+0.04.733.260 W model has unused tensor blk.64.nextn.enorm.weight (size = 20480 bytes) -- ignoring
+0.04.733.262 W model has unused tensor blk.64.nextn.hnorm.weight (size = 20480 bytes) -- ignoring
+0.04.733.268 W model has unused tensor blk.64.nextn.shared_head_norm.weight (size = 20480 bytes) -- ignoring
+1.45.586.204 I cmn          init: llama threadpool init, n_threads = 6
+1.55.126.928 I llama_completion: chat template is available, enabling conversation mode (disable it with -no-cnv)
+1.55.126.937 W *** User-specified prompt will pre-start conversation, did you mean to set --system-prompt (-sys) instead?
+1.55.130.829 I llama_completion: chat template example:
+<|im_start|>system
+You are a helpful assistant<|im_end|>
+<|im_start|>user
+Hello<|im_end|>
+<|im_start|>assistant
+Hi there<|im_end|>
+<|im_start|>user
+How are you?<|im_end|>
+<|im_start|>assistant
+
+1.55.130.833 I 
+1.55.132.082 I system_info: n_threads = 6 (n_threads_batch = 6) / 20 | CUDA : ARCHS = 890 | USE_GRAPHS = 1 | CPU : SSE3 = 1 | SSSE3 = 1 | AVX = 1 | AVX_VNNI = 1 | AVX2 = 1 | F16C = 1 | FMA = 1 | BMI2 = 1 | LLAMAFILE = 1 | OPENMP = 1 | REPACK = 1 | 
+1.55.132.084 I 
+1.55.167.877 I llama_completion: interactive mode on.
+1.55.167.894 I sampler seed: 2389103448
+1.55.167.956 I sampler params: 
+	repeat_last_n = 64, repeat_penalty = 1.000, frequency_penalty = 0.000, presence_penalty = 0.000
+	dry_multiplier = 0.000, dry_base = 1.750, dry_allowed_length = 2, dry_penalty_last_n = 64
+	top_k = 20, top_p = 0.950, min_p = 0.050, xtc_probability = 0.000, xtc_threshold = 0.100, typical_p = 1.000, top_n_sigma = -1.000, temp = 1.000
+	mirostat = 0, mirostat_lr = 0.100, mirostat_ent = 5.000, adaptive_target = -1.000, adaptive_decay = 0.900
+1.55.167.977 I sampler chain: logits -> ?penalties -> ?dry -> ?top-n-sigma -> top-k -> ?typical -> top-p -> min-p -> ?xtc -> ?temp-ext -> dist 
+1.55.167.980 I generate: n_ctx = 262144, n_batch = 2048, n_predict = 512, n_keep = 0
+1.55.167.981 I 
+1.55.167.982 I == Running in interactive mode. ==
+1.55.167.982 I  - Press Ctrl+C to interject at any time.
+1.55.167.983 I  - Press Return to return control to the AI.
+ - To return control without starting a new line, end your input with '/'.
+ - If you want to submit another line, end your input with '\'.
+1.55.167.984 I  - Not using system message. To change it, set a different value via -sys PROMPT
+1.55.167.984 I 
+user
+用中文写一段关于秋天的短诗，然后解释你最喜欢的一句。
+assistant
+<think>
+
+</think>
+
+**《秋声》**
+
+风把最后一片云吹散，
+梧桐叶在窗台跳完最后一支舞。
+阳光变得稀薄而温柔，
+像一杯放凉的茶，
+静静沉淀了季节的喧嚣。
+
+***
+
+**我最喜欢的一句：**
+
+> **“像一杯放凉的茶，静静沉淀了季节的喧嚣。”**
+
+**解释：**
+这句诗是我心中的“诗眼”。秋天常被描绘为萧瑟或悲凉，但我更看重它带来的**“静”**与**“缓”**。
+
+用“放凉的茶”来比喻秋天的阳光和心境，非常贴切：
+1.  **温度的变化**：茶从滚烫到温热，再到凉意，正如夏天到秋天的过渡，不是剧烈的断裂，而是温和的降温。
+2.  **沉淀的意象**：热茶时茶叶翻滚、香气浓烈，象征着夏日的热烈与躁动；而茶凉后，茶叶下沉，水面平静，正如秋天让人内心趋于平和、沉淀。
+3.  **情感的共鸣**：这句诗捕捉到了秋天最迷人的特质——它不是终结，而是一种温柔的休止符，让人得以从忙碌中抽离，获得片刻的宁静与自省。
+
+> EOF by user
+
+
+21.40.122.818 I common_perf_print:    sampling time =    1504.88 ms
+21.40.122.839 I common_perf_print:    samplers time =     358.95 ms /   282 tokens
+21.40.126.514 I common_perf_print:        load time =  111692.58 ms
+21.40.126.533 I common_perf_print: prompt eval time =    7634.51 ms /    23 tokens (  331.94 ms per token,     3.01 tokens per second)
+21.40.127.558 I common_perf_print:        eval time = 1173267.61 ms /   258 runs   ( 4547.55 ms per token,     0.22 tokens per second)
+21.40.127.583 I common_perf_print:       total time = 1184999.94 ms /   281 tokens
+21.40.127.586 I common_perf_print: unaccounted time =    2592.94 ms /   0.2 %      (total - sampling - prompt eval - eval) / (total)
+21.40.127.587 I common_perf_print:    graphs reused =        256
