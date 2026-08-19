@@ -1,0 +1,13 @@
+# GPU PC + WSL + 手机 三机桥接 — Qwen3.8-27B (64 主干层 + 1 MTP)
+#   GPU PC CUDA (6GB VRAM): 0-11 共 12 层 ≈ 2.7GB + lm_head
+#   GPU PC CPU:             12-44 共 33 层 ≈ 7.5GB + embedding
+#   WSL remote worker:      45-58 共 14 层 ≈ 3.2GB（经 ssh -R 隧道）
+#   手机 remote worker:     59-63 共 5 层 ≈ 1.2GB（直连 192.168.1.7:5052）
+0-11:
+  device: cuda[0]
+12-44:
+  device: cpu
+45-58:
+  device: remote:tcp://127.0.0.1:5051
+59-63:
+  device: remote:tcp://192.168.1.7:5052
