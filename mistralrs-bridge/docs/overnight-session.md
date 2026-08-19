@@ -5,6 +5,8 @@
 **当前阶段**: mistral.rs TCP 桥接分层推理, 部署 Qwen3.6-35B-A3B (16GB GGUF)
 **总 Commits**: 16 (mistral.rs bridge + SSM), 另有 llama.cpp 3-machine 分支 commits
 
+> **本篇结论**：早期探索史——从 llama.cpp RPC 三机组网失败（手机不可达、SSH 脆弱）转向 mistral.rs TCP 桥接的过程，含选型决策链和失败记录。最终成功结果不在本篇，见 session-2026-08-16.md 第八、九节。
+
 ---
 
 ## 一、全项目时间线 (跨 Session)

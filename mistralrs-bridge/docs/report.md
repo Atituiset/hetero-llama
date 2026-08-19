@@ -1,6 +1,8 @@
 # mistral.rs GPU/CPU 分层推理源码更改报告
 
 > **时效说明**：本报告覆盖早期 bridge 功能的 13 个关键 commit（截至 2026-07 通宵 session）。后续 Qwen3.5/3.6 SSM 支持、remote worker 部分加载与全部数值修复（commit 至 `f19aaaa88`，2026-08-18）见 [`session-2026-08-16.md`](./session-2026-08-16.md)。
+>
+> **本篇结论**：记录 mistral.rs TCP 远程层卸载的实现细节——线协议、RemoteLayerMapper、forward_from_layer、跨设备张量一致性保障。读它能理解 bridge 的"怎么实现的"；要知道"修了什么 bug、效果如何"看 session-2026-08-16.md。
 
 ## 概述
 

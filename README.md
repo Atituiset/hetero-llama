@@ -1,5 +1,11 @@
 # Hetero-LLaMA
 
+> **TL;DR**：多台内存都不够的异构设备（RTX 4050 6GB PC + WSL 15GB + 手机 8GB）通过自研 TCP 层切分联合推理大模型。Qwen3.6-27B / Qwen3.8-27B / Qwen3.6-35B-A3B（混合 SSM 架构）跨机跑通且输出正确，decode 2.5~3.4 T/s；为 mistral.rs 新增 qwen35 GGUF 支持并修复 6 处数值 bug；x86 稀疏 MoE 修复（~200x 提速）已提上游 [PR #2380](https://github.com/EricLBuehler/mistral.rs/pull/2380)。核心实现见 [`mistralrs-bridge/`](./mistralrs-bridge/README.md)，完整攻坚记录见 [`mistralrs-bridge/docs/session-2026-08-16.md`](./mistralrs-bridge/docs/session-2026-08-16.md)。
+>
+> **TL;DR (EN)**: Joint LLM inference across heterogeneous machines, none of which can hold the model alone (6GB-VRAM PC + 15GB WSL + 8GB phone), via a custom TCP layer-split bridge built on mistral.rs. Qwen3.6/3.8-27B and Qwen3.6-35B-A3B (hybrid SSM arch) run end-to-end with correct output at 2.5-3.4 tok/s. Added qwen35 GGUF support and fixed 6 numerical bugs; the x86 sparse MoE fix (~200x speedup) is upstreamed as [PR #2380](https://github.com/EricLBuehler/mistral.rs/pull/2380).
+
+---
+
 > GPU / CPU / Phone 异构推理实验仓库。  
 > main 分支按**模式**组织，每个模式有独立的配置、脚本、文档和日志；顶层 README 只负责导航。
 
