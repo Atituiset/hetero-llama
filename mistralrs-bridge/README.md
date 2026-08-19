@@ -17,16 +17,24 @@
 
 ## 架构
 
+以 Qwen3.8-27B 四段三机拓扑为例（`topologies/qwen38_27b_threeway.yml`）：
+
 ```
-┌─────────────────────────┐
-│ GPU PC (RTX 4050 6GB)   │
-│ mistralrs run --topology│
-│ Layers 0-7: cuda[0]     │ ──TCP── ┌──────────────────────┐
-│                         │         │ WSL (CPU 15GB)        │
-└─────────────────────────┘         │ mistralrs remote-worker│
-                                    │ Layers 8-23: CPU      │
-                                    └──────────────────────┘
+┌──────────────────────────┐         ┌──────────────────────┐
+│ GPU PC (4050 6GB+15GB)   │         │ WSL (CPU 15GB)        │
+│ mistralrs run --topology │         │ mistralrs remote-worker│
+│ L0-11:  cuda[0]          │ ──TCP── │ L45-58: CPU (14 层)   │
+│ L12-44: cpu (33 层)      │ (ssh-R  └──────────────────────┘
+│ + embedding / lm_head    │  反向隧道)
+└──────────────────────────┘         ┌──────────────────────┐
+         │                            │ Mate 40 Pro (8GB)     │
+         └───────────TCP───────────── │ mistralrs remote-worker│
+              (手机 ssh -R 反向隧道)   │ L59-63: CPU (5 层)    │
+                                     └──────────────────────┘
+每个远程块边界每 token 一次 TCP 往返（hidden state ~20KB F32）
 ```
+
+双机拓扑（`qwen36_27b_bridge.yml` 等）即去掉手机段：12 cuda + 37 cpu（GPU PC）+ 15 remote（WSL）。
 
 ## 快速开始
 
