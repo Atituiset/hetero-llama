@@ -13,12 +13,12 @@
 
 | 时间 | 模式 | 节点构成 | 状态 | 一句话说明 |
 |------|------|----------|------|------------|
-| 2026-07 上旬 | **main（基础 RPC）** | GPU PC + 手机（两机） | ✅ 可用 | llama.cpp RPC 双机协同推理的首个验证 |
-| 2026-07 中旬 | **vulkan** | WSL + 手机（两机） | ✅ 可运行 | 本地 Vulkan/OpenCL baseline |
-| 2026-07 中旬 | **mnn** | 手机单机 | ✅ 已验证 | 用 MNN 在 Mate 40 Pro 上跑 LLM；OpenCL/Vulkan 能调用 GPU 但比 CPU 慢 |
-| 2026-07 中旬 | **ncnn-llm** | 手机单机 | ✅ 已验证 | ncnn_llm 构建成功；Qwen3-0.6B CPU 40.7 s，Vulkan 卡住无输出 |
-| 2026-07 中旬 → 08-20 | **3-machine** | GPU PC + WSL + 手机（三机） | ✅ 27B 跑通 | llama.cpp RPC 三机异构推理；Qwen3.8-27B decode 0.22 T/s |
-| 2026-07 下旬 → 08-19 | **mistralrs-bridge** | GPU PC + WSL + 手机（三机） | ✅ 三模型跑通 | mistral.rs TCP 桥接（fork [`Atituiset/mistral.rs`](https://github.com/Atituiset/mistral.rs)，19 commits）；3.6/3.8-27B decode ~2.5 T/s，35B-A3B ~3.4 T/s，三机 1.29 T/s |
+| 07-07 ~ 07-09 | **main（基础 RPC）** | GPU PC + 手机（两机） | ✅ 可用 | llama.cpp RPC 双机协同推理的首个验证 |
+| 07-10 ~ 07-14 | **vulkan** | WSL + 手机（两机） | ✅ 可运行 | 本地 Vulkan/OpenCL baseline |
+| 07-10 ~ 07-14 | **mnn** | 手机单机 | ✅ 已验证 | 用 MNN 在 Mate 40 Pro 上跑 LLM；OpenCL/Vulkan 能调用 GPU 但比 CPU 慢 |
+| 07-10 ~ 07-14 | **ncnn-llm** | 手机单机 | ✅ 已验证 | ncnn_llm 构建成功；Qwen3-0.6B CPU 40.7 s，Vulkan 卡住无输出 |
+| 07-15 ~ 08-20 | **3-machine** | GPU PC + WSL + 手机（三机） | ✅ 27B 跑通 | llama.cpp RPC 三机异构推理；Qwen3.8-27B decode 0.22 T/s |
+| 07-24 ~ 08-19 | **mistralrs-bridge** | GPU PC + WSL + 手机（三机） | ✅ 三模型跑通 | mistral.rs TCP 桥接（fork [`Atituiset/mistral.rs`](https://github.com/Atituiset/mistral.rs)，19 commits）；3.6/3.8-27B decode ~2.5 T/s，35B-A3B ~3.4 T/s，三机 1.29 T/s |
 | 贯穿 | **common** | — | ✅ 已启用 | 跨模式共享脚本（`ts-log.sh`、`check-phone-status.sh`、配置模板） |
 
 进入对应目录查看各自的 README 获取详细用法。
