@@ -1,0 +1,8 @@
+[90m2[0m[BRIDGE] map: layer=12 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=12-19 past_kv=6997 payload_len=4136
+[BRIDGE] map: moving result from CPU to Cpu
+[BRIDGE] map: layer=20 remote=127.0.0.1:5052
+[BRIDGE] roundtrip: addr=127.0.0.1:5052 cmd=0 layers=20-23 past_kv=6997 payload_len=4136
+[BRIDGE] map: moving result from CPU to Cpu
+[90m =[0m[BRIDGE] map: layer=12 remote=127.0.0.1:5051
+[BRIDGE] roundtrip: addr=127.0.0.1:5051 cmd=0 layers=12-19 past_kv=6998 payload_len=4136
