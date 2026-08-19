@@ -111,4 +111,28 @@ GPU PC 只有 15GB RAM，必须单任务编译且只编 `cuda` feature（flash-a
 
 桥接源码在独立 git 仓库：`../mistral.rs/`，远程: `https://github.com/Atituiset/mistral.rs`（`feat/remote-layer-split` 分支，已推送）。
 
-19 个自定义 commits（`f4cb782b9` → `a9f7a8d3b`）：早期 16 个 bridge/SSM commits 实现内容详见 `docs/report.md`；第 17-18 个（remote worker 部分加载 + qwen35 dense GGUF 支持及全部数值修复）与第 19 个（x86 CPU 稀疏 MoE 前向，35B 提速 ~200x）见 `docs/session-2026-08-16.md` 第八、九节。
+### 源码改动整体总结（19 commits，+3696/-315 行，32 文件）
+
+**一、TCP 远程层卸载（核心，13 commits）**——从零实现的跨机分层推理：
+
+- 拓扑/设备层（`f4cb782b9`）：拓扑 YAML 支持 `remote:tcp://IP:PORT`，`RemoteLayerMapper`（DeviceMapper 新实现，本地 cuda/cpu 与远端混排）
+- 线协议 + 连接池（`device_map/remote.rs`，~330 行）：`[cmd][layer_start][layer_end][past_kv][len][F32 张量 payload]` 二进制协议，`RemoteConnectionPool` 持久连接 + 断线重连
+- 模型侧部分前向（`1fc61596e`、`aa6249c2f` 等）：给全部 7 个量化 GGUF 模型文件加 `forward_from_layer(hidden, start, end, past_kv)`——从预计算的 hidden state 只执行指定层范围，worker 不需要 embedding/lm_head
+- 性能（`ba1ae3b08`）：连续远程块每 token 每块只一次 TCP 往返（~20KB），而非每层一次——比 llama.cpp RPC 快 6-8 倍的关键
+- 正确性修复（7 个 fix commits）：past_kv 位置跨设备传递（RoPE 错位）、causal mask、输出张量回移输入设备、CUDA DeviceId 规范化、KV cache Option<Device>、多线程 worker 单连接池、RoPE 预创建重复 push
+
+**二、qwen35/qwen35moe GGUF 模型支持（3 commits）**——上游当时不支持的混合 SSM 架构：
+
+- `1aed6ecc3`：Qwen35MoE arch 注册；`c03ba7d3a`+`35a7aec02`：qwen3_moe 加 Gated DeltaNet SSM 层（713 行）
+- `f19aaaa88`（最大单 commit，+1615/-239）：新文件 `quantized_qwen35.rs`（1151 行）dense 完整实现 + **6 个数值 bug 修复**（conv1d 核方向、DeltaNet 递推顺序、norm_gated eps 位置、warmup 污染 SSM 状态、MTP 层误执行、v 头 tiled repeat 顺序）——输出从乱码变正确的关键
+
+**三、Remote worker 分层加载（1 commit）**——`e9cd3b850`：worker 用 `--layers S-E` 只加载指定层权重，范围外不分配 KV/SSM state，embedding/lm_head 用 dummy 跳过。手机（8GB）能参与 27B 的前提。
+
+**四、稀疏 MoE CPU 前向（1 commit，即上游 PR #2380）**——`a9f7a8d3b`：x86_64 上 MoE 前向不再全量反量化 256 个 expert（~380MB/层/token），按 expert 切分原始量化字节流只算路由到的 top-8。35B decode 从 ~1 token/min 到 3.4 T/s（~200x）。
+
+**附带基础设施**：`pipeline/gguf.rs` topology 优先于 auto device mapping；`device_map/mappers.rs` `is_partial()` 区分 host/worker；`mistralrs-quant/cublaslt/api.rs` 报错携带张量形状；hidden state 全设备 F32 不变量。
+
+### 详细文档
+
+- 前 16 个 bridge/SSM commits 实现分析：`docs/report.md`
+- 第 17-19 个（部分加载 + qwen35 dense + 数值修复、稀疏 MoE）：`docs/session-2026-08-16.md` 第八、九节
