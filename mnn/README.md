@@ -2,7 +2,7 @@
 
 本目录记录把 Qwen2 模型通过 **MNN** 导出并在 **Mate 40 Pro（Mali-G78）** 上推理的全过程，重点验证 OpenCL / Vulkan 后端能否调用手机 GPU。
 
-- 状态：✅ 0.5B / 1.5B / 3B CPU 已跑通；OpenCL/Vulkan 能调用 Mali-G78，但 0.5B/1.5B 比 CPU 慢，3B OpenCL normal OOM，OpenCL low 可稳定跑完但比 CPU 慢
+- 状态：✅ 已完成；0.5B / 1.5B / 3B CPU 已跑通；OpenCL/Vulkan 能调用 Mali-G78，但 0.5B/1.5B 比 CPU 慢，3B OpenCL normal OOM，OpenCL low 可稳定跑完但比 CPU 慢
 - 框架：MNN（fork 自 https://github.com/alibaba/MNN）
 - 模型：`Qwen2-0.5B-Instruct`、`Qwen2-1.5B-Instruct`、`Qwen2.5-3B-Instruct`
 - 手机：华为 Mate 40 Pro（Kirin 9000，Mali-G78 MP24）

@@ -2,7 +2,7 @@
 
 本目录用于在 WSL（当前机器）和华为 Mate 40 Pro 上分别运行 llama.cpp 的 **Vulkan** 与 **OpenCL** 后端本地推理，验证 GPU 可用性并记录 workaround。
 
-- 状态：✅ 可运行；WSL GPU 需走 OpenCL，手机端（Vulkan/OpenCL）均暂为 CPU fallback
+- 状态：✅ 已完成（baseline 验证）；WSL GPU 需走 OpenCL，手机端（Vulkan/OpenCL）均暂为 CPU fallback
 - 模型：`Qwen2-0.5B-Instruct-Q4_0.gguf`（336 MB，24 层）
 - llama.cpp commit：`152d337fadb93c2a099653c4072d5512c92c5bfd`
 

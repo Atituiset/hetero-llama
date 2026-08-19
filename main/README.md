@@ -4,7 +4,7 @@
 
 - 状态：✅ 可用
 - 模型：`Qwen2-0.5B-Instruct-Q4_0.gguf`（336 MB，24 层）
-- llama.cpp commit：`152d337fadb93c2a099653c4072d5512c92c5bfd`
+- llama.cpp commit：`152d337fadb93c2a099653c4072d5512c92c5bfd`（本模式实验时的 pin 版本；仓库当前已更新到 upstream master，两端版本一致即可）
 
 ## 目录
 

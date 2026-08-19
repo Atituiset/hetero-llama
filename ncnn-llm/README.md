@@ -2,7 +2,7 @@
 
 本目录记录使用 **Tencent ncnn** 框架（及社区 `ncnn_llm` 运行时）在手机端验证 GPU 加速可能性的实验。
 
-- 状态：✅ ncnn + Vulkan 编译并跑通 benchmark；✅ ncnn_llm 已构建成功；✅ Qwen3-0.6B CPU 基线已跑通（40.7 s）；⏳ Vulkan 基线正在运行中
+- 状态：✅ 已完成；ncnn + Vulkan 编译并跑通 benchmark；ncnn_llm 构建成功；Qwen3-0.6B CPU 基线跑通（40.7 s）；Vulkan 首次推理卡住无输出（基本不可用）
 - 框架：ncnn（https://github.com/Tencent/ncnn）
 - 社区 LLM 运行时：ncnn_llm（https://github.com/futz12/ncnn_llm，当前仓库已不可访问，使用 archive `LiYulin-s/ncnn_llm`）
 - 手机：华为 Mate 40 Pro（Kirin 9000，Mali-G78 MP24）
@@ -55,9 +55,9 @@ MNN LLM 的 0.5B/1.5B 模型在 OpenCL/Vulkan 上也很慢，和 ncnn `vision_tr
 11. ✅ 用 `install-glibc` 链接成功，`llm_ncnn_run` 构建完成；
 12. ✅ 从 https://mirrors.sdu.edu.cn/ncnn_modelzoo/ 下载 `qwen3_0.6b` fp16 模型并推送到手机 `assets/`；
 13. ✅ CPU 基线跑通（prompt=`hello`，约 9 token，**40.7 s**）；
-14. ⏳ Vulkan 基线正在运行中。
+14. ❌ Vulkan 基线首次推理卡住无输出（与 issue #5885 现象一致），判定基本不可用。
 
-之前主要阻塞：默认 `-j10` 编译大依赖时 Termux/proot 被系统杀掉；降低并行度并释放空间后重试。最新状态：ncnn_llm 已构建成功，CPU 已跑通，等待 Vulkan 结果。
+之前主要阻塞：默认 `-j10` 编译大依赖时 Termux/proot 被系统杀掉；降低并行度并释放空间后重试。最终状态：ncnn_llm 构建成功，CPU 跑通，Vulkan 不可用。
 
 ## 可复现执行路径
 
@@ -111,13 +111,13 @@ XMAKE_ROOT=y xmake run llm_ncnn_run --model ./assets/qwen3_0.6b --vulkan --vulka
 > - 不要用 Termux 原生 shell 编译的 ncnn，它是 Bionic libc，会在 proot glibc 链接时报 `__android_log_print` 等符号缺失。
 
 
-## 下一步
+## 最终结论
 
-- 等待 Vulkan 基线运行完成；
-- 对比 CPU / Vulkan 输出文本是否正常（参考 ncnn issue #5885）；
-- 把 CPU / Vulkan 结果更新到 `docs/ncnn-benchmark-report.md` 与 `docs/gpu-acceleration-summary.md`。
+- **ncnn_llm CPU**：可用（Qwen3-0.6B，40.7 s）；
+- **ncnn_llm Vulkan**：首次推理卡住无输出，基本不可用；
+- **ncnn Vulkan（CNN benchmark）**：重计算网络（vgg16）有加速，小网络/Transformer 受调度开销拖累更慢。
 
-鉴于 Mali 在 benchncnn 上的规律，**Vulkan 收益可能有限甚至为负**。
+结论已同步到 `docs/gpu-acceleration-summary.md`。
 
 ## 参考
 

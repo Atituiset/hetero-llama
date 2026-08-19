@@ -1,11 +1,11 @@
 # mistralrs-bridge 模式：mistral.rs TCP 桥接分层推理
 
-使用 [mistral.rs](https://github.com/Atituiset/mistral.rs)（EricLBuehler/mistral.rs 的 fork，`feat/remote-layer-split` 分支，含 18 个自定义 commits）的 TCP 桥接功能，实现 GPU / CPU 跨机异构推理。
+使用 [mistral.rs](https://github.com/Atituiset/mistral.rs)（EricLBuehler/mistral.rs 的 fork，`feat/remote-layer-split` 分支，含 19 个自定义 commits）的 TCP 桥接功能，实现 GPU / CPU 跨机异构推理。
 
 - 状态：✅ **27B（3.6/3.8）和 35B-A3B 跨机桥接均端到端跑通且输出正确**；27B decode ~2.5 T/s，35B 经稀疏 MoE 修复后 decode ~3.4 T/s（限长输出正常；无限 decode 数万 token 会长程退化重复并撑爆内存，务必设 max_tokens）
 - 框架：mistral.rs v0.9.0-dev + bridge commits + qwen35/qwen35moe GGUF 支持（`f19aaaa88`，已提交并推送）
-- 模型：`Qwen2-0.5B-Instruct-Q4_0`（已验证）、`Qwen3.6-27B-Q3_K_M`（✅ 正确）、`Qwen3.6-35B-A3B-Q3_K_M`（✅ 正确/慢）、`Qwen3.5-0.8B-Q4_K_M`（数值调试基准）
-- 设备：GPU PC（RTX 4050 6GB + 15GB RAM）+ WSL（CPU 15GB，worker ≤16 层，超限会把 WSL 搞崩）
+- 模型：`Qwen2-0.5B-Instruct-Q4_0`（已验证）、`Qwen3.6-27B-Q3_K_M`（✅ 正确）、`Qwen3.8-27B-Q3_K_M`（✅ 正确）、`Qwen3.6-35B-A3B-Q3_K_M`（✅ 正确，稀疏 MoE 修复后 ~3.4 T/s）、`Qwen3.5-0.8B-Q4_K_M`（数值调试基准）
+- 设备：GPU PC（RTX 4050 Laptop 6GB 显存 + 15GB 内存）+ WSL（CPU 15GB 内存，worker ≤16 层，超限会把 WSL 搞崩）+ 手机（可选，5 层 ~1.2GB）
 
 ## 目录
 
@@ -29,6 +29,8 @@
 ```
 
 ## 快速开始
+
+> 最快路径（推荐）：`./scripts/run_qwen_27b_bridge.sh 3.8 "prompt"` —— worker + 隧道 + host 一键完成，`-i` 进交互模式。以下是其内部展开的四个手动步骤。
 
 ### 1. 编译 mistral.rs 源码
 
@@ -102,6 +104,7 @@ GPU PC 只有 15GB RAM，必须单任务编译且只编 `cuda` feature（flash-a
 | **Qwen3.6-27B 三段桥接**（12 cuda + 37 cpu + 15 remote） | ✅ **输出正确** | prompt 5.2 T/s, decode 2.42 T/s |
 | **Qwen3.6-35B-A3B 三段桥接**（8 cuda + 17 cpu + 15 remote） | ✅ **输出正确** | decode ~3.4 T/s（稀疏 MoE 修复后，~200x）；限长输出正常，无限 decode 长程退化 |
 | **Qwen3.8-27B 三段桥接**（12 cuda + 37 cpu + 15 remote） | ✅ **输出正确** | TTFT 4.59s, prompt 5.59 T/s, decode 2.56 T/s |
+| **Qwen3.8-27B 四段三机桥接**（12 cuda + 33 cpu + 14 WSL + 5 手机） | ✅ **输出正确** | TTFT 7.06s, prompt 3.56 T/s, decode 1.29 T/s |
 | qwen35 数值逐层对照 llama.cpp | ✅ 24 层 <1% 偏差 | — |
 
 ## 源码
