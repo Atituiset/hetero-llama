@@ -1,8 +1,6 @@
 # Hetero-LLaMA
 
 > **TL;DR**：多台各自装不下大模型的异构设备——**GPU PC（RTX 4050 Laptop 6GB 显存 + 15GB 内存）、WSL 机器（15GB 内存）、华为 Mate 40 Pro 手机（8GB 内存）**——通过自研 TCP 层切分联合推理。Qwen3.6-27B / Qwen3.8-27B / Qwen3.6-35B-A3B（混合 SSM 架构）跨机跑通且输出正确，decode 1.3~3.4 T/s。核心工作是对 **mistral.rs 的深度改造**（fork [`Atituiset/mistral.rs`](https://github.com/Atituiset/mistral.rs)，19 个自定义 commits）：新增 qwen35/qwen35moe GGUF 支持（混合 Gated DeltaNet SSM + Full Attention，修复 6 处数值 bug）、TCP 远程层卸载（跨机分层推理）、x86 稀疏 MoE 前向（~200x 提速，已提上游 [PR #2380](https://github.com/EricLBuehler/mistral.rs/pull/2380)）。同 prompt 三机实测：自研桥 1.29 T/s vs llama.cpp RPC 0.22 T/s。核心实现见 [`mistralrs-bridge/`](./mistralrs-bridge/README.md)，完整攻坚记录见 [`mistralrs-bridge/docs/session-2026-08-16.md`](./mistralrs-bridge/docs/session-2026-08-16.md)。
->
-> **TL;DR (EN)**: Joint LLM inference across heterogeneous machines, none of which can hold the model alone — a PC with an RTX 4050 Laptop GPU (6GB VRAM) + 15GB RAM, a 15GB WSL box, and a Huawei Mate 40 Pro phone (8GB RAM) — via a custom TCP layer-split bridge. The core work is a deep fork of **mistral.rs** ([`Atituiset/mistral.rs`](https://github.com/Atituiset/mistral.rs), 19 custom commits): qwen35/qwen35moe GGUF support (hybrid Gated DeltaNet SSM + full attention, 6 numerical bugs fixed), TCP remote layer offloading, and an x86 sparse MoE forward (~200x speedup, upstreamed as [PR #2380](https://github.com/EricLBuehler/mistral.rs/pull/2380)). Qwen3.6/3.8-27B and Qwen3.6-35B-A3B run end-to-end; the custom bridge measures 6x faster than llama.cpp RPC on the same three-machine setup (1.29 vs 0.22 tok/s).
 
 ---
 
