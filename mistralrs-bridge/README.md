@@ -82,6 +82,15 @@ GPU PC 只有 15GB RAM，必须单任务编译且只编 `cuda` feature（flash-a
 | Qwen3.6 SSM 支持 | ✅ 已实现 | ✅ 支持（0.8B RPC 实测正确） |
 | 生产就绪 | ❌ 实验阶段 | ✅ 可用 |
 
+**同模型同 prompt 三机实测（Qwen3.8-27B Q3_K_M，2026-08-20）**：
+
+| 拓扑 | mistral.rs Bridge | llama.cpp RPC | 倍数 |
+|------|-------------------|---------------|------|
+| 双机（GPU PC + WSL） | decode **2.56 T/s** | decode 0.32 T/s | 8x |
+| 三机（+手机） | decode **1.29 T/s** | decode 0.22 T/s | 6x |
+
+根因：ggml RPC 是算子级卸载，decode 每 token 每算子都有网络往返；本桥按连续层块卸载，每 token 每个远程块只一次 20KB hidden state 往返。详见 `docs/threeway-challenge-2026-08-19.md`。
+
 > 为什么仍选 mistral.rs：项目动机是自研学习（数值修复、稀疏 MoE 等改动需要读懂并修改引擎源码，Rust/candle 比 ggml 易改）；且当时 llama.cpp RPC 三机的运维链路（SSH 隧道 + 手机掉线）稳定性差。论生产可用性 llama.cpp RPC 是更省力的路径。
 
 ## 验证状态

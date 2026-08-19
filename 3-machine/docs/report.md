@@ -4,6 +4,8 @@
 > 模型：Qwen3-1.7B-Instruct-Q4_K_M、Qwen2-0.5B-Instruct-Q4_0  
 > 拓扑：GPU PC 本地 CUDA / GPU PC + WSL RPC / GPU PC + WSL + 手机 RPC
 
+> **最新结论（2026-08-20）**：Qwen3.8-27B Q3_K_M 三机 RPC 已跑通——GPU PC（`-ngl 12`）+ WSL rpc + 手机 rpc（协议 v5.1.0），decode **0.22 T/s**、双机 0.32 T/s，输出正确。同拓扑 mistralrs 自研桥 1.29 T/s（6 倍差距，RPC 算子级卸载的往返开销所致）。完整对比见 `mistralrs-bridge/docs/threeway-challenge-2026-08-19.md`。注意：rpc-server 与客户端协议版本必须一致（v4.0.1 老进程会让新客户端 `get_socket` abort）。
+
 ---
 
 ## 1. 环境

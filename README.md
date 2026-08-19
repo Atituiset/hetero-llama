@@ -19,7 +19,7 @@
 | **vulkan** | [`vulkan/`](./vulkan/README.md) | ✅ 可运行 | WSL + Mate 40 Pro 本地 Vulkan/OpenCL baseline |
 | **mnn** | [`mnn/`](./mnn/README.md) | ✅ 已验证 | 用 MNN 在 Mate 40 Pro 上跑 LLM；OpenCL/Vulkan 能调用 GPU 但比 CPU 慢 |
 | **ncnn-llm** | [`ncnn-llm/`](./ncnn-llm/README.md) | ✅ 已验证 | ncnn_llm 已构建成功；Qwen3-0.6B CPU 40.7 s，Vulkan 卡住无输出 |
-| **3-machine** | [`3-machine/`](./3-machine/README.md) | ✅ 可用 | GPU PC + WSL + 手机三机 llama.cpp RPC 异构推理；含通宵基准与 watchdog |
+| **3-machine** | [`3-machine/`](./3-machine/README.md) | ✅ 27B 跑通 | GPU PC + WSL + 手机三机 llama.cpp RPC 异构推理；Qwen3.8-27B decode 0.22 T/s |
 | **mistralrs-bridge** | [`mistralrs-bridge/`](./mistralrs-bridge/README.md) | ✅ 三模型跑通 | mistral.rs TCP 桥接（fork [`Atituiset/mistral.rs`](https://github.com/Atituiset/mistral.rs)，19 commits）；3.6/3.8-27B decode ~2.5 T/s，35B-A3B 稀疏 MoE ~3.4 T/s |
 | **common** | [`common/`](./common/) | ✅ 已启用 | 跨模式共享脚本（`ts-log.sh`、`check-phone-status.sh`、配置模板） |
 
@@ -40,7 +40,7 @@
 
 手机上目前唯一可用的 LLM 路径是 **手机 CPU（MNN ARM82 / ncnn_llm CPU）**；PC/WSL 上唯一可用的 GPU 路径是 **llama.cpp OpenCL（Intel）**。
 
-PC 侧跨机分层推理由 **mistralrs-bridge** 模式自研实现（mistral.rs TCP 桥接）：Qwen3.6-27B / 3.8-27B / 35B-A3B（混合 SSM 架构）在 GPU PC + WSL 三段拓扑下输出正确，27B decode ~2.5 T/s，35B 经 x86 稀疏 MoE 修复后 ~3.4 T/s。llama.cpp RPC 也能做跨机（见 `3-machine/`，qwen35 SSM 已实测支持），本模式的价值在于自研实现与上游贡献（PR #2380）。
+PC 侧跨机分层推理由 **mistralrs-bridge** 模式自研实现（mistral.rs TCP 桥接）：Qwen3.6-27B / 3.8-27B / 35B-A3B（混合 SSM 架构）在 GPU PC + WSL 三段拓扑下输出正确，27B decode ~2.5 T/s，35B 经 x86 稀疏 MoE 修复后 ~3.4 T/s。三机（含手机）同 prompt 实测：**mistralrs 桥 1.29 T/s vs llama.cpp RPC 0.22 T/s**（详见 `mistralrs-bridge/docs/threeway-challenge-2026-08-19.md`）。
 
 > 注意：MNN / ncnn 实验均为**手机单机推理**。WSL 仅负责模型导出/编译 x86 工具，并未与手机 GPU 做分层协同；`3-machine/` 的 llama.cpp RPC 分层方案对 MNN/ncnn 不适用。
 
